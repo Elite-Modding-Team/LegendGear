@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=plain": {
+      "model": "legendgear:mystic_shrub_plain"
+    },
+    "type=charged": {
+      "model": "legendgear:mystic_shrub_charged"
+    },
+    "type=cut": {
+      "model": "legendgear:mystic_shrub_cut"
+    }
+  }
+}

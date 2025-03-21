@@ -1,0 +1,6 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "legendgear:blocks/bomb_flower_cut"
+  }
+}

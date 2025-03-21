@@ -1,0 +1,16 @@
+# CREATIVE TAB
+itemGroup.legendgear.tab=LegendGear
+
+# BLOCKS
+tile.legendgear.bomb_flower.name=Bomb Flower
+tile.legendgear.mystic_shrub.name=Mystic Shrub
+
+# ITEMS
+item.legendgear.bomb.name=Bomb
+item.legendgear.mystic_seed.name=Mystic Seed
+item.legendgear.recovery_heart.name=Recovery Heart
+
+# TOOLTIPS
+tooltip.legendgear.bomb_flower=Grows bombs but can only be placed next to lava.
+tooltip.legendgear.bomb_item=Right-click to throw it to the ground. It will explode after a few seconds.
+tooltip.legendgear.mystic_seed=Right-click on the ground to plant several Mystic Shrubs!

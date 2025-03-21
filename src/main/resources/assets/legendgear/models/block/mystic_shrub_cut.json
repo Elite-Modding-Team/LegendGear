@@ -1,0 +1,6 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "legendgear:blocks/mystic_shrub_cut"
+  }
+}

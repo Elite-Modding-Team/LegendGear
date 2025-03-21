@@ -1,0 +1,7 @@
+{
+  "item.recovery_heart.pickup": {
+    "sounds": [
+      "legendgear:heart_pickup"
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "type=normal": {
+      "model": "legendgear:bomb_flower_normal"
+    },
+    "type=cut": {
+      "model": "legendgear:bomb_flower_cut"
+    }
+  }
+}

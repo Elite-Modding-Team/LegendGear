@@ -1,0 +1,36 @@
+{
+  "pools": [
+    {
+      "name": "main",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "empty",
+          "weight": 35
+        },
+        {
+          "type": "item",
+          "entryName": "heart_1",
+          "name": "legendgear:recovery_heart",
+          "weight": 30
+        },
+        {
+          "type": "item",
+          "name": "minecraft:arrow",
+          "weight": 15
+        },
+        {
+          "type": "item",
+          "entryName": "emerald_1",
+          "name": "minecraft:emerald",
+          "weight": 15
+        },
+        {
+          "type": "item",
+          "name": "legendgear:mystic_seed",
+          "weight": 5
+        }
+      ]
+    }
+  ]
+}
