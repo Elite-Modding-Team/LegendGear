@@ -18,9 +18,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.registries.IForgeRegistry;
 
 import mod.emt.legendgear.LegendGear;
-import mod.emt.legendgear.item.LGItemBomb;
-import mod.emt.legendgear.item.LGItemMysticSeed;
-import mod.emt.legendgear.item.LGItemRecoveryHeart;
+import mod.emt.legendgear.item.*;
 
 @SuppressWarnings("unused")
 @Mod.EventBusSubscriber(modid = LegendGear.MOD_ID)
@@ -28,6 +26,8 @@ import mod.emt.legendgear.item.LGItemRecoveryHeart;
 public class LGItems
 {
     public static final LGItemBomb BOMB = null;
+    public static final LGItemEmeraldPiece EMERALD_PIECE = null;
+    public static final LGItemEmeraldShard EMERALD_SHARD = null;
     public static final LGItemMysticSeed MYSTIC_SEED = null;
     public static final LGItemRecoveryHeart RECOVERY_HEART = null;
 
@@ -42,6 +42,8 @@ public class LGItems
         registry.registerAll
             (
                 LGRegistry.setup(new LGItemBomb(), "bomb").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemEmeraldPiece(), "emerald_piece").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemEmeraldShard(), "emerald_shard").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemMysticSeed(LGBlocks.MYSTIC_SHRUB, Blocks.GRASS), "mystic_seed").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemRecoveryHeart(), "recovery_heart").setCreativeTab(LegendGear.TAB)
             );

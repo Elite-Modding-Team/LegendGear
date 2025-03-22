@@ -7,6 +7,8 @@ tile.legendgear.mystic_shrub.name=Mystic Shrub
 
 # ITEMS
 item.legendgear.bomb.name=Bomb
+item.legendgear.emerald_piece.name=Emerald Piece
+item.legendgear.emerald_shard.name=Emerald Shard
 item.legendgear.mystic_seed.name=Mystic Seed
 item.legendgear.recovery_heart.name=Recovery Heart
 
