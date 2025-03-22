@@ -8,8 +8,9 @@ import mod.emt.legendgear.LegendGear;
 public enum LGSoundEvents
 {
     ITEM_EMERALD_DROP_PICKUP_LARGE("item.emerald_drop.pickup_large"),
+    ITEM_EMERALD_DROP_PICKUP_MEDIUM("item.emerald_drop.pickup_medium"),
     ITEM_EMERALD_DROP_PICKUP_SMALL("item.emerald_drop.pickup_small"),
-    ITEM_EMERALD_GET("item.emerald.get"),
+    ITEM_EMERALD_EXCHANGE("item.emerald.exchange"),
     ITEM_RECOVERY_HEART_PICKUP("item.recovery_heart.pickup");
 
     private final SoundEvent soundEvent;

@@ -4,14 +4,19 @@
       "legendgear:emerald_drop_pickup_large"
     ]
   },
+  "item.emerald_drop.pickup_medium": {
+    "sounds": [
+      "legendgear:emerald_drop_pickup_medium"
+    ]
+  },
   "item.emerald_drop.pickup_small": {
     "sounds": [
       "legendgear:emerald_drop_pickup_small"
     ]
   },
-  "item.emerald.get": {
+  "item.emerald.exchange": {
     "sounds": [
-      "legendgear:emerald_get"
+      "legendgear:emerald_exchange"
     ]
   },
   "item.recovery_heart.pickup": {

@@ -26,11 +26,11 @@ public class LGEntityItemPickupEvent
         World world = player.getEntityWorld();
         if (item == Items.EMERALD)
         {
-            world.playSound(null, player.getPosition(), LGSoundEvents.ITEM_EMERALD_GET.getSoundEvent(), SoundCategory.PLAYERS, 0.5F, 1F);
+            world.playSound(null, player.getPosition(), LGSoundEvents.ITEM_EMERALD_DROP_PICKUP_LARGE.getSoundEvent(), SoundCategory.PLAYERS, 0.75F, 1F);
         }
         else if (item instanceof LGItemEmeraldPiece)
         {
-            world.playSound(null, player.getPosition(), LGSoundEvents.ITEM_EMERALD_DROP_PICKUP_LARGE.getSoundEvent(), SoundCategory.PLAYERS, 0.75F, 1F);
+            world.playSound(null, player.getPosition(), LGSoundEvents.ITEM_EMERALD_DROP_PICKUP_MEDIUM.getSoundEvent(), SoundCategory.PLAYERS, 0.75F, 1F);
         }
         else if (item instanceof LGItemEmeraldShard)
         {

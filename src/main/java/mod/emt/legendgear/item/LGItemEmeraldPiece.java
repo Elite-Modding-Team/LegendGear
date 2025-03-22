@@ -27,7 +27,7 @@ public class LGItemEmeraldPiece extends Item
         {
             heldStack.shrink(8);
             player.addItemStackToInventory(new ItemStack(Items.EMERALD));
-            world.playSound(player.posX, player.posY, player.posZ, LGSoundEvents.ITEM_EMERALD_GET.getSoundEvent(), SoundCategory.PLAYERS, 0.5F, 1F, false);
+            world.playSound(player.posX, player.posY, player.posZ, LGSoundEvents.ITEM_EMERALD_EXCHANGE.getSoundEvent(), SoundCategory.PLAYERS, 0.5F, 1F, false);
             return new ActionResult<>(EnumActionResult.SUCCESS, player.getHeldItem(hand));
         }
         return super.onItemRightClick(world, player, hand);

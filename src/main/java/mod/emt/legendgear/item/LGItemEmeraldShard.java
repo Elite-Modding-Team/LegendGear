@@ -27,7 +27,7 @@ public class LGItemEmeraldShard extends Item
         {
             heldStack.shrink(8);
             player.addItemStackToInventory(new ItemStack(LGItems.EMERALD_PIECE));
-            world.playSound(player.posX, player.posY, player.posZ, LGSoundEvents.ITEM_EMERALD_DROP_PICKUP_LARGE.getSoundEvent(), SoundCategory.PLAYERS, 0.75F, 1F, false);
+            world.playSound(player.posX, player.posY, player.posZ, LGSoundEvents.ITEM_EMERALD_EXCHANGE.getSoundEvent(), SoundCategory.PLAYERS, 0.75F, 1F, false);
             return new ActionResult<>(EnumActionResult.SUCCESS, player.getHeldItem(hand));
         }
         return super.onItemRightClick(world, player, hand);
