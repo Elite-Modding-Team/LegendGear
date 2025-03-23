@@ -27,11 +27,18 @@ import mod.emt.legendgear.item.base.*;
 public class LGItems
 {
     public static final LGItemBomb BOMB = null;
+    public static final LGItemRockCandy CHORUS_FRUIT_ROCK_CANDY = null;
     public static final LGItemEmeraldPiece EMERALD_PIECE = null;
+    public static final LGItemRockCandy EMERALD_ROCK_CANDY = null;
     public static final LGItemEmeraldShard EMERALD_SHARD = null;
+    public static final LGItemRockCandy DIAMOND_ROCK_CANDY = null;
+    public static final LGItemRockCandy GLOWSTONE_ROCK_CANDY = null;
+    public static final LGItemRockCandy LAPIS_LAZULI_ROCK_CANDY = null;
     public static final LGItemFood MILK_CHOCOLATE = null;
     public static final LGItemMysticSeed MYSTIC_SEED = null;
     public static final LGItemQuiver QUIVER = null;
+    public static final LGItemRockCandy QUARTZ_ROCK_CANDY = null;
+    public static final LGItemRockCandy REDSTONE_ROCK_CANDY = null;
     public static final LGItemRecoveryHeart RECOVERY_HEART = null;
 
     @SubscribeEvent
@@ -45,6 +52,13 @@ public class LGItems
         registry.registerAll
             (
                 LGRegistry.setup(new LGItemBomb(), "bomb").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemRockCandy(), "chorus_fruit_rock_candy").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemRockCandy(), "diamond_rock_candy").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemRockCandy(), "emerald_rock_candy").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemRockCandy(), "glowstone_rock_candy").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemRockCandy(), "lapis_lazuli_rock_candy").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemRockCandy(), "quartz_rock_candy").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemRockCandy(), "redstone_rock_candy").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemEmeraldPiece(), "emerald_piece").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemEmeraldShard(), "emerald_shard").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemFood(2, 0.3F, false), "milk_chocolate").setAlwaysEdible().setCreativeTab(LegendGear.TAB),

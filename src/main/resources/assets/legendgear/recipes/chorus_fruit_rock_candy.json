@@ -1,0 +1,28 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:water_bucket"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "stickWood"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:chorus_fruit_popped"
+    }
+  ],
+  "result": {
+    "item": "legendgear:chorus_fruit_rock_candy",
+    "count": 1
+  }
+}

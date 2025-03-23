@@ -1,0 +1,29 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:water_bucket"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "stickWood"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "gemLapis"
+    }
+  ],
+  "result": {
+    "item": "legendgear:lapis_lazuli_rock_candy",
+    "count": 1
+  }
+}

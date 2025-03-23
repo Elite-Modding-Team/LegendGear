@@ -7,12 +7,20 @@ tile.legendgear.mystic_shrub.name=Mystic Shrub
 
 # ITEMS
 item.legendgear.bomb.name=Bomb
+item.legendgear.chorus_fruit_rock_candy.name=Chorus Fruit Rock Candy
+item.legendgear.diamond_rock_candy.name=Diamond Rock Candy
 item.legendgear.emerald_piece.name=Emerald Piece
+item.legendgear.emerald_rock_candy.name=Emerald Rock Candy
 item.legendgear.emerald_shard.name=Emerald Shard
+item.legendgear.glowstone_rock_candy.name=Glowstone Rock Candy
+item.legendgear.lapis_lazuli_rock_candy.name=Lapis Lazuli Rock Candy
 item.legendgear.milk_chocolate.name=Milk Chocolate
 item.legendgear.mystic_seed.name=Mystic Seed
+item.legendgear.quartz_rock_candy.name=Quartz Rock Candy
 item.legendgear.quiver.name=Quiver
 item.legendgear.recovery_heart.name=Recovery Heart
+item.legendgear.redstone_rock_candy.name=Redstone Rock Candy
+item.legendgear.reed_pipes.name=Reed Pipes
 
 # TOOLTIPS
 tooltip.legendgear.arrows=Arrows
@@ -21,3 +29,5 @@ tooltip.legendgear.bomb_item=Right-click to throw it to the ground. It will expl
 tooltip.legendgear.milk_chocolate=Cures all status effects while also being chocolately.
 tooltip.legendgear.mystic_seed=Right-click on the ground to plant several Mystic Shrubs!
 tooltip.legendgear.quiver=Arrows picked up will be stored into the quiver until it's full. Right-click to store arrows into it or sneak and right-click to remove arrows from it.
+tooltip.legendgear.reed_pipes=Hold down right-click to play it! Pitch is determined by the angle you're looking at and notes are determined by sneaking.
+tooltip.legendgear.rock_candy=Rock solid! Gives you different effects when eaten depending on the flavor.

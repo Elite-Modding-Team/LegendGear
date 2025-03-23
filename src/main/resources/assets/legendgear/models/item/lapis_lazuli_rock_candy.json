@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "legendgear:items/lapis_lazuli_rock_candy"
+  }
+}
