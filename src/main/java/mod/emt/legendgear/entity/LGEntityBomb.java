@@ -115,15 +115,17 @@ public class LGEntityBomb extends Entity implements IEntityAdditionalSpawnData
             this.posZ = this.getRidingEntity().posZ;
             this.getRidingEntity().setDead();
         }
-        if (this.world.isRemote) for (int j = 0; j < 8; j++)
+        if (this.world.isRemote)
         {
-            this.world.spawnParticle(EnumParticleTypes.EXPLOSION_LARGE, this.posX + this.rand.nextGaussian(), this.posY + this.rand.nextGaussian(), this.posZ + this.rand.nextGaussian(), 0.0D, 0.0D, 0.0D);
-            this.world.spawnParticle(EnumParticleTypes.LAVA, this.posX, this.posY + 0.25D, this.posZ, this.rand.nextGaussian(), this.rand.nextGaussian(), this.rand.nextGaussian());
-            this.world.spawnParticle(EnumParticleTypes.EXPLOSION_NORMAL, this.posX + this.rand.nextGaussian(), this.posY + this.rand.nextGaussian(), this.posZ + this.rand.nextGaussian(), 0.0D, 0.0D, 0.0D);
+            for (int j = 0; j < 8; j++)
+            {
+                this.world.spawnParticle(EnumParticleTypes.EXPLOSION_LARGE, this.posX + this.rand.nextGaussian(), this.posY + this.rand.nextGaussian(), this.posZ + this.rand.nextGaussian(), 0.0D, 0.0D, 0.0D);
+                this.world.spawnParticle(EnumParticleTypes.LAVA, this.posX, this.posY + 0.25D, this.posZ, this.rand.nextGaussian(), this.rand.nextGaussian(), this.rand.nextGaussian());
+                this.world.spawnParticle(EnumParticleTypes.EXPLOSION_NORMAL, this.posX + this.rand.nextGaussian(), this.posY + this.rand.nextGaussian(), this.posZ + this.rand.nextGaussian(), 0.0D, 0.0D, 0.0D);
+            }
         }
         List<Entity> entities = this.world.getEntitiesWithinAABBExcludingEntity(this, this.getEntityBoundingBox().grow(4.0D, 4.0D, 4.0D));
-        DamageSource damage = DamageSource.causeThrownDamage(this, this.thrower);
-        damage.damageType = "explosion";
+        DamageSource damage = DamageSource.causeThrownDamage(this, this.thrower).setExplosion();
         double blastRadius = 3.5D;
         for (Entity e : entities)
         {
@@ -143,7 +145,7 @@ public class LGEntityBomb extends Entity implements IEntityAdditionalSpawnData
                 e.fallDistance = 0.0F;
             }
         }
-        if (!this.world.isRemote) this.world.createExplosion(this, this.posX, this.posY + (this.height / 16.0F), this.posZ, 4.0F, true);
+        if (!this.world.isRemote) this.world.createExplosion(this, this.posX, this.posY + (this.height / 16.0F), this.posZ, 4.0F, false);
         setDead();
     }
 

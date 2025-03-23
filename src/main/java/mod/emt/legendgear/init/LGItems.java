@@ -29,6 +29,7 @@ public class LGItems
     public static final LGItemEmeraldPiece EMERALD_PIECE = null;
     public static final LGItemEmeraldShard EMERALD_SHARD = null;
     public static final LGItemMysticSeed MYSTIC_SEED = null;
+    public static final LGItemQuiver QUIVER = null;
     public static final LGItemRecoveryHeart RECOVERY_HEART = null;
 
     @SubscribeEvent
@@ -45,6 +46,7 @@ public class LGItems
                 LGRegistry.setup(new LGItemEmeraldPiece(), "emerald_piece").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemEmeraldShard(), "emerald_shard").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemMysticSeed(LGBlocks.MYSTIC_SHRUB, Blocks.GRASS), "mystic_seed").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemQuiver(), "quiver").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemRecoveryHeart(), "recovery_heart").setCreativeTab(LegendGear.TAB)
             );
 

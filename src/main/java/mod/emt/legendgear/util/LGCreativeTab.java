@@ -17,6 +17,6 @@ public class LGCreativeTab extends CreativeTabs
     @SideOnly(Side.CLIENT)
     public ItemStack createIcon()
     {
-        return new ItemStack(Items.AIR, 1);
+        return new ItemStack(Items.EMERALD, 1);
     }
 }

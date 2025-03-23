@@ -11,6 +11,8 @@ public class LGLootTables
 {
     public static final ResourceLocation MYSTIC_SHRUB = createLootTable("mystic_shrub");
     public static final ResourceLocation MYSTIC_SHRUB_CHARGED = createLootTable("mystic_shrub_charged");
+    public static final ResourceLocation MOBS_REGULAR = createLootTable("mobs_regular");
+    public static final ResourceLocation MOBS_SPECIAL = createLootTable("mobs_special");
 
     private static ResourceLocation createLootTable(String path)
     {

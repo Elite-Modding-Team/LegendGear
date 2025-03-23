@@ -7,8 +7,12 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
+import mod.emt.legendgear.config.LGConfig;
 import mod.emt.legendgear.util.LGCreativeTab;
+import mod.emt.legendgear.worldgen.LGBombFlowerGenerator;
+import mod.emt.legendgear.worldgen.LGShrubGenerator;
 
 @Mod(modid = LegendGear.MOD_ID, name = LegendGear.NAME, version = LegendGear.VERSION, acceptedMinecraftVersions = LegendGear.ACCEPTED_VERSIONS, dependencies = LegendGear.DEPENDENCIES)
 public class LegendGear
@@ -33,6 +37,14 @@ public class LegendGear
     @Mod.EventHandler
     public void init(FMLInitializationEvent event)
     {
+        if (LGConfig.generateBombFlowers)
+        {
+            GameRegistry.registerWorldGenerator(new LGBombFlowerGenerator(), 100);
+        }
+        if (LGConfig.generateMysticShrubs)
+        {
+            GameRegistry.registerWorldGenerator(new LGShrubGenerator(), 100);
+        }
         LOGGER.info(NAME + " initialized");
     }
 

@@ -1,0 +1,26 @@
+{
+  "pools": [
+    {
+      "name": "main",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "empty",
+          "weight": 60
+        },
+        {
+          "type": "item",
+          "entryName": "heart_1",
+          "name": "legendgear:recovery_heart",
+          "weight": 20
+        },
+        {
+          "type": "item",
+          "entryName": "emerald_1",
+          "name": "legendgear:emerald_shard",
+          "weight": 20
+        }
+      ]
+    }
+  ]
+}
