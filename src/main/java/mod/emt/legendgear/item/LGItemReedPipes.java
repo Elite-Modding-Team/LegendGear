@@ -64,7 +64,7 @@ public class LGItemReedPipes extends Item
     @Override
     public void onPlayerStoppedUsing(ItemStack stack, World world, EntityLivingBase player, int time)
     {
-        player.getEntityData().setFloat("note_time", 0);
+        player.getEntityData().setFloat("flute_note_time", 0);
     }
 
     public static int getNoteFromSpan(double span, int[] notearray)
@@ -87,7 +87,7 @@ public class LGItemReedPipes extends Item
     @Override
     public void onUsingTick(ItemStack stack, EntityLivingBase player, int count)
     {
-        float noteTime = player.getEntityData().getFloat("note_time");
+        float noteTime = player.getEntityData().getFloat("flute_note_time");
 
         int savednote = player.getEntityData().getInteger("flute_note");
         int anglenote = getNoteFromSpan((180 - (player.rotationPitch + 90)) / 180, notes);
@@ -117,7 +117,7 @@ public class LGItemReedPipes extends Item
             player.world.playSound(null, player.getPosition(), LGSoundEvents.ITEM_FLUTE_SUSTAIN.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, pitch);
         }
 
-        player.getEntityData().setFloat("note_time", noteTime);
+        player.getEntityData().setFloat("flute_note_time", noteTime);
     }
 
     @Override
