@@ -41,6 +41,7 @@ public class LGItems
     public static final LGItemReedPipes REED_PIPES = null;
     public static final LGItemRockCandy REDSTONE_ROCK_CANDY = null;
     public static final LGItemRecoveryHeart RECOVERY_HEART = null;
+    public static final LGItemSlimeSword SLIME_SWORD = null;
 
     @SubscribeEvent
     public static void onRegisterItemsEvent(@Nonnull final RegistryEvent.Register<Item> event)
@@ -66,7 +67,8 @@ public class LGItems
                 LGRegistry.setup(new LGItemMysticSeed(LGBlocks.MYSTIC_SHRUB, Blocks.GRASS), "mystic_seed").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemQuiver(), "quiver").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemReedPipes(), "reed_pipes").setCreativeTab(LegendGear.TAB),
-                LGRegistry.setup(new LGItemRecoveryHeart(), "recovery_heart").setCreativeTab(LegendGear.TAB)
+                LGRegistry.setup(new LGItemRecoveryHeart(), "recovery_heart").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemSlimeSword(), "slime_sword").setCreativeTab(LegendGear.TAB)
             );
 
         // ITEM BLOCKS
