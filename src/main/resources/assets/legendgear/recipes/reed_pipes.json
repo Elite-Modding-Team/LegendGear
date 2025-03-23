@@ -1,0 +1,18 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "SSS",
+    "SS ",
+    "S  "
+  ],
+  "key": {
+    "S": {
+      "type": "forge:ore_dict",
+      "ore": "sugarcane"
+    }
+  },
+  "result": {
+    "item": "legendgear:reed_pipes",
+    "count": 1
+  }
+}

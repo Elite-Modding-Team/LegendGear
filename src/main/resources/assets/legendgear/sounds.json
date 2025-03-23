@@ -19,6 +19,16 @@
       "legendgear:emerald_exchange"
     ]
   },
+  "item.flute.attack": {
+    "sounds": [
+      "legendgear:flute_attack"
+    ]
+  },
+  "item.flute.sustain": {
+    "sounds": [
+      "legendgear:flute_sustain"
+    ]
+  },
   "item.recovery_heart.pickup": {
     "sounds": [
       "legendgear:heart_pickup"

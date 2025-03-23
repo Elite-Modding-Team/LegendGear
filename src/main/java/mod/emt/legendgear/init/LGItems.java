@@ -38,6 +38,7 @@ public class LGItems
     public static final LGItemMysticSeed MYSTIC_SEED = null;
     public static final LGItemQuiver QUIVER = null;
     public static final LGItemRockCandy QUARTZ_ROCK_CANDY = null;
+    public static final LGItemReedPipes REED_PIPES = null;
     public static final LGItemRockCandy REDSTONE_ROCK_CANDY = null;
     public static final LGItemRecoveryHeart RECOVERY_HEART = null;
 
@@ -64,6 +65,7 @@ public class LGItems
                 LGRegistry.setup(new LGItemFood(2, 0.3F, false), "milk_chocolate").setAlwaysEdible().setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemMysticSeed(LGBlocks.MYSTIC_SHRUB, Blocks.GRASS), "mystic_seed").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemQuiver(), "quiver").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemReedPipes(), "reed_pipes").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemRecoveryHeart(), "recovery_heart").setCreativeTab(LegendGear.TAB)
             );
 
