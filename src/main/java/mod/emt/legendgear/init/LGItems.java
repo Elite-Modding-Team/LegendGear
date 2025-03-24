@@ -27,6 +27,7 @@ import mod.emt.legendgear.item.base.LGItemFood;
 public class LGItems
 {
     public static final LGItemBomb BOMB = null;
+    public static final LGItemBombBag BOMB_BAG = null;
     public static final LGItemRockCandy CHORUS_FRUIT_ROCK_CANDY = null;
     public static final LGItemEmeraldPiece EMERALD_PIECE = null;
     public static final LGItemRockCandy EMERALD_ROCK_CANDY = null;
@@ -56,6 +57,7 @@ public class LGItems
         registry.registerAll
             (
                 LGRegistry.setup(new LGItemBomb(), "bomb").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemBombBag(), "bomb_bag").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemRockCandy(), "chorus_fruit_rock_candy").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemRockCandy(), "diamond_rock_candy").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemRockCandy(), "emerald_rock_candy").setCreativeTab(LegendGear.TAB),

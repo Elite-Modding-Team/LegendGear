@@ -7,6 +7,7 @@ tile.legendgear.mystic_shrub.name=Mystic Shrub
 
 # ITEMS
 item.legendgear.bomb.name=Bomb
+item.legendgear.bomb_bag.name=Bomb Bag
 item.legendgear.chorus_fruit_rock_candy.name=Chorus Fruit Rock Candy
 item.legendgear.diamond_rock_candy.name=Diamond Rock Candy
 item.legendgear.emerald_piece.name=Emerald Piece
@@ -27,11 +28,13 @@ item.legendgear.slime_sword.name=Slime Sword
 
 # TOOLTIPS
 tooltip.legendgear.arrows=Arrows
+tooltip.legendgear.bomb_bag=Bombs picked up will be stored into the bag until it's full. Right-click to throw one of the stored bombs to the ground or left-click active bombs to defuse them.
 tooltip.legendgear.bomb_flower=Grows bombs but can only be placed next to lava.
 tooltip.legendgear.bomb_item=Right-click to throw it to the ground. It will explode after a few seconds.
+tooltip.legendgear.bombs=Bombs
 tooltip.legendgear.magic_boomerang=Right-click to throw it. The boomerang will magically return to you and pick up any items it touches.
 tooltip.legendgear.magic_mirror=Hold down right-click to teleport to the last point you stood on that was exposed to the sky.
-tooltip.legendgear.milk_chocolate=Cures all status effects while also being chocolately.
+tooltip.legendgear.milk_chocolate=Cures all status effects while also being chocolatey.
 tooltip.legendgear.mystic_seed=Right-click on the ground to plant several Mystic Shrubs!
 tooltip.legendgear.quiver=Arrows picked up will be stored into the quiver until it's full. Right-click to store arrows into it or sneak and right-click to remove arrows from it.
 tooltip.legendgear.reed_pipes=Hold down right-click to play it! Pitch is determined by the angle you're looking at and notes are determined by sneaking.

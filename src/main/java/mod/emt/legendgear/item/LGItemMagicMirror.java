@@ -31,6 +31,7 @@ public class LGItemMagicMirror extends Item
 
     public LGItemMagicMirror()
     {
+        super();
         setMaxStackSize(1);
         status = 0.0F;
         addPropertyOverride(new ResourceLocation(LegendGear.MOD_ID, "status"), new IItemPropertyGetter()

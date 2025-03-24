@@ -95,7 +95,6 @@ public class LGEntityBomb extends Entity implements IEntityAdditionalSpawnData
         if (!this.world.isRemote)
         {
             LGEntityItemNoStacking bombDrop = new LGEntityItemNoStacking(this.world, this.posX, this.posY, this.posZ, new ItemStack(LGItems.BOMB));
-            bombDrop.setInfinitePickupDelay();
             this.world.spawnEntity(bombDrop);
             this.world.playSound(null, this.getPosition(), SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.BLOCKS, 1.0F, 1.7F);
         }

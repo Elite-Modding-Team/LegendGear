@@ -24,6 +24,7 @@ public class LGItemMagicBoomerang extends Item
 {
     public LGItemMagicBoomerang()
     {
+        super();
         setMaxStackSize(1);
         setMaxDamage(1500);
     }

@@ -1,0 +1,22 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "L L",
+    "LBL",
+    "LLL"
+  ],
+  "key": {
+    "L": {
+      "type": "forge:ore_dict",
+      "ore": "leather"
+    },
+    "B": {
+      "item": "legendgear:bomb"
+    }
+  },
+  "result": {
+    "item": "legendgear:bomb_bag",
+    "count": 1,
+    "data": 49
+  }
+}
