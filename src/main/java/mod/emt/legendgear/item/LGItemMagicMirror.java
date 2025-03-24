@@ -129,6 +129,12 @@ public class LGItemMagicMirror extends Item
     }
 
     @Override
+    public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flags)
+    {
+        tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.legendgear.magic_mirror"));
+    }
+
+    @Override
     @SideOnly(Side.CLIENT)
     public boolean hasEffect(ItemStack stack)
     {
@@ -178,11 +184,5 @@ public class LGItemMagicMirror extends Item
     private boolean isNBTOutdoors()
     {
         return status == 0.0F;
-    }
-
-    @Override
-    public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flags)
-    {
-        tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.legendgear.magic_mirror"));
     }
 }

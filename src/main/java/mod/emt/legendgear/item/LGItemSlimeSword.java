@@ -1,7 +1,5 @@
 package mod.emt.legendgear.item;
 
-import java.util.List;
-
 import javax.annotation.Nullable;
 
 import net.minecraft.client.resources.I18n;
@@ -16,12 +14,20 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
+import java.util.List;
+
 public class LGItemSlimeSword extends Item
 {
     public LGItemSlimeSword()
     {
         super();
         setMaxStackSize(1);
+    }
+
+    @Override
+    public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flags)
+    {
+        tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.legendgear.slime_sword"));
     }
 
     @Override
@@ -32,12 +38,6 @@ public class LGItemSlimeSword extends Item
             player.world.playSound(null, player.posX, player.posY, player.posZ, SoundEvents.ENTITY_SMALL_SLIME_HURT, SoundCategory.PLAYERS, 1.0F, 1.0F);
         }
 
-        return false;
-    }
-
-    @Override
-    public boolean canDestroyBlockInCreative(World world, BlockPos pos, ItemStack stack, EntityPlayer player)
-    {
         return false;
     }
 
@@ -53,8 +53,8 @@ public class LGItemSlimeSword extends Item
     }
 
     @Override
-    public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flags)
+    public boolean canDestroyBlockInCreative(World world, BlockPos pos, ItemStack stack, EntityPlayer player)
     {
-        tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.legendgear.slime_sword"));
+        return false;
     }
 }

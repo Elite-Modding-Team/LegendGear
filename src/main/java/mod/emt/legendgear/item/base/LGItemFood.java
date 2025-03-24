@@ -1,10 +1,7 @@
 package mod.emt.legendgear.item.base;
 
-import java.util.List;
-
 import javax.annotation.Nullable;
 
-import mod.emt.legendgear.init.LGItems;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
@@ -13,6 +10,9 @@ import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
+
+import java.util.List;
+import mod.emt.legendgear.init.LGItems;
 
 public class LGItemFood extends ItemFood
 {
@@ -35,14 +35,12 @@ public class LGItemFood extends ItemFood
     }
 
     @Override
-    public int getMaxItemUseDuration(ItemStack stack)
+    public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flags)
     {
-        if (itemUseDuration == 0)
+        if (stack.getItem() == LGItems.MILK_CHOCOLATE)
         {
-            return 32;
+            tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.legendgear.milk_chocolate"));
         }
-
-        return itemUseDuration;
     }
 
     @Override
@@ -61,11 +59,13 @@ public class LGItemFood extends ItemFood
     }
 
     @Override
-    public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flags)
+    public int getMaxItemUseDuration(ItemStack stack)
     {
-        if (stack.getItem() == LGItems.MILK_CHOCOLATE)
+        if (itemUseDuration == 0)
         {
-            tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.legendgear.milk_chocolate"));
+            return 32;
         }
+
+        return itemUseDuration;
     }
 }

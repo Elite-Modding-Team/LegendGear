@@ -19,7 +19,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 
 import mod.emt.legendgear.LegendGear;
 import mod.emt.legendgear.item.*;
-import mod.emt.legendgear.item.base.*;
+import mod.emt.legendgear.item.base.LGItemFood;
 
 @SuppressWarnings("unused")
 @Mod.EventBusSubscriber(modid = LegendGear.MOD_ID)
