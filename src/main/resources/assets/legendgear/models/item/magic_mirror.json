@@ -1,0 +1,20 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "legendgear:items/magic_mirror_dim"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "legendgear:status": 1
+      },
+      "model": "legendgear:item/magic_mirror_lit"
+    },
+    {
+      "predicate": {
+        "legendgear:status": 2
+      },
+      "model": "legendgear:item/magic_mirror_active"
+    }
+  ]
+}

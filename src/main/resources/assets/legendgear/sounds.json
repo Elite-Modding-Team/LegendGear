@@ -1,4 +1,9 @@
 {
+  "entity.boomerang.fly": {
+    "sounds": [
+      "legendgear:boomerang_fly"
+    ]
+  },
   "item.emerald_drop.pickup_large": {
     "sounds": [
       "legendgear:emerald_drop_pickup_large"
@@ -27,6 +32,16 @@
   "item.flute.sustain": {
     "sounds": [
       "legendgear:flute_sustain"
+    ]
+  },
+  "item.magic_mirror.inactive": {
+    "sounds": [
+      "legendgear:magic_mirror_inactive"
+    ]
+  },
+  "item.magic_mirror.use": {
+    "sounds": [
+      "legendgear:sine"
     ]
   },
   "item.recovery_heart.pickup": {

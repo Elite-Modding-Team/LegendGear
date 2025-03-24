@@ -7,12 +7,15 @@ import mod.emt.legendgear.LegendGear;
 
 public enum LGSoundEvents
 {
+    ENTITY_BOOMERANG_FLY("entity.boomerang.fly"),
     ITEM_EMERALD_DROP_PICKUP_LARGE("item.emerald_drop.pickup_large"),
     ITEM_EMERALD_DROP_PICKUP_MEDIUM("item.emerald_drop.pickup_medium"),
     ITEM_EMERALD_DROP_PICKUP_SMALL("item.emerald_drop.pickup_small"),
     ITEM_EMERALD_EXCHANGE("item.emerald.exchange"),
     ITEM_FLUTE_ATTACK("item.flute.attack"),
     ITEM_FLUTE_SUSTAIN("item.flute.sustain"),
+    ITEM_MAGIC_MIRROR_INACTIVE("item.magic_mirror.inactive"),
+    ITEM_MAGIC_MIRROR_USE("item.magic_mirror.use"),
     ITEM_RECOVERY_HEART_PICKUP("item.recovery_heart.pickup");
 
     private final SoundEvent soundEvent;
