@@ -1,7 +1,7 @@
 {
-  "entity.boomerang.fly": {
+  "entity.magic_boomerang.fly": {
     "sounds": [
-      "legendgear:boomerang_fly"
+      "legendgear:magic_boomerang_fly"
     ]
   },
   "item.emerald_drop.pickup_large": {

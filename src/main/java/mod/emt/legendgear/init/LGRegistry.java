@@ -29,7 +29,9 @@ import java.util.ArrayList;
 import java.util.List;
 import mod.emt.legendgear.LegendGear;
 import mod.emt.legendgear.client.render.LGRenderBomb;
+import mod.emt.legendgear.client.render.LGRenderMagicBoomerang;
 import mod.emt.legendgear.entity.LGEntityBomb;
+import mod.emt.legendgear.entity.LGEntityMagicBoomerang;
 
 @Mod.EventBusSubscriber(modid = LegendGear.MOD_ID)
 public class LGRegistry
@@ -81,7 +83,8 @@ public class LGRegistry
     {
         LegendGear.LOGGER.info("Registering entities...");
 
-        registerEntity("blood", LGEntityBomb.class);
+        registerEntity("bomb", LGEntityBomb.class);
+        registerEntity("magic_boomerang", LGEntityMagicBoomerang.class);
     }
 
     public static void registerEntitySpawns()
@@ -144,5 +147,6 @@ public class LGRegistry
         LegendGear.LOGGER.info("Registering entity renderers...");
 
         RenderingRegistry.registerEntityRenderingHandler(LGEntityBomb.class, new LGRenderBomb.Factory());
+        RenderingRegistry.registerEntityRenderingHandler(LGEntityMagicBoomerang.class, new LGRenderMagicBoomerang.Factory());
     }
 }

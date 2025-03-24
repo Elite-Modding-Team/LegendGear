@@ -1,15 +1,11 @@
 {
   "type": "forge:ore_shaped",
   "pattern": [
-    "PGP",
-    "GDG",
-    "PGP"
+    "DGG",
+    "G  ",
+    "G  "
   ],
   "key": {
-    "P": {
-      "type": "forge:ore_dict",
-      "ore": "enderpearl"
-    },
     "G": {
       "type": "forge:ore_dict",
       "ore": "ingotGold"
@@ -20,7 +16,7 @@
     }
   },
   "result": {
-    "item": "legendgear:magic_mirror",
+    "item": "legendgear:magic_boomerang",
     "count": 1
   }
 }

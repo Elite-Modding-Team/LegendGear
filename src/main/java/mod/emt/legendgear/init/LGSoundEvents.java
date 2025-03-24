@@ -7,7 +7,7 @@ import mod.emt.legendgear.LegendGear;
 
 public enum LGSoundEvents
 {
-    ENTITY_BOOMERANG_FLY("entity.boomerang.fly"),
+    ENTITY_MAGIC_BOOMERANG_FLY("entity.magic_boomerang.fly"),
     ITEM_EMERALD_DROP_PICKUP_LARGE("item.emerald_drop.pickup_large"),
     ITEM_EMERALD_DROP_PICKUP_MEDIUM("item.emerald_drop.pickup_medium"),
     ITEM_EMERALD_DROP_PICKUP_SMALL("item.emerald_drop.pickup_small"),

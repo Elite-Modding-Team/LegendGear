@@ -34,6 +34,8 @@ public class LGItems
     public static final LGItemRockCandy DIAMOND_ROCK_CANDY = null;
     public static final LGItemRockCandy GLOWSTONE_ROCK_CANDY = null;
     public static final LGItemRockCandy LAPIS_LAZULI_ROCK_CANDY = null;
+    public static final LGItemMagicBoomerang MAGIC_BOOMERANG = null;
+    public static final LGItemMagicMirror MAGIC_MIRROR = null;
     public static final LGItemFood MILK_CHOCOLATE = null;
     public static final LGItemMysticSeed MYSTIC_SEED = null;
     public static final LGItemQuiver QUIVER = null;
@@ -64,6 +66,7 @@ public class LGItems
                 LGRegistry.setup(new LGItemEmeraldPiece(), "emerald_piece").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemEmeraldShard(), "emerald_shard").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemFood(2, 0.3F, false), "milk_chocolate").setAlwaysEdible().setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemMagicBoomerang(), "magic_boomerang").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemMagicMirror(), "magic_mirror").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemMysticSeed(LGBlocks.MYSTIC_SHRUB, Blocks.GRASS), "mystic_seed").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemQuiver(), "quiver").setCreativeTab(LegendGear.TAB),
