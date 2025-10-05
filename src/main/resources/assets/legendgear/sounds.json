@@ -1,47 +1,47 @@
 {
   "entity.magic_boomerang.fly": {
     "sounds": [
-      "legendgear:magic_boomerang_fly"
+      "legendgear:item/boomernag/fly"
     ]
   },
   "item.emerald_drop.pickup_large": {
     "sounds": [
-      "legendgear:emerald_drop_pickup_large"
+      "legendgear:item/emerald/pickup_large"
     ]
   },
   "item.emerald_drop.pickup_medium": {
     "sounds": [
-      "legendgear:emerald_drop_pickup_medium"
+      "legendgear:item/emerald/pickup_medium"
     ]
   },
   "item.emerald_drop.pickup_small": {
     "sounds": [
-      "legendgear:emerald_drop_pickup_small"
+      "legendgear:item/emerald/pickup_small"
     ]
   },
   "item.emerald.exchange": {
     "sounds": [
-      "legendgear:emerald_exchange"
+      "legendgear:item/emerald/exchange"
     ]
   },
   "item.flute.attack": {
     "sounds": [
-      "legendgear:flute_attack"
+      "legendgear:item/flute/attack"
     ]
   },
   "item.flute.sustain": {
     "sounds": [
-      "legendgear:flute_sustain"
+      "legendgear:item/flute/sustain"
     ]
   },
   "item.magic_mirror.inactive": {
     "sounds": [
-      "legendgear:magic_mirror_inactive"
+      "legendgear:item/magic_mirror/inactive"
     ]
   },
   "item.magic_mirror.use": {
     "sounds": [
-      "legendgear:sine"
+      "legendgear:item/magic_mirror/use"
     ]
   },
   "item.recovery_heart.pickup": {
