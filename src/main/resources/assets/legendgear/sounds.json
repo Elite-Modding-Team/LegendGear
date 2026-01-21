@@ -48,5 +48,10 @@
     "sounds": [
       "legendgear:heart_pickup"
     ]
+  },
+  "random.sword_slash": {
+    "sounds": [
+      "legendgear:sword_slash"
+    ]
   }
 }

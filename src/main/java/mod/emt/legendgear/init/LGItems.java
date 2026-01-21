@@ -2,12 +2,15 @@ package mod.emt.legendgear.init;
 
 import javax.annotation.Nonnull;
 
+import mod.emt.legendgear.item.base.LGItemSword;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -45,6 +48,10 @@ public class LGItems
     public static final LGItemRockCandy REDSTONE_ROCK_CANDY = null;
     public static final LGItemRecoveryHeart RECOVERY_HEART = null;
     public static final LGItemSlimeSword SLIME_SWORD = null;
+    public static final LGItemSword STARGLASS_SWORD = null;
+
+    // TODO: Add materials to its own class
+    public static Item.ToolMaterial TOOL_STARGLASS = EnumHelper.addToolMaterial("legendgear_tool_starglass", 2, 216, 15.0F, 2.0F, 20);
 
     @SubscribeEvent
     public static void onRegisterItemsEvent(@Nonnull final RegistryEvent.Register<Item> event)
@@ -74,7 +81,8 @@ public class LGItems
                 LGRegistry.setup(new LGItemQuiver(), "quiver").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemReedPipes(), "reed_pipes").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemRecoveryHeart(), "recovery_heart").setCreativeTab(LegendGear.TAB),
-                LGRegistry.setup(new LGItemSlimeSword(), "slime_sword").setCreativeTab(LegendGear.TAB)
+                LGRegistry.setup(new LGItemSlimeSword(), "slime_sword").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemSword(TOOL_STARGLASS, EnumRarity.RARE), "starglass_sword").setCreativeTab(LegendGear.TAB)
             );
 
         // ITEM BLOCKS
