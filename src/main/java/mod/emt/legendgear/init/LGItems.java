@@ -33,6 +33,7 @@ public class LGItems
     public static final LGItemBomb BOMB = null;
     public static final LGItemBombBag BOMB_BAG = null;
     public static final LGItemRockCandy CHORUS_FRUIT_ROCK_CANDY = null;
+    public static final LGItemDimensionalCatalyst DIMENSIONAL_CATALYST = null;
     public static final LGItemEmeraldPiece EMERALD_PIECE = null;
     public static final LGItemRockCandy EMERALD_ROCK_CANDY = null;
     public static final LGItemEmeraldShard EMERALD_SHARD = null;
@@ -72,6 +73,7 @@ public class LGItems
                 LGRegistry.setup(new LGItemStarPiece(), "infused_star_piece").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemBomb(), "bomb").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemBombBag(), "bomb_bag").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemDimensionalCatalyst(), "dimensional_catalyst").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemRockCandy(), "chorus_fruit_rock_candy").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemRockCandy(), "diamond_rock_candy").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemRockCandy(), "emerald_rock_candy").setCreativeTab(LegendGear.TAB),

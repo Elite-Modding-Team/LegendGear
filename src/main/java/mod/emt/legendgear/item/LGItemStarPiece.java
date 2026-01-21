@@ -163,7 +163,8 @@ public class LGItemStarPiece extends Item
     }
 
     @Override
-    public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flags) {
+    public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flags)
+    {
         if (this.equals(LGItems.STAR_PIECE))
         {
             tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.legendgear.star_piece", INFUSE_LEVEL));
