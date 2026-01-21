@@ -1,5 +1,6 @@
 package mod.emt.legendgear;
 
+import mod.emt.legendgear.init.LGRegistry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import net.minecraft.creativetab.CreativeTabs;
@@ -45,6 +46,8 @@ public class LegendGear
         {
             GameRegistry.registerWorldGenerator(new LGShrubGenerator(), 100);
         }
+
+        LGRegistry.registerTileEntities();
         LOGGER.info(NAME + " initialized");
     }
 

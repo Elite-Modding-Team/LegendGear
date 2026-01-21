@@ -53,7 +53,7 @@ public class LGRenderPrismaticXP extends Render<EntityXPOrb>
         float b = Rainbow.b(phase);
         int rgba = (int) (r * 255.0F) << 16 | (int) (g * 255.0F) << 8 | (int) (b * 255.0F);
         GlStateManager.rotate(180.0F - this.renderManager.playerViewY, 0.0F, 1.0F, 0.0F);
-        GlStateManager.rotate(((this.renderManager.options.thirdPersonView == 2) ? -1 : true) * -this.renderManager.playerViewX, 1.0F, 0.0F, 0.0F);
+        GlStateManager.rotate(((this.renderManager.options.thirdPersonView == 2) ? -1 : 1) * -this.renderManager.playerViewX, 1.0F, 0.0F, 0.0F);
         GlStateManager.scale(size, size, size);
         GlStateManager.disableLighting();
         buffer.begin(7, DefaultVertexFormats.POSITION_TEX_COLOR);

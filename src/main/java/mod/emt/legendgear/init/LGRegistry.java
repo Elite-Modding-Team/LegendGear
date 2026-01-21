@@ -25,6 +25,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.EntityEntry;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.registries.IForgeRegistry;
@@ -143,6 +144,13 @@ public class LGRegistry
         {
             registry.register(soundEvents.getSoundEvent());
         }
+    }
+
+    public static void registerTileEntities()
+    {
+        LegendGear.LOGGER.info("Registering tile entities...");
+
+        GameRegistry.registerTileEntity(LGTileEntitySkybeam.class, new ResourceLocation(LegendGear.MOD_ID, "skybeam"));
     }
 
     @SideOnly(Side.CLIENT)
