@@ -1,0 +1,12 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "legendgear:star_piece"
+    }
+  ],
+  "result": {
+    "item": "legendgear:stardust",
+    "count": 3
+  }
+}

@@ -16,6 +16,7 @@ item.legendgear.emerald_piece.name=Emerald Piece
 item.legendgear.emerald_rock_candy.name=Emerald Rock Candy
 item.legendgear.emerald_shard.name=Emerald Shard
 item.legendgear.glowstone_rock_candy.name=Glowstone Rock Candy
+item.legendgear.infused_stardust.name=Infused Stardust
 item.legendgear.infused_star_piece.name=Infused Star Piece
 item.legendgear.lapis_lazuli_rock_candy.name=Lapis Lazuli Rock Candy
 item.legendgear.magic_boomerang.name=Magic Boomerang
@@ -31,6 +32,7 @@ item.legendgear.reed_pipes.name=Reed Pipes
 item.legendgear.slime_sword.name=Slime Sword
 item.legendgear.spotting_scope.name=Spotting Scope
 item.legendgear.starglass_sword.name=Starglass Sword
+item.legendgear.stardust.name=Stardust
 item.legendgear.star_piece.name=Star Piece
 
 item.record.dragondot.desc=NMcCoy - Dragondot's Return

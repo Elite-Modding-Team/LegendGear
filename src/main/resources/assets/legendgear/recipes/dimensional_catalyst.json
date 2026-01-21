@@ -1,0 +1,16 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "legendgear:infused_stardust"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "enderpearl"
+    }
+  ],
+  "result": {
+    "item": "legendgear:dimensional_catalyst",
+    "count": 16
+  }
+}
