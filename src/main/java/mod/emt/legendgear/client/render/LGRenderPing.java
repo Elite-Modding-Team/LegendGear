@@ -15,16 +15,19 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
 import org.lwjgl.opengl.GL11;
 
-public class LGRenderPing extends Render<LGEntityPing> {
+public class LGRenderPing extends Render<LGEntityPing>
+{
 
     private static final ResourceLocation TEXTURE = new ResourceLocation(LegendGear.MOD_ID, "textures/misc/ripple.png");
 
-    public LGRenderPing(RenderManager renderManager) {
+    public LGRenderPing(RenderManager renderManager)
+    {
         super(renderManager);
     }
 
     @Override
-    public void doRender(LGEntityPing entity, double x, double y, double z, float entityYaw, float partialTicks) {
+    public void doRender(LGEntityPing entity, double x, double y, double z, float entityYaw, float partialTicks)
+    {
         GlStateManager.pushMatrix();
         GlStateManager.translate(x, y + 1.0D, z);
         GlStateManager.rotate(180 - Minecraft.getMinecraft().getRenderManager().playerViewY, 0.0F, 1.0F, 0.0F);
@@ -46,7 +49,8 @@ public class LGRenderPing extends Render<LGEntityPing> {
         GlStateManager.popMatrix();
     }
 
-    private void renderOuterRipple(LGEntityPing entity, float partialTicks) {
+    private void renderOuterRipple(LGEntityPing entity, float partialTicks)
+    {
         float scale = calculateScale(entity, partialTicks);
         GlStateManager.pushMatrix();
         GlStateManager.scale(scale, scale, scale);
@@ -70,7 +74,8 @@ public class LGRenderPing extends Render<LGEntityPing> {
         GlStateManager.popMatrix();
     }
 
-    private void renderInnerRipple(LGEntityPing entity, float partialTicks) {
+    private void renderInnerRipple(LGEntityPing entity, float partialTicks)
+    {
         float phase = (Minecraft.getSystemTime() % 1000L) / 1000.0F;
         float innerScale = phase * calculateScale(entity, partialTicks);
         GlStateManager.pushMatrix();
@@ -94,7 +99,8 @@ public class LGRenderPing extends Render<LGEntityPing> {
         GlStateManager.popMatrix();
     }
 
-    private float calculateScale(LGEntityPing entity, float partialTicks) {
+    private float calculateScale(LGEntityPing entity, float partialTicks)
+    {
         float ageRatio = (8.0F - (entity.age + partialTicks)) / 8.0F;
         ageRatio = Math.max(ageRatio, 0.0F);
 
@@ -103,7 +109,8 @@ public class LGRenderPing extends Render<LGEntityPing> {
         double distance = viewerPos.distanceTo(entityPos);
 
         float scale = 2.0F;
-        if (scale < distance / 20.0) {
+        if (scale < distance / 20.0)
+        {
             scale = (float) distance / 20.0F;
         }
 
@@ -111,13 +118,16 @@ public class LGRenderPing extends Render<LGEntityPing> {
     }
 
     @Override
-    protected ResourceLocation getEntityTexture(LGEntityPing entity) {
+    protected ResourceLocation getEntityTexture(LGEntityPing entity)
+    {
         return TEXTURE;
     }
 
-    public static class Factory implements IRenderFactory<LGEntityPing> {
+    public static class Factory implements IRenderFactory<LGEntityPing>
+    {
         @Override
-        public Render<? super LGEntityPing> createRenderFor(RenderManager manager) {
+        public Render<? super LGEntityPing> createRenderFor(RenderManager manager)
+        {
             return new LGRenderPing(manager);
         }
     }

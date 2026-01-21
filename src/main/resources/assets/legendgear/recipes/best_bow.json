@@ -1,0 +1,22 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "WS ",
+    "W S",
+    "WS "
+  ],
+  "key": {
+    "W": {
+      "type": "forge:ore_dict",
+      "ore": "stickWood"
+    },
+    "S": {
+      "type": "forge:ore_dict",
+      "ore": "string"
+    }
+  },
+  "result": {
+    "item": "legendgear:best_bow",
+    "count": 1
+  }
+}

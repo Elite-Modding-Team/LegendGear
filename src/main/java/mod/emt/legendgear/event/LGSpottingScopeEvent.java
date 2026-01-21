@@ -19,38 +19,47 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 
 @Mod.EventBusSubscriber(modid = LegendGear.MOD_ID, value = Side.CLIENT)
-public class LGSpottingScopeEvent {
+public class LGSpottingScopeEvent
+{
     private static final ResourceLocation VIGNETTE_TEXTURE = new ResourceLocation("textures/misc/vignette.png");
     private static boolean smoothCameraReset;
 
     @SubscribeEvent
-    public static void scopeFOV(FOVUpdateEvent event) {
+    public static void scopeFOV(FOVUpdateEvent event)
+    {
         Minecraft mc = Minecraft.getMinecraft();
         EntityPlayer player = event.getEntity();
-        if (player.isHandActive()) {
+        if (player.isHandActive())
+        {
             ItemStack stack = player.getHeldItem(player.getActiveHand());
-            if (player.getItemInUseCount() != 0 && player.getItemInUseCount() < stack.getMaxItemUseDuration() - 5 && !stack.isEmpty() && stack.getItem() == LGItems.SPOTTING_SCOPE) {
+            if (player.getItemInUseCount() != 0 && player.getItemInUseCount() < stack.getMaxItemUseDuration() - 5 && !stack.isEmpty() && stack.getItem() == LGItems.SPOTTING_SCOPE)
+            {
                 event.setNewfov(event.getFov() * 0.15F);
-                if (!mc.gameSettings.smoothCamera) {
+                if (!mc.gameSettings.smoothCamera)
+                {
                     mc.gameSettings.smoothCamera = true;
                     smoothCameraReset = true;
                 }
             }
-        } else if (smoothCameraReset) {
+        } else if (smoothCameraReset)
+        {
             mc.gameSettings.smoothCamera = false;
             smoothCameraReset = false;
         }
     }
 
     @SubscribeEvent
-    public static void onRenderOverlay(RenderGameOverlayEvent.Pre event) {
-        if (event.getType() != RenderGameOverlayEvent.ElementType.HELMET) {
+    public static void onRenderOverlay(RenderGameOverlayEvent.Pre event)
+    {
+        if (event.getType() != RenderGameOverlayEvent.ElementType.HELMET)
+        {
             return;
         }
         Minecraft mc = Minecraft.getMinecraft();
         EntityPlayerSP player = mc.player;
         ItemStack stack = player.getHeldItemMainhand();
-        if (player.getItemInUseCount() != 0 && player.getItemInUseCount() < stack.getMaxItemUseDuration() - 5 && !stack.isEmpty() && stack.getItem() == LGItems.SPOTTING_SCOPE) {
+        if (player.getItemInUseCount() != 0 && player.getItemInUseCount() < stack.getMaxItemUseDuration() - 5 && !stack.isEmpty() && stack.getItem() == LGItems.SPOTTING_SCOPE)
+        {
             ScaledResolution scaledResolution = new ScaledResolution(mc);
             int screenWidth = scaledResolution.getScaledWidth();
             int screenHeight = scaledResolution.getScaledHeight();

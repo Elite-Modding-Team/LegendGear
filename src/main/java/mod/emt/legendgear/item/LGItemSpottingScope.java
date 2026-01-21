@@ -20,24 +20,29 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 
-public class LGItemSpottingScope extends Item {
-    public LGItemSpottingScope() {
+public class LGItemSpottingScope extends Item
+{
+    public LGItemSpottingScope()
+    {
         super();
         setMaxStackSize(1);
     }
 
     @Override
-    public EnumRarity getRarity(ItemStack stack) {
+    public EnumRarity getRarity(ItemStack stack)
+    {
         return EnumRarity.RARE;
     }
 
     @Override
-    public int getMaxItemUseDuration(ItemStack stack) {
+    public int getMaxItemUseDuration(ItemStack stack)
+    {
         return 60000;
     }
 
     @Override
-    public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand) {
+    public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand)
+    {
         ItemStack stack = player.getHeldItem(hand);
         player.setActiveHand(hand);
 
@@ -45,8 +50,10 @@ public class LGItemSpottingScope extends Item {
     }
 
     @Override
-    public void onPlayerStoppedUsing(ItemStack stack, World world, EntityLivingBase player, int time) {
-        if (!world.isRemote && this.getMaxItemUseDuration(stack) - time <= 5) {
+    public void onPlayerStoppedUsing(ItemStack stack, World world, EntityLivingBase player, int time)
+    {
+        if (!world.isRemote && this.getMaxItemUseDuration(stack) - time <= 5)
+        {
             final float range = 192.0F;
             final Vec3d from = new Vec3d(player.posX, player.posY + player.getEyeHeight(), player.posZ);
             final Vec3d direction = player.getLookVec().normalize();
@@ -55,18 +62,21 @@ public class LGItemSpottingScope extends Item {
             final RayTraceResult trace = world.rayTraceBlocks(from, target);
             Vec3d hit = null;
 
-            if (trace != null) {
+            if (trace != null)
+            {
                 hit = trace.hitVec;
             }
 
-            if (hit != null) {
+            if (hit != null)
+            {
                 world.spawnEntity(new LGEntityPing(world, hit.x, hit.y, hit.z, 500, 0));
             }
         }
     }
 
     @Override
-    public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flags) {
+    public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flags)
+    {
         tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.legendgear.spotting_scope"));
     }
 }

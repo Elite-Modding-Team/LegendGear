@@ -79,6 +79,7 @@ public class LGItems
                 LGRegistry.setup(new LGItemMagicBoomerang(), "magic_boomerang").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemMagicMirror(), "magic_mirror").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemMysticSeed(LGBlocks.MYSTIC_SHRUB, Blocks.GRASS), "mystic_seed").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemBestBow(), "best_bow").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemQuiver(), "quiver").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemReedPipes(), "reed_pipes").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemRecoveryHeart(), "recovery_heart").setCreativeTab(LegendGear.TAB),

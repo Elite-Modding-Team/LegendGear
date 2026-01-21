@@ -10,12 +10,14 @@ import net.minecraftforge.fml.common.registry.IEntityAdditionalSpawnData;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class LGEntityPing extends Entity implements IEntityAdditionalSpawnData {
+public class LGEntityPing extends Entity implements IEntityAdditionalSpawnData
+{
     public int energy;
     public int color;
     public int age;
 
-    public LGEntityPing(World world) {
+    public LGEntityPing(World world)
+    {
         super(world);
         this.energy = 10;
         this.color = 0;
@@ -23,7 +25,8 @@ public class LGEntityPing extends Entity implements IEntityAdditionalSpawnData {
         this.ignoreFrustumCheck = true;
     }
 
-    public LGEntityPing(World world, double x, double y, double z, int charge, int color) {
+    public LGEntityPing(World world, double x, double y, double z, int charge, int color)
+    {
         this(world);
         this.posX = x;
         this.posY = y;
@@ -33,43 +36,51 @@ public class LGEntityPing extends Entity implements IEntityAdditionalSpawnData {
     }
 
     @Override
-    public void writeSpawnData(ByteBuf buffer) {
+    public void writeSpawnData(ByteBuf buffer)
+    {
         buffer.writeInt(this.color);
         buffer.writeInt(this.energy);
         buffer.writeInt(this.age);
     }
 
     @Override
-    public void readSpawnData(ByteBuf buffer) {
+    public void readSpawnData(ByteBuf buffer)
+    {
         this.color = buffer.readInt();
         this.energy = buffer.readInt();
         this.age = buffer.readInt();
     }
 
     @Override
-    protected void entityInit() {
+    protected void entityInit()
+    {
     }
 
     @Override
-    public void onUpdate() {
-        if (this.age == 0) {
+    public void onUpdate()
+    {
+        if (this.age == 0)
+        {
             this.world.playSound(null, this.posX, this.posY, this.posZ, LGSoundEvents.ITEM_SPOTTING_SCOPE_MARK.getSoundEvent(), SoundCategory.NEUTRAL, 20.0F, 1.0F);
             this.world.playSound(null, this.posX, this.posY, this.posZ, LGSoundEvents.ITEM_SPOTTING_SCOPE_MARK.getSoundEvent(), SoundCategory.NEUTRAL, 20.0F, 1.5F);
         }
+
         this.age++;
         this.energy--;
         if (this.energy <= 0) setDead();
     }
 
     @Override
-    protected void readEntityFromNBT(NBTTagCompound tag) {
+    protected void readEntityFromNBT(NBTTagCompound tag)
+    {
         this.color = tag.getInteger("color");
         this.energy = tag.getInteger("energy");
         this.age = tag.getInteger("age");
     }
 
     @Override
-    protected void writeEntityToNBT(NBTTagCompound tag) {
+    protected void writeEntityToNBT(NBTTagCompound tag)
+    {
         tag.setInteger("color", this.color);
         tag.setInteger("energy", this.energy);
         tag.setInteger("age", this.age);
@@ -83,12 +94,14 @@ public class LGEntityPing extends Entity implements IEntityAdditionalSpawnData {
 
     @SideOnly(Side.CLIENT)
     @Override
-    public int getBrightnessForRender() {
+    public int getBrightnessForRender()
+    {
         return 15728880;
     }
 
     @Override
-    public float getBrightness() {
+    public float getBrightness()
+    {
         return 1.0F;
     }
 }

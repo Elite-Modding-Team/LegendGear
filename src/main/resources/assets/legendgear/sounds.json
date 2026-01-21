@@ -4,6 +4,11 @@
       "legendgear:item/magic_boomerang/fly"
     ]
   },
+  "item.best_bow.shoot": {
+    "sounds": [
+      "legendgear:best_bow"
+    ]
+  },
   "item.emerald_drop.pickup_large": {
     "sounds": [
       "legendgear:item/emerald/pickup_large"
