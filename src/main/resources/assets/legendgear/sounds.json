@@ -39,6 +39,11 @@
       "legendgear:item/flute/sustain"
     ]
   },
+  "item.fortune_cookie.use": {
+    "sounds": [
+      "legendgear:fortune_cookie"
+    ]
+  },
   "item.magic_mirror.inactive": {
     "sounds": [
       "legendgear:item/magic_mirror/inactive"
