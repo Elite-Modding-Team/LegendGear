@@ -17,10 +17,14 @@ public enum LGSoundEvents
     ITEM_FLUTE_SUSTAIN("item.flute.sustain"),
     ITEM_MAGIC_MIRROR_INACTIVE("item.magic_mirror.inactive"),
     ITEM_MAGIC_MIRROR_USE("item.magic_mirror.use"),
+    ITEM_RECOVERY_HEART_PICKUP("item.recovery_heart.pickup"),
     ITEM_SPOTTING_SCOPE_MARK("item.spotting_scope.mark"),
     ITEM_SPOTTING_SCOPE_UNZOOM("item.spotting_scope.unzoom"),
     ITEM_SPOTTING_SCOPE_ZOOM("item.spotting_scope.zoom"),
-    ITEM_RECOVERY_HEART_PICKUP("item.recovery_heart.pickup"),
+    ITEM_STAR_PIECE_CHARGE_END("item.star_piece.charge_end"),
+    ITEM_STAR_PIECE_CHARGE_START("item.star_piece.charge_start"),
+    ITEM_STAR_PIECE_SPARKLE("item.star_piece.sparkle"),
+    RANDOM_MYSTERY_SPARKLE("random.mystery_sparkle"),
     RANDOM_SWORD_SLASH("random.sword_slash"),
     RECORD_DRAGONDOT("record.dragondot");
 

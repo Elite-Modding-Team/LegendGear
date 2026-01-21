@@ -69,6 +69,26 @@
       "legendgear:item/spotting_scope/zoom_in"
     ]
   },
+  "item.star_piece.charge_end": {
+    "sounds": [
+      "legendgear:item/star_piece/charge_end"
+    ]
+  },
+  "item.star_piece.charge_start": {
+    "sounds": [
+      "legendgear:item/star_piece/charge_start"
+    ]
+  },
+  "item.star_piece.sparkle": {
+    "sounds": [
+      "legendgear:entity/falling_star/despawn"
+    ]
+  },
+  "random.mystery_sparkle": {
+    "sounds": [
+      "legendgear:mystery_sparkle"
+    ]
+  },
   "random.sword_slash": {
     "sounds": [
       "legendgear:sword_slash"

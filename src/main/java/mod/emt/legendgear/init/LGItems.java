@@ -38,6 +38,7 @@ public class LGItems
     public static final LGItemEmeraldShard EMERALD_SHARD = null;
     public static final LGItemRockCandy DIAMOND_ROCK_CANDY = null;
     public static final LGItemRockCandy GLOWSTONE_ROCK_CANDY = null;
+    public static final LGItemStarPiece INFUSED_STAR_PIECE = null;
     public static final LGItemRockCandy LAPIS_LAZULI_ROCK_CANDY = null;
     public static final LGItemMagicBoomerang MAGIC_BOOMERANG = null;
     public static final LGItemMagicMirror MAGIC_MIRROR = null;
@@ -52,6 +53,7 @@ public class LGItems
     public static final LGItemSlimeSword SLIME_SWORD = null;
     public static final LGItemSpottingScope SPOTTING_SCOPE = null;
     public static final LGItemSword STARGLASS_SWORD = null;
+    public static final LGItemStarPiece STAR_PIECE = null;
 
     // TODO: Add materials to its own class
     public static Item.ToolMaterial TOOL_STARGLASS = EnumHelper.addToolMaterial("legendgear_tool_starglass", 2, 216, 15.0F, 2.0F, 20);
@@ -66,6 +68,8 @@ public class LGItems
         // ITEMS
         registry.registerAll
             (
+                LGRegistry.setup(new LGItemStarPiece(), "star_piece").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemStarPiece(), "infused_star_piece").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemBomb(), "bomb").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemBombBag(), "bomb_bag").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemRockCandy(), "chorus_fruit_rock_candy").setCreativeTab(LegendGear.TAB),
