@@ -1,0 +1,22 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "S",
+    "S",
+    "W"
+  ],
+  "key": {
+    "S": {
+      "type": "forge:ore_dict",
+      "ore": "ingotStarglass"
+    },
+    "W": {
+      "type": "forge:ore_dict",
+      "ore": "stickWood"
+    }
+  },
+  "result": {
+    "item": "legendgear:starglass_sword",
+    "count": 1
+  }
+}
