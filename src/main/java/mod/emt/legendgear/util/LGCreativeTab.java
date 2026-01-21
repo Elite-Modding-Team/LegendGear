@@ -1,7 +1,7 @@
 package mod.emt.legendgear.util;
 
+import mod.emt.legendgear.init.LGItems;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -17,6 +17,6 @@ public class LGCreativeTab extends CreativeTabs
     @SideOnly(Side.CLIENT)
     public ItemStack createIcon()
     {
-        return new ItemStack(Items.EMERALD, 1);
+        return new ItemStack(LGItems.STAR_PIECE, 1);
     }
 }
