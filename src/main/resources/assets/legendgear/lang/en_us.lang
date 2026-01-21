@@ -4,6 +4,7 @@ itemGroup.legendgear.tab=LegendGear
 # BLOCKS
 tile.legendgear.bomb_flower.name=Bomb Flower
 tile.legendgear.mystic_shrub.name=Mystic Shrub
+tile.legendgear.starbeam_block.name=Starbeam Block
 
 # ITEMS
 item.legendgear.bomb.name=Bomb
