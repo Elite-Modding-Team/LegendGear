@@ -26,6 +26,7 @@ item.legendgear.recovery_heart.name=Recovery Heart
 item.legendgear.redstone_rock_candy.name=Redstone Rock Candy
 item.legendgear.reed_pipes.name=Reed Pipes
 item.legendgear.slime_sword.name=Slime Sword
+item.legendgear.spotting_scope.name=Spotting Scope
 item.legendgear.starglass_sword.name=Starglass Sword
 
 # TOOLTIPS
@@ -44,4 +45,5 @@ tooltip.legendgear.quiver=Arrows picked up will be stored into the quiver until 
 tooltip.legendgear.reed_pipes=Hold down right-click to play it! Pitch is determined by the angle you're looking at and notes are determined by sneaking.
 tooltip.legendgear.rock_candy=Rock solid! Gives you different effects when eaten depending on the flavor.
 tooltip.legendgear.slime_sword=Bouncy! Does absolutely no damage.
+tooltip.legendgear.spotting_scope=Hold down right-click to zoom. Quickly right-click to temporarily mark a location instead.
 tooltip.legendgear.starglass_sword=All attacks have a 50%% chance to deal a critical hit.

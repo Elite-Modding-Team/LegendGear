@@ -3,8 +3,8 @@ package mod.emt.legendgear.init;
 import javax.annotation.Nonnull;
 
 import com.google.common.base.Preconditions;
-import mod.emt.legendgear.block.LGRenderPrismaticXP;
-import mod.emt.legendgear.block.LGRenderSkybeam;
+import mod.emt.legendgear.client.render.*;
+import mod.emt.legendgear.entity.LGEntityPing;
 import mod.emt.legendgear.tileentity.LGTileEntitySkybeam;
 import net.minecraft.block.Block;
 import net.minecraft.enchantment.Enchantment;
@@ -34,8 +34,6 @@ import net.minecraftforge.registries.IForgeRegistryEntry;
 import java.util.ArrayList;
 import java.util.List;
 import mod.emt.legendgear.LegendGear;
-import mod.emt.legendgear.client.render.LGRenderBomb;
-import mod.emt.legendgear.client.render.LGRenderMagicBoomerang;
 import mod.emt.legendgear.entity.LGEntityBomb;
 import mod.emt.legendgear.entity.LGEntityMagicBoomerang;
 
@@ -67,9 +65,9 @@ public class LGRegistry
         EntityRegistry.registerModEntity(new ResourceLocation(LegendGear.MOD_ID, name), clazz, LegendGear.MOD_ID + "." + name, entityID++, LegendGear.instance, 64, 1, true, eggColor1, eggColor2);
     }
 
-    public static void registerEntity(String name, Class<? extends Entity> clazz)
+    public static void registerEntity(String name, Class<? extends Entity> clazz, int trackingRange, boolean sendsVelocityUpdates)
     {
-        EntityRegistry.registerModEntity(new ResourceLocation(LegendGear.MOD_ID, name), clazz, LegendGear.MOD_ID + "." + name, entityID++, LegendGear.instance, 64, 1, true);
+        EntityRegistry.registerModEntity(new ResourceLocation(LegendGear.MOD_ID, name), clazz, LegendGear.MOD_ID + "." + name, entityID++, LegendGear.instance, 64, 1, sendsVelocityUpdates);
     }
 
     public static void registerAdvancements()
@@ -89,8 +87,9 @@ public class LGRegistry
     {
         LegendGear.LOGGER.info("Registering entities...");
 
-        registerEntity("bomb", LGEntityBomb.class);
-        registerEntity("magic_boomerang", LGEntityMagicBoomerang.class);
+        registerEntity("bomb", LGEntityBomb.class, 64, true);
+        registerEntity("magic_boomerang", LGEntityMagicBoomerang.class, 64, true);
+        registerEntity("ping", LGEntityPing.class, 128, false);
     }
 
     public static void registerEntitySpawns()
@@ -163,6 +162,7 @@ public class LGRegistry
 
         RenderingRegistry.registerEntityRenderingHandler(LGEntityBomb.class, new LGRenderBomb.Factory());
         RenderingRegistry.registerEntityRenderingHandler(LGEntityMagicBoomerang.class, new LGRenderMagicBoomerang.Factory());
+        RenderingRegistry.registerEntityRenderingHandler(LGEntityPing.class, new LGRenderPing.Factory());
 
         // XP Orb Replacement
         RenderingRegistry.registerEntityRenderingHandler(EntityXPOrb.class, LGRenderPrismaticXP::new);

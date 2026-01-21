@@ -1,4 +1,4 @@
-package mod.emt.legendgear.block;
+package mod.emt.legendgear.client.render;
 
 import mod.emt.legendgear.util.Rainbow;
 import net.minecraft.client.Minecraft;

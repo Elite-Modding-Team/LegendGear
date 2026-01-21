@@ -48,6 +48,7 @@ public class LGItems
     public static final LGItemRockCandy REDSTONE_ROCK_CANDY = null;
     public static final LGItemRecoveryHeart RECOVERY_HEART = null;
     public static final LGItemSlimeSword SLIME_SWORD = null;
+    public static final LGItemSpottingScope SPOTTING_SCOPE = null;
     public static final LGItemSword STARGLASS_SWORD = null;
 
     // TODO: Add materials to its own class
@@ -82,6 +83,7 @@ public class LGItems
                 LGRegistry.setup(new LGItemReedPipes(), "reed_pipes").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemRecoveryHeart(), "recovery_heart").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemSlimeSword(), "slime_sword").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemSpottingScope(), "spotting_scope").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemSword(TOOL_STARGLASS, EnumRarity.RARE), "starglass_sword").setCreativeTab(LegendGear.TAB)
             );
 

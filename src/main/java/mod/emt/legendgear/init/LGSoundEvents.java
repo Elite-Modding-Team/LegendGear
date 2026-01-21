@@ -16,6 +16,9 @@ public enum LGSoundEvents
     ITEM_FLUTE_SUSTAIN("item.flute.sustain"),
     ITEM_MAGIC_MIRROR_INACTIVE("item.magic_mirror.inactive"),
     ITEM_MAGIC_MIRROR_USE("item.magic_mirror.use"),
+    ITEM_SPOTTING_SCOPE_MARK("item.spotting_scope.mark"),
+    ITEM_SPOTTING_SCOPE_UNZOOM("item.spotting_scope.unzoom"),
+    ITEM_SPOTTING_SCOPE_ZOOM("item.spotting_scope.zoom"),
     ITEM_RECOVERY_HEART_PICKUP("item.recovery_heart.pickup"),
     RANDOM_SWORD_SLASH("random.sword_slash");
 

@@ -49,6 +49,21 @@
       "legendgear:heart_pickup"
     ]
   },
+  "item.spotting_scope.mark": {
+    "sounds": [
+      "legendgear:block/ritual/ring1"
+    ]
+  },
+  "item.spotting_scope.unzoom": {
+    "sounds": [
+      "legendgear:item/spotting_scope/zoom_out"
+    ]
+  },
+  "item.spotting_scope.zoom": {
+    "sounds": [
+      "legendgear:item/spotting_scope/zoom_in"
+    ]
+  },
   "random.sword_slash": {
     "sounds": [
       "legendgear:sword_slash"
