@@ -22,12 +22,15 @@ item.legendgear.milk_chocolate.name=Milk Chocolate
 item.legendgear.mystic_seed.name=Mystic Seed
 item.legendgear.quartz_rock_candy.name=Quartz Rock Candy
 item.legendgear.quiver.name=Quiver
+item.legendgear.record_dragondot.name=Music Disc
 item.legendgear.recovery_heart.name=Recovery Heart
 item.legendgear.redstone_rock_candy.name=Redstone Rock Candy
 item.legendgear.reed_pipes.name=Reed Pipes
 item.legendgear.slime_sword.name=Slime Sword
 item.legendgear.spotting_scope.name=Spotting Scope
 item.legendgear.starglass_sword.name=Starglass Sword
+
+item.record.dragondot.desc=NMcCoy - Dragondot's Return
 
 # TOOLTIPS
 tooltip.legendgear.arrows=Arrows

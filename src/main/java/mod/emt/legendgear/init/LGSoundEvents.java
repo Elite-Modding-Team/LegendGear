@@ -21,7 +21,8 @@ public enum LGSoundEvents
     ITEM_SPOTTING_SCOPE_UNZOOM("item.spotting_scope.unzoom"),
     ITEM_SPOTTING_SCOPE_ZOOM("item.spotting_scope.zoom"),
     ITEM_RECOVERY_HEART_PICKUP("item.recovery_heart.pickup"),
-    RANDOM_SWORD_SLASH("random.sword_slash");
+    RANDOM_SWORD_SLASH("random.sword_slash"),
+    RECORD_DRAGONDOT("record.dragondot");
 
     private final SoundEvent soundEvent;
 

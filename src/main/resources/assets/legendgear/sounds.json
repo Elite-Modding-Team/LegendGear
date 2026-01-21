@@ -73,5 +73,12 @@
     "sounds": [
       "legendgear:sword_slash"
     ]
+  },
+  "record.dragondot": {
+    "category": "record",
+    "stream": true,
+    "sounds": [
+      "legendgear:record/dragondot"
+    ]
   }
 }

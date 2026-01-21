@@ -2,6 +2,7 @@ package mod.emt.legendgear.init;
 
 import javax.annotation.Nonnull;
 
+import mod.emt.legendgear.item.base.LGItemRecord;
 import mod.emt.legendgear.item.base.LGItemSword;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.Blocks;
@@ -44,8 +45,9 @@ public class LGItems
     public static final LGItemMysticSeed MYSTIC_SEED = null;
     public static final LGItemQuiver QUIVER = null;
     public static final LGItemRockCandy QUARTZ_ROCK_CANDY = null;
-    public static final LGItemReedPipes REED_PIPES = null;
+    public static final LGItemRecord RECORD_DRAGONDOT = null;
     public static final LGItemRockCandy REDSTONE_ROCK_CANDY = null;
+    public static final LGItemReedPipes REED_PIPES = null;
     public static final LGItemRecoveryHeart RECOVERY_HEART = null;
     public static final LGItemSlimeSword SLIME_SWORD = null;
     public static final LGItemSpottingScope SPOTTING_SCOPE = null;
@@ -85,7 +87,8 @@ public class LGItems
                 LGRegistry.setup(new LGItemRecoveryHeart(), "recovery_heart").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemSlimeSword(), "slime_sword").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemSpottingScope(), "spotting_scope").setCreativeTab(LegendGear.TAB),
-                LGRegistry.setup(new LGItemSword(TOOL_STARGLASS, EnumRarity.RARE), "starglass_sword").setCreativeTab(LegendGear.TAB)
+                LGRegistry.setup(new LGItemSword(TOOL_STARGLASS, EnumRarity.RARE), "starglass_sword").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemRecord("dragondot", LGSoundEvents.RECORD_DRAGONDOT.getSoundEvent(), EnumRarity.EPIC), "record_dragondot").setCreativeTab(LegendGear.TAB)
             );
 
         // ITEM BLOCKS
