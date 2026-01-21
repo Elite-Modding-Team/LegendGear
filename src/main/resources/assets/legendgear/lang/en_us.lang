@@ -59,3 +59,6 @@ tooltip.legendgear.slime_sword=Bouncy! Does absolutely no damage.
 tooltip.legendgear.spotting_scope=Hold down right-click to zoom. Quickly right-click to temporarily mark a location instead.
 tooltip.legendgear.starglass_sword=All attacks have a 50%% chance to deal a critical hit.
 tooltip.legendgear.star_piece=Hold down right-click to infuse this star piece at the cost of %d experience level(s).
+
+# MESSAGES
+message.legendgear.no_levels=You don't have enough levels to infuse your star piece!

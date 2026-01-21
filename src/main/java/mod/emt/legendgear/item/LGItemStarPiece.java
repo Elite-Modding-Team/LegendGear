@@ -100,7 +100,7 @@ public class LGItemStarPiece extends Item
             // If insufficient levels, warn the player
         } else if (player.experienceLevel < INFUSE_LEVEL)
         {
-            player.sendStatusMessage(new TextComponentTranslation("hexxitworld.notif.no_levels"), true);
+            player.sendStatusMessage(new TextComponentTranslation("message.legendgear.no_levels"), true);
             world.playSound(null, player.getPosition(), LGSoundEvents.RANDOM_MYSTERY_SPARKLE.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 1.0F + world.rand.nextFloat() * 0.2F);
         }
 
