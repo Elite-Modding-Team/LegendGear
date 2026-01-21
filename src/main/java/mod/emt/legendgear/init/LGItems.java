@@ -2,6 +2,7 @@ package mod.emt.legendgear.init;
 
 import javax.annotation.Nonnull;
 
+import mod.emt.legendgear.item.base.LGItemBase;
 import mod.emt.legendgear.item.base.LGItemRecord;
 import mod.emt.legendgear.item.base.LGItemSword;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -55,8 +56,10 @@ public class LGItems
     public static final LGItemSlimeSword SLIME_SWORD = null;
     public static final LGItemSpottingScope SPOTTING_SCOPE = null;
     public static final LGItemStardust STARDUST = null;
+    public static final LGItemBase STARGLASS_INGOT = null;
     public static final LGItemSword STARGLASS_SWORD = null;
     public static final LGItemStarPiece STAR_PIECE = null;
+    public static final LGItemBase STARSTEEL_INGOT = null;
 
     // TODO: Add materials to its own class
     public static Item.ToolMaterial TOOL_STARGLASS = EnumHelper.addToolMaterial("legendgear_tool_starglass", 2, 216, 15.0F, 2.0F, 20);
@@ -75,6 +78,8 @@ public class LGItems
                 LGRegistry.setup(new LGItemStarPiece(), "infused_star_piece").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemStardust(), "stardust").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemStardust(), "infused_stardust").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemBase(EnumRarity.UNCOMMON), "starglass_ingot").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemBase(EnumRarity.UNCOMMON), "starsteel_ingot").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemBomb(), "bomb").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemBombBag(), "bomb_bag").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemDimensionalCatalyst(), "dimensional_catalyst").setCreativeTab(LegendGear.TAB),

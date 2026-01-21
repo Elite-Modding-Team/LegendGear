@@ -1,0 +1,22 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "legendgear:dimensional_catalyst"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "ingotIron"
+    },
+    {
+      "item": "legendgear:infused_stardust"
+    },
+    {
+      "item": "legendgear:infused_stardust"
+    }
+  ],
+  "result": {
+    "item": "legendgear:starsteel_ingot",
+    "count": 1
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "G",
+    "S",
+    "S"
+  ],
+  "key": {
+    "G": {
+      "type": "forge:ore_dict",
+      "ore": "ingotStarglass"
+    },
+    "S": {
+      "type": "forge:ore_dict",
+      "ore": "ingotStarsteel"
+    }
+  },
+  "result": {
+    "item": "legendgear:spotting_scope",
+    "count": 1
+  }
+}

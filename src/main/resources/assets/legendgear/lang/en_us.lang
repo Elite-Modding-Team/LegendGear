@@ -31,9 +31,11 @@ item.legendgear.redstone_rock_candy.name=Redstone Rock Candy
 item.legendgear.reed_pipes.name=Reed Pipes
 item.legendgear.slime_sword.name=Slime Sword
 item.legendgear.spotting_scope.name=Spotting Scope
-item.legendgear.starglass_sword.name=Starglass Sword
 item.legendgear.stardust.name=Stardust
+item.legendgear.starglass_ingot.name=Starglass Ingot
+item.legendgear.starglass_sword.name=Starglass Sword
 item.legendgear.star_piece.name=Star Piece
+item.legendgear.starsteel_ingot.name=Starsteel Ingot
 
 item.record.dragondot.desc=NMcCoy - Dragondot's Return
 

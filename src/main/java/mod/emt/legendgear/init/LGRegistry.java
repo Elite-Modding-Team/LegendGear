@@ -28,6 +28,7 @@ import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.registries.IForgeRegistry;
 import net.minecraftforge.registries.IForgeRegistryEntry;
 
@@ -130,6 +131,9 @@ public class LGRegistry
         LegendGear.LOGGER.info("Registering ore dictionary entries...");
 
         final IForgeRegistry<IRecipe> registry = event.getRegistry();
+
+        OreDictionary.registerOre("ingotStarglass", LGItems.STARGLASS_INGOT);
+        OreDictionary.registerOre("ingotStarsteel", LGItems.STARSTEEL_INGOT);
     }
 
     @SubscribeEvent
