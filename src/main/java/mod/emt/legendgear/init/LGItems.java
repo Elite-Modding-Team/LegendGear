@@ -48,6 +48,7 @@ public class LGItems
     public static final LGItemMagicMirror MAGIC_MIRROR = null;
     public static final LGItemFood MILK_CHOCOLATE = null;
     public static final LGItemMysticSeed MYSTIC_SEED = null;
+    public static final LGItemPhoenixFeather PHOENIX_FEATHER = null;
     public static final LGItemQuiver QUIVER = null;
     public static final LGItemRockCandy QUARTZ_ROCK_CANDY = null;
     public static final LGItemRecord RECORD_DRAGONDOT = null;
@@ -98,6 +99,7 @@ public class LGItems
                 LGRegistry.setup(new LGItemMagicBoomerang(), "magic_boomerang").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemMagicMirror(), "magic_mirror").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemMysticSeed(LGBlocks.MYSTIC_SHRUB, Blocks.GRASS), "mystic_seed").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemPhoenixFeather(), "phoenix_feather").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemBestBow(), "best_bow").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemQuiver(), "quiver").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemReedPipes(), "reed_pipes").setCreativeTab(LegendGear.TAB),

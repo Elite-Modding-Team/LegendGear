@@ -16,20 +16,26 @@ import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
-public class LGItemFortuneCookie extends LGItemFood {
-    public LGItemFortuneCookie() {
+public class LGItemFortuneCookie extends LGItemFood
+{
+    public LGItemFortuneCookie()
+    {
         super(2, 0.1F, false);
         this.setAlwaysEdible();
     }
 
     @Override
-    protected void onFoodEaten(ItemStack stack, World world, EntityPlayer player) {
-        if (!world.isRemote) {
+    protected void onFoodEaten(ItemStack stack, World world, EntityPlayer player)
+    {
+        if (!world.isRemote)
+        {
             // TODO: Custom fortunes via a config list?
             // 1/3 chance to give a useful tip, otherwise give us a generic message
-            /*if (world.rand.nextInt(2) == 0) {
+            /*if (world.rand.nextInt(2) == 0)
+            {
                 player.sendMessage(new TextComponentTranslation("fortunes." + LegendGear.MOD_ID + ".hint." + world.rand.nextInt(23)).setStyle(new Style().setItalic(true).setColor(TextFormatting.GOLD)));
-            } else {
+            } else
+            {
                 player.sendMessage(new TextComponentTranslation("fortunes." + LegendGear.MOD_ID + ".generic." + world.rand.nextInt(51)).setStyle(new Style().setItalic(true)));
             }*/
 
@@ -44,7 +50,8 @@ public class LGItemFortuneCookie extends LGItemFood {
     }
 
     @Override
-    public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flags) {
+    public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flags)
+    {
         tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.legendgear.fortune_cookie"));
     }
 }

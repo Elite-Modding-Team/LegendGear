@@ -54,6 +54,21 @@
       "legendgear:item/magic_mirror/use"
     ]
   },
+  "item.phoenix_feather.activate": {
+    "sounds": [
+      "legendgear:item/spell/ember_cast"
+    ]
+  },
+  "item.phoenix_feather.revive": {
+    "sounds": [
+      "legendgear:revive"
+    ]
+  },
+  "item.phoenix_feather.use": {
+    "sounds": [
+      "legendgear:feather"
+    ]
+  },
   "item.recovery_heart.pickup": {
     "sounds": [
       "legendgear:heart_pickup"
@@ -87,6 +102,11 @@
   "item.star_piece.sparkle": {
     "sounds": [
       "legendgear:entity/falling_star/despawn"
+    ]
+  },
+  "random.feather": {
+    "sounds": [
+      "legendgear:feather"
     ]
   },
   "random.mystery_sparkle": {
