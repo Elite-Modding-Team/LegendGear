@@ -1,0 +1,24 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "G G",
+    "WMW"
+  ],
+  "key": {
+    "G": {
+      "type": "forge:ore_dict",
+      "ore": "ingotGold"
+    },
+    "W": {
+      "type": "forge:ore_dict",
+      "ore": "wool"
+    },
+    "M": {
+      "item": "legendgear:wind_medallion"
+    }
+  },
+  "result": {
+    "item": "legendgear:whirlwind_boots",
+    "count": 1
+  }
+}

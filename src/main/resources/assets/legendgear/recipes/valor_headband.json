@@ -1,0 +1,20 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "WWW",
+    "WMW"
+  ],
+  "key": {
+    "W": {
+      "type": "forge:ore_dict",
+      "ore": "wool"
+    },
+    "M": {
+      "item": "legendgear:fire_medallion"
+    }
+  },
+  "result": {
+    "item": "legendgear:valor_headband",
+    "count": 1
+  }
+}

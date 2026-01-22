@@ -4,8 +4,7 @@ import javax.annotation.Nonnull;
 
 import com.google.common.base.Preconditions;
 import mod.emt.legendgear.client.render.*;
-import mod.emt.legendgear.entity.LGEntityPing;
-import mod.emt.legendgear.entity.LGEntityQuake;
+import mod.emt.legendgear.entity.*;
 import mod.emt.legendgear.tileentity.LGTileEntitySkybeam;
 import net.minecraft.block.Block;
 import net.minecraft.enchantment.Enchantment;
@@ -36,8 +35,6 @@ import net.minecraftforge.registries.IForgeRegistryEntry;
 import java.util.ArrayList;
 import java.util.List;
 import mod.emt.legendgear.LegendGear;
-import mod.emt.legendgear.entity.LGEntityBomb;
-import mod.emt.legendgear.entity.LGEntityMagicBoomerang;
 
 @Mod.EventBusSubscriber(modid = LegendGear.MOD_ID)
 public class LGRegistry
@@ -89,10 +86,18 @@ public class LGRegistry
     {
         LegendGear.LOGGER.info("Registering entities...");
 
+        registerEntity("arrow_storm", LGEntityArrowStorm.class, 64, false);
         registerEntity("bomb", LGEntityBomb.class, 64, true);
+        registerEntity("earth_medallion", LGEntityEarthMedallion.class, 64, true);
+        registerEntity("ender_bomb", LGEntityEnderBomb.class, 64, false);
+        registerEntity("ender_medallion", LGEntityEnderMedallion.class, 64, true);
+        registerEntity("fire_blast", LGEntityFireBlast.class, 64, false);
+        registerEntity("fire_medallion", LGEntityFireMedallion.class, 64, true);
         registerEntity("magic_boomerang", LGEntityMagicBoomerang.class, 64, true);
         registerEntity("ping", LGEntityPing.class, 128, false);
         registerEntity("quake", LGEntityQuake.class, 64, false);
+        registerEntity("volatile_arrow", LGEntityVolatileArrow.class, 64, true);
+        registerEntity("wind_medallion", LGEntityWindMedallion.class, 64, true);
     }
 
     public static void registerEntitySpawns()
@@ -166,10 +171,18 @@ public class LGRegistry
 
         ClientRegistry.bindTileEntitySpecialRenderer(LGTileEntitySkybeam.class, new LGRenderSkybeam());
 
+        RenderingRegistry.registerEntityRenderingHandler(LGEntityArrowStorm.class, new LGRenderArrowStorm.Factory());
         RenderingRegistry.registerEntityRenderingHandler(LGEntityBomb.class, new LGRenderBomb.Factory());
+        RenderingRegistry.registerEntityRenderingHandler(LGEntityEarthMedallion.class, new LGRenderEarthMedallion.Factory());
+        RenderingRegistry.registerEntityRenderingHandler(LGEntityEnderBomb.class, new LGRenderEnderBomb.Factory());
+        RenderingRegistry.registerEntityRenderingHandler(LGEntityEnderMedallion.class, new LGRenderEnderMedallion.Factory());
+        RenderingRegistry.registerEntityRenderingHandler(LGEntityFireBlast.class, new LGRenderFireBlast.Factory());
+        RenderingRegistry.registerEntityRenderingHandler(LGEntityFireMedallion.class, new LGRenderFireMedallion.Factory());
         RenderingRegistry.registerEntityRenderingHandler(LGEntityMagicBoomerang.class, new LGRenderMagicBoomerang.Factory());
         RenderingRegistry.registerEntityRenderingHandler(LGEntityPing.class, new LGRenderPing.Factory());
         RenderingRegistry.registerEntityRenderingHandler(LGEntityQuake.class, new LGRenderQuake.Factory());
+        RenderingRegistry.registerEntityRenderingHandler(LGEntityVolatileArrow.class, new LGRenderVolatileArrow.Factory());
+        RenderingRegistry.registerEntityRenderingHandler(LGEntityWindMedallion.class, new LGRenderWindMedallion.Factory());
 
         // XP Orb Replacement
         RenderingRegistry.registerEntityRenderingHandler(EntityXPOrb.class, LGRenderPrismaticXP::new);

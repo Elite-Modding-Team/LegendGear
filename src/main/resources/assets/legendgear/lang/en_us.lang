@@ -14,10 +14,13 @@ item.legendgear.bomb_bag.name=Bomb Bag
 item.legendgear.chorus_fruit_rock_candy.name=Chorus Fruit Rock Candy
 item.legendgear.diamond_rock_candy.name=Diamond Rock Candy
 item.legendgear.dimensional_catalyst.name=Dimensional Catalyst
+item.legendgear.earth_medallion.name=Earth Medallion
 item.legendgear.emerald_piece.name=Emerald Piece
 item.legendgear.emerald_rock_candy.name=Emerald Rock Candy
 item.legendgear.emerald_shard.name=Emerald Shard
+item.legendgear.ender_medallion.name=Ender Medallion
 item.legendgear.feather_charm.name=Feather Charm
+item.legendgear.fire_medallion.name=Fire Medallion
 item.legendgear.fortune_cookie.name=Fortune Cookie
 item.legendgear.geo_amulet.name=Geo Amulet
 item.legendgear.glowstone_rock_candy.name=Glowstone Rock Candy
@@ -47,6 +50,7 @@ item.legendgear.starsteel_ingot.name=Starsteel Ingot
 item.legendgear.titan_band.name=Titan Band
 item.legendgear.valor_headband.name=Headband of Valor
 item.legendgear.whirlwind_boots.name=Whirlwind Boots
+item.legendgear.wind_medallion.name=Wind Medallion
 
 item.record.dragondot.desc=NMcCoy - Dragondot's Return
 
@@ -58,9 +62,13 @@ tooltip.legendgear.bomb_bag=Bombs picked up will be stored into the bag until it
 tooltip.legendgear.bomb_flower=Grows bombs but can only be placed next to lava.
 tooltip.legendgear.bomb_item=Right-click to throw it to the ground. It will explode after a few seconds.
 tooltip.legendgear.bombs=Bombs
+tooltip.legendgear.charges=Charges
 tooltip.legendgear.emerald_piece=Right-click to combine into %s x Emerald
 tooltip.legendgear.emerald_shard=Right-click to combine into %s x Emerald Piece
+tooltip.legendgear.earth_medallion=When fully charged, hold down right-click and let go to throw it and cause a huge shockwave at the impact point. Charges are gained from fall damage taken.
+tooltip.legendgear.ender_medallion=When fully charged, hold down right-click and let go to throw it and cause a magic ring that teleports mobs trapped within it at the impact point. Charges are gained from being damaged by certain End creatures.
 tooltip.legendgear.feather_charm=Provides full immunity to fall damage and wall collision damage while it is equipped.
+tooltip.legendgear.fire_medallion=When fully charged, hold down right-click and let go to throw it and cause a fiery vortex at the landing point. Charges are gained from fire damage taken.
 tooltip.legendgear.fortune_cookie=Receive your fortune.
 tooltip.legendgear.geo_amulet=While equipped, it will cause a quake around you when fall damage is taken. Durability is decreased during usage.
 tooltip.legendgear.infused_star_piece=This star piece hums with an intense energy!
@@ -81,6 +89,7 @@ tooltip.legendgear.star_piece=Hold down right-click to infuse this star piece at
 tooltip.legendgear.titan_band=While equipped, it will allow you to carry a mob by right-clicking it with an empty hand. Right-click again with the carried mob to throw it with force!
 tooltip.legendgear.valor_headband=Damage against mobs is increased by 4 while equipped. Durability is decreased during usage.
 tooltip.legendgear.whirlwind_boots=Sprinting is faster while equipped. Durability is decreased during usage.
+tooltip.legendgear.wind_medallion=When fully charged, hold down right-click and let go to throw it and cause a storm of arrows at the impact point. Charges are gained from arrow damage taken.
 
 # MESSAGES
 message.legendgear.no_levels=You don't have enough levels to infuse your star piece!

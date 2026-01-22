@@ -1,0 +1,25 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "GLG",
+    "LML",
+    "GLG"
+  ],
+  "key": {
+    "G": {
+      "type": "forge:ore_dict",
+      "ore": "ingotGold"
+    },
+    "L": {
+      "type": "forge:ore_dict",
+      "ore": "leather"
+    },
+    "M": {
+      "item": "legendgear:earth_medallion"
+    }
+  },
+  "result": {
+    "item": "legendgear:titan_band",
+    "count": 1
+  }
+}

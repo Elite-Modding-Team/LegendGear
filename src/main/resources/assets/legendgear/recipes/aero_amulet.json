@@ -1,0 +1,21 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    " G ",
+    "G G",
+    " M "
+  ],
+  "key": {
+    "G": {
+      "type": "forge:ore_dict",
+      "ore": "ingotGold"
+    },
+    "M": {
+      "item": "legendgear:wind_medallion"
+    }
+  },
+  "result": {
+    "item": "legendgear:aero_amulet",
+    "count": 1
+  }
+}

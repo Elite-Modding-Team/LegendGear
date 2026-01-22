@@ -1,0 +1,27 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "GBG",
+    "BPB",
+    "GBG"
+  ],
+  "key": {
+    "G": {
+      "type": "forge:ore_dict",
+      "ore": "nuggetGold"
+    },
+    "B": {
+      "type": "forge:ore_dict",
+      "ore": "ingotBrick"
+    },
+    "P": {
+      "type": "forge:ore_dict",
+      "ore": "enderpearl"
+    }
+  },
+  "result": {
+    "item": "legendgear:ender_medallion",
+    "count": 1,
+    "data": 20
+  }
+}

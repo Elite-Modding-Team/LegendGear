@@ -37,10 +37,13 @@ public class LGItems
     public static final LGItemRockCandy CHORUS_FRUIT_ROCK_CANDY = null;
     public static final LGItemRockCandy DIAMOND_ROCK_CANDY = null;
     public static final LGItemDimensionalCatalyst DIMENSIONAL_CATALYST = null;
+    public static final LGItemEarthMedallion EARTH_MEDALLION = null;
     public static final LGItemEmeraldPiece EMERALD_PIECE = null;
+    public static final LGItemEnderMedallion ENDER_MEDALLION = null;
     public static final LGItemRockCandy EMERALD_ROCK_CANDY = null;
     public static final LGItemEmeraldShard EMERALD_SHARD = null;
     public static final LGItemCharm FEATHER_CHARM = null;
+    public static final LGItemFireMedallion FIRE_MEDALLION = null;
     public static final LGItemFortuneCookie FORTUNE_COOKIE = null;
     public static final LGItemGeoAmulet GEO_AMULET = null;
     public static final LGItemRockCandy GLOWSTONE_ROCK_CANDY = null;
@@ -70,6 +73,7 @@ public class LGItems
     public static final LGItemTitanBand TITAN_BAND = null;
     public static final LGItemValorHeadband VALOR_HEADBAND = null;
     public static final LGItemWhirlwindBoots WHIRLWIND_BOOTS = null;
+    public static final LGItemWindMedallion WIND_MEDALLION = null;
 
     // TODO: Add materials to its own class
     public static Item.ToolMaterial TOOL_STARGLASS = EnumHelper.addToolMaterial("legendgear_tool_starglass", 2, 216, 15.0F, 2.0F, 20);
@@ -110,6 +114,10 @@ public class LGItems
                 LGRegistry.setup(new LGItemMagicMirror(), "magic_mirror").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemMysticSeed(LGBlocks.MYSTIC_SHRUB, Blocks.GRASS), "mystic_seed").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemPhoenixFeather(), "phoenix_feather").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemEarthMedallion(), "earth_medallion").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemEnderMedallion(), "ender_medallion").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemFireMedallion(), "fire_medallion").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemWindMedallion(), "wind_medallion").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemAeroAmulet(), "aero_amulet").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemGeoAmulet(), "geo_amulet").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemPyroAmulet(), "pyro_amulet").setCreativeTab(LegendGear.TAB),

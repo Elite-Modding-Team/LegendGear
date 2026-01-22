@@ -1,0 +1,27 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "GBG",
+    "BDB",
+    "GBG"
+  ],
+  "key": {
+    "G": {
+      "type": "forge:ore_dict",
+      "ore": "nuggetGold"
+    },
+    "B": {
+      "type": "forge:ore_dict",
+      "ore": "ingotBrick"
+    },
+    "D": {
+      "type": "forge:ore_dict",
+      "ore": "dirt"
+    }
+  },
+  "result": {
+    "item": "legendgear:earth_medallion",
+    "count": 1,
+    "data": 20
+  }
+}

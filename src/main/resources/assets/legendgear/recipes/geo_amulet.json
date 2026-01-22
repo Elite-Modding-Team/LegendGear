@@ -1,0 +1,21 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    " G ",
+    "G G",
+    " M "
+  ],
+  "key": {
+    "G": {
+      "type": "forge:ore_dict",
+      "ore": "ingotGold"
+    },
+    "M": {
+      "item": "legendgear:earth_medallion"
+    }
+  },
+  "result": {
+    "item": "legendgear:geo_amulet",
+    "count": 1
+  }
+}

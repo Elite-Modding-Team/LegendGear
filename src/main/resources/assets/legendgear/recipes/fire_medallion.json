@@ -1,0 +1,27 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "GBG",
+    "BCB",
+    "GBG"
+  ],
+  "key": {
+    "G": {
+      "type": "forge:ore_dict",
+      "ore": "nuggetGold"
+    },
+    "B": {
+      "type": "forge:ore_dict",
+      "ore": "ingotBrick"
+    },
+    "C": {
+      "item": "minecraft:coal",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "legendgear:fire_medallion",
+    "count": 1,
+    "data": 20
+  }
+}

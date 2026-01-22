@@ -8,6 +8,7 @@ import mod.emt.legendgear.LegendGear;
 public enum LGSoundEvents
 {
     ENTITY_MAGIC_BOOMERANG_FLY("entity.magic_boomerang.fly"),
+    ENTITY_MEDALLION_FIRE_START("entity.medallion.fire_start"),
     ITEM_AMULET_REPEL("item.amulet.repel"),
     ITEM_BAUBLE_EQUIP("item.bauble.equip"),
     ITEM_BAUBLE_UNEQUIP("item.bauble.unequip"),
@@ -22,6 +23,8 @@ public enum LGSoundEvents
     ITEM_FORTUNE_COOKIE_USE("item.fortune_cookie.use"),
     ITEM_MAGIC_MIRROR_INACTIVE("item.magic_mirror.inactive"),
     ITEM_MAGIC_MIRROR_USE("item.magic_mirror.use"),
+    ITEM_MEDALLION_CHARGE_FULL("item.medallion.charge_full"),
+    ITEM_MEDALLION_CHARGE_PARTIAL("item.medallion.charge_partial"),
     ITEM_PHOENIX_FEATHER_ACTIVATE("item.phoenix_feather.activate"),
     ITEM_PHOENIX_FEATHER_REVIVE("item.phoenix_feather.revive"),
     ITEM_PHOENIX_FEATHER_USE("item.phoenix_feather.use"),

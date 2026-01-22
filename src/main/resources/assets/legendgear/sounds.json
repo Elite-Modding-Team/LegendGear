@@ -4,6 +4,11 @@
       "legendgear:item/magic_boomerang/fly"
     ]
   },
+  "entity.medallion.fire_start": {
+    "sounds": [
+      "legendgear:item/medallion/fire_start"
+    ]
+  },
   "item.amulet.repel": {
     "sounds": [
       "legendgear:item/medallion/wind_repel"
@@ -72,6 +77,16 @@
   "item.magic_mirror.use": {
     "sounds": [
       "legendgear:item/magic_mirror/use"
+    ]
+  },
+  "item.medallion.charge_full": {
+    "sounds": [
+      "legendgear:item/star_piece/charge_end"
+    ]
+  },
+  "item.medallion.charge_partial": {
+    "sounds": [
+      "legendgear:item/star_piece/charge_start"
     ]
   },
   "item.phoenix_feather.activate": {
