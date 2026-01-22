@@ -4,6 +4,11 @@
       "legendgear:item/magic_boomerang/fly"
     ]
   },
+  "item.amulet.repel": {
+    "sounds": [
+      "legendgear:item/medallion/wind_repel"
+    ]
+  },
   "item.bauble.equip": {
     "sounds": [
       "legendgear:bauble_equip"

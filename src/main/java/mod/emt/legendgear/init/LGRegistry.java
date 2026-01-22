@@ -5,6 +5,7 @@ import javax.annotation.Nonnull;
 import com.google.common.base.Preconditions;
 import mod.emt.legendgear.client.render.*;
 import mod.emt.legendgear.entity.LGEntityPing;
+import mod.emt.legendgear.entity.LGEntityQuake;
 import mod.emt.legendgear.tileentity.LGTileEntitySkybeam;
 import net.minecraft.block.Block;
 import net.minecraft.enchantment.Enchantment;
@@ -91,6 +92,7 @@ public class LGRegistry
         registerEntity("bomb", LGEntityBomb.class, 64, true);
         registerEntity("magic_boomerang", LGEntityMagicBoomerang.class, 64, true);
         registerEntity("ping", LGEntityPing.class, 128, false);
+        registerEntity("quake", LGEntityQuake.class, 64, false);
     }
 
     public static void registerEntitySpawns()
@@ -167,6 +169,7 @@ public class LGRegistry
         RenderingRegistry.registerEntityRenderingHandler(LGEntityBomb.class, new LGRenderBomb.Factory());
         RenderingRegistry.registerEntityRenderingHandler(LGEntityMagicBoomerang.class, new LGRenderMagicBoomerang.Factory());
         RenderingRegistry.registerEntityRenderingHandler(LGEntityPing.class, new LGRenderPing.Factory());
+        RenderingRegistry.registerEntityRenderingHandler(LGEntityQuake.class, new LGRenderQuake.Factory());
 
         // XP Orb Replacement
         RenderingRegistry.registerEntityRenderingHandler(EntityXPOrb.class, LGRenderPrismaticXP::new);

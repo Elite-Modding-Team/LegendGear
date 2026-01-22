@@ -7,6 +7,7 @@ tile.legendgear.mystic_shrub.name=Mystic Shrub
 tile.legendgear.skybeam_block.name=Skybeam Block
 
 # ITEMS
+item.legendgear.aero_amulet.name=Aero Amulet
 item.legendgear.blast_charm.name=Blast Charm
 item.legendgear.bomb.name=Bomb
 item.legendgear.bomb_bag.name=Bomb Bag
@@ -18,6 +19,7 @@ item.legendgear.emerald_rock_candy.name=Emerald Rock Candy
 item.legendgear.emerald_shard.name=Emerald Shard
 item.legendgear.feather_charm.name=Feather Charm
 item.legendgear.fortune_cookie.name=Fortune Cookie
+item.legendgear.geo_amulet.name=Geo Amulet
 item.legendgear.glowstone_rock_candy.name=Glowstone Rock Candy
 item.legendgear.infused_stardust.name=Infused Stardust
 item.legendgear.infused_star_piece.name=Infused Star Piece
@@ -28,6 +30,7 @@ item.legendgear.milk_chocolate.name=Milk Chocolate
 item.legendgear.mystic_seed.name=Mystic Seed
 item.legendgear.phoenix_charm.name=Phoenix Charm
 item.legendgear.phoenix_feather.name=Phoenix Feather
+item.legendgear.pyro_amulet.name=Pyro Amulet
 item.legendgear.quartz_rock_candy.name=Quartz Rock Candy
 item.legendgear.quiver.name=Quiver
 item.legendgear.record_dragondot.name=Music Disc
@@ -48,6 +51,7 @@ item.legendgear.whirlwind_boots.name=Whirlwind Boots
 item.record.dragondot.desc=NMcCoy - Dragondot's Return
 
 # TOOLTIPS
+tooltip.legendgear.aero_amulet=While equipped, it will provide full immunity to arrows. Durability is decreased during usage.
 tooltip.legendgear.arrows=Arrows
 tooltip.legendgear.blast_charm=Completely shields you from explosion damage while it is equipped. Has a small cooldown per use.
 tooltip.legendgear.bomb_bag=Bombs picked up will be stored into the bag until it's full. Right-click to throw one of the stored bombs to the ground or left-click active bombs to defuse them.
@@ -58,6 +62,7 @@ tooltip.legendgear.emerald_piece=Right-click to combine into %s x Emerald
 tooltip.legendgear.emerald_shard=Right-click to combine into %s x Emerald Piece
 tooltip.legendgear.feather_charm=Provides full immunity to fall damage and wall collision damage while it is equipped.
 tooltip.legendgear.fortune_cookie=Receive your fortune.
+tooltip.legendgear.geo_amulet=While equipped, it will cause a quake around you when fall damage is taken. Durability is decreased during usage.
 tooltip.legendgear.infused_star_piece=This star piece hums with an intense energy!
 tooltip.legendgear.magic_boomerang=Right-click to throw it. The boomerang will magically return to you and pick up any items it touches.
 tooltip.legendgear.magic_mirror=Hold down right-click to teleport to the last point you stood on that was exposed to the sky.
@@ -65,6 +70,7 @@ tooltip.legendgear.milk_chocolate=Cures all status effects while also being choc
 tooltip.legendgear.mystic_seed=Right-click on the ground to plant several Mystic Shrubs!
 tooltip.legendgear.phoenix_charm=Saves you from death while it is equipped. Has only one use.
 tooltip.legendgear.phoenix_feather=Saves you from death while it is anywhere in your inventory. Has only one use.
+tooltip.legendgear.pyro_amulet=While equipped, it will provide full immunity to fire damage and convert the damage received to newly restored health. Durability is decreased during usage.
 tooltip.legendgear.quiver=Arrows picked up will be stored into the quiver until it's full. Right-click to store arrows into it or sneak and right-click to remove arrows from it.
 tooltip.legendgear.reed_pipes=Hold down right-click to play it! Pitch is determined by the angle you're looking at and notes are determined by sneaking.
 tooltip.legendgear.rock_candy=Rock solid! Gives you different effects when eaten depending on the flavor.

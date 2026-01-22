@@ -14,7 +14,7 @@ import net.minecraft.world.World;
 import javax.annotation.Nullable;
 import java.util.List;
 
-// TODO: Instead of durability and being able to break, it will recharge with extra wind medallions
+// TODO: Instead of durability and being able to break, it will recharge with extra fire medallions
 public class LGItemValorHeadband extends ItemArmor
 {
     protected static final String TEXTURE = new ResourceLocation(LegendGear.MOD_ID, "textures/models/armor/valor_headband.png").toString();

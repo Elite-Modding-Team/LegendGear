@@ -19,7 +19,7 @@ import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
-// TODO: Instead of durability and being able to break, it will recharge with extra wind medallions
+// TODO: Instead of durability and being able to break, it will recharge with extra earth medallions
 public class LGItemTitanBand extends Item implements IBauble {
     public LGItemTitanBand() {
         super();

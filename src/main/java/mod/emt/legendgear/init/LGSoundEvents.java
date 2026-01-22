@@ -8,6 +8,7 @@ import mod.emt.legendgear.LegendGear;
 public enum LGSoundEvents
 {
     ENTITY_MAGIC_BOOMERANG_FLY("entity.magic_boomerang.fly"),
+    ITEM_AMULET_REPEL("item.amulet.repel"),
     ITEM_BAUBLE_EQUIP("item.bauble.equip"),
     ITEM_BAUBLE_UNEQUIP("item.bauble.unequip"),
     ITEM_BEST_BOW_SHOOT("item.best_bow.shoot"),

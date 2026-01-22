@@ -30,6 +30,7 @@ import mod.emt.legendgear.item.*;
 @GameRegistry.ObjectHolder(LegendGear.MOD_ID)
 public class LGItems
 {
+    public static final LGItemAeroAmulet AERO_AMULET = null;
     public static final LGItemCharm BLAST_CHARM = null;
     public static final LGItemBomb BOMB = null;
     public static final LGItemBombBag BOMB_BAG = null;
@@ -41,6 +42,7 @@ public class LGItems
     public static final LGItemEmeraldShard EMERALD_SHARD = null;
     public static final LGItemCharm FEATHER_CHARM = null;
     public static final LGItemFortuneCookie FORTUNE_COOKIE = null;
+    public static final LGItemGeoAmulet GEO_AMULET = null;
     public static final LGItemRockCandy GLOWSTONE_ROCK_CANDY = null;
     public static final LGItemStardust INFUSED_STARDUST = null;
     public static final LGItemStarPiece INFUSED_STAR_PIECE = null;
@@ -51,6 +53,7 @@ public class LGItems
     public static final LGItemMysticSeed MYSTIC_SEED = null;
     public static final LGItemCharm PHOENIX_CHARM = null;
     public static final LGItemPhoenixFeather PHOENIX_FEATHER = null;
+    public static final LGItemPyroAmulet PYRO_AMULET = null;
     public static final LGItemQuiver QUIVER = null;
     public static final LGItemRockCandy QUARTZ_ROCK_CANDY = null;
     public static final LGItemRecord RECORD_DRAGONDOT = null;
@@ -107,6 +110,9 @@ public class LGItems
                 LGRegistry.setup(new LGItemMagicMirror(), "magic_mirror").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemMysticSeed(LGBlocks.MYSTIC_SHRUB, Blocks.GRASS), "mystic_seed").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemPhoenixFeather(), "phoenix_feather").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemAeroAmulet(), "aero_amulet").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemGeoAmulet(), "geo_amulet").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemPyroAmulet(), "pyro_amulet").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemCharm(), "blast_charm").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemCharm(), "feather_charm").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemCharm(), "phoenix_charm").setCreativeTab(LegendGear.TAB),
