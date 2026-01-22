@@ -2,9 +2,7 @@ package mod.emt.legendgear.init;
 
 import javax.annotation.Nonnull;
 
-import mod.emt.legendgear.item.base.LGItemBase;
-import mod.emt.legendgear.item.base.LGItemRecord;
-import mod.emt.legendgear.item.base.LGItemSword;
+import mod.emt.legendgear.item.base.*;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
@@ -26,21 +24,22 @@ import net.minecraftforge.registries.IForgeRegistry;
 
 import mod.emt.legendgear.LegendGear;
 import mod.emt.legendgear.item.*;
-import mod.emt.legendgear.item.base.LGItemFood;
 
 @SuppressWarnings("unused")
 @Mod.EventBusSubscriber(modid = LegendGear.MOD_ID)
 @GameRegistry.ObjectHolder(LegendGear.MOD_ID)
 public class LGItems
 {
+    public static final LGItemCharm BLAST_CHARM = null;
     public static final LGItemBomb BOMB = null;
     public static final LGItemBombBag BOMB_BAG = null;
     public static final LGItemRockCandy CHORUS_FRUIT_ROCK_CANDY = null;
+    public static final LGItemRockCandy DIAMOND_ROCK_CANDY = null;
     public static final LGItemDimensionalCatalyst DIMENSIONAL_CATALYST = null;
     public static final LGItemEmeraldPiece EMERALD_PIECE = null;
     public static final LGItemRockCandy EMERALD_ROCK_CANDY = null;
     public static final LGItemEmeraldShard EMERALD_SHARD = null;
-    public static final LGItemRockCandy DIAMOND_ROCK_CANDY = null;
+    public static final LGItemCharm FEATHER_CHARM = null;
     public static final LGItemFortuneCookie FORTUNE_COOKIE = null;
     public static final LGItemRockCandy GLOWSTONE_ROCK_CANDY = null;
     public static final LGItemStardust INFUSED_STARDUST = null;
@@ -50,6 +49,7 @@ public class LGItems
     public static final LGItemMagicMirror MAGIC_MIRROR = null;
     public static final LGItemFood MILK_CHOCOLATE = null;
     public static final LGItemMysticSeed MYSTIC_SEED = null;
+    public static final LGItemCharm PHOENIX_CHARM = null;
     public static final LGItemPhoenixFeather PHOENIX_FEATHER = null;
     public static final LGItemQuiver QUIVER = null;
     public static final LGItemRockCandy QUARTZ_ROCK_CANDY = null;
@@ -107,6 +107,9 @@ public class LGItems
                 LGRegistry.setup(new LGItemMagicMirror(), "magic_mirror").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemMysticSeed(LGBlocks.MYSTIC_SHRUB, Blocks.GRASS), "mystic_seed").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemPhoenixFeather(), "phoenix_feather").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemCharm(), "blast_charm").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemCharm(), "feather_charm").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemCharm(), "phoenix_charm").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemTitanBand(), "titan_band").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemValorHeadband(ARMOR_SPECIAL, 0), "valor_headband").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemWhirlwindBoots(ARMOR_SPECIAL, 0), "whirlwind_boots").setCreativeTab(LegendGear.TAB),

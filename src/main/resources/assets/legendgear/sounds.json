@@ -19,6 +19,11 @@
       "legendgear:best_bow"
     ]
   },
+  "item.charm.repel": {
+    "sounds": [
+      "legendgear:item/medallion/wind_repel"
+    ]
+  },
   "item.emerald_drop.pickup_large": {
     "sounds": [
       "legendgear:item/emerald/pickup_large"

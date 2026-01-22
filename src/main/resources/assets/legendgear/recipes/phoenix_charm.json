@@ -1,0 +1,19 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "legendgear:phoenix_feather"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "string"
+    },
+    {
+      "item": "legendgear:dimensional_catalyst"
+    }
+  ],
+  "result": {
+    "item": "legendgear:phoenix_charm",
+    "count": 1
+  }
+}

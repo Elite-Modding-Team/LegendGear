@@ -11,6 +11,7 @@ public enum LGSoundEvents
     ITEM_BAUBLE_EQUIP("item.bauble.equip"),
     ITEM_BAUBLE_UNEQUIP("item.bauble.unequip"),
     ITEM_BEST_BOW_SHOOT("item.best_bow.shoot"),
+    ITEM_CHARM_REPEL("item.charm.repel"),
     ITEM_EMERALD_DROP_PICKUP_LARGE("item.emerald_drop.pickup_large"),
     ITEM_EMERALD_DROP_PICKUP_MEDIUM("item.emerald_drop.pickup_medium"),
     ITEM_EMERALD_DROP_PICKUP_SMALL("item.emerald_drop.pickup_small"),

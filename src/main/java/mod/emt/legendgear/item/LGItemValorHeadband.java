@@ -15,26 +15,31 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 // TODO: Instead of durability and being able to break, it will recharge with extra wind medallions
-public class LGItemValorHeadband extends ItemArmor {
-    protected static final String TEXTURE_PATH = new ResourceLocation(LegendGear.MOD_ID, "textures/models/armor/valor_headband.png").toString();
+public class LGItemValorHeadband extends ItemArmor
+{
+    protected static final String TEXTURE = new ResourceLocation(LegendGear.MOD_ID, "textures/models/armor/valor_headband.png").toString();
 
-    public LGItemValorHeadband(ArmorMaterial material, int renderIndex) {
+    public LGItemValorHeadband(ArmorMaterial material, int renderIndex)
+    {
         super(material, renderIndex, EntityEquipmentSlot.HEAD);
         this.setMaxDamage(4000);
     }
 
     @Override
-    public boolean isDamageable() {
+    public boolean isDamageable()
+    {
         return false;
     }
 
     @Override
-    public String getArmorTexture(ItemStack stack, Entity entity, EntityEquipmentSlot slot, String type) {
-        return TEXTURE_PATH;
+    public String getArmorTexture(ItemStack stack, Entity entity, EntityEquipmentSlot slot, String type)
+    {
+        return TEXTURE;
     }
 
     @Override
-    public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flags) {
+    public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flags)
+    {
         tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.legendgear.valor_headband"));
     }
 }

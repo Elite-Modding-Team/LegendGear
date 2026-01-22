@@ -23,7 +23,7 @@ public class LGPhoenixFeatherEvent
         if (!event.getEntityLiving().getEntityWorld().isRemote && event.getEntityLiving() instanceof EntityPlayer)
         {
             EntityPlayer player = (EntityPlayer) event.getEntityLiving();
-            //int slot = BaublesApi.isBaubleEquipped(player, LGItems.PHOENIX_CHARM);
+            int slot = BaublesApi.isBaubleEquipped(player, LGItems.PHOENIX_CHARM);
 
             // Phoenix Feather
             if (InventoryHelper.deleteFirstMatchingItemStack(player, LGItems.PHOENIX_FEATHER))
@@ -42,7 +42,7 @@ public class LGPhoenixFeatherEvent
                 event.setCanceled(true);
 
                 // Phoenix Charm
-            } /*else if (BaublesApi.isBaubleEquipped(player, HwItems.PHOENIX_CHARM) > 5)
+            } else if (BaublesApi.isBaubleEquipped(player, LGItems.PHOENIX_CHARM) > 5)
             {
                 player.setHealth(1);
                 player.hurtResistantTime = 65;
@@ -57,7 +57,7 @@ public class LGPhoenixFeatherEvent
                 player.getEntityWorld().playSound(null, player.getPosition(), LGSoundEvents.ITEM_PHOENIX_FEATHER_USE.getSoundEvent(), SoundCategory.PLAYERS, 0.8F, 1.0F);
                 BaublesApi.getBaublesHandler(player).extractItem(slot, 1, false);
                 event.setCanceled(true);
-            }*/
+            }
         }
     }
 }

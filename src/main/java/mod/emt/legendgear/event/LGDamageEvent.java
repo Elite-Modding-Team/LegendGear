@@ -18,20 +18,24 @@ import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 @Mod.EventBusSubscriber(modid = LegendGear.MOD_ID)
-public class LGDamageEvent {
+public class LGDamageEvent
+{
     @SubscribeEvent(priority = EventPriority.LOWEST)
-    public static void headbandHurtEvent(LivingHurtEvent event) {
+    public static void headbandHurtEvent(LivingHurtEvent event)
+    {
         EntityLivingBase entity = event.getEntityLiving();
         World world = entity.getEntityWorld();
         DamageSource damageSource = event.getSource();
         Entity trueSource = damageSource.getTrueSource();
 
-        if (trueSource instanceof EntityPlayer && trueSource != null) {
+        if (trueSource instanceof EntityPlayer && trueSource != null)
+        {
             EntityPlayer player = (EntityPlayer) trueSource;
             ItemStack headband = player.getItemStackFromSlot(EntityEquipmentSlot.HEAD);
 
             // The Headband of Valor increases damage by 4 while equipped
-            if (headband.getItem() == LGItems.VALOR_HEADBAND) {
+            if (headband.getItem() == LGItems.VALOR_HEADBAND)
+            {
                 world.playSound(null, entity.getPosition(), LGSoundEvents.RANDOM_DAMAGE_BOOST.getSoundEvent(), SoundCategory.PLAYERS, 0.5F, 0.8F + world.rand.nextFloat() * 0.4F);
                 event.setAmount(event.getAmount() + 4.0F);
                 headband.damageItem(1, player);
