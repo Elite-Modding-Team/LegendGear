@@ -38,6 +38,9 @@ item.legendgear.starglass_ingot.name=Starglass Ingot
 item.legendgear.starglass_sword.name=Starglass Sword
 item.legendgear.star_piece.name=Star Piece
 item.legendgear.starsteel_ingot.name=Starsteel Ingot
+item.legendgear.titan_band.name=Titan Band
+item.legendgear.valor_headband.name=Headband of Valor
+item.legendgear.whirlwind_boots.name=Whirlwind Boots
 
 item.record.dragondot.desc=NMcCoy - Dragondot's Return
 
@@ -63,6 +66,9 @@ tooltip.legendgear.slime_sword=Bouncy! Does absolutely no damage.
 tooltip.legendgear.spotting_scope=Hold down right-click to zoom. Quickly right-click to temporarily mark a location instead.
 tooltip.legendgear.starglass_sword=All attacks have a 50%% chance to deal a critical hit.
 tooltip.legendgear.star_piece=Hold down right-click to infuse this star piece at the cost of %d experience level(s).
+tooltip.legendgear.titan_band=While equipped, it will allow you to carry a mob by right-clicking it with an empty hand. Right-click again with the carried mob to throw it with force!
+tooltip.legendgear.valor_headband=Damage against mobs is increased by 4 while equipped. Durability is decreased during usage.
+tooltip.legendgear.whirlwind_boots=Sprinting is faster while equipped. Durability is decreased during usage.
 
 # MESSAGES
 message.legendgear.no_levels=You don't have enough levels to infuse your star piece!

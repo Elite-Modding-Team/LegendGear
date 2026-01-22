@@ -8,6 +8,8 @@ import mod.emt.legendgear.LegendGear;
 public enum LGSoundEvents
 {
     ENTITY_MAGIC_BOOMERANG_FLY("entity.magic_boomerang.fly"),
+    ITEM_BAUBLE_EQUIP("item.bauble.equip"),
+    ITEM_BAUBLE_UNEQUIP("item.bauble.unequip"),
     ITEM_BEST_BOW_SHOOT("item.best_bow.shoot"),
     ITEM_EMERALD_DROP_PICKUP_LARGE("item.emerald_drop.pickup_large"),
     ITEM_EMERALD_DROP_PICKUP_MEDIUM("item.emerald_drop.pickup_medium"),
@@ -28,6 +30,10 @@ public enum LGSoundEvents
     ITEM_STAR_PIECE_CHARGE_END("item.star_piece.charge_end"),
     ITEM_STAR_PIECE_CHARGE_START("item.star_piece.charge_start"),
     ITEM_STAR_PIECE_SPARKLE("item.star_piece.sparkle"),
+    ITEM_TITAN_BAND_LIFT("item.titan_band.lift"),
+    ITEM_TITAN_BAND_THROW("item.titan_band.throw"),
+    RANDOM_DAMAGE_BOOST("random.damage_boost"),
+    RANDOM_DASH("random.dash"),
     RANDOM_MYSTERY_SPARKLE("random.mystery_sparkle"),
     RANDOM_SWORD_SLASH("random.sword_slash"),
     RECORD_DRAGONDOT("record.dragondot");

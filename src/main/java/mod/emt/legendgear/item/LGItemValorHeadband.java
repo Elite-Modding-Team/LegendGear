@@ -1,0 +1,40 @@
+package mod.emt.legendgear.item;
+
+import mod.emt.legendgear.LegendGear;
+import net.minecraft.client.resources.I18n;
+import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.entity.Entity;
+import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.item.ItemArmor;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.world.World;
+
+import javax.annotation.Nullable;
+import java.util.List;
+
+// TODO: Instead of durability and being able to break, it will recharge with extra wind medallions
+public class LGItemValorHeadband extends ItemArmor {
+    protected static final String TEXTURE_PATH = new ResourceLocation(LegendGear.MOD_ID, "textures/models/armor/valor_headband.png").toString();
+
+    public LGItemValorHeadband(ArmorMaterial material, int renderIndex) {
+        super(material, renderIndex, EntityEquipmentSlot.HEAD);
+        this.setMaxDamage(4000);
+    }
+
+    @Override
+    public boolean isDamageable() {
+        return false;
+    }
+
+    @Override
+    public String getArmorTexture(ItemStack stack, Entity entity, EntityEquipmentSlot slot, String type) {
+        return TEXTURE_PATH;
+    }
+
+    @Override
+    public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flags) {
+        tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.legendgear.valor_headband"));
+    }
+}

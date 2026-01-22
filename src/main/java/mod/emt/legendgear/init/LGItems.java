@@ -7,8 +7,10 @@ import mod.emt.legendgear.item.base.LGItemRecord;
 import mod.emt.legendgear.item.base.LGItemSword;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
@@ -62,9 +64,14 @@ public class LGItems
     public static final LGItemSword STARGLASS_SWORD = null;
     public static final LGItemStarPiece STAR_PIECE = null;
     public static final LGItemBase STARSTEEL_INGOT = null;
+    public static final LGItemTitanBand TITAN_BAND = null;
+    public static final LGItemValorHeadband VALOR_HEADBAND = null;
+    public static final LGItemWhirlwindBoots WHIRLWIND_BOOTS = null;
 
     // TODO: Add materials to its own class
     public static Item.ToolMaterial TOOL_STARGLASS = EnumHelper.addToolMaterial("legendgear_tool_starglass", 2, 216, 15.0F, 2.0F, 20);
+
+    public static ItemArmor.ArmorMaterial ARMOR_SPECIAL = EnumHelper.addArmorMaterial("legendgear_armor_special", "special", 5, new int[]{1, 0, 0, 1}, 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F);
 
     @SubscribeEvent
     public static void onRegisterItemsEvent(@Nonnull final RegistryEvent.Register<Item> event)
@@ -100,6 +107,9 @@ public class LGItems
                 LGRegistry.setup(new LGItemMagicMirror(), "magic_mirror").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemMysticSeed(LGBlocks.MYSTIC_SHRUB, Blocks.GRASS), "mystic_seed").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemPhoenixFeather(), "phoenix_feather").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemTitanBand(), "titan_band").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemValorHeadband(ARMOR_SPECIAL, 0), "valor_headband").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemWhirlwindBoots(ARMOR_SPECIAL, 0), "whirlwind_boots").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemBestBow(), "best_bow").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemQuiver(), "quiver").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemReedPipes(), "reed_pipes").setCreativeTab(LegendGear.TAB),

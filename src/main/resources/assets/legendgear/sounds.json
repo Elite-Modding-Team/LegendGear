@@ -4,6 +4,16 @@
       "legendgear:item/magic_boomerang/fly"
     ]
   },
+  "item.bauble.equip": {
+    "sounds": [
+      "legendgear:bauble_equip"
+    ]
+  },
+  "item.bauble.unequip": {
+    "sounds": [
+      "legendgear:bauble_unequip"
+    ]
+  },
   "item.best_bow.shoot": {
     "sounds": [
       "legendgear:best_bow"
@@ -104,9 +114,24 @@
       "legendgear:entity/falling_star/despawn"
     ]
   },
-  "random.feather": {
+  "item.titan_band.lift": {
     "sounds": [
-      "legendgear:feather"
+      "legendgear:lift"
+    ]
+  },
+  "item.titan_band.throw": {
+    "sounds": [
+      "legendgear:throw"
+    ]
+  },
+  "random.damage_boost": {
+    "sounds": [
+      "legendgear:damage_boost"
+    ]
+  },
+  "random.dash": {
+    "sounds": [
+      "legendgear:dash"
     ]
   },
   "random.mystery_sparkle": {
