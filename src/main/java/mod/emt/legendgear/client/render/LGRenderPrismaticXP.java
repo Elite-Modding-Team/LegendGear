@@ -36,7 +36,7 @@ public class LGRenderPrismaticXP extends Render<EntityXPOrb>
         GlStateManager.pushMatrix();
         GlStateManager.translate((float) x, (float) y, (float) z);
         int frame = orb.getTextureByXP();
-        this.bindEntityTexture(orb);
+        this.bindTexture(prismaticLegendOrbs);
         Tessellator tess = Tessellator.getInstance();
         BufferBuilder buffer = tess.getBuffer();
         float uMin = (float) (frame % 4 * 16 + 0) / 64.0F;
