@@ -95,7 +95,7 @@ public class LGRenderPrismaticXP extends Render<EntityXPOrb>
                 .endVertex();
 
         tess.draw();
-        GlStateManager.disableLighting();
+        GlStateManager.enableLighting();
         GlStateManager.disableBlend();
         GlStateManager.disableRescaleNormal();
         GlStateManager.popMatrix();
