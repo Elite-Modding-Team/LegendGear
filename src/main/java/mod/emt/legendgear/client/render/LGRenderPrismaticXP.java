@@ -14,7 +14,6 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-// TODO: Position could be adjusted so it doesn't sink too much into the ground
 @SideOnly(Side.CLIENT)
 public class LGRenderPrismaticXP extends Render<EntityXPOrb>
 {
@@ -34,7 +33,7 @@ public class LGRenderPrismaticXP extends Render<EntityXPOrb>
 
     public void renderTheXPOrb(EntityXPOrb orb, double x, double y, double z, float entityYaw, float partialTicks) {
         GlStateManager.pushMatrix();
-        GlStateManager.translate((float) x, (float) y, (float) z);
+        GlStateManager.translate((float) x, (float) y + 0.1F, (float) z);
         int frame = orb.getTextureByXP();
         this.bindTexture(prismaticLegendOrbs);
         Tessellator tess = Tessellator.getInstance();
