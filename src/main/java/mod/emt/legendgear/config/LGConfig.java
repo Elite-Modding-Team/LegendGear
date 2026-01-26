@@ -19,6 +19,10 @@ public class LGConfig
     @Config.Comment("Generate mystic shrubs in the world")
     public static boolean generateMysticShrubs = true;
 
+    @Config.Name("Falling Star Chance")
+    @Config.Comment("Spawn chance for falling stars per second for each player under the open sky at night")
+    public static double chanceFallingStar = 0.001D;
+
     @Mod.EventBusSubscriber(modid = LegendGear.MOD_ID)
     public static class EventHandler
     {

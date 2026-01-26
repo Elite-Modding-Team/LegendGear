@@ -66,7 +66,7 @@ public class LGRegistry
 
     public static void registerEntity(String name, Class<? extends Entity> clazz, int trackingRange, boolean sendsVelocityUpdates)
     {
-        EntityRegistry.registerModEntity(new ResourceLocation(LegendGear.MOD_ID, name), clazz, LegendGear.MOD_ID + "." + name, entityID++, LegendGear.instance, 64, 1, sendsVelocityUpdates);
+        EntityRegistry.registerModEntity(new ResourceLocation(LegendGear.MOD_ID, name), clazz, LegendGear.MOD_ID + "." + name, entityID++, LegendGear.instance, trackingRange, 1, sendsVelocityUpdates);
     }
 
     public static void registerAdvancements()
@@ -91,6 +91,7 @@ public class LGRegistry
         registerEntity("earth_medallion", LGEntityEarthMedallion.class, 64, true);
         registerEntity("ender_bomb", LGEntityEnderBomb.class, 64, false);
         registerEntity("ender_medallion", LGEntityEnderMedallion.class, 64, true);
+        registerEntity("falling_star", LGEntityFallingStar.class, 128, true);
         registerEntity("fire_blast", LGEntityFireBlast.class, 64, false);
         registerEntity("fire_medallion", LGEntityFireMedallion.class, 64, true);
         registerEntity("magic_boomerang", LGEntityMagicBoomerang.class, 64, true);
@@ -176,6 +177,7 @@ public class LGRegistry
         RenderingRegistry.registerEntityRenderingHandler(LGEntityEarthMedallion.class, new LGRenderEarthMedallion.Factory());
         RenderingRegistry.registerEntityRenderingHandler(LGEntityEnderBomb.class, new LGRenderEnderBomb.Factory());
         RenderingRegistry.registerEntityRenderingHandler(LGEntityEnderMedallion.class, new LGRenderEnderMedallion.Factory());
+        RenderingRegistry.registerEntityRenderingHandler(LGEntityFallingStar.class, new LGRenderFallingStar.Factory());
         RenderingRegistry.registerEntityRenderingHandler(LGEntityFireBlast.class, new LGRenderFireBlast.Factory());
         RenderingRegistry.registerEntityRenderingHandler(LGEntityFireMedallion.class, new LGRenderFireMedallion.Factory());
         RenderingRegistry.registerEntityRenderingHandler(LGEntityMagicBoomerang.class, new LGRenderMagicBoomerang.Factory());

@@ -7,6 +7,12 @@ import mod.emt.legendgear.LegendGear;
 
 public enum LGSoundEvents
 {
+    ENTITY_FALLING_STAR_CAUGHT("entity.falling_star.caught"),
+    ENTITY_FALLING_STAR_DESPAWN("entity.falling_star.despawn"),
+    ENTITY_FALLING_STAR_EXPLODE("entity.falling_star.explode"),
+    ENTITY_FALLING_STAR_FALL("entity.falling_star.fall"),
+    ENTITY_FALLING_STAR_LAND("entity.falling_star.land"),
+    ENTITY_FALLING_STAR_TWINKLE("entity.falling_star.twinkle"),
     ENTITY_MAGIC_BOOMERANG_FLY("entity.magic_boomerang.fly"),
     ENTITY_MEDALLION_FIRE_START("entity.medallion.fire_start"),
     ITEM_AMULET_REPEL("item.amulet.repel"),

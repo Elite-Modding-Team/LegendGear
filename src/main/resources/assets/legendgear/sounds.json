@@ -1,4 +1,34 @@
 {
+  "entity.falling_star.caught": {
+    "sounds": [
+      "legendgear:entity/falling_star/caught"
+    ]
+  },
+  "entity.falling_star.despawn": {
+    "sounds": [
+      "legendgear:entity/falling_star/despawn"
+    ]
+  },
+  "entity.falling_star.explode": {
+    "sounds": [
+      "legendgear:entity/falling_star/explode"
+    ]
+  },
+  "entity.falling_star.fall": {
+    "sounds": [
+      "legendgear:entity/falling_star/fall"
+    ]
+  },
+  "entity.falling_star.land": {
+    "sounds": [
+      "legendgear:entity/falling_star/land"
+    ]
+  },
+  "entity.falling_star.twinkle": {
+    "sounds": [
+      "legendgear:entity/falling_star/twinkle"
+    ]
+  },
   "entity.magic_boomerang.fly": {
     "sounds": [
       "legendgear:item/magic_boomerang/fly"
