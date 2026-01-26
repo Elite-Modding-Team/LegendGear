@@ -37,7 +37,7 @@ public class LGItemWhirlwindBoots extends ItemArmor
 
         if (player.isSprinting())
         {
-            player.moveRelative(0.0F, 0.0F, 0.1F, 1.0F);
+            player.moveRelative(0.0F, 0.0F, 0.08F, 1.0F);
             final int blockY = (int) Math.floor(player.posY - 0.0625D - player.getYOffset());
             final int dashTicks = player.getEntityData().getInteger("dashTicks");
 
