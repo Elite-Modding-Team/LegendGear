@@ -4,6 +4,7 @@ import org.lwjgl.opengl.GL11;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -35,6 +36,8 @@ public class LGRenderFallingStar extends Render<LGEntityFallingStar>
         GlStateManager.translate((float) x, (float) y + 0.5F, (float) z);
         GlStateManager.enableRescaleNormal();
         GlStateManager.disableLighting();
+        OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, 240.0F, 240.0F);
+        GlStateManager.disableCull();
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE);
         GlStateManager.alphaFunc(GL11.GL_GREATER, 0.0F);
@@ -70,11 +73,16 @@ public class LGRenderFallingStar extends Render<LGEntityFallingStar>
 
         GlStateManager.scale(scale, scale, scale);
         renderBillboard(r, g, b, phase, 180);
+
+        GlStateManager.scale(0.8f, 0.8f, 0.8f);
         renderBillboard(g, b, r, phase, -270);
+
+        GlStateManager.scale(0.8f, 0.8f, 0.8f);
         renderBillboard(b, r, g, phase, 90);
 
         GlStateManager.disableRescaleNormal();
         GlStateManager.disableBlend();
+        GlStateManager.enableCull();
         GlStateManager.enableLighting();
         GlStateManager.alphaFunc(GL11.GL_GREATER, 0.1F);
         GlStateManager.depthMask(true);
