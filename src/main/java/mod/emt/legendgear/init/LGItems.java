@@ -2,6 +2,7 @@ package mod.emt.legendgear.init;
 
 import javax.annotation.Nonnull;
 
+import mod.emt.legendgear.block.LGBlockStarstone;
 import mod.emt.legendgear.item.base.*;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.Blocks;
@@ -69,6 +70,7 @@ public class LGItems
     public static final LGItemBase STARGLASS_INGOT = null;
     public static final LGItemSword STARGLASS_SWORD = null;
     public static final LGItemStarPiece STAR_PIECE = null;
+    public static final LGItemBlockSpecial STARSTONE = null;
     public static final LGItemBase STARSTEEL_INGOT = null;
     public static final LGItemTitanBand TITAN_BAND = null;
     public static final LGItemValorHeadband VALOR_HEADBAND = null;
@@ -92,6 +94,7 @@ public class LGItems
             (
                 LGRegistry.setup(new LGItemStarPiece(), "star_piece").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemStarPiece(), "infused_star_piece").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemBlockSpecial(LGBlocks.STARSTONE_BLOCK, EnumRarity.RARE), "starstone").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemStardust(), "stardust").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemStardust(), "infused_stardust").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemBase(EnumRarity.UNCOMMON), "starglass_ingot").setCreativeTab(LegendGear.TAB),
@@ -140,6 +143,7 @@ public class LGItems
         // ITEM BLOCKS
         ForgeRegistries.BLOCKS.getValues().stream()
             .filter(block -> block.getRegistryName().getNamespace().equals(LegendGear.MOD_ID))
+            .filter(block -> !(block instanceof LGBlockStarstone))
             .forEach(block -> registry.register(LGRegistry.setup(new ItemBlock(block), block.getRegistryName())));
     }
 

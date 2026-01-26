@@ -5,6 +5,7 @@ itemGroup.legendgear.tab=LegendGear
 tile.legendgear.bomb_flower.name=Bomb Flower
 tile.legendgear.mystic_shrub.name=Mystic Shrub
 tile.legendgear.skybeam_block.name=Skybeam Block
+tile.legendgear.starstone_block.name=Starstone Block
 
 # ITEMS
 item.legendgear.aero_amulet.name=Aero Amulet
@@ -47,6 +48,7 @@ item.legendgear.starglass_ingot.name=Starglass Ingot
 item.legendgear.starglass_sword.name=Starglass Sword
 item.legendgear.star_piece.name=Star Piece
 item.legendgear.starsteel_ingot.name=Starsteel Ingot
+item.legendgear.starstone.name=Starstone
 item.legendgear.titan_band.name=Titan Band
 item.legendgear.valor_headband.name=Headband of Valor
 item.legendgear.whirlwind_boots.name=Whirlwind Boots

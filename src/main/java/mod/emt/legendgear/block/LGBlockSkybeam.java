@@ -3,6 +3,7 @@ package mod.emt.legendgear.block;
 import mod.emt.legendgear.tileentity.LGTileEntitySkybeam;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
+import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -29,7 +30,7 @@ public class LGBlockSkybeam extends Block implements ITileEntityProvider
 
     public LGBlockSkybeam()
     {
-        super(Material.ROCK);
+        super(Material.ROCK, MapColor.BLACK);
         setHardness(50.0F);
         setResistance(2000.0F);
     }

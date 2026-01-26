@@ -1,0 +1,17 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "SSS",
+    "SSS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "legendgear:star_piece"
+    }
+  },
+  "result": {
+    "item": "legendgear:starstone",
+    "count": 1
+  }
+}
