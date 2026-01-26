@@ -35,15 +35,13 @@ public class LGItemWhirlwindBoots extends ItemArmor
     {
         super.onArmorTick(world, player, stack);
 
-        // TODO: Dashing does not seem to currently work properly
-        if (player.isSprinting() && !player.isInWater())
+        if (player.isSprinting())
         {
-            player.landMovementFactor *= 2.0F;
-            player.jumpMovementFactor *= 2.0F;
+            player.moveRelative(0.0F, 0.0F, 0.1F, 1.0F);
             final int blockY = (int) Math.floor(player.posY - 0.0625D - player.getYOffset());
-            final int dashticks = player.getEntityData().getInteger("dashTicks");
+            final int dashTicks = player.getEntityData().getInteger("dashTicks");
 
-            if (!player.onGround && world.getBlockState(player.getPosition()).getMaterial().isLiquid() && player.motionY <= 0.0D && player.motionY >= -0.2D)
+            if (!player.onGround && player.isInWater() && player.motionY <= 0.0D && player.motionY >= -0.2D)
             {
                 player.motionY = 0.0D;
                 player.onGround = true;
@@ -61,14 +59,17 @@ public class LGItemWhirlwindBoots extends ItemArmor
                 if (world.isRemote)
                 {
                     world.spawnParticle(EnumParticleTypes.EXPLOSION_NORMAL, player.posX, player.posY - player.getYOffset(), player.posZ, 0.0D, 0.0D, 0.0D);
-                } else if (dashticks % 3 == 0)
+                }
+                else if (dashTicks % 3 == 0)
                 {
                     world.playSound(null, player.getPosition(), LGSoundEvents.RANDOM_DASH.getSoundEvent(), SoundCategory.PLAYERS, 0.2F, 0.9F + world.rand.nextFloat() * 0.2F);
                 }
             }
 
-            player.getEntityData().setInteger("dashTicks", dashticks + 1);
-        } else {
+            player.getEntityData().setInteger("dashTicks", dashTicks + 1);
+        }
+        else
+        {
             player.getEntityData().setInteger("dashTicks", 0);
         }
     }
