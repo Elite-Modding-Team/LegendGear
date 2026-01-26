@@ -31,8 +31,8 @@ public class LGBlockSkybeam extends Block implements ITileEntityProvider
     public LGBlockSkybeam()
     {
         super(Material.ROCK, MapColor.BLACK);
-        setHardness(50.0F);
-        setResistance(2000.0F);
+        this.setHardness(50.0F);
+        this.setResistance(2000.0F);
     }
 
     public TileEntity createNewTileEntity(World world, int meta)

@@ -91,11 +91,11 @@ public class LGRegistry
         registerEntity("earth_medallion", LGEntityEarthMedallion.class, 64, true);
         registerEntity("ender_bomb", LGEntityEnderBomb.class, 64, false);
         registerEntity("ender_medallion", LGEntityEnderMedallion.class, 64, true);
-        registerEntity("falling_star", LGEntityFallingStar.class, 128, true);
+        registerEntity("falling_star", LGEntityFallingStar.class, 512, true);
         registerEntity("fire_blast", LGEntityFireBlast.class, 64, false);
         registerEntity("fire_medallion", LGEntityFireMedallion.class, 64, true);
         registerEntity("magic_boomerang", LGEntityMagicBoomerang.class, 64, true);
-        registerEntity("ping", LGEntityPing.class, 128, false);
+        registerEntity("ping", LGEntityPing.class, 512, false);
         registerEntity("quake", LGEntityQuake.class, 64, false);
         registerEntity("volatile_arrow", LGEntityVolatileArrow.class, 64, true);
         registerEntity("wind_medallion", LGEntityWindMedallion.class, 64, true);

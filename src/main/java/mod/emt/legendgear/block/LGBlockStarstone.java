@@ -25,7 +25,7 @@ public class LGBlockStarstone extends Block
         super(Material.ROCK, MapColor.SILVER);
         this.setLightLevel(1.0F);
         this.setHardness(5.0F);
-        setResistance(2000.0F);
+        this.setResistance(2000.0F);
     }
 
     @Override

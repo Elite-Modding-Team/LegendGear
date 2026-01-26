@@ -18,6 +18,8 @@ import net.minecraftforge.fml.common.registry.IEntityAdditionalSpawnData;
 import io.netty.buffer.ByteBuf;
 import mod.emt.legendgear.init.LGItems;
 import mod.emt.legendgear.init.LGSoundEvents;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class LGEntityFallingStar extends Entity implements IEntityAdditionalSpawnData
 {
@@ -182,5 +184,22 @@ public class LGEntityFallingStar extends Entity implements IEntityAdditionalSpaw
             }
         }
         this.setDead();
+    }
+
+    @SideOnly(Side.CLIENT)
+    @Override
+    public boolean isInRangeToRender3d(double x, double y, double z) {
+        return true;
+    }
+
+    @SideOnly(Side.CLIENT)
+    @Override
+    public int getBrightnessForRender() {
+        return 15728880;
+    }
+
+    @Override
+    public float getBrightness() {
+        return 1.0F;
     }
 }
