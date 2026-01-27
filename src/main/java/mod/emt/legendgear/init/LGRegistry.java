@@ -162,6 +162,7 @@ public class LGRegistry
     {
         LegendGear.LOGGER.info("Registering tile entities...");
 
+        GameRegistry.registerTileEntity(LGTileEntityInfusedStarstone.class, new ResourceLocation(LegendGear.MOD_ID, "infused_starstone"));
         GameRegistry.registerTileEntity(LGTileEntitySkybeam.class, new ResourceLocation(LegendGear.MOD_ID, "skybeam"));
     }
 

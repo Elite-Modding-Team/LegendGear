@@ -46,7 +46,7 @@ public class LGRenderInfusedStarstone extends TileEntitySpecialRenderer<LGTileEn
         float b = 0.6F;
         float a = 0.3F;
 
-        if (!getWorld().getBlockState(entity.getPos().up()).isOpaqueCube())
+        if (!entity.getWorld().getBlockState(entity.getPos().up()).isOpaqueCube())
         {
             buffer.pos(0.0D, 1.0D, 0.0D).tex(u + dsu, v + ds).color(r, g, b, a).endVertex();
             buffer.pos(0.0D, 1.0D, 1.0D).tex(u + dsu * 2.0F, v + ds * 2.0F).color(r, g, b, a).endVertex();
@@ -54,7 +54,7 @@ public class LGRenderInfusedStarstone extends TileEntitySpecialRenderer<LGTileEn
             buffer.pos(1.0D, 1.0D, 0.0D).tex(u + dsu * 2.0F, v + ds * 2.0F).color(r, g, b, a).endVertex();
         }
 
-        if (!getWorld().getBlockState(entity.getPos().down()).isOpaqueCube())
+        if (!entity.getWorld().getBlockState(entity.getPos().down()).isOpaqueCube())
         {
             buffer.pos(0.0D, 0.0D, 0.0D).tex(u, v).color(r, g, b, a).endVertex();
             buffer.pos(1.0D, 0.0D, 0.0D).tex(u + dsu, v + ds).color(r, g, b, a).endVertex();
@@ -62,7 +62,7 @@ public class LGRenderInfusedStarstone extends TileEntitySpecialRenderer<LGTileEn
             buffer.pos(0.0D, 0.0D, 1.0D).tex(u + dsu, v + ds).color(r, g, b, a).endVertex();
         }
 
-        if (!getWorld().getBlockState(entity.getPos().west()).isOpaqueCube())
+        if (!entity.getWorld().getBlockState(entity.getPos().west()).isOpaqueCube())
         {
             buffer.pos(0.0D, 0.0D, 1.0D).tex(u + dsu, v + ds).color(r, g, b, a).endVertex();
             buffer.pos(0.0D, 1.0D, 1.0D).tex(u + dsu * 2.0F, v + ds * 2.0F).color(r, g, b, a).endVertex();
@@ -70,7 +70,7 @@ public class LGRenderInfusedStarstone extends TileEntitySpecialRenderer<LGTileEn
             buffer.pos(0.0D, 0.0D, 0.0D).tex(u, v).color(r, g, b, a).endVertex();
         }
 
-        if (!getWorld().getBlockState(entity.getPos().east()).isOpaqueCube())
+        if (!entity.getWorld().getBlockState(entity.getPos().east()).isOpaqueCube())
         {
             buffer.pos(1.0D, 1.0D, 0.0D).tex(u + dsu * 2.0F, v + ds * 2.0F).color(r, g, b, a).endVertex();
             buffer.pos(1.0D, 1.0D, 1.0D).tex(u + dsu * 3.0F, v + ds * 3.0F).color(r, g, b, a).endVertex();
@@ -78,7 +78,7 @@ public class LGRenderInfusedStarstone extends TileEntitySpecialRenderer<LGTileEn
             buffer.pos(1.0D, 0.0D, 0.0D).tex(u + dsu, v + ds).color(r, g, b, a).endVertex();
         }
 
-        if (!getWorld().getBlockState(entity.getPos().south()).isOpaqueCube())
+        if (!entity.getWorld().getBlockState(entity.getPos().south()).isOpaqueCube())
         {
             buffer.pos(1.0D, 0.0D, 1.0D).tex(u + dsu * 2.0F, v + ds * 2.0F).color(r, g, b, a).endVertex();
             buffer.pos(1.0D, 1.0D, 1.0D).tex(u + dsu * 3.0F, v + ds * 3.0F).color(r, g, b, a).endVertex();
@@ -86,7 +86,7 @@ public class LGRenderInfusedStarstone extends TileEntitySpecialRenderer<LGTileEn
             buffer.pos(0.0D, 0.0D, 1.0D).tex(u + dsu, v + ds).color(r, g, b, a).endVertex();
         }
 
-        if (!getWorld().getBlockState(entity.getPos().north()).isOpaqueCube())
+        if (!entity.getWorld().getBlockState(entity.getPos().north()).isOpaqueCube())
         {
             buffer.pos(0.0D, 1.0D, 0.0D).tex(u + dsu, v + ds).color(r, g, b, a).endVertex();
             buffer.pos(1.0D, 1.0D, 0.0D).tex(u + dsu * 2.0F, v + ds * 2.0F).color(r, g, b, a).endVertex();
