@@ -42,6 +42,7 @@ public class LGRenderSkybeam extends TileEntitySpecialRenderer<LGTileEntitySkybe
         return true;
     }
 
+    @Override
     public void render(LGTileEntitySkybeam tile, double x, double y, double z, float partialTicks, int destroyStage, float alpha)
     {
         if (tile == null)

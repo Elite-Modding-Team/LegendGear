@@ -5,6 +5,7 @@ import javax.annotation.Nonnull;
 import com.google.common.base.Preconditions;
 import mod.emt.legendgear.client.render.*;
 import mod.emt.legendgear.entity.*;
+import mod.emt.legendgear.tileentity.LGTileEntityInfusedStarstone;
 import mod.emt.legendgear.tileentity.LGTileEntitySkybeam;
 import net.minecraft.block.Block;
 import net.minecraft.enchantment.Enchantment;
@@ -170,6 +171,7 @@ public class LGRegistry
     {
         LegendGear.LOGGER.info("Registering entity renderers...");
 
+        ClientRegistry.bindTileEntitySpecialRenderer(LGTileEntityInfusedStarstone.class, new LGRenderInfusedStarstone());
         ClientRegistry.bindTileEntitySpecialRenderer(LGTileEntitySkybeam.class, new LGRenderSkybeam());
 
         RenderingRegistry.registerEntityRenderingHandler(LGEntityArrowStorm.class, new LGRenderArrowStorm.Factory());

@@ -35,6 +35,7 @@ public class LGBlockSkybeam extends Block implements ITileEntityProvider
         this.setResistance(2000.0F);
     }
 
+    @Override
     public TileEntity createNewTileEntity(World world, int meta)
     {
         return new LGTileEntitySkybeam();
@@ -54,6 +55,7 @@ public class LGBlockSkybeam extends Block implements ITileEntityProvider
         return false;
     }
 
+    @Override
     public void neighborChanged(IBlockState state, World world, BlockPos pos, Block block, BlockPos fromPos)
     {
         TileEntity te = world.getTileEntity(pos);
@@ -61,6 +63,7 @@ public class LGBlockSkybeam extends Block implements ITileEntityProvider
             ((LGTileEntitySkybeam) te).setActive(isPoweredFromSides(world, pos));
     }
 
+    @Override
     public void onBlockAdded(World world, BlockPos pos, IBlockState state)
     {
         TileEntity tile = world.getTileEntity(pos);
@@ -68,6 +71,7 @@ public class LGBlockSkybeam extends Block implements ITileEntityProvider
             ((LGTileEntitySkybeam) tile).setActive(isPoweredFromSides(world, pos));
     }
 
+    @Override
     public EnumBlockRenderType getRenderType(IBlockState state)
     {
         return EnumBlockRenderType.MODEL;

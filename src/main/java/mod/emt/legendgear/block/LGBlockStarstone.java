@@ -1,7 +1,6 @@
 package mod.emt.legendgear.block;
 
 import mod.emt.legendgear.LegendGear;
-import mod.emt.legendgear.init.LGBlocks;
 import mod.emt.legendgear.init.LGItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.MapColor;
@@ -19,7 +18,6 @@ import java.util.Random;
 
 public class LGBlockStarstone extends Block
 {
-    private static final ResourceLocation INFUSED_STARSTONE = new ResourceLocation(LegendGear.MOD_ID, "infused_starstone");
     private static final ResourceLocation STARSTONE = new ResourceLocation(LegendGear.MOD_ID, "starstone");
     public float resistance;
 
@@ -47,20 +45,12 @@ public class LGBlockStarstone extends Block
     @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-        if (this.equals(LGBlocks.INFUSED_STARSTONE_BLOCK)) {
-            return LGItems.INFUSED_STARSTONE;
-        }
-
         return LGItems.STARSTONE;
     }
 
     @Override
     public ItemStack getItem(World world, BlockPos pos, IBlockState state)
     {
-        if (this.equals(LGBlocks.INFUSED_STARSTONE_BLOCK)) {
-            return new ItemStack(ForgeRegistries.ITEMS.getValue(INFUSED_STARSTONE));
-        }
-
         return new ItemStack(ForgeRegistries.ITEMS.getValue(STARSTONE));
     }
 }
