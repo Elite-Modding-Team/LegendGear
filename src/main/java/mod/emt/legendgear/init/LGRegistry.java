@@ -8,6 +8,7 @@ import mod.emt.legendgear.entity.*;
 import mod.emt.legendgear.tileentity.LGTileEntityInfusedStarstone;
 import mod.emt.legendgear.tileentity.LGTileEntitySkybeam;
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureType;
@@ -41,6 +42,8 @@ import mod.emt.legendgear.LegendGear;
 public class LGRegistry
 {
     private static int entityID = 1;
+
+    public static final SoundType CALTROPS = new SoundType(1.0F, 1.2F, LGSoundEvents.BLOCK_CALTROPS_LAND.getSoundEvent(), LGSoundEvents.BLOCK_CALTROPS_HIT.getSoundEvent(), LGSoundEvents.BLOCK_CALTROPS_LAND.getSoundEvent(), LGSoundEvents.BLOCK_CALTROPS_HIT.getSoundEvent(), LGSoundEvents.BLOCK_CALTROPS_HIT.getSoundEvent());
 
     @Nonnull
     public static <T extends IForgeRegistryEntry> T setup(@Nonnull final T entry, @Nonnull final String name)

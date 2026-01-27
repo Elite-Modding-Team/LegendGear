@@ -1,4 +1,17 @@
 {
+  "block.caltrops.hit": {
+    "sounds": [
+      "legendgear:block/caltrops/hit1",
+      "legendgear:block/caltrops/hit2"
+    ]
+  },
+  "block.caltrops.land": {
+    "sounds": [
+      "legendgear:block/caltrops/land1",
+      "legendgear:block/caltrops/land2",
+      "legendgear:block/caltrops/land3"
+    ]
+  },
   "entity.falling_star.caught": {
     "sounds": [
       "legendgear:entity/falling_star/caught"

@@ -2,6 +2,8 @@ package mod.emt.legendgear.block;
 
 import javax.annotation.Nullable;
 
+import mod.emt.legendgear.init.LGRegistry;
+import mod.emt.legendgear.init.LGSoundEvents;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -30,7 +32,7 @@ public class LGBlockCaltrops extends Block
     {
         super(Material.CIRCUITS);
         this.setHardness(0.0F);
-        this.setSoundType(SoundType.METAL);
+        this.setSoundType(LGRegistry.CALTROPS);
     }
 
     @Override
@@ -64,7 +66,7 @@ public class LGBlockCaltrops extends Block
         if (!canPlaceBlockAt(world, pos))
         {
             world.destroyBlock(pos, true);
-            world.playSound(null, pos, SoundEvents.ENTITY_ITEM_BREAK, SoundCategory.BLOCKS, 0.8F, 0.8F + world.rand.nextFloat() * 0.4F);
+            world.playSound(null, pos, LGSoundEvents.BLOCK_CALTROPS_HIT.getSoundEvent(), SoundCategory.BLOCKS, 2.0F, 0.8F + world.rand.nextFloat() * 0.4F);
         }
     }
 
@@ -94,7 +96,7 @@ public class LGBlockCaltrops extends Block
                 if (world.rand.nextDouble() < 0.25D)
                 {
                     world.destroyBlock(new BlockPos(pos), world.rand.nextBoolean());
-                    world.playSound(null, pos, SoundEvents.ENTITY_ITEM_BREAK, SoundCategory.BLOCKS, 0.8F, 0.8F + world.rand.nextFloat() * 0.4F);
+                    world.playSound(null, pos, LGSoundEvents.BLOCK_CALTROPS_HIT.getSoundEvent(), SoundCategory.BLOCKS, 2.0F, 0.8F + world.rand.nextFloat() * 0.4F);
                 }
             }
         }
