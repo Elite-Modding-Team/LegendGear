@@ -93,7 +93,7 @@ public class LGBlockCaltrops extends Block
                 living.addPotionEffect(new PotionEffect(MobEffects.JUMP_BOOST, 100, -3, false, true));
                 if (world.rand.nextBoolean())
                 {
-                    world.destroyBlock(pos, false);
+                    world.destroyBlock(new BlockPos(pos), false);
                     world.playSound(null, pos, SoundEvents.ENTITY_ITEM_BREAK, SoundCategory.BLOCKS, 0.8F, 0.8F + world.rand.nextFloat() * 0.4F);
                 }
             }
