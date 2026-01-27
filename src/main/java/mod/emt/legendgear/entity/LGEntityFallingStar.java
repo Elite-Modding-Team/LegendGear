@@ -150,6 +150,7 @@ public class LGEntityFallingStar extends Entity implements IEntityAdditionalSpaw
         if (!this.impact && !this.world.isRemote)
         {
             this.world.createExplosion(this, this.posX, this.posY, this.posZ, 5.0f, false);
+            this.world.playSound(null, this.getPosition(), LGSoundEvents.ENTITY_FALLING_STAR_LAND.getSoundEvent(), SoundCategory.PLAYERS, 10.0f, 1.0f);
             this.setSize(0.5f, 0.5f);
             //this.world.playSound(null, this.posX, this.posY, this.posZ, LegendGear2.SPLASH_SOUND, SoundCategory.NEUTRAL, 10.0f, 1.0f);
         }
@@ -163,6 +164,7 @@ public class LGEntityFallingStar extends Entity implements IEntityAdditionalSpaw
         if (!this.world.isRemote)
         {
             this.world.createExplosion(this, this.posX, this.posY, this.posZ, 5.0f, false);
+            this.world.playSound(null, this.getPosition(), LGSoundEvents.ENTITY_FALLING_STAR_LAND.getSoundEvent(), SoundCategory.PLAYERS, 10.0f, 1.0f);
             this.setSize(0.5f, 0.5f);
             //Vec3d pos = new Vec3d(this.posX, this.posY, this.posZ);
             //this.world.spawnEntity(new EntitySpellEffect(world, SpellID.StarImpact, null, pos, 2, 1, false));
@@ -188,18 +190,21 @@ public class LGEntityFallingStar extends Entity implements IEntityAdditionalSpaw
 
     @SideOnly(Side.CLIENT)
     @Override
-    public boolean isInRangeToRender3d(double x, double y, double z) {
+    public boolean isInRangeToRender3d(double x, double y, double z)
+    {
         return true;
     }
 
     @SideOnly(Side.CLIENT)
     @Override
-    public int getBrightnessForRender() {
+    public int getBrightnessForRender()
+    {
         return 15728880;
     }
 
     @Override
-    public float getBrightness() {
+    public float getBrightness()
+    {
         return 1.0F;
     }
 }
