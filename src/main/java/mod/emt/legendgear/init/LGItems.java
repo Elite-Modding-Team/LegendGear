@@ -50,6 +50,7 @@ public class LGItems
     public static final LGItemRockCandy GLOWSTONE_ROCK_CANDY = null;
     public static final LGItemStardust INFUSED_STARDUST = null;
     public static final LGItemStarPiece INFUSED_STAR_PIECE = null;
+    public static final LGItemBlockSpecial INFUSED_STARSTONE = null;
     public static final LGItemRockCandy LAPIS_LAZULI_ROCK_CANDY = null;
     public static final LGItemMagicBoomerang MAGIC_BOOMERANG = null;
     public static final LGItemMagicMirror MAGIC_MIRROR = null;
@@ -95,6 +96,7 @@ public class LGItems
                 LGRegistry.setup(new LGItemStarPiece(), "star_piece").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemStarPiece(), "infused_star_piece").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemBlockSpecial(LGBlocks.STARSTONE_BLOCK, EnumRarity.RARE), "starstone").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemBlockSpecial(LGBlocks.INFUSED_STARSTONE_BLOCK, EnumRarity.EPIC), "infused_starstone").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemStardust(), "stardust").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemStardust(), "infused_stardust").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemBase(EnumRarity.UNCOMMON), "starglass_ingot").setCreativeTab(LegendGear.TAB),

@@ -1,0 +1,21 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "OOO",
+    "OSO",
+    "OOO"
+  ],
+  "key": {
+    "S": {
+      "item": "legendgear:infused_starstone"
+    },
+    "O": {
+      "type": "forge:ore_dict",
+      "ore": "obsidian"
+    }
+  },
+  "result": {
+    "item": "legendgear:skybeam_block",
+    "count": 1
+  }
+}

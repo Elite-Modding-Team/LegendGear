@@ -1,0 +1,12 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "legendgear:infused_starstone"
+    }
+  ],
+  "result": {
+    "item": "legendgear:infused_star_piece",
+    "count": 9
+  }
+}
