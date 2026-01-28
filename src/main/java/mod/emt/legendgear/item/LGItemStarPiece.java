@@ -5,6 +5,7 @@ import java.util.Random;
 
 import javax.annotation.Nullable;
 
+import mod.emt.legendgear.client.particle.LGParticleHandler;
 import mod.emt.legendgear.init.LGItems;
 import mod.emt.legendgear.init.LGSoundEvents;
 import net.minecraft.client.resources.I18n;
@@ -17,7 +18,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
-import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.Vec2f;
 import net.minecraft.util.math.Vec3d;
@@ -27,7 +27,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-// TODO: Fix particles
+// TODO: Fix particle XYZ positions
 public class LGItemStarPiece extends Item
 {
     // The amount of experience levels required to infuse our star piece here
@@ -58,18 +58,17 @@ public class LGItemStarPiece extends Item
             }
         } else if (count <= 56)
         {
-            final Random rand = player.world.rand;
-            final Vec3d forward = player.getLookVec();
-            final Vec3d right = forward.crossProduct(Vec3d.fromPitchYaw(Vec2f.UNIT_Y)).normalize();
-            final float fs = 0.3F;
-            final float rs = 0.5F;
-            final float rands = 0.1F;
-            final double x = player.posX + fs * forward.x + rs * right.x + rands * rand.nextGaussian();
-            final double y = player.posY + fs * forward.y + rs * right.y - 0.2D;
-            final double z = player.posZ + fs * forward.z + rs * right.z + rands * rand.nextGaussian();
+            Random rand = player.world.rand;
+            Vec3d forward = player.getLookVec();
+            Vec3d right = forward.crossProduct(new Vec3d(0.0D, 1.0D, 0.0D)).normalize();
+            float fs = 0.3F;
+            float rs = 0.5F;
+            float rands = 0.1F;
+            double x = player.posX + fs * forward.x + rs * right.x + rands * rand.nextGaussian();
+            double y = player.posY + fs * forward.y + rs * right.y - 0.2D;
+            double z = player.posZ + fs * forward.z + rs * right.z + rands * rand.nextGaussian();
 
-            player.world.spawnParticle(EnumParticleTypes.SPELL_INSTANT, x, y, z, 0.0D, 0.05D, 0.0D);
-            //LegendGear2.proxy.addSparkleParticle(player.worldObj, x, y, z, 0.0, 0.05, 0.0, 1.0f);
+            LGParticleHandler.spawnSparkleFX(player.world, x, y + 0.5D, z, 0.0D, 0.05D, 0.0D, 1.0F);
         }
     }
 
@@ -86,7 +85,7 @@ public class LGItemStarPiece extends Item
         {
             final Random rand = player.world.rand;
             final Vec3d forward = player.getLookVec();
-            final Vec3d right = forward.crossProduct(Vec3d.fromPitchYaw(Vec2f.UNIT_Y)).normalize();
+            final Vec3d right = forward.crossProduct(new Vec3d(0.0D, 1.0D, 0.0D)).normalize();
             final float fs = 0.3F;
             final float rs = 0.5F;
             final float rands = 0.1F;
@@ -94,7 +93,7 @@ public class LGItemStarPiece extends Item
             final double y = player.posY + fs * forward.y + rs * right.y - 0.2D;
             final double z = player.posZ + fs * forward.z + rs * right.z + rands * rand.nextGaussian();
 
-            player.world.spawnParticle(EnumParticleTypes.SPELL_INSTANT, x, y, z, 0.0D, 0.05D, 0.0D);
+            LGParticleHandler.spawnSparkleFX(player.world, x, y + 0.5D, z, rands * rand.nextGaussian(), rands * rand.nextGaussian(), rands * rand.nextGaussian(), 1.0F);
             world.playSound(null, player.getPosition(), LGSoundEvents.ITEM_STAR_PIECE_SPARKLE.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 1.0F + world.rand.nextFloat() * 0.2F);
 
             // If insufficient levels, warn the player
@@ -127,7 +126,7 @@ public class LGItemStarPiece extends Item
                     {
                         final Random rand = world.rand;
                         final Vec3d forward = player.getLookVec();
-                        final Vec3d right = forward.crossProduct(Vec3d.fromPitchYaw(Vec2f.UNIT_Y)).normalize();
+                        final Vec3d right = forward.crossProduct(new Vec3d(0.0D, 1.0D, 0.0D)).normalize();
                         final float fs = 0.3F;
                         final float rs = 0.5F;
                         final float rands = 0.1F;
@@ -135,8 +134,7 @@ public class LGItemStarPiece extends Item
                         final double y = player.posY + fs * forward.y + rs * right.y - 0.3D;
                         final double z = player.posZ + fs * forward.z + rs * right.z;
 
-                        world.spawnParticle(EnumParticleTypes.SPELL_INSTANT, x, y, z, rands * rand.nextGaussian(), rands * rand.nextGaussian(), rands * rand.nextGaussian());
-                        //LegendGear2.proxy.addSparkleParticle(player.worldObj, x, y, z, rands * rand.nextGaussian(), rands * rand.nextGaussian(), rands * rand.nextGaussian(), 1.0f);
+                        LGParticleHandler.spawnSparkleFX(player.world, x, y + 0.5D, z, rands * rand.nextGaussian(), rands * rand.nextGaussian(), rands * rand.nextGaussian(), 1.0F);
                     }
 
                     // Convert to infused star piece otherwise just add it to the inventory if the star pieces are stacked
