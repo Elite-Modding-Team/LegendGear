@@ -23,6 +23,7 @@ public class LGBlocks
     public static final LGBlockMysticShrub MYSTIC_SHRUB = null;
     public static final LGBlockSkybeam SKYBEAM_BLOCK = null;
     public static final LGBlockStarstone STARSTONE_BLOCK = null;
+    public static final LGBlockSugarCube SUGAR_CUBE = null;
 
     @SubscribeEvent
     public static void onRegisterBlocksEvent(@Nonnull final RegistryEvent.Register<Block> event)
@@ -41,5 +42,8 @@ public class LGBlocks
                 LGRegistry.setup(new LGBlockSkybeam(), "skybeam_block").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGBlockStarstone(3000.0F), "starstone_block")
             );
+
+        // Optional - These blocks can be disabled by the config file
+        registry.register(LGRegistry.setup(new LGBlockSugarCube(), "sugar_cube").setCreativeTab(LegendGear.TAB));
     }
 }

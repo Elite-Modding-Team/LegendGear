@@ -8,6 +8,7 @@ tile.legendgear.infused_starstone_block.name=Infused Starstone Block
 tile.legendgear.mystic_shrub.name=Mystic Shrub
 tile.legendgear.skybeam_block.name=Skybeam Block
 tile.legendgear.starstone_block.name=Starstone Block
+tile.legendgear.sugar_cube.name=Sugar Cube
 
 # ITEMS
 item.legendgear.aero_amulet.name=Aero Amulet

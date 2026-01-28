@@ -1,0 +1,18 @@
+{
+  "conditions": [
+    {
+      "type": "minecraft:item_exists",
+      "item": "legendgear:sugar_cube"
+    }
+  ],
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "legendgear:sugar_cube"
+    }
+  ],
+  "result": {
+    "item": "minecraft:sugar",
+    "count": 9
+  }
+}
