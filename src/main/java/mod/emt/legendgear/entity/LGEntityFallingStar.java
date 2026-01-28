@@ -1,5 +1,6 @@
 package mod.emt.legendgear.entity;
 
+import mod.emt.legendgear.client.particle.LGParticleHandler;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.MoverType;
@@ -92,7 +93,10 @@ public class LGEntityFallingStar extends Entity implements IEntityAdditionalSpaw
             handleGroundImpact();
         }
 
-        if (!this.world.isRemote && this.impact && this.dwindleTimer % 25 == 0)
+        if(this.world.isRemote)
+        {
+            LGParticleHandler.spawnSparkleFX(world, posX - motionX, posY - motionY, posZ - motionZ, rand.nextGaussian() * 0.2D, rand.nextGaussian() * 0.2D, rand.nextGaussian() * 0.2D, 4.0F * dwindleTimer / DWINDLE_TIME);
+        } else if (this.impact && this.dwindleTimer % 25 == 0)
         {
             this.world.playSound(null, this.getPosition(), LGSoundEvents.ENTITY_FALLING_STAR_TWINKLE.getSoundEvent(), SoundCategory.AMBIENT, 2.0f, 1.0f);
         }

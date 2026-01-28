@@ -67,13 +67,17 @@ public class LGBlockSugarCube extends Block
     }
 
     @Override
-    public void randomTick(World world, BlockPos pos, IBlockState state, Random random) {
-        if (world.isRainingAt(pos.up())) {
-            if (random.nextInt(3) == 0) {
+    public void randomTick(World world, BlockPos pos, IBlockState state, Random random)
+    {
+        if (world.isRainingAt(pos.up()))
+        {
+            if (random.nextInt(3) == 0)
+            {
                 world.playEvent(2001, pos, Block.getStateId(state));
                 world.setBlockToAir(pos);
 
-                if (!world.isRemote) {
+                if (!world.isRemote)
+                {
                     this.dropBlockAsItem(world, pos, state, 0);
                 }
             }
