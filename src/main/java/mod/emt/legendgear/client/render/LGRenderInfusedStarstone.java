@@ -34,7 +34,7 @@ public class LGRenderInfusedStarstone extends TileEntitySpecialRenderer<LGTileEn
         GlStateManager.enableRescaleNormal();
         GlStateManager.disableLighting();
         GlStateManager.enableBlend();
-        GlStateManager.tryBlendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
+        GlStateManager.tryBlendFuncSeparate(GlStateManager.SourceFactor.ONE_MINUS_DST_COLOR, GlStateManager.DestFactor.ONE, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
         GlStateManager.enablePolygonOffset();
         GlStateManager.doPolygonOffset(-2.0F, -5.0F);
 
