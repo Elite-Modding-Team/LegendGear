@@ -2,6 +2,7 @@ package mod.emt.legendgear.client.render;
 
 import javax.annotation.Nullable;
 
+import mod.emt.legendgear.client.particle.LGParticleHandler;
 import mod.emt.legendgear.entity.LGEntityFireBlast;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -41,7 +42,7 @@ public class LGRenderFireBlast extends Render<LGEntityFireBlast>
             {
                 double ox = Math.cos(theta) * r;
                 double oz = Math.sin(theta) * r;
-                entity.world.spawnParticle(EnumParticleTypes.FLAME, entity.posX + ox, entity.posY, entity.posZ + oz, 0.0D, 0.05D, 0.0D);
+                LGParticleHandler.spawnFireSwirlFX(entity.world, entity.posX + ox, entity.posY, entity.posZ + oz, 0.0D, 0.05D, 0.0D, 3.0F);
                 theta += 2.0943951023931953D;
             }
         }
@@ -49,7 +50,7 @@ public class LGRenderFireBlast extends Render<LGEntityFireBlast>
         {
             for (int i = 0; i < 5; i++)
             {
-                entity.world.spawnParticle(EnumParticleTypes.FLAME, entity.posX + entity.world.rand.nextGaussian() * LGEntityFireBlast.DETONATION_RADIUS * 0.5D, entity.posY, entity.posZ + entity.world.rand.nextGaussian() * LGEntityFireBlast.DETONATION_RADIUS * 0.5D, 0.0D, 0.5D, 0.0D);
+                LGParticleHandler.spawnFireSwirlFX(entity.world, entity.posX + entity.world.rand.nextGaussian() * LGEntityFireBlast.DETONATION_RADIUS * 0.5D, entity.posY, entity.posZ + entity.world.rand.nextGaussian() * LGEntityFireBlast.DETONATION_RADIUS * 0.5D, 0.0D, 0.5D, 0.0D, 10.0F);
                 entity.world.spawnParticle(EnumParticleTypes.LAVA, entity.posX + entity.world.rand.nextGaussian() * LGEntityFireBlast.DETONATION_RADIUS * 0.5D, entity.posY, entity.posZ + entity.world.rand.nextGaussian() * LGEntityFireBlast.DETONATION_RADIUS * 0.5D, 0.0D, 0.5D, 0.0D);
             }
         }
