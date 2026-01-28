@@ -3,6 +3,7 @@ package mod.emt.legendgear.event;
 import baubles.api.cap.BaublesCapabilities;
 import baubles.api.inv.BaublesInventoryWrapper;
 import mod.emt.legendgear.LegendGear;
+import mod.emt.legendgear.client.particle.LGParticleHandler;
 import mod.emt.legendgear.entity.LGEntityQuake;
 import mod.emt.legendgear.init.LGSoundEvents;
 import mod.emt.legendgear.item.*;
@@ -64,8 +65,22 @@ public class LGAmuletEvent
                         arrow.setDamage(power * 1.5D);
                         arrow.setIsCritical(true);
                         world.playSound(null, arrow.getPosition(), LGSoundEvents.ITEM_AMULET_REPEL.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 0.8F + world.rand.nextFloat() * 0.4F);
-                    } else
-                        world.spawnParticle(EnumParticleTypes.SPELL, arrow.posX, arrow.posY, arrow.posZ, arrow.motionX * 0.2D, arrow.motionY * 0.2D, arrow.motionZ * 0.2D);
+                    } else {
+                        // TODO: Improve particles to be similar to 1.5.2
+                        for (int j = 0; j < 3; j++) {
+                            double azimuth = 5 * 0.3D + j * Math.PI * 2.0D / 3.0D;
+                            double r = 2.0D;
+                            double elevation = Math.sin(5 * 0.13D + j * Math.PI * 2.0D / 3.0D);
+                            double y = Math.sin(elevation) * r + player.posY;
+                            double out = Math.cos(elevation);
+                            double x = Math.sin(azimuth) * out * r + player.posX;
+                            double z = Math.cos(azimuth) * out * r + player.posZ;
+                            LGParticleHandler.spawnMagicRuneFX(player.world, x, y, z, player.getRNG().nextGaussian() * 0.002D, player.getRNG().nextGaussian() * 0.002D, player.getRNG().nextGaussian() * 0.002D, 1.0F);
+                        }
+
+                        LGParticleHandler.spawnMagicScrambleFX(player.world, arrow.posX, arrow.posY, arrow.posZ, arrow.motionX * 0.2D, arrow.motionY * 0.2D, arrow.motionZ * 0.2D, 6.0F);
+                    }
+
                     event.setCanceled(true);
                 }
             }

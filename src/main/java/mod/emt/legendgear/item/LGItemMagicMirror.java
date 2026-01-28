@@ -2,6 +2,7 @@ package mod.emt.legendgear.item;
 
 import javax.annotation.Nullable;
 
+import mod.emt.legendgear.client.particle.LGParticleHandler;
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
@@ -159,7 +160,7 @@ public class LGItemMagicMirror extends Item
                 double r = 2 * (1 - progress);
                 for (int i = 0; i < 3; i++)
                 {
-                    player.world.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, player.posX + Math.cos(theta) * r, player.posY, player.posZ + Math.sin(theta) * r, 0, 2, 0);
+                    LGParticleHandler.spawnMagicRuneFX(player.world, player.posX + Math.cos(theta) * r, player.posY, player.posZ + Math.sin(theta) * r, 0.0D, 0.1D, 0.0D, 1.5F);
                     theta += Math.PI * 2 / 3;
                 }
             }

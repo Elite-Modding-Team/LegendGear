@@ -1,5 +1,6 @@
 package mod.emt.legendgear.entity;
 
+import mod.emt.legendgear.client.particle.LGParticleHandler;
 import mod.emt.legendgear.init.LGItems;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.projectile.EntityThrowable;
@@ -29,7 +30,7 @@ public class LGEntityEarthMedallion extends EntityThrowable
     {
         super.onUpdate();
         if (world.isRemote)
-            world.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, posX + rand.nextGaussian() * 0.1D, posY + rand.nextGaussian() * 0.1D, posZ + rand.nextGaussian() * 0.1D, rand.nextGaussian() * 0.03D, rand.nextGaussian() * 0.03D, rand.nextGaussian() * 0.03D);
+            LGParticleHandler.spawnMagicRuneFX(this.world, this.posX + this.rand.nextGaussian() * 0.1D, this.posY + this.rand.nextGaussian() * 0.1D, this.posZ + this.rand.nextGaussian() * 0.1D, this.rand.nextGaussian() * 0.03D, this.rand.nextGaussian() * 0.03D, this.rand.nextGaussian() * 0.03D, 1.0F);
     }
 
     @Override
@@ -52,6 +53,11 @@ public class LGEntityEarthMedallion extends EntityThrowable
             for (int i = 0; i < 8; ++i)
             {
                 world.spawnParticle(EnumParticleTypes.ITEM_CRACK, posX, posY, posZ, (rand.nextFloat() - 0.5D) * 0.08D, (rand.nextFloat() - 0.5D) * 0.08D, (rand.nextFloat() - 0.5D) * 0.08D, Item.getIdFromItem(LGItems.EARTH_MEDALLION));
+            }
+
+            for (int i = 0; i < 15; ++i)
+            {
+                LGParticleHandler.spawnMagicRuneFX(this.world, this.posX + this.rand.nextGaussian() * 0.3D, this.posY, this.posZ + this.rand.nextGaussian() * 0.3D, 0.0D, this.rand.nextDouble(), 0.0D, 1.5F);
             }
         }
     }

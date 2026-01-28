@@ -6,6 +6,7 @@ import javax.annotation.Nullable;
 
 import baubles.api.BaubleType;
 import baubles.api.IBauble;
+import mod.emt.legendgear.client.particle.LGParticleHandler;
 import mod.emt.legendgear.init.LGSoundEvents;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
@@ -20,6 +21,7 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 // TODO: Instead of durability and being able to break, it will recharge with extra earth medallions
+// TODO: Currently carried mobs sit right on top of the player unlike 1.5.2 where they are floating. Maybe there is another way to get around this?
 public class LGItemTitanBand extends Item implements IBauble {
     public LGItemTitanBand() {
         super();
@@ -36,8 +38,8 @@ public class LGItemTitanBand extends Item implements IBauble {
                 ++carry;
 
                 if (world.isRemote) {
-                    //LegendGear.proxy.addRuneParticle(par2World, par3Entity.riddenByEntity.posX, par3Entity.riddenByEntity.posY, par3Entity.riddenByEntity.posZ, ItemTitanBand.itemRand.nextGaussian() * 0.1, ItemTitanBand.itemRand.nextGaussian() * 0.1, ItemTitanBand.itemRand.nextGaussian() * 0.1, 1.0f);
-                    world.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, entity.posX, entity.posY + 2.0D, entity.posZ, world.rand.nextGaussian() * 0.1D, world.rand.nextGaussian() * 0.1D, world.rand.nextGaussian() * 0.1D);
+                    // TODO: Particle position varies depending on mob currently
+                    LGParticleHandler.spawnMagicRuneFX(world, entity.posX, entity.posY + 2.0D, entity.posZ, world.rand.nextGaussian() * 0.1D, world.rand.nextGaussian() * 0.1D, world.rand.nextGaussian() * 0.1D, 1.0F);
                 }
 
                 if ((entity.getPassengers().get(0) instanceof EntityChicken || entity.getPassengers().get(0) instanceof EntityBat) && !entity.onGround && entity.fallDistance > 0.0F) {
