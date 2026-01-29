@@ -116,10 +116,10 @@ public class LGRenderEnderBomb extends Render<LGEntityEnderBomb>
                 firstZ = z;
             }
 
-            buffer.pos(x, y, z).color(r, g, b, alpha).endVertex();
+            buffer.pos(x, y + 0.5D, z).color(r, g, b, alpha).endVertex();
         }
 
-        buffer.pos(firstX, firstY, firstZ).color(r, g, b, alpha).endVertex();
+        buffer.pos(firstX, firstY + 0.5D, firstZ).color(r, g, b, alpha).endVertex();
         Tessellator.getInstance().draw();
     }
 
