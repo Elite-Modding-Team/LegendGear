@@ -1,15 +1,18 @@
 package mod.emt.legendgear.entity;
 
-import mod.emt.legendgear.init.LGSoundEvents;
-import mod.emt.legendgear.util.damagesource.DamageSourceFirestorm;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
 
 import java.util.List;
+import mod.emt.legendgear.client.particle.LGParticleHandler;
+import mod.emt.legendgear.init.LGSoundEvents;
+import mod.emt.legendgear.util.damagesource.DamageSourceFirestorm;
 
 public class LGEntityFireBlast extends Entity
 {
@@ -54,6 +57,7 @@ public class LGEntityFireBlast extends Entity
     public void onUpdate()
     {
         super.onUpdate();
+        spawnParticles();
         if (lifetime == 0)
         {
             world.playSound(null, this.getPosition(), LGSoundEvents.ENTITY_MEDALLION_FIRE_START.getSoundEvent(), SoundCategory.NEUTRAL, 3.0F, 1.0F);
@@ -95,6 +99,44 @@ public class LGEntityFireBlast extends Entity
                     DamageSourceFirestorm damageSourceFirestorm = new DamageSourceFirestorm("inFire", this, thrower);
                     el.setFire(10);
                     el.attackEntityFrom(damageSourceFirestorm, damage_per_hit);
+                }
+            }
+        }
+    }
+
+    private void spawnParticles()
+    {
+        if (FMLLaunchHandler.side().isClient() && world.isRemote)
+        {
+            if (lifetime == 0)
+            {
+                for (int i = 0; i < 15; i++)
+                {
+                    world.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, posX + world.rand.nextGaussian() * 0.3D, posY, posZ + world.rand.nextGaussian() * 0.3D, 0.0D, world.rand.nextDouble(), 0.0D);
+                }
+            }
+            if (lifetime < LGEntityFireBlast.DETONATION_TIME)
+            {
+                double progress = 1.0D * lifetime / LGEntityFireBlast.DETONATION_TIME;
+                double decel = 1.0D - progress;
+                decel = decel * decel * decel;
+                decel = 1.0D - decel;
+                double r = LGEntityFireBlast.DETONATION_RADIUS * decel;
+                double theta = decel * Math.PI * 4.0D;
+                for (int i = 0; i < 3; i++)
+                {
+                    double ox = Math.cos(theta) * r;
+                    double oz = Math.sin(theta) * r;
+                    LGParticleHandler.spawnFireSwirlFX(world, posX + ox, posY, posZ + oz, 0.0D, 0.05D, 0.0D, 3.0F);
+                    theta += 2.0943951023931953D;
+                }
+            }
+            if (lifetime > LGEntityFireBlast.DETONATION_TIME)
+            {
+                for (int i = 0; i < 5; i++)
+                {
+                    LGParticleHandler.spawnFireSwirlFX(world, posX + world.rand.nextGaussian() * LGEntityFireBlast.DETONATION_RADIUS * 0.5D, posY, posZ + world.rand.nextGaussian() * LGEntityFireBlast.DETONATION_RADIUS * 0.5D, 0.0D, 0.5D, 0.0D, 10.0F);
+                    world.spawnParticle(EnumParticleTypes.LAVA, posX + world.rand.nextGaussian() * LGEntityFireBlast.DETONATION_RADIUS * 0.5D, posY, posZ + world.rand.nextGaussian() * LGEntityFireBlast.DETONATION_RADIUS * 0.5D, 0.0D, 0.5D, 0.0D);
                 }
             }
         }

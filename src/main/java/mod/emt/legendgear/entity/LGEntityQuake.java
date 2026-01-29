@@ -1,15 +1,17 @@
 package mod.emt.legendgear.entity;
 
-import io.netty.buffer.ByteBuf;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.IEntityAdditionalSpawnData;
+import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
 
+import io.netty.buffer.ByteBuf;
 import java.util.List;
 
 public class LGEntityQuake extends Entity implements IEntityAdditionalSpawnData
@@ -91,10 +93,12 @@ public class LGEntityQuake extends Entity implements IEntityAdditionalSpawnData
         oneshot_radius = additionalData.readDouble();
     }
 
+    @Override
     protected void entityInit()
     {
     }
 
+    @Override
     public void onUpdate()
     {
         super.onUpdate();
@@ -102,19 +106,52 @@ public class LGEntityQuake extends Entity implements IEntityAdditionalSpawnData
         {
             doPulse(oneshot_radius);
             setDead();
-        } else
+        }
+        else
         {
             if (lifetime % PULSE_INTERVAL == 0) doPulse(FIRST_PULSE_RADIUS + RADIUS_PER_TICK * lifetime);
             lifetime++;
             if (lifetime > MAX_LIFESPAN) setDead();
         }
+        spawnParticles();
     }
 
+    @Override
     protected void readEntityFromNBT(NBTTagCompound var1)
     {
     }
 
+    @Override
     protected void writeEntityToNBT(NBTTagCompound var1)
     {
+    }
+
+    private void spawnParticles()
+    {
+        if (FMLLaunchHandler.side().isClient() && world.isRemote)
+        {
+            double radius = oneshot_radius;
+            if (!oneshot)
+            {
+                radius = LGEntityQuake.FIRST_PULSE_RADIUS + LGEntityQuake.RADIUS_PER_TICK * lifetime;
+            }
+            if (ticksExisted % 5 == 0)
+            {
+                for (int i = 0; i < 12; i++)
+                {
+                    double th = i * Math.PI * 2.0D / 12.0D;
+                    double vx = Math.cos(th);
+                    double vz = Math.sin(th);
+                    world.spawnParticle(EnumParticleTypes.EXPLOSION_LARGE, posX + vx * radius, posY, posZ + vz * radius, vx * 0.05D, 0.2D, vz * 0.05D);
+                }
+            }
+            if (lifetime <= 1 && !oneshot)
+            {
+                for (int i = 0; i < 15; i++)
+                {
+                    world.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, posX + world.rand.nextGaussian() * 0.3D, posY, posZ + world.rand.nextGaussian() * 0.3D, 0.0D, world.rand.nextDouble(), 0.0D);
+                }
+            }
+        }
     }
 }

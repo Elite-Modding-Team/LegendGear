@@ -5,8 +5,10 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
 
 import java.util.List;
 
@@ -73,6 +75,7 @@ public class LGEntityArrowStorm extends Entity
     public void onUpdate()
     {
         super.onUpdate();
+        spawnParticles();
         if (!world.isRemote && thrower != null)
         {
             doArrowStorm();
@@ -92,5 +95,23 @@ public class LGEntityArrowStorm extends Entity
     @Override
     protected void writeEntityToNBT(NBTTagCompound var1)
     {
+    }
+
+    private void spawnParticles()
+    {
+        if (FMLLaunchHandler.side().isClient() && world.isRemote)
+        {
+            if (lifetime == 0)
+            {
+                for (int i = 0; i < 15; i++)
+                {
+                    world.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, posX + world.rand.nextGaussian() * 0.3D, posY, posZ + world.rand.nextGaussian() * 0.3D, 0.0D, world.rand.nextDouble(), 0.0D);
+                }
+            }
+            for (int i = 0; i < 5; i++)
+            {
+                world.spawnParticle(EnumParticleTypes.CLOUD, posX + world.rand.nextGaussian() * LGEntityArrowStorm.RADIUS * 0.5D, posY + 3.0D, posZ + world.rand.nextGaussian() * LGEntityArrowStorm.RADIUS * 0.5D, 0.0D, -0.1D, 0.0D);
+            }
+        }
     }
 }
