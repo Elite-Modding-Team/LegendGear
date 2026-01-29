@@ -18,7 +18,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import java.util.Random;
 import mod.emt.legendgear.entity.LGEntityEnderBomb;
 
-// TODO: Ring vertices have a closing animation in 1.5.2, this currently doesn't occur in our port
 @SideOnly(Side.CLIENT)
 public class LGRenderEnderBomb extends Render<LGEntityEnderBomb>
 {
@@ -74,7 +73,7 @@ public class LGRenderEnderBomb extends Render<LGEntityEnderBomb>
         // Return as soon as radius is at 0
         if (entity.radius <= 0) return;
 
-        // Fade out effect
+        // Fade out effect. In 1.5.2, there is a closing animation but this was unable to be ported
         float fadeDuration = 4.0F;
         float ticksRemaining = (float) entity.EXPAND_TIME - (float) entity.lifespan_timer;
         float alphaPercent;
@@ -116,10 +115,10 @@ public class LGRenderEnderBomb extends Render<LGEntityEnderBomb>
                 firstZ = z;
             }
 
-            buffer.pos(x, y, z).color(r, g, b, alpha).endVertex();
+            buffer.pos(x, y + 0.5D, z).color(r, g, b, alpha).endVertex();
         }
 
-        buffer.pos(firstX, firstY, firstZ).color(r, g, b, alpha).endVertex();
+        buffer.pos(firstX, firstY + 0.5D, firstZ).color(r, g, b, alpha).endVertex();
         Tessellator.getInstance().draw();
     }
 
