@@ -49,9 +49,9 @@ public class LGRenderEnderBomb extends Render<LGEntityEnderBomb>
         Tessellator tess = Tessellator.getInstance();
         BufferBuilder bufferbuilder = tess.getBuffer();
 
-        drawRingVertices(entity, bufferbuilder, 30, 13, 53); // #1E0D35
-        drawRingVertices(entity, bufferbuilder, 78, 32, 138); // #4E208A
-        drawRingVertices(entity, bufferbuilder, 144, 64, 255); // #9040FF
+        drawRingVertices(entity, bufferbuilder, partialTicks, 30, 13, 53); // #1E0D35
+        drawRingVertices(entity, bufferbuilder, partialTicks, 78, 32, 138); // #4E208A
+        drawRingVertices(entity, bufferbuilder, partialTicks, 144, 64, 255); // #9040FF
 
         GlStateManager.disableBlend();
         GlStateManager.enableTexture2D();
@@ -68,27 +68,13 @@ public class LGRenderEnderBomb extends Render<LGEntityEnderBomb>
         return null;
     }
 
-    private void drawRingVertices(LGEntityEnderBomb entity, BufferBuilder buffer, int r, int g, int b)
+    private void drawRingVertices(LGEntityEnderBomb entity, BufferBuilder buffer, float partialTicks, int r, int g, int b)
     {
-        // Return as soon as radius is at 0
-        if (entity.radius <= 0) return;
-
         // Fade out effect. In 1.5.2, there is a closing animation but this was unable to be ported
-        float fadeDuration = 4.0F;
-        float ticksRemaining = (float) entity.EXPAND_TIME - (float) entity.lifespan_timer;
-        float alphaPercent;
+        int alpha = getAlpha(entity, partialTicks);
 
-        if (ticksRemaining > fadeDuration)
-        {
-            alphaPercent = 1.0F;
-        }
-        else
-        {
-            alphaPercent = ticksRemaining / fadeDuration;
-        }
-
-        int alpha = (int) (alphaPercent * 255);
-        if (alpha <= 0) return;
+        // Return as soon as radius or alpha is at 0
+        if (entity.radius <= 0 || alpha <= 0) return;
 
         buffer.begin(GL11.GL_LINE_STRIP, DefaultVertexFormats.POSITION_COLOR);
 
@@ -120,6 +106,21 @@ public class LGRenderEnderBomb extends Render<LGEntityEnderBomb>
 
         buffer.pos(firstX, firstY + 0.5D, firstZ).color(r, g, b, alpha).endVertex();
         Tessellator.getInstance().draw();
+    }
+
+    private static int getAlpha(LGEntityEnderBomb entity, float partialTicks)
+    {
+        float continuousTime = entity.lifespan_timer + partialTicks;
+        float pulse = (float) Math.sin(continuousTime * 0.4F) * 0.15F + 0.85F;
+        float ticksRemaining = (float) entity.EXPAND_TIME - continuousTime;
+        float fade = 1.0F;
+
+        if (ticksRemaining < 3.5F)
+        {
+            fade = Math.max(0.0F, ticksRemaining / 3.5F);
+        }
+
+        return (int)(255 * pulse * fade);
     }
 
     public static class Factory implements IRenderFactory<LGEntityEnderBomb>
