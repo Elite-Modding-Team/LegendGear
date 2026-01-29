@@ -22,6 +22,7 @@ public class LGBlocks
     public static final LGBlockInfusedStarstone INFUSED_STARSTONE_BLOCK = null;
     public static final LGBlockMysticShrub MYSTIC_SHRUB = null;
     public static final LGBlockSkybeam SKYBEAM_BLOCK = null;
+    public static final LGBlockStarbeamTorch STARBEAM_TORCH = null;
     public static final LGBlockStarstone STARSTONE_BLOCK = null;
     public static final LGBlockSugarCube SUGAR_CUBE = null;
 
@@ -37,10 +38,11 @@ public class LGBlocks
             (
                 LGRegistry.setup(new LGBlockBombFlower(), "bomb_flower").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGBlockCaltrops(), "caltrops").setCreativeTab(LegendGear.TAB),
-                LGRegistry.setup(new LGBlockInfusedStarstone(6000.0F), "infused_starstone_block"),
                 LGRegistry.setup(new LGBlockMysticShrub(), "mystic_shrub").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGBlockStarstone(3000.0F), "starstone_block"),
+                LGRegistry.setup(new LGBlockInfusedStarstone(6000.0F), "infused_starstone_block"),
                 LGRegistry.setup(new LGBlockSkybeam(), "skybeam_block").setCreativeTab(LegendGear.TAB),
-                LGRegistry.setup(new LGBlockStarstone(3000.0F), "starstone_block")
+                LGRegistry.setup(new LGBlockStarbeamTorch(), "starbeam_torch").setCreativeTab(LegendGear.TAB)
             );
 
         // Optional - These blocks can be disabled by the config file

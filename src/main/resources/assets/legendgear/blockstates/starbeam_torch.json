@@ -1,0 +1,41 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "torch",
+    "textures": {
+      "torch": "legendgear:blocks/starbeam_torch"
+    }
+  },
+  "variants": {
+    "facing": {
+      "up": {
+        "model": "torch"
+      },
+      "east": {
+        "model": "torch",
+        "x": 0,
+        "y": 90
+      },
+      "south": {
+        "model": "torch",
+        "x": 0,
+        "y": 180
+      },
+      "west": {
+        "model": "torch",
+        "x": 0,
+        "y": 270
+      },
+      "north": {
+        "model": "torch",
+        "x": 0,
+        "y": 0
+      }
+    },
+    "inventory": [
+      {
+        "model": "legendgear:item/starbeam_torch"
+      }
+    ]
+  }
+}
