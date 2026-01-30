@@ -13,7 +13,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-
 public class LGBlockStarbeamTorch extends BlockTorch
 {
     public LGBlockStarbeamTorch()
@@ -65,9 +64,8 @@ public class LGBlockStarbeamTorch extends BlockTorch
         {
             EntityPlayer player = (EntityPlayer) entity;
 
-            if (player.fallDistance > 0.1D && player.getRidingEntity() == null && player.isSneaking() && !world.isRemote)
+            if (!world.isRemote && player.fallDistance > 0.1D && player.getRidingEntity() == null)
             {
-
                 LGEntityGrindRail rail = LGEntityGrindRail.tryMakingRail(world, pos.getX(), pos.getY(), pos.getZ(), player);
 
                 if (rail != null)
