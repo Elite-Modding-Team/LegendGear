@@ -114,7 +114,6 @@ public class LGEntityGrindRail extends Entity implements IEntityAdditionalSpawnD
         this.setPosition(startNode.x, startNode.y, startNode.z);
         this.speed = Math.max(START_GRIND_SPEED, speed);
         Vec3d dir = getLineDirection();
-        this.speed = Math.max(this.speed, speed);
         this.motionX = dir.x * this.speed;
         this.motionY = dir.y * this.speed;
         this.motionZ = dir.z * this.speed;
@@ -262,12 +261,10 @@ public class LGEntityGrindRail extends Entity implements IEntityAdditionalSpawnD
                 return;
             }
 
-            Vec3d dir = getLineDirection();
-            this.speed = new Vec3d(this.motionX, this.motionY, this.motionZ).length();
-
             Vec3d motionVec = new Vec3d(this.motionX, this.motionY, this.motionZ);
             this.speed = motionVec.length();
 
+            Vec3d dir = getLineDirection();
             this.speed += dir.y * -0.02D;
 
             if (rider.isSprinting())
