@@ -187,7 +187,7 @@ public class LGRegistry
         RenderingRegistry.registerEntityRenderingHandler(LGEntityFallingStar.class, new LGRenderFallingStar.Factory());
         RenderingRegistry.registerEntityRenderingHandler(LGEntityFireBlast.class, new LGRenderFireBlast.Factory());
         RenderingRegistry.registerEntityRenderingHandler(LGEntityFireMedallion.class, new LGRenderFireMedallion.Factory());
-        //RenderingRegistry.registerEntityRenderingHandler(LGEntityGrindRail.class, new LGRenderGrindRail.Factory());
+        RenderingRegistry.registerEntityRenderingHandler(LGEntityGrindRail.class, new LGRenderGrindRail.Factory());
         RenderingRegistry.registerEntityRenderingHandler(LGEntityMagicBoomerang.class, new LGRenderMagicBoomerang.Factory());
         RenderingRegistry.registerEntityRenderingHandler(LGEntityPing.class, new LGRenderPing.Factory());
         RenderingRegistry.registerEntityRenderingHandler(LGEntityQuake.class, new LGRenderQuake.Factory());

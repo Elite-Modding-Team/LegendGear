@@ -94,13 +94,13 @@ public class LGEntityGrindRail extends Entity implements IEntityAdditionalSpawnD
         return new LGEntityGrindRail(world, from, to, momentum);
     }
 
-    private double fromX;
-    private double fromY;
-    private double fromZ;
-    private double toX;
-    private double toY;
-    private double toZ;
-    private double speed;
+    public double fromX;
+    public double fromY;
+    public double fromZ;
+    public double toX;
+    public double toY;
+    public double toZ;
+    public double speed;
 
     public LGEntityGrindRail(World world, Vec3d startNode, Vec3d towardsNode, double speed)
     {
@@ -314,8 +314,8 @@ public class LGEntityGrindRail extends Entity implements IEntityAdditionalSpawnD
 
         if (FMLLaunchHandler.side().isClient() && this.world.isRemote)
         {
-            LGParticleHandler.spawnSparkleFX(this.world, this.posX, this.posY, this.posZ, this.rand.nextGaussian() * 0.1D, this.rand.nextGaussian() * 0.1D, this.rand.nextGaussian() * 0.1D, 3.0F);
-            LGParticleHandler.spawnMagicRuneFX(this.world, this.posX, this.posY, this.posZ, 0.0D, 0.0D, 0.0D, 2.0F);
+            LGParticleHandler.spawnSparkleFX(this.world, this.posX, this.posY - 0.5D, this.posZ, this.rand.nextGaussian() * 0.1D, this.rand.nextGaussian() * 0.1D, this.rand.nextGaussian() * 0.1D, 3.0F);
+            LGParticleHandler.spawnMagicRuneFX(this.world, this.posX, this.posY - 0.5D, this.posZ, 0.0D, 0.0D, 0.0D, 2.0F);
         }
     }
 
