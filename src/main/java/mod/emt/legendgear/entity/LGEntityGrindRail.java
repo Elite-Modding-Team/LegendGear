@@ -304,7 +304,8 @@ public class LGEntityGrindRail extends Entity implements IEntityAdditionalSpawnD
         if (this.ticksExisted % 5 == 0)
         {
             float speedLevel = (float) ((this.speed - 0.02D) / 0.98D);
-            this.world.playSound(null, this.getPosition(), LGSoundEvents.ENTITY_MAGIC_BOOMERANG_FLY.getSoundEvent(), SoundCategory.BLOCKS, 0.3F, 0.5F + speedLevel * 1.5F);
+            this.world.playSound(null, this.getPosition(), LGSoundEvents.BLOCK_GRIND_RAIL_CHOIR.getSoundEvent(), SoundCategory.BLOCKS, 0.6F, 0.5F + speedLevel * 1.5F);
+            this.world.playSound(null, this.getPosition(), LGSoundEvents.BLOCK_GRIND_RAIL.getSoundEvent(), SoundCategory.BLOCKS, 0.55F, 0.5F + speedLevel * 1.5F);
         }
 
         if (!this.world.isRemote && isPast(new Vec3d(this.toX, this.toY, this.toZ)) && nodeHop())

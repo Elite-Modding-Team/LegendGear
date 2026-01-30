@@ -12,6 +12,16 @@
       "legendgear:block/caltrops/land3"
     ]
   },
+  "block.grind_rail_choir": {
+    "sounds": [
+      "legendgear:heal"
+    ]
+  },
+  "block.grind_rail": {
+    "sounds": [
+      "legendgear:grind_rail"
+    ]
+  },
   "entity.falling_star.caught": {
     "sounds": [
       "legendgear:entity/falling_star/caught"

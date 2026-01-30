@@ -9,6 +9,8 @@ public enum LGSoundEvents
 {
     BLOCK_CALTROPS_HIT("block.caltrops.hit"),
     BLOCK_CALTROPS_LAND("block.caltrops.land"),
+    BLOCK_GRIND_RAIL_CHOIR("block.grind_rail_choir"),
+    BLOCK_GRIND_RAIL("block.grind_rail"),
     ENTITY_FALLING_STAR_CAUGHT("entity.falling_star.caught"),
     ENTITY_FALLING_STAR_DESPAWN("entity.falling_star.despawn"),
     ENTITY_FALLING_STAR_EXPLODE("entity.falling_star.explode"),
