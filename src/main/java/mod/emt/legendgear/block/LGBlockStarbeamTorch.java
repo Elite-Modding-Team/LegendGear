@@ -68,7 +68,7 @@ public class LGBlockStarbeamTorch extends BlockTorch
             if (player.fallDistance > 0.1D && player.getRidingEntity() == null && player.isSneaking() && !world.isRemote)
             {
 
-                LGEntityGrindRail rail = LGEntityGrindRail.tryMakingStar(world, pos, player);
+                LGEntityGrindRail rail = LGEntityGrindRail.tryMakingRail(world, pos.getX(), pos.getY(), pos.getZ(), player);
 
                 if (rail != null)
                 {
