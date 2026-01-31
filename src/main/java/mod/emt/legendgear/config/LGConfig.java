@@ -23,6 +23,22 @@ public class LGConfig
     @Config.Comment("Spawn chance for falling stars per second for each player under the open sky at night")
     public static double chanceFallingStar = 0.001D;
 
+    @Config.Name("Grind Rail Start Speed")
+    @Config.Comment("Initial speed for grinding on starbeam torch rails")
+    public static double grindRailSpeedStart = 0.3D;
+
+    @Config.Name("Grind Rail Minimum Speed")
+    @Config.Comment("Minimum speed for grinding on starbeam torch rails")
+    public static double grindRailSpeedMin = 0.02D;
+
+    @Config.Name("Grind Rail Drag")
+    @Config.Comment("Slowdown when grinding on starbeam torch rails")
+    public static double grindRailDrag = 0.001D;
+
+    @Config.Name("Grind Rail Node Link Distance")
+    @Config.Comment("Maximum distance for linking starbeam torch nodes")
+    public static int grindRailNodeLinkDistance = 8;
+
     @Mod.EventBusSubscriber(modid = LegendGear.MOD_ID)
     public static class EventHandler
     {

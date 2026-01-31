@@ -18,16 +18,13 @@ import io.netty.buffer.ByteBuf;
 import java.util.ArrayList;
 import java.util.List;
 import mod.emt.legendgear.client.particle.LGParticleHandler;
+import mod.emt.legendgear.config.LGConfig;
 import mod.emt.legendgear.init.LGBlocks;
 import mod.emt.legendgear.init.LGSoundEvents;
 
 public class LGEntityGrindRail extends Entity implements IEntityAdditionalSpawnData
 {
-    public static final double MIN_GRIND_SPEED = 0.02D;
-    public static final double START_GRIND_SPEED = 0.3D;
-    public static final double DRAG = 0.002D;
-    public static final double Y_OFF = 0.0625D;
-    public static final int NODE_LINK_DISTANCE = 6;
+    private static final double Y_OFF = 0.0625D;
     private static final DataParameter<String> COORDS = EntityDataManager.createKey(LGEntityGrindRail.class, DataSerializers.STRING);
 
     public static List<Vec3d> getNodesNearButNotAt(World world, int x, int y, int z, int radius)
@@ -79,7 +76,7 @@ public class LGEntityGrindRail extends Entity implements IEntityAdditionalSpawnD
     {
         Vec3d from = new Vec3d(x + 0.5D, y + 0.5D + Y_OFF, z + 0.5D);
         Vec3d dir = rider.getLookVec();
-        List<Vec3d> nodeVectors = getNodesNearButNotAt(world, x, y, z, NODE_LINK_DISTANCE);
+        List<Vec3d> nodeVectors = getNodesNearButNotAt(world, x, y, z, LGConfig.grindRailNodeLinkDistance);
 
         Vec3d to = findBestAlignedNode(world, nodeVectors, from, dir, 0.0D);
 
@@ -112,7 +109,7 @@ public class LGEntityGrindRail extends Entity implements IEntityAdditionalSpawnD
         this.toY = towardsNode.y;
         this.toZ = towardsNode.z;
         this.setPosition(startNode.x, startNode.y, startNode.z);
-        this.speed = Math.max(START_GRIND_SPEED, speed);
+        this.speed = Math.max(LGConfig.grindRailSpeedStart, speed);
         Vec3d dir = getLineDirection();
         this.motionX = dir.x * this.speed;
         this.motionY = dir.y * this.speed;
@@ -154,7 +151,7 @@ public class LGEntityGrindRail extends Entity implements IEntityAdditionalSpawnD
         int newOldY = (int) Math.floor(this.toY);
         int newOldZ = (int) Math.floor(this.toZ);
 
-        List<Vec3d> candidates = getNodesNearButNotAt(this.world, newOldX, newOldY, newOldZ, NODE_LINK_DISTANCE);
+        List<Vec3d> candidates = getNodesNearButNotAt(this.world, newOldX, newOldY, newOldZ, LGConfig.grindRailNodeLinkDistance);
         Vec3d dir = getLineDirection();
 
         this.fromX = this.toX;
@@ -269,9 +266,9 @@ public class LGEntityGrindRail extends Entity implements IEntityAdditionalSpawnD
                 }
             }
 
-            this.speed -= DRAG;
+            this.speed -= LGConfig.grindRailDrag;
 
-            if (this.speed < MIN_GRIND_SPEED)
+            if (this.speed < LGConfig.grindRailSpeedMin)
             {
                 if (dir.y >= 0)
                 {
@@ -280,7 +277,7 @@ public class LGEntityGrindRail extends Entity implements IEntityAdditionalSpawnD
                 }
                 else
                 {
-                    this.speed = MIN_GRIND_SPEED;
+                    this.speed = LGConfig.grindRailSpeedMin;
                 }
             }
 
