@@ -4,9 +4,6 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.PacketBuffer;
-import net.minecraft.network.datasync.DataParameter;
-import net.minecraft.network.datasync.DataSerializers;
-import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
@@ -25,7 +22,6 @@ import mod.emt.legendgear.init.LGSoundEvents;
 public class LGEntityGrindRail extends Entity implements IEntityAdditionalSpawnData
 {
     private static final double Y_OFF = 0.0625D;
-    private static final DataParameter<String> COORDS = EntityDataManager.createKey(LGEntityGrindRail.class, DataSerializers.STRING);
 
     public static List<Vec3d> getNodesNearButNotAt(World world, int x, int y, int z, int radius)
     {
@@ -158,7 +154,7 @@ public class LGEntityGrindRail extends Entity implements IEntityAdditionalSpawnD
         this.fromY = this.toY;
         this.fromZ = this.toZ;
 
-        Vec3d toNode = findBestAlignedNode(this.world, candidates, new Vec3d(this.fromX, this.fromY, this.fromZ), dir, 0.8D);
+        Vec3d toNode = findBestAlignedNode(this.world, candidates, new Vec3d(this.fromX, this.fromY, this.fromZ), dir, 0.4D);
 
         if (toNode == null)
         {
@@ -223,9 +219,9 @@ public class LGEntityGrindRail extends Entity implements IEntityAdditionalSpawnD
     @Override
     protected void entityInit()
     {
-        this.dataManager.register(COORDS, "0,0,0,0,0,0");
     }
 
+    @Override
     public void onUpdate()
     {
         this.prevPosX = this.posX;
@@ -290,6 +286,12 @@ public class LGEntityGrindRail extends Entity implements IEntityAdditionalSpawnD
         this.posY += this.motionY;
         this.posZ += this.motionZ;
 
+        if (isPast(new Vec3d(this.toX, this.toY, this.toZ)) && nodeHop())
+        {
+            snapOn();
+        }
+
+        // Sounds
         if (this.ticksExisted % 5 == 0)
         {
             float speedLevel = (float) ((this.speed - 0.02D) / 0.98D);
@@ -297,11 +299,7 @@ public class LGEntityGrindRail extends Entity implements IEntityAdditionalSpawnD
             this.world.playSound(null, this.getPosition(), LGSoundEvents.BLOCK_GRIND_RAIL.getSoundEvent(), SoundCategory.BLOCKS, 0.55F, 0.5F + speedLevel * 1.5F);
         }
 
-        if (!this.world.isRemote && isPast(new Vec3d(this.toX, this.toY, this.toZ)) && nodeHop())
-        {
-            snapOn();
-        }
-
+        // Particles
         if (FMLLaunchHandler.side().isClient() && this.world.isRemote)
         {
             LGParticleHandler.spawnSparkleFX(this.world, this.posX, this.posY - 0.5D, this.posZ, this.rand.nextGaussian() * 0.1D, this.rand.nextGaussian() * 0.1D, this.rand.nextGaussian() * 0.1D, 3.0F);
