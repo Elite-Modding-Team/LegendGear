@@ -2,17 +2,22 @@
 itemGroup.legendgear.tab=LegendGear
 
 # BLOCKS
+tile.legendgear.azurite_block.name=Azurite Block
+tile.legendgear.azurite_ore.name=Azurite Ore
 tile.legendgear.bomb_flower.name=Bomb Flower
 tile.legendgear.caltrops.name=Caltrops
 tile.legendgear.infused_starstone_block.name=Infused Starstone Block
 tile.legendgear.mystic_shrub.name=Mystic Shrub
+tile.legendgear.red_starry_sand.name=Red Starry Sand
 tile.legendgear.skybeam_block.name=Skybeam Block
 tile.legendgear.starbeam_torch.name=Starbeam Torch
+tile.legendgear.starry_sand.name=Starry Sand
 tile.legendgear.starstone_block.name=Starstone Block
 tile.legendgear.sugar_cube.name=Sugar Cube
 
 # ITEMS
 item.legendgear.aero_amulet.name=Aero Amulet
+item.legendgear.azurite.name=Azurite
 item.legendgear.blast_charm.name=Blast Charm
 item.legendgear.bomb.name=Bomb
 item.legendgear.bomb_bag.name=Bomb Bag
@@ -27,6 +32,7 @@ item.legendgear.ender_medallion.name=Ender Medallion
 item.legendgear.feather_charm.name=Feather Charm
 item.legendgear.fire_medallion.name=Fire Medallion
 item.legendgear.fortune_cookie.name=Fortune Cookie
+item.legendgear.fulgurite.name=Fulgurite
 item.legendgear.geo_amulet.name=Geo Amulet
 item.legendgear.glowstone_rock_candy.name=Glowstone Rock Candy
 item.legendgear.infused_stardust.name=Infused Stardust

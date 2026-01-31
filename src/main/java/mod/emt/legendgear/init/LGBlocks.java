@@ -3,6 +3,7 @@ package mod.emt.legendgear.init;
 import javax.annotation.Nonnull;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.material.MapColor;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -21,9 +22,11 @@ public class LGBlocks
     public static final LGBlockCaltrops CALTROPS = null;
     public static final LGBlockInfusedStarstone INFUSED_STARSTONE_BLOCK = null;
     public static final LGBlockMysticShrub MYSTIC_SHRUB = null;
+    public static final LGBlockFalling RED_STARRY_SAND = null;
     public static final LGBlockSkybeam SKYBEAM_BLOCK = null;
     public static final LGBlockStarbeamTorch STARBEAM_TORCH = null;
     public static final LGBlockStarstone STARSTONE_BLOCK = null;
+    public static final LGBlockFalling STARRY_SAND = null;
     public static final LGBlockSugarCube SUGAR_CUBE = null;
 
     @SubscribeEvent
@@ -36,6 +39,8 @@ public class LGBlocks
         // BLOCKS
         registry.registerAll
             (
+                LGRegistry.setup(new LGBlockFalling(MapColor.SAND, -2370656), "starry_sand").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGBlockFalling(MapColor.ADOBE, -5679071), "red_starry_sand").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGBlockBombFlower(), "bomb_flower").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGBlockCaltrops(), "caltrops").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGBlockMysticShrub(), "mystic_shrub").setCreativeTab(LegendGear.TAB),

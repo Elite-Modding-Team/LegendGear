@@ -1,0 +1,25 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "D",
+    "A",
+    "S"
+  ],
+  "key": {
+    "S": {
+      "type": "forge:ore_dict",
+      "ore": "ingotStarsteel"
+    },
+    "A": {
+      "type": "forge:ore_dict",
+      "ore": "gemAzurite"
+    },
+    "D": {
+      "item": "legendgear:stardust"
+    }
+  },
+  "result": {
+    "item": "legendgear:starbeam_torch",
+    "count": 8
+  }
+}

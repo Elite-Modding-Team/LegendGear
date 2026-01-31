@@ -32,6 +32,7 @@ import mod.emt.legendgear.item.*;
 public class LGItems
 {
     public static final LGItemAeroAmulet AERO_AMULET = null;
+    public static final LGItemBase AZURITE = null;
     public static final LGItemCharm BLAST_CHARM = null;
     public static final LGItemBomb BOMB = null;
     public static final LGItemBombBag BOMB_BAG = null;
@@ -46,6 +47,7 @@ public class LGItems
     public static final LGItemCharm FEATHER_CHARM = null;
     public static final LGItemFireMedallion FIRE_MEDALLION = null;
     public static final LGItemFortuneCookie FORTUNE_COOKIE = null;
+    public static final LGItemBase FULGURITE = null;
     public static final LGItemGeoAmulet GEO_AMULET = null;
     public static final LGItemRockCandy GLOWSTONE_ROCK_CANDY = null;
     public static final LGItemStardust INFUSED_STARDUST = null;
@@ -100,7 +102,8 @@ public class LGItems
                 LGRegistry.setup(new LGItemStardust(), "stardust").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemStardust(), "infused_stardust").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemBase(EnumRarity.UNCOMMON), "starglass_ingot").setCreativeTab(LegendGear.TAB),
-                LGRegistry.setup(new LGItemBase(EnumRarity.UNCOMMON), "starsteel_ingot").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemBase(EnumRarity.UNCOMMON), "azurite").setCreativeTab(LegendGear.TAB), LGRegistry.setup(new LGItemBase(EnumRarity.UNCOMMON), "starsteel_ingot").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemBase(EnumRarity.RARE), "fulgurite").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemBomb(), "bomb").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemBombBag(), "bomb_bag").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemDimensionalCatalyst(), "dimensional_catalyst").setCreativeTab(LegendGear.TAB),

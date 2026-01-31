@@ -2,18 +2,15 @@
   "type": "forge:ore_shapeless",
   "ingredients": [
     {
-      "item": "legendgear:dimensional_catalyst"
-    },
-    {
-      "type": "forge:ore_dict",
-      "ore": "ingotIron"
+      "item": "minecraft:sand",
+      "data": 1
     },
     {
       "item": "legendgear:infused_stardust"
     }
   ],
   "result": {
-    "item": "legendgear:starsteel_ingot",
+    "item": "legendgear:red_starry_sand",
     "count": 1
   }
 }

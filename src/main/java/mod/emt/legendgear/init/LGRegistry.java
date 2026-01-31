@@ -14,6 +14,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.potion.Potion;
 import net.minecraft.util.ResourceLocation;
@@ -145,8 +146,15 @@ public class LGRegistry
 
         final IForgeRegistry<IRecipe> registry = event.getRegistry();
 
+        GameRegistry.addSmelting(new ItemStack(LGBlocks.RED_STARRY_SAND), new ItemStack(LGItems.STARGLASS_INGOT), 1.0F);
+        GameRegistry.addSmelting(new ItemStack(LGBlocks.STARRY_SAND), new ItemStack(LGItems.STARGLASS_INGOT), 1.0F);
+
+        OreDictionary.registerOre("gemAzurite", LGItems.AZURITE);
         OreDictionary.registerOre("ingotStarglass", LGItems.STARGLASS_INGOT);
         OreDictionary.registerOre("ingotStarsteel", LGItems.STARSTEEL_INGOT);
+
+        OreDictionary.registerOre("sandStarry", LGBlocks.RED_STARRY_SAND);
+        OreDictionary.registerOre("sandStarry", LGBlocks.STARRY_SAND);
     }
 
     @SubscribeEvent
