@@ -146,6 +146,7 @@ public class LGRegistry
 
         final IForgeRegistry<IRecipe> registry = event.getRegistry();
 
+        GameRegistry.addSmelting(new ItemStack(LGBlocks.AZURITE_ORE), new ItemStack(LGItems.AZURITE), 1.0F);
         GameRegistry.addSmelting(new ItemStack(LGBlocks.RED_STARRY_SAND), new ItemStack(LGItems.STARGLASS_INGOT), 1.0F);
         GameRegistry.addSmelting(new ItemStack(LGBlocks.STARRY_SAND), new ItemStack(LGItems.STARGLASS_INGOT), 1.0F);
 

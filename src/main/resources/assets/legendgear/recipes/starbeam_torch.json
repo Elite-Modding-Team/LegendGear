@@ -1,7 +1,6 @@
 {
   "type": "forge:ore_shaped",
   "pattern": [
-    "D",
     "A",
     "S"
   ],
@@ -13,9 +12,6 @@
     "A": {
       "type": "forge:ore_dict",
       "ore": "gemAzurite"
-    },
-    "D": {
-      "item": "legendgear:stardust"
     }
   },
   "result": {

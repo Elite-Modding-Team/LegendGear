@@ -1,0 +1,17 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "AAA",
+    "AAA",
+    "AAA"
+  ],
+  "key": {
+    "A": {
+      "item": "legendgear:azurite"
+    }
+  },
+  "result": {
+    "item": "legendgear:azurite_block",
+    "count": 1
+  }
+}
