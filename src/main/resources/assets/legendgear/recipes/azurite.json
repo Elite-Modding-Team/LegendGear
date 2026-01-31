@@ -1,0 +1,12 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "legendgear:azurite_block"
+    }
+  ],
+  "result": {
+    "item": "legendgear:azurite",
+    "count": 9
+  }
+}

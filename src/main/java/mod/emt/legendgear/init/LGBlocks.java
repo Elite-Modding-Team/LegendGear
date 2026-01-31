@@ -21,6 +21,8 @@ import mod.emt.legendgear.block.*;
 @GameRegistry.ObjectHolder(LegendGear.MOD_ID)
 public class LGBlocks
 {
+    public static final LGBlockAzurite AZURITE_BLOCK = null;
+    public static final LGBlockAzuriteOre AZURITE_ORE = null;
     public static final LGBlockBombFlower BOMB_FLOWER = null;
     public static final LGBlockCaltrops CALTROPS = null;
     public static final LGBlockInfusedStarstone INFUSED_STARSTONE_BLOCK = null;
@@ -54,10 +56,12 @@ public class LGBlocks
                 LGRegistry.setup(new LGBlockStarstone(3000.0F), "starstone_block"),
                 LGRegistry.setup(new LGBlockInfusedStarstone(6000.0F), "infused_starstone_block"),
                 LGRegistry.setup(new LGBlockSkybeam(), "skybeam_block").setCreativeTab(LegendGear.TAB),
-                LGRegistry.setup(new LGBlockStarbeamTorch(), "starbeam_torch").setCreativeTab(LegendGear.TAB)
+                LGRegistry.setup(new LGBlockStarbeamTorch(), "starbeam_torch").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGBlockAzurite(), "azurite_block").setCreativeTab(LegendGear.TAB)
             );
 
         // Optional - These blocks can be disabled by the config file
+        registry.register(LGRegistry.setup(new LGBlockAzuriteOre(), "azurite_ore").setCreativeTab(LegendGear.TAB));
         registry.register(LGRegistry.setup(new LGBlockLightningStruck(Material.GROUND, SoundType.GROUND, MapColor.DIRT, Blocks.DIRT, 0), "lightning_struck_dirt").setHardness(0.5F).setCreativeTab(LegendGear.TAB));
         registry.register(LGRegistry.setup(new LGBlockLightningStruck(Material.GROUND, SoundType.GROUND, MapColor.DIRT, Blocks.DIRT, 1), "lightning_struck_coarse_dirt").setHardness(0.5F).setCreativeTab(LegendGear.TAB));
         registry.register(LGRegistry.setup(new LGBlockLightningStruckFalling(Material.SAND, SoundType.SAND, MapColor.SAND, Blocks.SAND, 0, -2370656), "lightning_struck_sand").setHardness(0.5F).setCreativeTab(LegendGear.TAB));
