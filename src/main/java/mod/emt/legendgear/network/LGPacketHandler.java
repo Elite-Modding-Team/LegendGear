@@ -12,7 +12,6 @@ public class LGPacketHandler
     public static void init()
     {
         int id = 0;
-        INSTANCE.registerMessage(LGPacketJump.class, LGPacketJump.class, id++, Side.SERVER);
     }
 
     static
