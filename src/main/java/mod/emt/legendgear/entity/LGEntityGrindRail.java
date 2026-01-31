@@ -254,11 +254,11 @@ public class LGEntityGrindRail extends Entity implements IEntityAdditionalSpawnD
 
             if (rider.isSprinting())
             {
-                this.speed += dir.y * -0.04D;
+                this.speed += dir.y * 0.02D;
 
                 if (dir.y == 0)
                 {
-                    this.speed *= 0.9D;
+                    this.speed *= 1.01D;
                 }
             }
 
