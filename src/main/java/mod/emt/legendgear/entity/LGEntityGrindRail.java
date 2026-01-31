@@ -72,7 +72,7 @@ public class LGEntityGrindRail extends Entity implements IEntityAdditionalSpawnD
     {
         Vec3d from = new Vec3d(x + 0.5D, y + 0.5D + Y_OFF, z + 0.5D);
         Vec3d dir = rider.getLookVec();
-        List<Vec3d> nodeVectors = getNodesNearButNotAt(world, x, y, z, LGConfig.grindRailNodeLinkDistance);
+        List<Vec3d> nodeVectors = getNodesNearButNotAt(world, x, y, z, LGConfig.STARBEAM_TORCH_SETTINGS.grindRailNodeLinkDistance);
 
         Vec3d to = findBestAlignedNode(world, nodeVectors, from, dir, 0.0D);
 
@@ -105,7 +105,7 @@ public class LGEntityGrindRail extends Entity implements IEntityAdditionalSpawnD
         this.toY = towardsNode.y;
         this.toZ = towardsNode.z;
         this.setPosition(startNode.x, startNode.y, startNode.z);
-        this.speed = Math.max(LGConfig.grindRailSpeedStart, speed);
+        this.speed = Math.max(LGConfig.STARBEAM_TORCH_SETTINGS.grindRailSpeedStart, speed);
         Vec3d dir = getLineDirection();
         this.motionX = dir.x * this.speed;
         this.motionY = dir.y * this.speed;
@@ -147,7 +147,7 @@ public class LGEntityGrindRail extends Entity implements IEntityAdditionalSpawnD
         int newOldY = (int) Math.floor(this.toY);
         int newOldZ = (int) Math.floor(this.toZ);
 
-        List<Vec3d> candidates = getNodesNearButNotAt(this.world, newOldX, newOldY, newOldZ, LGConfig.grindRailNodeLinkDistance);
+        List<Vec3d> candidates = getNodesNearButNotAt(this.world, newOldX, newOldY, newOldZ, LGConfig.STARBEAM_TORCH_SETTINGS.grindRailNodeLinkDistance);
         Vec3d dir = getLineDirection();
 
         this.fromX = this.toX;
@@ -262,9 +262,9 @@ public class LGEntityGrindRail extends Entity implements IEntityAdditionalSpawnD
                 }
             }
 
-            this.speed -= LGConfig.grindRailDrag;
+            this.speed -= LGConfig.STARBEAM_TORCH_SETTINGS.grindRailDrag;
 
-            if (this.speed < LGConfig.grindRailSpeedMin)
+            if (this.speed < LGConfig.STARBEAM_TORCH_SETTINGS.grindRailSpeedMin)
             {
                 if (dir.y >= 0)
                 {
@@ -273,7 +273,7 @@ public class LGEntityGrindRail extends Entity implements IEntityAdditionalSpawnD
                 }
                 else
                 {
-                    this.speed = LGConfig.grindRailSpeedMin;
+                    this.speed = LGConfig.STARBEAM_TORCH_SETTINGS.grindRailSpeedMin;
                 }
             }
 

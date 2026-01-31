@@ -22,7 +22,7 @@ public class LGFallingStarEvent
 
         if (!world.isRemote && world.getTotalWorldTime() % 20 == 0 && entity instanceof EntityPlayer && !world.isDaytime() && world.canSeeSky(entity.getPosition()))
         {
-            double chance = world.getCurrentMoonPhaseFactor() == 1 ? LGConfig.chanceFallingStar * 2 : LGConfig.chanceFallingStar;
+            double chance = world.getCurrentMoonPhaseFactor() == 1 ? LGConfig.GENERAL_SETTINGS.chanceFallingStar * 2 : LGConfig.GENERAL_SETTINGS.chanceFallingStar;
             if (world.rand.nextDouble() < chance)
             {
                 world.spawnEntity(new LGEntityFallingStar((EntityPlayer) entity));

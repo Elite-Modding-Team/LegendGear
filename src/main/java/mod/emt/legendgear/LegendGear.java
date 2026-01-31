@@ -41,11 +41,11 @@ public class LegendGear
     public void init(FMLInitializationEvent event)
     {
         GameRegistry.registerWorldGenerator(new LGAzuriteGenerator(), 3);
-        if (LGConfig.generateBombFlowers)
+        if (LGConfig.WORLD_GEN_SETTINGS.generateBombFlowers)
         {
             GameRegistry.registerWorldGenerator(new LGBombFlowerGenerator(), 100);
         }
-        if (LGConfig.generateMysticShrubs)
+        if (LGConfig.WORLD_GEN_SETTINGS.generateMysticShrubs)
         {
             GameRegistry.registerWorldGenerator(new LGShrubGenerator(), 100);
         }

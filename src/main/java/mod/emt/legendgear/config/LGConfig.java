@@ -11,33 +11,46 @@ import mod.emt.legendgear.LegendGear;
 @Config(modid = LegendGear.MOD_ID, name = LegendGear.NAME)
 public class LGConfig
 {
-    @Config.Name("Generate Bomb Flowers")
-    @Config.Comment("Generate bomb flowers in the world")
-    public static boolean generateBombFlowers = true;
+    public static final GeneralSettings GENERAL_SETTINGS = new GeneralSettings();
+    public static final WorldGenSettings WORLD_GEN_SETTINGS = new WorldGenSettings();
+    public static final StarbeamTorchSettings STARBEAM_TORCH_SETTINGS = new StarbeamTorchSettings();
 
-    @Config.Name("Generate Mystic Shrubs")
-    @Config.Comment("Generate mystic shrubs in the world")
-    public static boolean generateMysticShrubs = true;
+    public static class GeneralSettings
+    {
+        @Config.Name("Falling Star Chance")
+        @Config.Comment("Spawn chance for falling stars per second for each player under the open sky at night")
+        public double chanceFallingStar = 0.001D;
+    }
 
-    @Config.Name("Falling Star Chance")
-    @Config.Comment("Spawn chance for falling stars per second for each player under the open sky at night")
-    public static double chanceFallingStar = 0.001D;
+    public static class WorldGenSettings
+    {
+        @Config.Name("Generate Bomb Flowers")
+        @Config.Comment("Generate bomb flowers in the world")
+        public boolean generateBombFlowers = true;
 
-    @Config.Name("Grind Rail Start Speed")
-    @Config.Comment("Initial speed for grinding on starbeam torch rails")
-    public static double grindRailSpeedStart = 0.3D;
+        @Config.Name("Generate Mystic Shrubs")
+        @Config.Comment("Generate mystic shrubs in the world")
+        public boolean generateMysticShrubs = true;
+    }
 
-    @Config.Name("Grind Rail Minimum Speed")
-    @Config.Comment("Minimum speed for grinding on starbeam torch rails")
-    public static double grindRailSpeedMin = 0.02D;
+    public static class StarbeamTorchSettings
+    {
+        @Config.Name("Grind Rail Start Speed")
+        @Config.Comment("Initial speed for grinding on starbeam torch rails")
+        public double grindRailSpeedStart = 0.3D;
 
-    @Config.Name("Grind Rail Drag")
-    @Config.Comment("Slowdown when grinding on starbeam torch rails")
-    public static double grindRailDrag = 0.001D;
+        @Config.Name("Grind Rail Minimum Speed")
+        @Config.Comment("Minimum speed for grinding on starbeam torch rails")
+        public double grindRailSpeedMin = 0.02D;
 
-    @Config.Name("Grind Rail Node Link Distance")
-    @Config.Comment("Maximum distance for linking starbeam torch nodes")
-    public static int grindRailNodeLinkDistance = 8;
+        @Config.Name("Grind Rail Drag")
+        @Config.Comment("Slowdown when grinding on starbeam torch rails")
+        public double grindRailDrag = 0.001D;
+
+        @Config.Name("Grind Rail Node Link Distance")
+        @Config.Comment("Maximum distance for linking starbeam torch nodes")
+        public int grindRailNodeLinkDistance = 8;
+    }
 
     @Mod.EventBusSubscriber(modid = LegendGear.MOD_ID)
     public static class EventHandler
