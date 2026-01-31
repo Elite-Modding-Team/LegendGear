@@ -1,0 +1,18 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "cube_top",
+    "textures": {
+      "top": "legendgear:blocks/lightning_struck_red_sand",
+      "side": "minecraft:blocks/red_sand"
+    }
+  },
+  "variants": {
+    "normal": [
+      {}
+    ],
+    "inventory": [
+      {}
+    ]
+  }
+}
