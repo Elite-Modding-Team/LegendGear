@@ -253,14 +253,6 @@ public class LGEntityGrindRail extends Entity implements IEntityAdditionalSpawnD
                 return;
             }
 
-            if (rider.getEntityData().getBoolean("justJumped"))
-            {
-                boot();
-                rider.motionY += 0.5D;
-                rider.getEntityData().setBoolean("justJumped", false);
-                return;
-            }
-
             Vec3d motionVec = new Vec3d(this.motionX, this.motionY, this.motionZ);
             this.speed = motionVec.length();
 
