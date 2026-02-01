@@ -14,6 +14,7 @@ import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
+import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -25,13 +26,13 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.ArrayList;
 import java.util.List;
-import mod.emt.legendgear.tileentity.LGTileEntityClayJar;
+import mod.emt.legendgear.tileentity.LGTileEntityClayUrn;
 
-public class LGBlockClayJar extends BlockContainer
+public class LGBlockClayUrn extends BlockContainer
 {
-    private static final AxisAlignedBB JAR_AABB = new AxisAlignedBB(0.0625D, 0.0D, 0.0625D, 0.9375D, 1.0D, 0.9375D);
+    private static final AxisAlignedBB URN_AABB = new AxisAlignedBB(0.0625D, 0.0D, 0.0625D, 0.9375D, 1.0D, 0.9375D);
 
-    public LGBlockClayJar()
+    public LGBlockClayUrn()
     {
         super(Material.GLASS);
         this.setHardness(0.0F);
@@ -47,7 +48,7 @@ public class LGBlockClayJar extends BlockContainer
     @Override
     public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
     {
-        return JAR_AABB;
+        return URN_AABB;
     }
 
     @Override
@@ -60,7 +61,7 @@ public class LGBlockClayJar extends BlockContainer
     @Nullable
     public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess world, BlockPos pos)
     {
-        return JAR_AABB;
+        return URN_AABB;
     }
 
     @Override
@@ -84,10 +85,10 @@ public class LGBlockClayJar extends BlockContainer
             if (entity instanceof EntityItem)
             {
                 EntityItem itemEntity = (EntityItem) entity;
-                LGTileEntityClayJar jar = (LGTileEntityClayJar) world.getTileEntity(pos);
-                if (jar != null && jar.getContents().isEmpty() && !itemEntity.isDead)
+                LGTileEntityClayUrn urn = (LGTileEntityClayUrn) world.getTileEntity(pos);
+                if (urn != null && urn.getContents().isEmpty() && !itemEntity.isDead)
                 {
-                    jar.setContents(itemEntity.getItem().copy());
+                    urn.setContents(itemEntity.getItem().copy());
                     itemEntity.setDead();
                     world.playSound(null, pos, SoundEvents.ENTITY_CHICKEN_EGG, SoundCategory.BLOCKS, 0.3F, 0.5F + world.rand.nextFloat() * 0.2F);
                 }
@@ -106,21 +107,27 @@ public class LGBlockClayJar extends BlockContainer
     }
 
     @Override
-    public TileEntity createNewTileEntity(World world, int meta)
+    public EnumBlockRenderType getRenderType(IBlockState state)
     {
-        return new LGTileEntityClayJar();
+        return EnumBlockRenderType.MODEL;
     }
 
     @Override
     public void breakBlock(World world, BlockPos pos, IBlockState state)
     {
-        LGTileEntityClayJar jar = (LGTileEntityClayJar) world.getTileEntity(pos);
-        if (jar != null && jar.getContents() != null && !world.isRemote)
+        LGTileEntityClayUrn urn = (LGTileEntityClayUrn) world.getTileEntity(pos);
+        if (urn != null && urn.getContents() != null && !world.isRemote)
         {
-            EntityItem drop = new EntityItem(world, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, jar.getContents().copy());
+            EntityItem drop = new EntityItem(world, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, urn.getContents().copy());
             drop.setDefaultPickupDelay();
             world.spawnEntity(drop);
         }
         super.breakBlock(world, pos, state);
+    }
+
+    @Override
+    public TileEntity createNewTileEntity(World world, int meta)
+    {
+        return new LGTileEntityClayUrn();
     }
 }

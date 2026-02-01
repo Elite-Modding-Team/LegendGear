@@ -25,7 +25,7 @@ public class LGBlocks
     public static final LGBlockAzuriteOre AZURITE_ORE = null;
     public static final LGBlockBombFlower BOMB_FLOWER = null;
     public static final LGBlockCaltrops CALTROPS = null;
-    public static final LGBlockClayJar CLAY_JAR = null;
+    public static final LGBlockClayUrn CLAY_URN = null;
     public static final LGBlockInfusedStarstone INFUSED_STARSTONE_BLOCK = null;
     public static final LGBlockLightningStruck LIGHTNING_STRUCK_COARSE_DIRT = null;
     public static final LGBlockLightningStruck LIGHTNING_STRUCK_DIRT = null;
@@ -59,7 +59,7 @@ public class LGBlocks
                 LGRegistry.setup(new LGBlockSkybeam(), "skybeam_block").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGBlockStarbeamTorch(), "starbeam_torch").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGBlockAzurite(), "azurite_block").setCreativeTab(LegendGear.TAB),
-                LGRegistry.setup(new LGBlockClayJar(), "clay_jar").setCreativeTab(LegendGear.TAB)
+                LGRegistry.setup(new LGBlockClayUrn(), "clay_urn").setCreativeTab(LegendGear.TAB)
             );
 
         // Optional - These blocks can be disabled by the config file

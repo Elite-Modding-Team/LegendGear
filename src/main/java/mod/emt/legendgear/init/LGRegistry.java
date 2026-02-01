@@ -5,7 +5,7 @@ import javax.annotation.Nonnull;
 import com.google.common.base.Preconditions;
 import mod.emt.legendgear.client.render.*;
 import mod.emt.legendgear.entity.*;
-import mod.emt.legendgear.tileentity.LGTileEntityClayJar;
+import mod.emt.legendgear.tileentity.LGTileEntityClayUrn;
 import mod.emt.legendgear.tileentity.LGTileEntityInfusedStarstone;
 import mod.emt.legendgear.tileentity.LGTileEntitySkybeam;
 import net.minecraft.block.Block;
@@ -176,7 +176,7 @@ public class LGRegistry
     {
         LegendGear.LOGGER.info("Registering tile entities...");
 
-        GameRegistry.registerTileEntity(LGTileEntityClayJar.class, new ResourceLocation(LegendGear.MOD_ID, "clay_jar"));
+        GameRegistry.registerTileEntity(LGTileEntityClayUrn.class, new ResourceLocation(LegendGear.MOD_ID, "clay_urn"));
         GameRegistry.registerTileEntity(LGTileEntityInfusedStarstone.class, new ResourceLocation(LegendGear.MOD_ID, "infused_starstone"));
         GameRegistry.registerTileEntity(LGTileEntitySkybeam.class, new ResourceLocation(LegendGear.MOD_ID, "skybeam"));
     }

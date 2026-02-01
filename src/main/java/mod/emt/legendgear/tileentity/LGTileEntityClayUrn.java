@@ -4,7 +4,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 
-public class LGTileEntityClayJar extends TileEntity
+public class LGTileEntityClayUrn extends TileEntity
 {
     private ItemStack contents = ItemStack.EMPTY;
 
