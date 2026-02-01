@@ -22,6 +22,32 @@
       "legendgear:grind_rail"
     ]
   },
+  "block.urn.place": {
+    "sounds": [
+      "legendgear:block/urn/place1",
+      "legendgear:block/urn/place2",
+      "legendgear:block/urn/place3",
+      "legendgear:block/urn/place4"
+    ]
+  },
+  "block.urn.shatter": {
+    "sounds": [
+      "legendgear:block/urn/shatter1",
+      "legendgear:block/urn/shatter2",
+      "legendgear:block/urn/shatter3",
+      "legendgear:block/urn/shatter4",
+      "legendgear:block/urn/shatter5"
+    ]
+  },
+  "block.urn.step": {
+    "sounds": [
+      "legendgear:block/urn/step1",
+      "legendgear:block/urn/step2",
+      "legendgear:block/urn/step3",
+      "legendgear:block/urn/step4",
+      "legendgear:block/urn/step5"
+    ]
+  },
   "entity.falling_star.caught": {
     "sounds": [
       "legendgear:entity/falling_star/caught"

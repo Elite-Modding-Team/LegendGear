@@ -4,7 +4,6 @@ import javax.annotation.Nullable;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
-import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
@@ -26,6 +25,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.ArrayList;
 import java.util.List;
+import mod.emt.legendgear.init.LGRegistry;
+import mod.emt.legendgear.init.LGSoundEvents;
 import mod.emt.legendgear.tileentity.LGTileEntityClayUrn;
 
 public class LGBlockClayUrn extends BlockContainer
@@ -36,7 +37,7 @@ public class LGBlockClayUrn extends BlockContainer
     {
         super(Material.GLASS);
         this.setHardness(0.0F);
-        this.setSoundType(SoundType.GLASS);
+        this.setSoundType(LGRegistry.URN);
     }
 
     @Override
@@ -91,6 +92,7 @@ public class LGBlockClayUrn extends BlockContainer
                     urn.setContents(itemEntity.getItem().copy());
                     itemEntity.setDead();
                     world.playSound(null, pos, SoundEvents.ENTITY_CHICKEN_EGG, SoundCategory.BLOCKS, 0.3F, 0.5F + world.rand.nextFloat() * 0.2F);
+                    world.playSound(null, pos, LGSoundEvents.BLOCK_URN_STEP.getSoundEvent(), SoundCategory.BLOCKS, 0.3F, 0.5F + world.rand.nextFloat() * 0.2F);
                 }
             }
             if (entity instanceof EntityArrow && world.setBlockToAir(pos))

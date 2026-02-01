@@ -3,11 +3,6 @@ package mod.emt.legendgear.init;
 import javax.annotation.Nonnull;
 
 import com.google.common.base.Preconditions;
-import mod.emt.legendgear.client.render.*;
-import mod.emt.legendgear.entity.*;
-import mod.emt.legendgear.tileentity.LGTileEntityClayUrn;
-import mod.emt.legendgear.tileentity.LGTileEntityInfusedStarstone;
-import mod.emt.legendgear.tileentity.LGTileEntitySkybeam;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.enchantment.Enchantment;
@@ -39,13 +34,19 @@ import net.minecraftforge.registries.IForgeRegistryEntry;
 import java.util.ArrayList;
 import java.util.List;
 import mod.emt.legendgear.LegendGear;
+import mod.emt.legendgear.client.render.*;
+import mod.emt.legendgear.entity.*;
+import mod.emt.legendgear.tileentity.LGTileEntityClayUrn;
+import mod.emt.legendgear.tileentity.LGTileEntityInfusedStarstone;
+import mod.emt.legendgear.tileentity.LGTileEntitySkybeam;
 
 @Mod.EventBusSubscriber(modid = LegendGear.MOD_ID)
 public class LGRegistry
 {
-    private static int entityID = 1;
-
     public static final SoundType CALTROPS = new SoundType(1.0F, 1.2F, LGSoundEvents.BLOCK_CALTROPS_LAND.getSoundEvent(), LGSoundEvents.BLOCK_CALTROPS_HIT.getSoundEvent(), LGSoundEvents.BLOCK_CALTROPS_LAND.getSoundEvent(), LGSoundEvents.BLOCK_CALTROPS_HIT.getSoundEvent(), LGSoundEvents.BLOCK_CALTROPS_HIT.getSoundEvent());
+    public static final SoundType URN = new SoundType(1.0F, 1.0F, LGSoundEvents.BLOCK_URN_SHATTER.getSoundEvent(), LGSoundEvents.BLOCK_URN_STEP.getSoundEvent(), LGSoundEvents.BLOCK_URN_PLACE.getSoundEvent(), LGSoundEvents.BLOCK_URN_STEP.getSoundEvent(), LGSoundEvents.BLOCK_URN_STEP.getSoundEvent());
+
+    private static int entityID = 1;
 
     @Nonnull
     public static <T extends IForgeRegistryEntry> T setup(@Nonnull final T entry, @Nonnull final String name)
