@@ -171,8 +171,6 @@ public class LGEntityGrindRail extends Entity implements IEntityAdditionalSpawnD
 
     public void boot()
     {
-        this.setDead();
-
         if (!this.getPassengers().isEmpty())
         {
             Entity e = this.getPassengers().get(0);
@@ -183,6 +181,8 @@ public class LGEntityGrindRail extends Entity implements IEntityAdditionalSpawnD
             e.setPosition(this.posX, this.posY + this.getMountedYOffset() + 0.1D, this.posZ);
             e.fallDistance = 0.0F;
         }
+
+        this.setDead();
     }
 
     public Vec3d getLineDirection()
