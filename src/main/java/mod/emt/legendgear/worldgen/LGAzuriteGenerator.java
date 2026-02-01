@@ -77,7 +77,7 @@ public class LGAzuriteGenerator implements IWorldGenerator
                     BlockPos orePos = core.add(0, yOff, zOff);
                     BlockPos crystalPos = orePos.offset(airDirection);
 
-                    if (random.nextFloat() < LGConfig.WORLD_GEN_SETTINGS.azuriteOreDensity && world.getBlockState(orePos).getBlock() instanceof BlockStone && world.isAirBlock(crystalPos))
+                    if (random.nextDouble() < LGConfig.WORLD_GEN_SETTINGS.azuriteOreDensity && world.getBlockState(orePos).getBlock() instanceof BlockStone && world.isAirBlock(crystalPos))
                     {
                         world.setBlockState(orePos, azuriteOre, 2);
                     }
@@ -93,7 +93,7 @@ public class LGAzuriteGenerator implements IWorldGenerator
                     BlockPos orePos = core.add(xOff, yOff, 0);
                     BlockPos crystalPos = orePos.offset(airDirection);
 
-                    if (random.nextFloat() < LGConfig.WORLD_GEN_SETTINGS.azuriteOreDensity && world.getBlockState(orePos).getBlock() instanceof BlockStone && world.isAirBlock(crystalPos))
+                    if (random.nextDouble() < LGConfig.WORLD_GEN_SETTINGS.azuriteOreDensity && world.getBlockState(orePos).getBlock() instanceof BlockStone && world.isAirBlock(crystalPos))
                     {
                         world.setBlockState(orePos, azuriteOre, 2);
                     }
