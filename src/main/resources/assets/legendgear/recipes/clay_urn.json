@@ -1,18 +1,21 @@
 {
   "type": "forge:ore_shaped",
   "pattern": [
-    "B B",
-    "B B",
-    "BBB"
+    " B ",
+    "BEB",
+    " B "
   ],
   "key": {
     "B": {
       "type": "forge:ore_dict",
       "ore": "ingotBrick"
+    },
+    "E": {
+      "item": "legendgear:emerald_shard"
     }
   },
   "result": {
     "item": "legendgear:clay_urn",
-    "count": 16
+    "count": 8
   }
 }
