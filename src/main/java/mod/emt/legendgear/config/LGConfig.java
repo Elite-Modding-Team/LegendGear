@@ -24,12 +24,22 @@ public class LGConfig
 
     public static class WorldGenSettings
     {
+        @Config.Name("Azurite Ore Generation Frequency")
+        public int azuriteOreFrequency = 1;
+
+        @Config.Name("Azurite Ore Generation Min Altitude")
+        public int azuriteOreAltitudeMin = 100;
+
+        @Config.Name("Azurite Ore Generation Max Altitude")
+        public int azuriteOreAltitudeMax = 110;
+
+        @Config.Name("Azurite Ore Generation Density")
+        public double azuriteOreDensity = 0.5D;
+
         @Config.Name("Generate Bomb Flowers")
-        @Config.Comment("Generate bomb flowers in the world")
         public boolean generateBombFlowers = true;
 
         @Config.Name("Generate Mystic Shrubs")
-        @Config.Comment("Generate mystic shrubs in the world")
         public boolean generateMysticShrubs = true;
     }
 
@@ -58,7 +68,10 @@ public class LGConfig
         @SubscribeEvent
         public static void onConfigChanged(ConfigChangedEvent.OnConfigChangedEvent event)
         {
-            if (event.getModID().equals(LegendGear.MOD_ID)) ConfigManager.sync(LegendGear.MOD_ID, Config.Type.INSTANCE);
+            if (event.getModID().equals(LegendGear.MOD_ID))
+            {
+                ConfigManager.sync(LegendGear.MOD_ID, Config.Type.INSTANCE);
+            }
         }
     }
 }

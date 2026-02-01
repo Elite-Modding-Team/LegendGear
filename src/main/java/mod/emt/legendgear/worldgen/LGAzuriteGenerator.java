@@ -1,8 +1,7 @@
 package mod.emt.legendgear.worldgen;
 
-import mod.emt.legendgear.init.LGBlocks;
+import net.minecraft.block.BlockStone;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -11,15 +10,11 @@ import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraftforge.fml.common.IWorldGenerator;
 
 import java.util.Random;
+import mod.emt.legendgear.config.LGConfig;
+import mod.emt.legendgear.init.LGBlocks;
 
-// TODO: Clean up and make sure they're not too rare or too common
 public class LGAzuriteGenerator implements IWorldGenerator
 {
-    public static final int attempts = 1;
-    public static final int minAltitude = 100;
-    public static final int maxAltitude = 110;
-    public static final float density = 0.5F;
-
     @Override
     public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider)
     {
@@ -28,9 +23,9 @@ public class LGAzuriteGenerator implements IWorldGenerator
             int blockX = chunkX * 16 + 8;
             int blockZ = chunkZ * 16 + 8;
 
-            for (int i = 0; i < attempts; i++)
+            for (int i = 0; i < LGConfig.WORLD_GEN_SETTINGS.azuriteOreFrequency; i++)
             {
-                int y = random.nextInt(maxAltitude + 1 - minAltitude) + minAltitude;
+                int y = random.nextInt(LGConfig.WORLD_GEN_SETTINGS.azuriteOreAltitudeMax + 1 - LGConfig.WORLD_GEN_SETTINGS.azuriteOreAltitudeMin) + LGConfig.WORLD_GEN_SETTINGS.azuriteOreAltitudeMin;
 
                 int localX = random.nextInt(16);
                 for (int localZ = 0; localZ < 16; localZ++)
@@ -38,10 +33,14 @@ public class LGAzuriteGenerator implements IWorldGenerator
                     BlockPos pos = new BlockPos(blockX + localX, y, blockZ + localZ);
                     BlockPos pos2 = pos.south();
 
-                    if (world.getBlockState(pos).getBlock() == Blocks.STONE && world.isAirBlock(pos2))
+                    if (world.getBlockState(pos).getBlock() instanceof BlockStone && world.isAirBlock(pos2))
+                    {
                         generateOres(random, world, pos, EnumFacing.SOUTH);
-                    if (world.isAirBlock(pos) && world.getBlockState(pos2).getBlock() == Blocks.STONE)
+                    }
+                    if (world.isAirBlock(pos) && world.getBlockState(pos2).getBlock() instanceof BlockStone)
+                    {
                         generateOres(random, world, pos2, EnumFacing.NORTH);
+                    }
                 }
 
                 int localZ = random.nextInt(16);
@@ -50,10 +49,14 @@ public class LGAzuriteGenerator implements IWorldGenerator
                     BlockPos pos = new BlockPos(blockX + lx, y, blockZ + localZ);
                     BlockPos pos2 = pos.east();
 
-                    if (world.getBlockState(pos).getBlock() == Blocks.STONE && world.isAirBlock(pos2))
+                    if (world.getBlockState(pos).getBlock() instanceof BlockStone && world.isAirBlock(pos2))
+                    {
                         generateOres(random, world, pos, EnumFacing.EAST);
-                    if (world.isAirBlock(pos) && world.getBlockState(pos2).getBlock() == Blocks.STONE)
+                    }
+                    if (world.isAirBlock(pos) && world.getBlockState(pos2).getBlock() instanceof BlockStone)
+                    {
                         generateOres(random, world, pos2, EnumFacing.WEST);
+                    }
                 }
             }
         }
@@ -62,7 +65,6 @@ public class LGAzuriteGenerator implements IWorldGenerator
     private void generateOres(Random random, World world, BlockPos core, EnumFacing airDirection)
     {
         IBlockState azuriteOre = LGBlocks.AZURITE_ORE.getDefaultState();
-        //IBlockState azuriteCrystal = Blocks.AIR.getDefaultState(); // Disabled leftover placeholder from 1.7.10
         int r = 2;
         int h = 2;
 
@@ -75,14 +77,14 @@ public class LGAzuriteGenerator implements IWorldGenerator
                     BlockPos orePos = core.add(0, yOff, zOff);
                     BlockPos crystalPos = orePos.offset(airDirection);
 
-                    if (random.nextFloat() < density && world.getBlockState(orePos).getBlock() == Blocks.STONE && world.isAirBlock(crystalPos))
+                    if (random.nextFloat() < LGConfig.WORLD_GEN_SETTINGS.azuriteOreDensity && world.getBlockState(orePos).getBlock() instanceof BlockStone && world.isAirBlock(crystalPos))
                     {
                         world.setBlockState(orePos, azuriteOre, 2);
-                        //world.setBlockState(crystalPos, azuriteCrystal, 2);
                     }
                 }
             }
-        } else if (airDirection.getAxis() == EnumFacing.Axis.Z)
+        }
+        else if (airDirection.getAxis() == EnumFacing.Axis.Z)
         {
             for (int yOff = -h; yOff <= h; yOff++)
             {
@@ -91,10 +93,9 @@ public class LGAzuriteGenerator implements IWorldGenerator
                     BlockPos orePos = core.add(xOff, yOff, 0);
                     BlockPos crystalPos = orePos.offset(airDirection);
 
-                    if (random.nextFloat() < density && world.getBlockState(orePos).getBlock() == Blocks.STONE && world.isAirBlock(crystalPos))
+                    if (random.nextFloat() < LGConfig.WORLD_GEN_SETTINGS.azuriteOreDensity && world.getBlockState(orePos).getBlock() instanceof BlockStone && world.isAirBlock(crystalPos))
                     {
                         world.setBlockState(orePos, azuriteOre, 2);
-                        //world.setBlockState(crystalPos, azuriteCrystal, 2);
                     }
                 }
             }

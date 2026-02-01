@@ -1,8 +1,5 @@
 package mod.emt.legendgear;
 
-import mod.emt.legendgear.init.LGRegistry;
-import mod.emt.legendgear.network.LGPacketHandler;
-import mod.emt.legendgear.worldgen.LGAzuriteGenerator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import net.minecraft.creativetab.CreativeTabs;
@@ -13,7 +10,10 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import mod.emt.legendgear.config.LGConfig;
+import mod.emt.legendgear.init.LGRegistry;
+import mod.emt.legendgear.network.LGPacketHandler;
 import mod.emt.legendgear.util.LGCreativeTab;
+import mod.emt.legendgear.worldgen.LGAzuriteGenerator;
 import mod.emt.legendgear.worldgen.LGBombFlowerGenerator;
 import mod.emt.legendgear.worldgen.LGShrubGenerator;
 
@@ -40,7 +40,10 @@ public class LegendGear
     @Mod.EventHandler
     public void init(FMLInitializationEvent event)
     {
-        GameRegistry.registerWorldGenerator(new LGAzuriteGenerator(), 3);
+        if (LGConfig.WORLD_GEN_SETTINGS.azuriteOreFrequency > 0)
+        {
+            GameRegistry.registerWorldGenerator(new LGAzuriteGenerator(), 3);
+        }
         if (LGConfig.WORLD_GEN_SETTINGS.generateBombFlowers)
         {
             GameRegistry.registerWorldGenerator(new LGBombFlowerGenerator(), 100);
