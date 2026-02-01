@@ -119,7 +119,7 @@ public class LGEntityGrindRail extends Entity implements IEntityAdditionalSpawnD
         super(world);
         this.noClip = true;
         this.setSize(0.25F, 0.25F);
-        this.speed = 0.3D;
+        this.speed = LGConfig.STARBEAM_TORCH_SETTINGS.grindRailSpeedStart;
     }
 
     public boolean isPast(Vec3d node)
@@ -286,7 +286,7 @@ public class LGEntityGrindRail extends Entity implements IEntityAdditionalSpawnD
         this.posY += this.motionY;
         this.posZ += this.motionZ;
 
-        if (isPast(new Vec3d(this.toX, this.toY, this.toZ)) && nodeHop())
+        if (isPast(new Vec3d(this.toX, this.toY, this.toZ)) && nodeHop() && !this.world.isRemote)
         {
             snapOn();
         }
