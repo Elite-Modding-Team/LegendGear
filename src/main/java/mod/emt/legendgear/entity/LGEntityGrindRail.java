@@ -264,6 +264,8 @@ public class LGEntityGrindRail extends Entity implements IEntityAdditionalSpawnD
 
             this.speed -= LGConfig.STARBEAM_TORCH_SETTINGS.grindRailDrag;
 
+            this.speed = Math.min(LGConfig.STARBEAM_TORCH_SETTINGS.grindRailSpeedStart * 4, this.speed);
+
             if (this.speed < LGConfig.STARBEAM_TORCH_SETTINGS.grindRailSpeedMin)
             {
                 if (dir.y >= 0)
