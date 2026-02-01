@@ -83,39 +83,22 @@ public class LGBlockClayUrn extends BlockContainer
     {
         if (!world.isRemote)
         {
-            if (entity instanceof EntityItem)
-            {
-                EntityItem itemEntity = (EntityItem) entity;
-                LGTileEntityClayUrn urn = (LGTileEntityClayUrn) world.getTileEntity(pos);
-                if (urn != null && !itemEntity.isDead)
-                {
-                    ItemStack itemStack = itemEntity.getItem();
-                    ItemStack contents = urn.getContents();
-                    if (contents.isEmpty())
-                    {
-                        urn.setContents(itemStack);
-                        itemEntity.setDead();
-                        world.playSound(null, pos, SoundEvents.ENTITY_CHICKEN_EGG, SoundCategory.BLOCKS, 0.3F, 0.5F + world.rand.nextFloat() * 0.2F);
-                        world.playSound(null, pos, LGSoundEvents.BLOCK_URN_STEP.getSoundEvent(), SoundCategory.BLOCKS, 0.3F, 0.5F + world.rand.nextFloat() * 0.2F);
-                    }
-                    else if (contents.getItem() == itemStack.getItem() && contents.getCount() < contents.getMaxStackSize())
-                    {
-                        int count = Math.min(itemStack.getCount(), contents.getMaxStackSize() - contents.getCount());
-                        itemStack.shrink(count);
-                        contents.grow(count);
-                        if (itemStack.isEmpty())
-                        {
-                            itemEntity.setDead();
-                        }
-                        world.playSound(null, pos, SoundEvents.ENTITY_CHICKEN_EGG, SoundCategory.BLOCKS, 0.3F, 0.5F + world.rand.nextFloat() * 0.2F);
-                        world.playSound(null, pos, LGSoundEvents.BLOCK_URN_STEP.getSoundEvent(), SoundCategory.BLOCKS, 0.3F, 0.5F + world.rand.nextFloat() * 0.2F);
-                    }
-                }
-            }
+            succItem(world, pos, entity);
+
             if (entity instanceof EntityArrow && world.setBlockToAir(pos))
             {
                 world.playEvent(2001, pos, Block.getStateId(state));
             }
+        }
+    }
+
+    @Override
+    public void onLanded(World world, Entity entity)
+    {
+        super.onLanded(world, entity);
+        if (!world.isRemote)
+        {
+            succItem(world, entity.getPosition().down(), entity);
         }
     }
 
@@ -148,5 +131,38 @@ public class LGBlockClayUrn extends BlockContainer
     public TileEntity createNewTileEntity(World world, int meta)
     {
         return new LGTileEntityClayUrn();
+    }
+
+    private void succItem(World world, BlockPos pos, Entity entity)
+    {
+        if (entity instanceof EntityItem)
+        {
+            EntityItem itemEntity = (EntityItem) entity;
+            LGTileEntityClayUrn urn = (LGTileEntityClayUrn) world.getTileEntity(pos);
+            if (urn != null && !itemEntity.isDead)
+            {
+                ItemStack itemStack = itemEntity.getItem();
+                ItemStack contents = urn.getContents();
+                if (contents.isEmpty())
+                {
+                    urn.setContents(itemStack);
+                    itemEntity.setDead();
+                    world.playSound(null, pos, SoundEvents.ENTITY_CHICKEN_EGG, SoundCategory.BLOCKS, 0.3F, 0.5F + world.rand.nextFloat() * 0.2F);
+                    world.playSound(null, pos, LGSoundEvents.BLOCK_URN_STEP.getSoundEvent(), SoundCategory.BLOCKS, 0.3F, 0.5F + world.rand.nextFloat() * 0.2F);
+                }
+                else if (contents.getItem() == itemStack.getItem() && contents.getCount() < contents.getMaxStackSize())
+                {
+                    int count = Math.min(itemStack.getCount(), contents.getMaxStackSize() - contents.getCount());
+                    itemStack.shrink(count);
+                    contents.grow(count);
+                    if (itemStack.isEmpty())
+                    {
+                        itemEntity.setDead();
+                    }
+                    world.playSound(null, pos, SoundEvents.ENTITY_CHICKEN_EGG, SoundCategory.BLOCKS, 0.3F, 0.5F + world.rand.nextFloat() * 0.2F);
+                    world.playSound(null, pos, LGSoundEvents.BLOCK_URN_STEP.getSoundEvent(), SoundCategory.BLOCKS, 0.3F, 0.5F + world.rand.nextFloat() * 0.2F);
+                }
+            }
+        }
     }
 }
