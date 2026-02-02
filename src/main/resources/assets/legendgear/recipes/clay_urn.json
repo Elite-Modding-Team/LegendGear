@@ -2,16 +2,13 @@
   "type": "forge:ore_shaped",
   "pattern": [
     " B ",
-    "BEB",
-    " B "
+    "B B",
+    "BBB"
   ],
   "key": {
     "B": {
       "type": "forge:ore_dict",
       "ore": "ingotBrick"
-    },
-    "E": {
-      "item": "legendgear:emerald_shard"
     }
   },
   "result": {

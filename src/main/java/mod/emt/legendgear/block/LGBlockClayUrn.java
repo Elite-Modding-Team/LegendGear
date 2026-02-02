@@ -35,8 +35,8 @@ public class LGBlockClayUrn extends BlockContainer
 
     public LGBlockClayUrn()
     {
-        super(Material.GLASS);
-        this.setHardness(0.0F);
+        super(Material.CLAY);
+        this.setHardness(0.2F);
         this.setSoundType(LGRegistry.URN);
     }
 
