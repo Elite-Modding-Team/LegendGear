@@ -22,6 +22,16 @@
       "legendgear:grind_rail"
     ]
   },
+  "block.sword_pedestal.place": {
+    "sounds": [
+      "legendgear:block/sword_pedestal/place_sword"
+    ]
+  },
+  "block.sword_pedestal.take": {
+    "sounds": [
+      "legendgear:block/sword_pedestal/take_sword"
+    ]
+  },
   "block.urn.place": {
     "sounds": [
       "legendgear:block/urn/place1",

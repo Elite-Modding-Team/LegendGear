@@ -32,6 +32,8 @@ public class LGBlocks
     public static final LGBlockLightningStruckFalling LIGHTNING_STRUCK_RED_SAND = null;
     public static final LGBlockLightningStruckFalling LIGHTNING_STRUCK_SAND = null;
     public static final LGBlockMysticShrub MYSTIC_SHRUB = null;
+    public static final LGBlockSwordPedestal SWORD_PEDESTAL = null;
+    public static final LGBlockSwordPedestalTechnical SWORD_PEDESTAL_TECHNICAL = null;
     public static final LGBlockFalling RED_STARRY_SAND = null;
     public static final LGBlockSkybeam SKYBEAM_BLOCK = null;
     public static final LGBlockStarbeamTorch STARBEAM_TORCH = null;
@@ -59,7 +61,9 @@ public class LGBlocks
                 LGRegistry.setup(new LGBlockSkybeam(), "skybeam_block").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGBlockStarbeamTorch(), "starbeam_torch").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGBlockAzurite(), "azurite_block").setCreativeTab(LegendGear.TAB),
-                LGRegistry.setup(new LGBlockClayUrn(), "clay_urn").setCreativeTab(LegendGear.TAB)
+                LGRegistry.setup(new LGBlockClayUrn(), "clay_urn").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGBlockSwordPedestal(), "sword_pedestal").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGBlockSwordPedestalTechnical(), "sword_pedestal_technical")
             );
 
         // Optional - These blocks can be disabled by the config file

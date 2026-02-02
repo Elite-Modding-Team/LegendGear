@@ -1,0 +1,22 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "legendgear:sword_pedestal"
+  },
+  "variants": {
+    "facing=north,has_sword=false": [{"y": 0}],
+    "facing=south,has_sword=false": [{"y": 180}],
+    "facing=west,has_sword=false": [{"y": 270}],
+    "facing=east,has_sword=false": [{"y": 90}],
+    "facing=north,has_sword=true": [{"y": 0}],
+    "facing=south,has_sword=true": [{"y": 180}],
+    "facing=west,has_sword=true": [{"y": 270}],
+    "facing=east,has_sword=true": [{"y": 90}],
+    "normal": [
+      {}
+    ],
+    "inventory": [
+      {}
+    ]
+  }
+}

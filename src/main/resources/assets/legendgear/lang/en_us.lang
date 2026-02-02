@@ -19,6 +19,8 @@ tile.legendgear.starbeam_torch.name=Starbeam Torch
 tile.legendgear.starry_sand.name=Starry Sand
 tile.legendgear.starstone_block.name=Starstone Block
 tile.legendgear.sugar_cube.name=Sugar Cube
+tile.legendgear.sword_pedestal.name=Sword Pedestal
+tile.legendgear.sword_pedestal_technical.name=Sword Pedestal Dummy
 
 # ITEMS
 item.legendgear.aero_amulet.name=Aero Amulet

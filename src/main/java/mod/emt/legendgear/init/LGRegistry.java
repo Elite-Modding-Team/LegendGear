@@ -39,6 +39,7 @@ import mod.emt.legendgear.entity.*;
 import mod.emt.legendgear.tileentity.LGTileEntityClayUrn;
 import mod.emt.legendgear.tileentity.LGTileEntityInfusedStarstone;
 import mod.emt.legendgear.tileentity.LGTileEntitySkybeam;
+import mod.emt.legendgear.tileentity.LGTileEntitySwordPedestal;
 
 @Mod.EventBusSubscriber(modid = LegendGear.MOD_ID)
 public class LGRegistry
@@ -180,6 +181,7 @@ public class LGRegistry
         GameRegistry.registerTileEntity(LGTileEntityClayUrn.class, new ResourceLocation(LegendGear.MOD_ID, "clay_urn"));
         GameRegistry.registerTileEntity(LGTileEntityInfusedStarstone.class, new ResourceLocation(LegendGear.MOD_ID, "infused_starstone"));
         GameRegistry.registerTileEntity(LGTileEntitySkybeam.class, new ResourceLocation(LegendGear.MOD_ID, "skybeam"));
+        GameRegistry.registerTileEntity(LGTileEntitySwordPedestal.class, new ResourceLocation(LegendGear.MOD_ID, "sword_pedestal"));
     }
 
     @SideOnly(Side.CLIENT)
@@ -190,6 +192,7 @@ public class LGRegistry
 
         ClientRegistry.bindTileEntitySpecialRenderer(LGTileEntityInfusedStarstone.class, new LGRenderInfusedStarstone());
         ClientRegistry.bindTileEntitySpecialRenderer(LGTileEntitySkybeam.class, new LGRenderSkybeam());
+        ClientRegistry.bindTileEntitySpecialRenderer(LGTileEntitySwordPedestal.class, new LGRenderSwordPedestal());
 
         RenderingRegistry.registerEntityRenderingHandler(LGEntityArrowStorm.class, new LGRenderArrowStorm.Factory());
         RenderingRegistry.registerEntityRenderingHandler(LGEntityBomb.class, new LGRenderBomb.Factory());

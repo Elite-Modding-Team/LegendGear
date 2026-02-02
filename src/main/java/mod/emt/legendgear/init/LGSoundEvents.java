@@ -11,6 +11,8 @@ public enum LGSoundEvents
     BLOCK_CALTROPS_LAND("block.caltrops.land"),
     BLOCK_GRIND_RAIL_CHOIR("block.grind_rail_choir"),
     BLOCK_GRIND_RAIL("block.grind_rail"),
+    BLOCK_SWORD_PEDESTAL_PLACE("block.sword_pedestal.place"),
+    BLOCK_SWORD_PEDESTAL_TAKE("block.sword_pedestal.take"),
     BLOCK_URN_PLACE("block.urn.place"),
     BLOCK_URN_SHATTER("block.urn.shatter"),
     BLOCK_URN_STEP("block.urn.step"),
