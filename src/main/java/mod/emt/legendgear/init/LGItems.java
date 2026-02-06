@@ -2,8 +2,6 @@ package mod.emt.legendgear.init;
 
 import javax.annotation.Nonnull;
 
-import mod.emt.legendgear.block.LGBlockStarstone;
-import mod.emt.legendgear.item.base.*;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
@@ -24,7 +22,9 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.registries.IForgeRegistry;
 
 import mod.emt.legendgear.LegendGear;
+import mod.emt.legendgear.block.LGBlockStarstone;
 import mod.emt.legendgear.item.*;
+import mod.emt.legendgear.item.base.*;
 
 @SuppressWarnings("unused")
 @Mod.EventBusSubscriber(modid = LegendGear.MOD_ID)
@@ -50,6 +50,7 @@ public class LGItems
     public static final LGItemBase FULGURITE = null;
     public static final LGItemGeoAmulet GEO_AMULET = null;
     public static final LGItemRockCandy GLOWSTONE_ROCK_CANDY = null;
+    public static final LGItemHookshot HOOKSHOT = null;
     public static final LGItemStardust INFUSED_STARDUST = null;
     public static final LGItemStarPiece INFUSED_STAR_PIECE = null;
     public static final LGItemBlockSpecial INFUSED_STARSTONE = null;
@@ -83,7 +84,7 @@ public class LGItems
     // TODO: Add materials to its own class
     public static Item.ToolMaterial TOOL_STARGLASS = EnumHelper.addToolMaterial("legendgear_tool_starglass", 2, 216, 15.0F, 2.0F, 20);
 
-    public static ItemArmor.ArmorMaterial ARMOR_SPECIAL = EnumHelper.addArmorMaterial("legendgear_armor_special", "special", 5, new int[]{1, 0, 0, 1}, 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F);
+    public static ItemArmor.ArmorMaterial ARMOR_SPECIAL = EnumHelper.addArmorMaterial("legendgear_armor_special", "special", 5, new int[] {1, 0, 0, 1}, 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F);
 
     @SubscribeEvent
     public static void onRegisterItemsEvent(@Nonnull final RegistryEvent.Register<Item> event)
@@ -139,8 +140,9 @@ public class LGItems
                 LGRegistry.setup(new LGItemQuiver(), "quiver").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemReedPipes(), "reed_pipes").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemRecoveryHeart(), "recovery_heart").setCreativeTab(LegendGear.TAB),
-                LGRegistry.setup(new LGItemSlimeSword(), "slime_sword").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemSpottingScope(), "spotting_scope").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemHookshot(), "hookshot").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemSlimeSword(), "slime_sword").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemSword(TOOL_STARGLASS, EnumRarity.RARE), "starglass_sword").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemRecord("dragondot", LGSoundEvents.RECORD_DRAGONDOT.getSoundEvent(), EnumRarity.EPIC), "record_dragondot").setCreativeTab(LegendGear.TAB)
             );

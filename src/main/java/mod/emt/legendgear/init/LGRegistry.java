@@ -103,6 +103,7 @@ public class LGRegistry
         registerEntity("fire_blast", LGEntityFireBlast.class, 64, false);
         registerEntity("fire_medallion", LGEntityFireMedallion.class, 64, true);
         registerEntity("grind_rail", LGEntityGrindRail.class, 64, true);
+        registerEntity("hookshot", LGEntityHookshot.class, 64, true);
         registerEntity("magic_boomerang", LGEntityMagicBoomerang.class, 64, true);
         registerEntity("ping", LGEntityPing.class, 512, false);
         registerEntity("quake", LGEntityQuake.class, 64, false);
@@ -203,6 +204,7 @@ public class LGRegistry
         RenderingRegistry.registerEntityRenderingHandler(LGEntityFireBlast.class, new LGRenderFireBlast.Factory());
         RenderingRegistry.registerEntityRenderingHandler(LGEntityFireMedallion.class, new LGRenderFireMedallion.Factory());
         RenderingRegistry.registerEntityRenderingHandler(LGEntityGrindRail.class, new LGRenderGrindRail.Factory());
+        RenderingRegistry.registerEntityRenderingHandler(LGEntityHookshot.class, new LGRenderHookshot.Factory());
         RenderingRegistry.registerEntityRenderingHandler(LGEntityMagicBoomerang.class, new LGRenderMagicBoomerang.Factory());
         RenderingRegistry.registerEntityRenderingHandler(LGEntityPing.class, new LGRenderPing.Factory());
         RenderingRegistry.registerEntityRenderingHandler(LGEntityQuake.class, new LGRenderQuake.Factory());

@@ -1,0 +1,14 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "legendgear:items/hookshot"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "legendgear:cast": 1
+      },
+      "model": "legendgear:item/hookshot_fired"
+    }
+  ]
+}
