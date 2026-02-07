@@ -118,7 +118,7 @@ public class LGEntityHookshot extends EntityThrowable implements IEntityAddition
         boolean anchored = dataManager.get(ANCHORED);
         if (anchored)
         {
-            if (!world.isRemote && (!isValidAnchor(posX, posY, posZ) || getDistance(shooter) < 3.0D))
+            if (!world.isRemote && (!isValidAnchor(posX, posY, posZ) || getDistance(shooter) < 3.0D || shooter.isRiding()))
             {
                 setDead();
             }
@@ -136,7 +136,8 @@ public class LGEntityHookshot extends EntityThrowable implements IEntityAddition
         }
         else
         {
-            if (this.travelTime % 2 == 0 && !this.world.isRemote) {
+            if (this.travelTime % 2 == 0 && !this.world.isRemote)
+            {
                 world.playSound(null, shooter.posX, shooter.posY, shooter.posZ, SoundEvents.ENTITY_ITEM_BREAK, SoundCategory.PLAYERS, 0.2F, 1.5F);
             }
 
