@@ -57,6 +57,7 @@ public class LGItems
     public static final LGItemRockCandy LAPIS_LAZULI_ROCK_CANDY = null;
     public static final LGItemMagicBoomerang MAGIC_BOOMERANG = null;
     public static final LGItemMagicMirror MAGIC_MIRROR = null;
+    public static final LGItemMagicPowder MAGIC_POWDER = null;
     public static final LGItemFood MILK_CHOCOLATE = null;
     public static final LGItemMysticSeed MYSTIC_SEED = null;
     public static final LGItemCharm PHOENIX_CHARM = null;
@@ -142,6 +143,7 @@ public class LGItems
                 LGRegistry.setup(new LGItemRecoveryHeart(), "recovery_heart").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemSpottingScope(), "spotting_scope").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemHookshot(), "hookshot").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemMagicPowder(), "magic_powder").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemSlimeSword(), "slime_sword").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemSword(TOOL_STARGLASS, EnumRarity.RARE), "starglass_sword").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemRecord("dragondot", LGSoundEvents.RECORD_DRAGONDOT.getSoundEvent(), EnumRarity.EPIC), "record_dragondot").setCreativeTab(LegendGear.TAB)
