@@ -18,6 +18,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import mod.emt.legendgear.block.LGBlockMysticShrub;
 import mod.emt.legendgear.init.LGBlocks;
@@ -130,6 +132,13 @@ public class LGItemMagicPowder extends Item
         }
 
         return super.itemInteractionForEntity(stack, player, target, hand);
+    }
+
+    @SideOnly(Side.CLIENT)
+    @Override
+    public boolean hasEffect(ItemStack stack)
+    {
+        return true;
     }
 
     @Override
