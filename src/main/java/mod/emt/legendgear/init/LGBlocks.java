@@ -51,27 +51,31 @@ public class LGBlocks
         // BLOCKS
         registry.registerAll
             (
-                LGRegistry.setup(new LGBlockFalling(Material.SAND, SoundType.SAND, MapColor.SAND, -2370656), "starry_sand").setHardness(0.5F).setLightLevel(0.4F).setCreativeTab(LegendGear.TAB),
-                LGRegistry.setup(new LGBlockFalling(Material.SAND, SoundType.SAND, MapColor.ADOBE, -5679071), "red_starry_sand").setHardness(0.5F).setLightLevel(0.4F).setCreativeTab(LegendGear.TAB),
+                // LegendGear 1
+                LGRegistry.setup(new LGBlockMysticShrub(), "mystic_shrub").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGBlockClayUrn(), "clay_urn").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGBlockBombFlower(), "bomb_flower").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGBlockCaltrops(), "caltrops").setCreativeTab(LegendGear.TAB),
-                LGRegistry.setup(new LGBlockMysticShrub(), "mystic_shrub").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGBlockSwordPedestal(), "sword_pedestal").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGBlockSwordPedestalTechnical(), "sword_pedestal_technical"),
+                LGRegistry.setup(new LGBlockStarbeamTorch(), "starbeam_torch").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGBlockSkybeam(), "skybeam_block").setCreativeTab(LegendGear.TAB),
+                // LegendGear 2
+                LGRegistry.setup(new LGBlockFalling(Material.SAND, SoundType.SAND, MapColor.SAND, -2370656), "starry_sand").setHardness(0.5F).setLightLevel(0.4F).setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGBlockFalling(Material.SAND, SoundType.SAND, MapColor.ADOBE, -5679071), "red_starry_sand").setHardness(0.5F).setLightLevel(0.4F).setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGBlockStarstone(3000.0F), "starstone_block"),
                 LGRegistry.setup(new LGBlockInfusedStarstone(6000.0F), "infused_starstone_block"),
-                LGRegistry.setup(new LGBlockSkybeam(), "skybeam_block").setCreativeTab(LegendGear.TAB),
-                LGRegistry.setup(new LGBlockStarbeamTorch(), "starbeam_torch").setCreativeTab(LegendGear.TAB),
-                LGRegistry.setup(new LGBlockAzurite(), "azurite_block").setCreativeTab(LegendGear.TAB),
-                LGRegistry.setup(new LGBlockClayUrn(), "clay_urn").setCreativeTab(LegendGear.TAB),
-                LGRegistry.setup(new LGBlockSwordPedestal(), "sword_pedestal").setCreativeTab(LegendGear.TAB),
-                LGRegistry.setup(new LGBlockSwordPedestalTechnical(), "sword_pedestal_technical")
+                LGRegistry.setup(new LGBlockAzurite(), "azurite_block").setCreativeTab(LegendGear.TAB)
             );
 
         // Optional - These blocks can be disabled by the config file
-        registry.register(LGRegistry.setup(new LGBlockAzuriteOre(), "azurite_ore").setCreativeTab(LegendGear.TAB));
+        // LegendGear 1
+        registry.register(LGRegistry.setup(new LGBlockSugarCube(), "sugar_cube").setCreativeTab(LegendGear.TAB));
+        // LegendGear 2
         registry.register(LGRegistry.setup(new LGBlockLightningStruck(Material.GROUND, SoundType.GROUND, MapColor.DIRT, Blocks.DIRT, 0), "lightning_struck_dirt").setHardness(0.5F).setCreativeTab(LegendGear.TAB));
         registry.register(LGRegistry.setup(new LGBlockLightningStruck(Material.GROUND, SoundType.GROUND, MapColor.DIRT, Blocks.DIRT, 1), "lightning_struck_coarse_dirt").setHardness(0.5F).setCreativeTab(LegendGear.TAB));
         registry.register(LGRegistry.setup(new LGBlockLightningStruckFalling(Material.SAND, SoundType.SAND, MapColor.SAND, Blocks.SAND, 0, -2370656), "lightning_struck_sand").setHardness(0.5F).setCreativeTab(LegendGear.TAB));
         registry.register(LGRegistry.setup(new LGBlockLightningStruckFalling(Material.SAND, SoundType.SAND, MapColor.ADOBE, Blocks.SAND, 1, -5679071), "lightning_struck_red_sand").setHardness(0.5F).setCreativeTab(LegendGear.TAB));
-        registry.register(LGRegistry.setup(new LGBlockSugarCube(), "sugar_cube").setCreativeTab(LegendGear.TAB));
+        registry.register(LGRegistry.setup(new LGBlockAzuriteOre(), "azurite_ore").setCreativeTab(LegendGear.TAB));
     }
 }
