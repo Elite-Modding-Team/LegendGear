@@ -128,10 +128,22 @@ public class LGEntityHookshot extends EntityThrowable implements IEntityAddition
             shooter.motionY = toMe.y + 0.25D;
             shooter.motionZ = toMe.z;
             shooter.fallDistance = 0.0F;
+
+            if (this.travelTime % 2 == 0 && !this.world.isRemote)
+            {
+                world.playSound(null, shooter.posX, shooter.posY, shooter.posZ, SoundEvents.ENTITY_ITEM_BREAK, SoundCategory.PLAYERS, 0.2F, 2.0F);
+            }
         }
-        else if (travelTime <= -25)
+        else
         {
-            setDead();
+            if (this.travelTime % 2 == 0 && !this.world.isRemote) {
+                world.playSound(null, shooter.posX, shooter.posY, shooter.posZ, SoundEvents.ENTITY_ITEM_BREAK, SoundCategory.PLAYERS, 0.2F, 1.5F);
+            }
+
+            if (travelTime <= -20)
+            {
+                setDead();
+            }
         }
     }
 

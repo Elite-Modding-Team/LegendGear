@@ -65,7 +65,7 @@ public class LGItemHookshot extends Item
                 LGEntityHookshot hook = new LGEntityHookshot(world, player);
                 world.spawnEntity(hook);
                 hook.shootHookshot(player, player.rotationPitch, player.rotationYaw, 1.5F, 1.0F);
-                world.playSound(null, player.posX, player.posY, player.posZ, SoundEvents.ENTITY_ARROW_SHOOT, SoundCategory.PLAYERS, 1.0F, 1.0F);
+                world.playSound(null, player.posX, player.posY, player.posZ, SoundEvents.ENTITY_ITEM_BREAK, SoundCategory.PLAYERS, 1.0F, 0.25F);
             }
             setCast(stack, true);
             player.getCooldownTracker().setCooldown(this, 40);
