@@ -1,7 +1,5 @@
 package mod.emt.legendgear.item;
 
-import mod.emt.legendgear.client.particle.LGParticleHandler;
-import mod.emt.legendgear.init.LGSoundEvents;
 import net.minecraft.block.*;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityAgeable;
@@ -23,7 +21,9 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import mod.emt.legendgear.block.LGBlockMysticShrub;
+import mod.emt.legendgear.client.particle.LGParticleHandler;
 import mod.emt.legendgear.init.LGBlocks;
+import mod.emt.legendgear.init.LGSoundEvents;
 
 public class LGItemMagicPowder extends Item
 {
@@ -85,31 +85,22 @@ public class LGItemMagicPowder extends Item
             ItemStack helmet = zombie.getItemStackFromSlot(EntityEquipmentSlot.HEAD);
             if (helmet.isEmpty())
             {
-                if (!target.world.isRemote)
-                {
-                    zombie.setItemStackToSlot(EntityEquipmentSlot.HEAD, new ItemStack(Blocks.PUMPKIN));
-                    zombie.getEntityData().setBoolean("pumpkined", true);
-                }
+                zombie.setItemStackToSlot(EntityEquipmentSlot.HEAD, new ItemStack(Blocks.PUMPKIN));
+                zombie.getEntityData().setBoolean("pumpkined", true);
                 success = true;
             }
             else if (zombie.getEntityData().getBoolean("pumpkined") && !zombie.getEntityData().getBoolean("meloned"))
             {
-                if (!target.world.isRemote)
-                {
-                    zombie.setItemStackToSlot(EntityEquipmentSlot.HEAD, new ItemStack(Blocks.MELON_BLOCK));
-                    zombie.getEntityData().setBoolean("meloned", true);
-                    zombie.getEntityData().setBoolean("pumpkined", false);
-                }
+                zombie.setItemStackToSlot(EntityEquipmentSlot.HEAD, new ItemStack(Blocks.MELON_BLOCK));
+                zombie.getEntityData().setBoolean("meloned", true);
+                zombie.getEntityData().setBoolean("pumpkined", false);
                 success = true;
             }
             else if (zombie.getEntityData().getBoolean("meloned") && !zombie.getEntityData().getBoolean("pumpkined"))
             {
-                if (!target.world.isRemote)
-                {
-                    zombie.setItemStackToSlot(EntityEquipmentSlot.HEAD, new ItemStack(Blocks.PUMPKIN));
-                    zombie.getEntityData().setBoolean("meloned", false);
-                    zombie.getEntityData().setBoolean("pumpkined", true);
-                }
+                zombie.setItemStackToSlot(EntityEquipmentSlot.HEAD, new ItemStack(Blocks.PUMPKIN));
+                zombie.getEntityData().setBoolean("meloned", false);
+                zombie.getEntityData().setBoolean("pumpkined", true);
                 success = true;
             }
         }
