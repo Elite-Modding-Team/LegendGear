@@ -1,5 +1,7 @@
 package mod.emt.legendgear.item;
 
+import mod.emt.legendgear.client.particle.LGParticleHandler;
+import mod.emt.legendgear.init.LGSoundEvents;
 import net.minecraft.block.*;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityAgeable;
@@ -10,7 +12,6 @@ import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.passive.EntitySheep;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
@@ -126,7 +127,8 @@ public class LGItemMagicPowder extends Item
             }
             else
             {
-                target.world.playSound(null, target.getPosition(), SoundEvents.ENTITY_ZOMBIE_VILLAGER_CURE, SoundCategory.NEUTRAL, 0.4F, 1.0F + target.world.rand.nextFloat() * 0.5F);
+                target.world.playSound(null, target.getPosition(), LGSoundEvents.ITEM_MAGIC_POWDER_SPRINKLE.getSoundEvent(), SoundCategory.AMBIENT, 0.2F, 1.0F);
+                target.world.playSound(null, target.getPosition(), LGSoundEvents.ITEM_MAGIC_POWDER_TRANSFORM.getSoundEvent(), SoundCategory.AMBIENT, 1.0F, 0.7F + target.world.rand.nextFloat() * 0.5F);
             }
             return true;
         }
@@ -245,7 +247,8 @@ public class LGItemMagicPowder extends Item
             }
             else
             {
-                world.playSound(null, pos, SoundEvents.ENTITY_ZOMBIE_VILLAGER_CURE, SoundCategory.BLOCKS, 0.4F, 1.0F + world.rand.nextFloat() * 0.5F);
+                world.playSound(null, pos, LGSoundEvents.ITEM_MAGIC_POWDER_SPRINKLE.getSoundEvent(), SoundCategory.AMBIENT, 0.2F, 1.0F);
+                world.playSound(null, pos, LGSoundEvents.ITEM_MAGIC_POWDER_TRANSFORM.getSoundEvent(), SoundCategory.AMBIENT, 1.0F, 0.7F + world.rand.nextFloat() * 0.5F);
             }
         }
 
@@ -257,7 +260,7 @@ public class LGItemMagicPowder extends Item
         world.spawnParticle(EnumParticleTypes.EXPLOSION_LARGE, x, y, z, 0, 0, 0);
         for (int i = 0; i < 20; i++)
         {
-            world.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, x + world.rand.nextGaussian() * 0.5, y + world.rand.nextGaussian() * 0.5, z + world.rand.nextGaussian() * 0.5, 0, -0.02, 0);
+            LGParticleHandler.spawnSparkleFX(world, x + world.rand.nextGaussian() * 0.5D, y + world.rand.nextGaussian() * 0.5D, z + world.rand.nextGaussian() * 0.5D, 0.0D, -0.02D, 0.0D, 1.0F);
         }
     }
 }

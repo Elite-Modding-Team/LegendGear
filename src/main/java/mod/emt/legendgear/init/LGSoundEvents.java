@@ -38,6 +38,8 @@ public enum LGSoundEvents
     ITEM_FORTUNE_COOKIE_USE("item.fortune_cookie.use"),
     ITEM_MAGIC_MIRROR_INACTIVE("item.magic_mirror.inactive"),
     ITEM_MAGIC_MIRROR_USE("item.magic_mirror.use"),
+    ITEM_MAGIC_POWDER_SPRINKLE("item.magic_powder.sprinkle"),
+    ITEM_MAGIC_POWDER_TRANSFORM("item.magic_powder.transform"),
     ITEM_MEDALLION_CHARGE_FULL("item.medallion.charge_full"),
     ITEM_MEDALLION_CHARGE_PARTIAL("item.medallion.charge_partial"),
     ITEM_PHOENIX_FEATHER_ACTIVATE("item.phoenix_feather.activate"),

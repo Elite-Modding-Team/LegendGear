@@ -168,6 +168,16 @@
       "legendgear:item/magic_mirror/use"
     ]
   },
+  "item.magic_powder.sprinkle": {
+    "sounds": [
+      "legendgear:sprinkle"
+    ]
+  },
+  "item.magic_powder.transform": {
+    "sounds": [
+      "legendgear:transform"
+    ]
+  },
   "item.medallion.charge_full": {
     "sounds": [
       "legendgear:item/star_piece/charge_end"
