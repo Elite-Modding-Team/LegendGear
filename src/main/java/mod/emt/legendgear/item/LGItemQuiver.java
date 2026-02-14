@@ -18,6 +18,7 @@ import net.minecraft.world.World;
 
 import java.util.List;
 import mod.emt.legendgear.config.LGConfig;
+import mod.emt.legendgear.util.TooltipHelper;
 
 public class LGItemQuiver extends Item
 {
@@ -78,7 +79,7 @@ public class LGItemQuiver extends Item
     @Override
     public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flag)
     {
-        tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.legendgear.quiver"));
+        TooltipHelper.addWrappedTooltip(tooltip, TextFormatting.GRAY, I18n.format("tooltip.legendgear.quiver"));
         tooltip.add(I18n.format(""));
 
         if (stack.getItemDamage() <= stack.getMaxDamage())

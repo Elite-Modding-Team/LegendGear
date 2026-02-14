@@ -15,6 +15,7 @@ import java.util.List;
 import mod.emt.legendgear.LegendGear;
 import mod.emt.legendgear.init.LGSoundEvents;
 import mod.emt.legendgear.item.base.LGItemFood;
+import mod.emt.legendgear.util.TooltipHelper;
 
 public class LGItemFortuneCookie extends LGItemFood
 {
@@ -27,7 +28,7 @@ public class LGItemFortuneCookie extends LGItemFood
     @Override
     public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flags)
     {
-        tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.legendgear.fortune_cookie"));
+        TooltipHelper.addWrappedTooltip(tooltip, TextFormatting.GRAY, I18n.format("tooltip.legendgear.fortune_cookie"));
     }
 
     @Override

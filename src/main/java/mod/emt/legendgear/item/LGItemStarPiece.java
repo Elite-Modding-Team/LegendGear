@@ -25,6 +25,7 @@ import java.util.Random;
 import mod.emt.legendgear.client.particle.LGParticleHandler;
 import mod.emt.legendgear.init.LGItems;
 import mod.emt.legendgear.init.LGSoundEvents;
+import mod.emt.legendgear.util.TooltipHelper;
 
 // TODO: Fix particle XYZ positions
 public class LGItemStarPiece extends Item
@@ -128,11 +129,11 @@ public class LGItemStarPiece extends Item
     {
         if (this.equals(LGItems.STAR_PIECE))
         {
-            tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.legendgear.star_piece", INFUSE_LEVEL));
+            TooltipHelper.addWrappedTooltip(tooltip, TextFormatting.GRAY, I18n.format("tooltip.legendgear.star_piece", INFUSE_LEVEL));
         }
         else if (this.equals(LGItems.INFUSED_STAR_PIECE))
         {
-            tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.legendgear.infused_star_piece"));
+            TooltipHelper.addWrappedTooltip(tooltip, TextFormatting.GRAY, I18n.format("tooltip.legendgear.infused_star_piece"));
         }
     }
 

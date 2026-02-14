@@ -19,6 +19,7 @@ import net.minecraft.world.World;
 
 import java.util.List;
 import mod.emt.legendgear.entity.LGEntityPing;
+import mod.emt.legendgear.util.TooltipHelper;
 
 
 public class LGItemSpottingScope extends Item
@@ -72,7 +73,7 @@ public class LGItemSpottingScope extends Item
     @Override
     public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flags)
     {
-        tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.legendgear.spotting_scope"));
+        TooltipHelper.addWrappedTooltip(tooltip, TextFormatting.GRAY, I18n.format("tooltip.legendgear.spotting_scope"));
     }
 
     @Override

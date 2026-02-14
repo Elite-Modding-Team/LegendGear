@@ -25,6 +25,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import java.util.List;
 import mod.emt.legendgear.LegendGear;
 import mod.emt.legendgear.init.LGBlocks;
+import mod.emt.legendgear.util.TooltipHelper;
 import mod.emt.legendgear.worldgen.LGShrubClusterMaker;
 
 public class LGItemMysticSeed extends ItemSeeds
@@ -98,7 +99,7 @@ public class LGItemMysticSeed extends ItemSeeds
     @Override
     public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flags)
     {
-        tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.legendgear.mystic_seed"));
+        TooltipHelper.addWrappedTooltip(tooltip, TextFormatting.GRAY, I18n.format("tooltip.legendgear.mystic_seed"));
     }
 
     @Override

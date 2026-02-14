@@ -15,6 +15,7 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 import java.util.List;
+import mod.emt.legendgear.util.TooltipHelper;
 
 public class LGItemSlimeSword extends Item
 {
@@ -27,7 +28,7 @@ public class LGItemSlimeSword extends Item
     @Override
     public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flags)
     {
-        tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.legendgear.slime_sword"));
+        TooltipHelper.addWrappedTooltip(tooltip, TextFormatting.GRAY, I18n.format("tooltip.legendgear.slime_sword"));
     }
 
     @Override

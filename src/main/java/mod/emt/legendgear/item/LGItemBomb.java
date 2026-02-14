@@ -18,6 +18,7 @@ import net.minecraft.world.World;
 
 import java.util.List;
 import mod.emt.legendgear.entity.LGEntityBomb;
+import mod.emt.legendgear.util.TooltipHelper;
 
 public class LGItemBomb extends Item implements IBehaviorDispenseItem
 {
@@ -45,7 +46,7 @@ public class LGItemBomb extends Item implements IBehaviorDispenseItem
     @Override
     public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flags)
     {
-        tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.legendgear.bomb_item"));
+        TooltipHelper.addWrappedTooltip(tooltip, TextFormatting.GRAY, I18n.format("tooltip.legendgear.bomb_item"));
     }
 
     @Override

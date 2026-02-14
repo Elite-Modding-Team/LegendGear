@@ -18,6 +18,7 @@ import java.util.List;
 import mod.emt.legendgear.config.LGConfig;
 import mod.emt.legendgear.init.LGItems;
 import mod.emt.legendgear.init.LGSoundEvents;
+import mod.emt.legendgear.util.TooltipHelper;
 
 public class LGItemEmeraldShard extends Item
 {
@@ -45,7 +46,7 @@ public class LGItemEmeraldShard extends Item
     {
         if (stack.getCount() >= LGConfig.GENERAL_SETTINGS.emeraldExchangeRate)
         {
-            tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.legendgear.emerald_shard", stack.getCount() / LGConfig.GENERAL_SETTINGS.emeraldExchangeRate));
+            TooltipHelper.addWrappedTooltip(tooltip, TextFormatting.GRAY, I18n.format("tooltip.legendgear.emerald_shard", stack.getCount() / LGConfig.GENERAL_SETTINGS.emeraldExchangeRate));
         }
     }
 }

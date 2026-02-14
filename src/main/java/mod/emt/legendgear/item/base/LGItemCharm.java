@@ -17,6 +17,7 @@ import baubles.api.IBauble;
 import java.util.List;
 import mod.emt.legendgear.init.LGItems;
 import mod.emt.legendgear.init.LGSoundEvents;
+import mod.emt.legendgear.util.TooltipHelper;
 
 public class LGItemCharm extends Item implements IBauble
 {
@@ -49,15 +50,15 @@ public class LGItemCharm extends Item implements IBauble
     {
         if (this.equals(LGItems.BLAST_CHARM))
         {
-            tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.legendgear.blast_charm"));
+            TooltipHelper.addWrappedTooltip(tooltip, TextFormatting.GRAY, I18n.format("tooltip.legendgear.blast_charm"));
         }
         else if (this.equals(LGItems.FEATHER_CHARM))
         {
-            tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.legendgear.feather_charm"));
+            TooltipHelper.addWrappedTooltip(tooltip, TextFormatting.GRAY, I18n.format("tooltip.legendgear.feather_charm"));
         }
         else if (this.equals(LGItems.PHOENIX_CHARM))
         {
-            tooltip.add(TextFormatting.GOLD + I18n.format("tooltip.legendgear.phoenix_charm"));
+            TooltipHelper.addWrappedTooltip(tooltip, TextFormatting.GOLD, I18n.format("tooltip.legendgear.phoenix_charm"));
         }
     }
 

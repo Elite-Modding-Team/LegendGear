@@ -18,6 +18,7 @@ import baubles.api.IBauble;
 import java.util.List;
 import mod.emt.legendgear.client.particle.LGParticleHandler;
 import mod.emt.legendgear.init.LGSoundEvents;
+import mod.emt.legendgear.util.TooltipHelper;
 
 // TODO: Instead of durability and being able to break, it will recharge with extra earth medallions
 // TODO: Currently carried mobs sit right on top of the player unlike 1.5.2 where they are floating. Maybe there is another way to get around this?
@@ -38,7 +39,7 @@ public class LGItemTitanBand extends Item implements IBauble
     @Override
     public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flags)
     {
-        tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.legendgear.titan_band"));
+        TooltipHelper.addWrappedTooltip(tooltip, TextFormatting.GRAY, I18n.format("tooltip.legendgear.titan_band"));
     }
 
     @Override

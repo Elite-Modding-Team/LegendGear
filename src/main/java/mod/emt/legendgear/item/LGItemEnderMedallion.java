@@ -15,6 +15,7 @@ import net.minecraft.world.World;
 import java.util.List;
 import mod.emt.legendgear.entity.LGEntityEnderMedallion;
 import mod.emt.legendgear.item.base.LGItemMedallion;
+import mod.emt.legendgear.util.TooltipHelper;
 
 public class LGItemEnderMedallion extends LGItemMedallion
 {
@@ -44,6 +45,6 @@ public class LGItemEnderMedallion extends LGItemMedallion
     @Override
     public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flags)
     {
-        tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.legendgear.ender_medallion"));
+        TooltipHelper.addWrappedTooltip(tooltip, TextFormatting.GRAY, I18n.format("tooltip.legendgear.ender_medallion"));
     }
 }

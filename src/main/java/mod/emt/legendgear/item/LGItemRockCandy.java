@@ -19,6 +19,7 @@ import net.minecraft.world.World;
 import java.util.List;
 import mod.emt.legendgear.init.LGItems;
 import mod.emt.legendgear.item.base.LGItemFood;
+import mod.emt.legendgear.util.TooltipHelper;
 
 public class LGItemRockCandy extends LGItemFood
 {
@@ -74,7 +75,7 @@ public class LGItemRockCandy extends LGItemFood
     @Override
     public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flags)
     {
-        tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.legendgear.rock_candy"));
+        TooltipHelper.addWrappedTooltip(tooltip, TextFormatting.GRAY, I18n.format("tooltip.legendgear.rock_candy"));
     }
 
     @Override

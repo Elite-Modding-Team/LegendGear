@@ -12,6 +12,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.List;
+import mod.emt.legendgear.util.TooltipHelper;
 
 public class LGItemPhoenixFeather extends Item
 {
@@ -23,7 +24,7 @@ public class LGItemPhoenixFeather extends Item
     @Override
     public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flags)
     {
-        tooltip.add(TextFormatting.GOLD + I18n.format("tooltip.legendgear.phoenix_feather"));
+        TooltipHelper.addWrappedTooltip(tooltip, TextFormatting.GOLD, I18n.format("tooltip.legendgear.phoenix_feather"));
     }
 
     @Override

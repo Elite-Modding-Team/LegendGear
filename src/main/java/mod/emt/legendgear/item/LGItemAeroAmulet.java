@@ -14,6 +14,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import baubles.api.BaubleType;
 import baubles.api.IBauble;
 import java.util.List;
+import mod.emt.legendgear.util.TooltipHelper;
 
 // TODO: Instead of durability and being able to break, it will recharge with extra wind medallions
 public class LGItemAeroAmulet extends Item implements IBauble
@@ -34,7 +35,7 @@ public class LGItemAeroAmulet extends Item implements IBauble
     @Override
     public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flags)
     {
-        tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.legendgear.aero_amulet"));
+        TooltipHelper.addWrappedTooltip(tooltip, TextFormatting.GRAY, I18n.format("tooltip.legendgear.aero_amulet"));
     }
 
     @Override

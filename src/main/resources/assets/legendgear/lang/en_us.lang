@@ -77,6 +77,7 @@ item.legendgear.wind_medallion.name=Wind Medallion
 item.record.dragondot.desc=NMcCoy - Dragondot's Return
 
 # TOOLTIPS
+tooltip.legendgear.shift=Hold SHIFT to see more info...
 tooltip.legendgear.aero_amulet=While equipped, it will provide full immunity to arrows. Durability is decreased during usage.
 tooltip.legendgear.arrows=Arrows
 tooltip.legendgear.blast_charm=Completely shields you from explosion damage while it is equipped. Has a small cooldown per use.

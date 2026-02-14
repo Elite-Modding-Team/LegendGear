@@ -18,6 +18,7 @@ import net.minecraft.world.World;
 import java.util.List;
 import mod.emt.legendgear.config.LGConfig;
 import mod.emt.legendgear.init.LGSoundEvents;
+import mod.emt.legendgear.util.TooltipHelper;
 
 public class LGItemEmeraldPiece extends Item
 {
@@ -45,7 +46,7 @@ public class LGItemEmeraldPiece extends Item
     {
         if (stack.getCount() >= LGConfig.GENERAL_SETTINGS.emeraldExchangeRate)
         {
-            tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.legendgear.emerald_piece", stack.getCount() / LGConfig.GENERAL_SETTINGS.emeraldExchangeRate));
+            TooltipHelper.addWrappedTooltip(tooltip, TextFormatting.GRAY, I18n.format("tooltip.legendgear.emerald_piece", stack.getCount() / LGConfig.GENERAL_SETTINGS.emeraldExchangeRate));
         }
     }
 }

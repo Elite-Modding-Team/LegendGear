@@ -13,6 +13,7 @@ import net.minecraft.world.World;
 
 import java.util.List;
 import mod.emt.legendgear.init.LGItems;
+import mod.emt.legendgear.util.TooltipHelper;
 
 public class LGItemFood extends ItemFood
 {
@@ -39,7 +40,7 @@ public class LGItemFood extends ItemFood
     {
         if (stack.getItem() == LGItems.MILK_CHOCOLATE)
         {
-            tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.legendgear.milk_chocolate"));
+            TooltipHelper.addWrappedTooltip(tooltip, TextFormatting.GRAY, I18n.format("tooltip.legendgear.milk_chocolate"));
         }
     }
 

@@ -25,6 +25,7 @@ import java.util.List;
 import mod.emt.legendgear.LegendGear;
 import mod.emt.legendgear.client.particle.LGParticleHandler;
 import mod.emt.legendgear.init.LGSoundEvents;
+import mod.emt.legendgear.util.TooltipHelper;
 
 public class LGItemMagicMirror extends Item
 {
@@ -133,7 +134,7 @@ public class LGItemMagicMirror extends Item
     @Override
     public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flags)
     {
-        tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.legendgear.magic_mirror"));
+        TooltipHelper.addWrappedTooltip(tooltip, TextFormatting.GRAY, I18n.format("tooltip.legendgear.magic_mirror"));
     }
 
     @Override

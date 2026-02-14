@@ -18,6 +18,7 @@ import net.minecraft.world.World;
 import java.util.List;
 import mod.emt.legendgear.entity.LGEntityMagicBoomerang;
 import mod.emt.legendgear.init.LGSoundEvents;
+import mod.emt.legendgear.util.TooltipHelper;
 
 //TODO: Let's not hardcode repair time, damage, speed, and throw time. We should make these customizable to be able to make more boomerang variants
 public class LGItemMagicBoomerang extends Item
@@ -47,7 +48,7 @@ public class LGItemMagicBoomerang extends Item
     @Override
     public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flags)
     {
-        tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.legendgear.magic_boomerang"));
+        TooltipHelper.addWrappedTooltip(tooltip, TextFormatting.GRAY, I18n.format("tooltip.legendgear.magic_boomerang"));
     }
 
     @Override
