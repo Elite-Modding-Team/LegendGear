@@ -18,25 +18,16 @@ public class LGRenderSkybeam extends TileEntitySpecialRenderer<LGTileEntitySkybe
 
     private static boolean isOptifineInstalled;
 
-    // TODO: See what this actually does
     static
     {
         try
         {
-            Class.forName("Config");
+            Class.forName("optifine.OptiFineTweaker");
             isOptifineInstalled = true;
         }
-        catch (ClassNotFoundException e)
+        catch (ClassNotFoundException e2)
         {
-            try
-            {
-                Class.forName("net.optifine.Config");
-                isOptifineInstalled = true;
-            }
-            catch (ClassNotFoundException e2)
-            {
-                isOptifineInstalled = false;
-            }
+            isOptifineInstalled = false;
         }
     }
 
@@ -47,8 +38,7 @@ public class LGRenderSkybeam extends TileEntitySpecialRenderer<LGTileEntitySkybe
             return;
         float phase = (float) (Minecraft.getSystemTime() % 2500L) / 2500.0F;
         float currentTick = tile.tick + partialTicks;
-        float ramp = tile.getRamp();
-        float power = ramp;
+        float power = tile.getRamp();
         float maxBeamHeight = tile.currentBeamHeight;
         GlStateManager.pushMatrix();
         float rotationSpeed = 0.5F;
