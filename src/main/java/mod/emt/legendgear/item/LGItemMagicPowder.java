@@ -17,6 +17,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -51,10 +52,7 @@ public class LGItemMagicPowder extends Item
                     ageable.setGrowingAge(-20 * 300);
                 }
             }
-            else
-            {
-                spawnParticles(target.world, target.posX, target.posY + target.height / 2, target.posZ);
-            }
+            spawnParticles(target.world, target.posX, target.posY + target.height / 2, target.posZ);
             success = true;
         }
 
@@ -112,15 +110,11 @@ public class LGItemMagicPowder extends Item
                 stack.shrink(1);
             }
 
-            if (target.world.isRemote)
-            {
-                spawnParticles(target.world, target.posX, target.posY + target.height / 2, target.posZ);
-            }
-            else
-            {
-                target.world.playSound(null, target.getPosition(), LGSoundEvents.ITEM_MAGIC_POWDER_SPRINKLE.getSoundEvent(), SoundCategory.AMBIENT, 0.2F, 1.0F);
-                target.world.playSound(null, target.getPosition(), LGSoundEvents.ITEM_MAGIC_POWDER_TRANSFORM.getSoundEvent(), SoundCategory.AMBIENT, 1.0F, 0.7F + target.world.rand.nextFloat() * 0.5F);
-            }
+            spawnParticles(target.world, target.posX, target.posY + target.height / 2, target.posZ);
+
+            target.world.playSound(null, target.getPosition(), LGSoundEvents.ITEM_MAGIC_POWDER_SPRINKLE.getSoundEvent(), SoundCategory.AMBIENT, 0.2F, 1.0F);
+            target.world.playSound(null, target.getPosition(), LGSoundEvents.ITEM_MAGIC_POWDER_TRANSFORM.getSoundEvent(), SoundCategory.AMBIENT, 1.0F, 0.7F + target.world.rand.nextFloat() * 0.5F);
+
             return true;
         }
 
@@ -248,10 +242,13 @@ public class LGItemMagicPowder extends Item
 
     private void spawnParticles(World world, double x, double y, double z)
     {
-        world.spawnParticle(EnumParticleTypes.EXPLOSION_LARGE, x, y, z, 0, 0, 0);
-        for (int i = 0; i < 20; i++)
+        if (FMLLaunchHandler.side().isClient() && world.isRemote)
         {
-            LGParticleHandler.spawnSparkleFX(world, x + world.rand.nextGaussian() * 0.5D, y + world.rand.nextGaussian() * 0.5D, z + world.rand.nextGaussian() * 0.5D, 0.0D, -0.02D, 0.0D, 1.0F);
+            world.spawnParticle(EnumParticleTypes.EXPLOSION_LARGE, x, y, z, 0, 0, 0);
+            for (int i = 0; i < 20; i++)
+            {
+                LGParticleHandler.spawnSparkleFX(world, x + world.rand.nextGaussian() * 0.5D, y + world.rand.nextGaussian() * 0.5D, z + world.rand.nextGaussian() * 0.5D, 0.0D, -0.02D, 0.0D, 1.0F);
+            }
         }
     }
 }

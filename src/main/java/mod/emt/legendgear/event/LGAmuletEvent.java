@@ -15,6 +15,7 @@ import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
 
 import baubles.api.cap.BaublesCapabilities;
 import baubles.api.inv.BaublesInventoryWrapper;
@@ -68,7 +69,7 @@ public class LGAmuletEvent
                         arrow.setIsCritical(true);
                         world.playSound(null, arrow.getPosition(), LGSoundEvents.ITEM_AMULET_REPEL.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 0.8F + world.rand.nextFloat() * 0.4F);
                     }
-                    else
+                    else if (FMLLaunchHandler.side().isClient())
                     {
                         // TODO: Improve particles to be similar to 1.5.2
                         for (int j = 0; j < 3; j++)

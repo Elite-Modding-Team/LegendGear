@@ -17,6 +17,7 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -85,6 +86,20 @@ public class LGItemStarPiece extends Item
                     world.playSound(null, player.getPosition(), LGSoundEvents.ITEM_STAR_PIECE_CHARGE_END.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 1.0F);
                     player.addExperienceLevel(-INFUSE_LEVEL);
 
+                    // Convert to infused star piece otherwise just add it to the inventory if the star pieces are stacked
+                    if (stack.getCount() <= 0)
+                    {
+                        player.getCooldownTracker().setCooldown(this, 20);
+                        return new ItemStack(LGItems.INFUSED_STAR_PIECE);
+                    }
+                    else
+                    {
+                        player.getCooldownTracker().setCooldown(this, 20);
+                        player.addItemStackToInventory(new ItemStack(LGItems.INFUSED_STAR_PIECE));
+                    }
+                }
+                else if (FMLLaunchHandler.side().isClient())
+                {
                     for (int i = 0; i < 20; ++i)
                     {
                         final Random rand = world.rand;
@@ -98,18 +113,6 @@ public class LGItemStarPiece extends Item
                         final double z = player.posZ + fs * forward.z + rs * right.z;
 
                         LGParticleHandler.spawnSparkleFX(player.world, x, y + 0.5D, z, rands * rand.nextGaussian(), rands * rand.nextGaussian(), rands * rand.nextGaussian(), 1.0F);
-                    }
-
-                    // Convert to infused star piece otherwise just add it to the inventory if the star pieces are stacked
-                    if (stack.getCount() <= 0)
-                    {
-                        player.getCooldownTracker().setCooldown(this, 20);
-                        return new ItemStack(LGItems.INFUSED_STAR_PIECE);
-                    }
-                    else
-                    {
-                        player.getCooldownTracker().setCooldown(this, 20);
-                        player.addItemStackToInventory(new ItemStack(LGItems.INFUSED_STAR_PIECE));
                     }
                 }
             }
@@ -161,7 +164,7 @@ public class LGItemStarPiece extends Item
                 player.world.playSound(null, player.getPosition(), LGSoundEvents.ITEM_STAR_PIECE_CHARGE_START.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 1.0F);
             }
         }
-        else if (count <= 56)
+        else if (FMLLaunchHandler.side().isClient() && count <= 56)
         {
             Random rand = player.world.rand;
             Vec3d forward = player.getLookVec();

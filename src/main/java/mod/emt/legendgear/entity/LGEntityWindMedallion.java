@@ -8,6 +8,7 @@ import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -30,7 +31,7 @@ public class LGEntityWindMedallion extends EntityThrowable
     public void onUpdate()
     {
         super.onUpdate();
-        if (world.isRemote)
+        if (FMLLaunchHandler.side().isClient() && world.isRemote)
             LGParticleHandler.spawnMagicRuneFX(this.world, this.posX + this.rand.nextGaussian() * 0.1D, this.posY + this.rand.nextGaussian() * 0.1D, this.posZ + this.rand.nextGaussian() * 0.1D, this.rand.nextGaussian() * 0.03D, this.rand.nextGaussian() * 0.03D, this.rand.nextGaussian() * 0.03D, 1.0F);
     }
 

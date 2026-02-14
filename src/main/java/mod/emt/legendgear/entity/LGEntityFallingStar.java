@@ -14,6 +14,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.fml.common.registry.IEntityAdditionalSpawnData;
+import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -93,7 +94,7 @@ public class LGEntityFallingStar extends Entity implements IEntityAdditionalSpaw
             handleGroundImpact();
         }
 
-        if (this.world.isRemote)
+        if (FMLLaunchHandler.side().isClient() && this.world.isRemote)
         {
             LGParticleHandler.spawnSparkleFX(world, posX - motionX, posY - motionY, posZ - motionZ, rand.nextGaussian() * 0.2D, rand.nextGaussian() * 0.2D, rand.nextGaussian() * 0.2D, 4.0F * dwindleTimer / LGConfig.GENERAL_SETTINGS.fallenStarLifetime);
         }

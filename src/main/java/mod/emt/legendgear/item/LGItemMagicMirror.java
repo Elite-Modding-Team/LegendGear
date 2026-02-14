@@ -18,6 +18,7 @@ import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -154,7 +155,7 @@ public class LGItemMagicMirror extends Item
             status = 2.0F;
             int dur = stack.getMaxItemUseDuration() - time;
             float progress = dur * 1.0f / stack.getMaxItemUseDuration();
-            if (player.world.isRemote)
+            if (FMLLaunchHandler.side().isClient() && player.world.isRemote)
             {
                 if (player instanceof EntityPlayerSP) ((EntityPlayerSP) player).timeInPortal = Math.max(progress * 0.95f, ((EntityPlayerSP) player).timeInPortal);
                 double theta = Math.PI * 6 * progress;
