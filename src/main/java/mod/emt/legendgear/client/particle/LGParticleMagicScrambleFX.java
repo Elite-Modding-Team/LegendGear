@@ -19,7 +19,7 @@ public class LGParticleMagicScrambleFX extends LGParticleMagicRuneFX
     public void onUpdate()
     {
         super.onUpdate();
-        this.setParticleTextureIndex((int)(Math.random() * 26.0D + 1.0D + 224.0D));
+        this.setParticleTextureIndex((int) (Math.random() * 26.0D + 1.0D + 224.0D));
         float freshness = 1.0F - (float) this.particleAge / this.particleMaxAge;
 
         this.particleGreen = Math.min(freshness * 2.0F, 1.0F);

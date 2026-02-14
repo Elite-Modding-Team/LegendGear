@@ -1,7 +1,5 @@
 package mod.emt.legendgear.event;
 
-import mod.emt.legendgear.LegendGear;
-import mod.emt.legendgear.init.LGItems;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
@@ -9,6 +7,9 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 import net.minecraftforge.fml.relauncher.Side;
+
+import mod.emt.legendgear.LegendGear;
+import mod.emt.legendgear.init.LGItems;
 
 @Mod.EventBusSubscriber(modid = LegendGear.MOD_ID, value = Side.CLIENT)
 public class LGCraftEvent

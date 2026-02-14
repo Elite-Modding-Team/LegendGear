@@ -7,6 +7,7 @@ import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraftforge.fml.common.IWorldGenerator;
 
 import java.util.Random;
+import mod.emt.legendgear.config.LGConfig;
 import mod.emt.legendgear.init.LGBlocks;
 
 public class LGBombFlowerGenerator implements IWorldGenerator
@@ -14,12 +15,11 @@ public class LGBombFlowerGenerator implements IWorldGenerator
     @Override
     public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider)
     {
-        final int tries = 8;
         final int spread = 9;
         final float spreadChance = 0.5F;
         final BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
 
-        for (int i = 0; i < tries; i++)
+        for (int i = 0; i < LGConfig.WORLD_GEN_SETTINGS.bombFlowerFrequency; i++)
         {
             int x = (chunkX * 16) + 8 + random.nextInt(8);
             int z = (chunkZ * 16) + 8 + random.nextInt(8);

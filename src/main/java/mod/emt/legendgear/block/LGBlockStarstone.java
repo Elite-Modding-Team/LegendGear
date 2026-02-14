@@ -1,7 +1,5 @@
 package mod.emt.legendgear.block;
 
-import mod.emt.legendgear.LegendGear;
-import mod.emt.legendgear.init.LGItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
@@ -15,6 +13,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 import java.util.Random;
+import mod.emt.legendgear.LegendGear;
+import mod.emt.legendgear.init.LGItems;
 
 public class LGBlockStarstone extends Block
 {
@@ -28,12 +28,6 @@ public class LGBlockStarstone extends Block
         this.setHardness(5.0F);
         this.setResistance(resistance);
         resistance = resistanceAmount;
-    }
-
-    @Override
-    public boolean isBeaconBase(IBlockAccess worldObj, BlockPos pos, BlockPos beacon)
-    {
-        return true;
     }
 
     @Override
@@ -52,5 +46,11 @@ public class LGBlockStarstone extends Block
     public ItemStack getItem(World world, BlockPos pos, IBlockState state)
     {
         return new ItemStack(ForgeRegistries.ITEMS.getValue(STARSTONE));
+    }
+
+    @Override
+    public boolean isBeaconBase(IBlockAccess worldObj, BlockPos pos, BlockPos beacon)
+    {
+        return true;
     }
 }

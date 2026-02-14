@@ -1,9 +1,9 @@
 package mod.emt.legendgear.util.damagesource;
 
+import javax.annotation.Nullable;
+
 import net.minecraft.entity.Entity;
 import net.minecraft.util.EntityDamageSourceIndirect;
-
-import javax.annotation.Nullable;
 
 public class DamageSourceFirestorm extends EntityDamageSourceIndirect
 {

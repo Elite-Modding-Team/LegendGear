@@ -1,10 +1,5 @@
 package mod.emt.legendgear.event;
 
-import baubles.api.BaublesApi;
-import mod.emt.legendgear.LegendGear;
-import mod.emt.legendgear.init.LGItems;
-import mod.emt.legendgear.init.LGSoundEvents;
-import mod.emt.legendgear.util.InventoryHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
 import net.minecraft.potion.PotionEffect;
@@ -13,6 +8,12 @@ import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+
+import baubles.api.BaublesApi;
+import mod.emt.legendgear.LegendGear;
+import mod.emt.legendgear.init.LGItems;
+import mod.emt.legendgear.init.LGSoundEvents;
+import mod.emt.legendgear.util.InventoryHelper;
 
 @Mod.EventBusSubscriber(modid = LegendGear.MOD_ID)
 public class LGPhoenixFeatherEvent
@@ -42,7 +43,8 @@ public class LGPhoenixFeatherEvent
                 event.setCanceled(true);
 
                 // Phoenix Charm
-            } else if (BaublesApi.isBaubleEquipped(player, LGItems.PHOENIX_CHARM) > 5)
+            }
+            else if (BaublesApi.isBaubleEquipped(player, LGItems.PHOENIX_CHARM) > 5)
             {
                 player.setHealth(1);
                 player.hurtResistantTime = 65;

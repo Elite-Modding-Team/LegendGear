@@ -1,8 +1,6 @@
 package mod.emt.legendgear.client.render;
 
-import mod.emt.legendgear.LegendGear;
-import mod.emt.legendgear.entity.LGEntityPing;
-import mod.emt.legendgear.util.Rainbow;
+import org.lwjgl.opengl.GL11;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.client.renderer.GlStateManager;
@@ -13,7 +11,10 @@ import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.Vec3d;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
-import org.lwjgl.opengl.GL11;
+
+import mod.emt.legendgear.LegendGear;
+import mod.emt.legendgear.entity.LGEntityPing;
+import mod.emt.legendgear.util.Rainbow;
 
 public class LGRenderPing extends Render<LGEntityPing>
 {
@@ -47,6 +48,12 @@ public class LGRenderPing extends Render<LGEntityPing>
         GlStateManager.alphaFunc(GL11.GL_GREATER, 0.1F);
         GlStateManager.enableDepth();
         GlStateManager.popMatrix();
+    }
+
+    @Override
+    protected ResourceLocation getEntityTexture(LGEntityPing entity)
+    {
+        return TEXTURE;
     }
 
     private void renderOuterRipple(LGEntityPing entity, float partialTicks)
@@ -115,12 +122,6 @@ public class LGRenderPing extends Render<LGEntityPing>
         }
 
         return scale * (1.0F - ageRatio) * (1.0F + ageRatio * ageRatio * 12.0F);
-    }
-
-    @Override
-    protected ResourceLocation getEntityTexture(LGEntityPing entity)
-    {
-        return TEXTURE;
     }
 
     public static class Factory implements IRenderFactory<LGEntityPing>

@@ -1,7 +1,5 @@
 package mod.emt.legendgear.client.render;
 
-import mod.emt.legendgear.entity.LGEntityWindMedallion;
-import mod.emt.legendgear.init.LGItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderItem;
 import net.minecraft.client.renderer.entity.Render;
@@ -11,6 +9,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import mod.emt.legendgear.entity.LGEntityWindMedallion;
+import mod.emt.legendgear.init.LGItems;
 
 @SideOnly(Side.CLIENT)
 public class LGRenderWindMedallion extends RenderSnowball<LGEntityWindMedallion>

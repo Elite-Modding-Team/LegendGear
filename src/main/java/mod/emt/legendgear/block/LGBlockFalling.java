@@ -33,13 +33,6 @@ public class LGBlockFalling extends BlockFalling
         return mapColor;
     }
 
-    @SideOnly(Side.CLIENT)
-    @Override
-    public int getDustColor(IBlockState state)
-    {
-        return dustColor;
-    }
-
     @Override
     public boolean canSustainPlant(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing direction, IPlantable plantable)
     {
@@ -51,5 +44,12 @@ public class LGBlockFalling extends BlockFalling
         }
 
         return super.canSustainPlant(state, world, pos, direction, plantable);
+    }
+
+    @SideOnly(Side.CLIENT)
+    @Override
+    public int getDustColor(IBlockState state)
+    {
+        return dustColor;
     }
 }

@@ -1,7 +1,5 @@
 package mod.emt.legendgear.entity;
 
-import io.netty.buffer.ByteBuf;
-import mod.emt.legendgear.init.LGSoundEvents;
 import net.minecraft.entity.Entity;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.SoundCategory;
@@ -9,6 +7,9 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.IEntityAdditionalSpawnData;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import io.netty.buffer.ByteBuf;
+import mod.emt.legendgear.init.LGSoundEvents;
 
 public class LGEntityPing extends Entity implements IEntityAdditionalSpawnData
 {
@@ -70,6 +71,26 @@ public class LGEntityPing extends Entity implements IEntityAdditionalSpawnData
         if (this.energy <= 0) setDead();
     }
 
+    @SideOnly(Side.CLIENT)
+    @Override
+    public int getBrightnessForRender()
+    {
+        return 15728880;
+    }
+
+    @Override
+    public float getBrightness()
+    {
+        return 1.0F;
+    }
+
+    @SideOnly(Side.CLIENT)
+    @Override
+    public boolean isInRangeToRender3d(double x, double y, double z)
+    {
+        return true;
+    }
+
     @Override
     protected void readEntityFromNBT(NBTTagCompound tag)
     {
@@ -84,24 +105,5 @@ public class LGEntityPing extends Entity implements IEntityAdditionalSpawnData
         tag.setInteger("color", this.color);
         tag.setInteger("energy", this.energy);
         tag.setInteger("age", this.age);
-    }
-
-    @SideOnly(Side.CLIENT)
-    @Override
-    public boolean isInRangeToRender3d(double x, double y, double z) {
-        return true;
-    }
-
-    @SideOnly(Side.CLIENT)
-    @Override
-    public int getBrightnessForRender()
-    {
-        return 15728880;
-    }
-
-    @Override
-    public float getBrightness()
-    {
-        return 1.0F;
     }
 }

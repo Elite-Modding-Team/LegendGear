@@ -17,6 +17,7 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 import java.util.List;
+import mod.emt.legendgear.config.LGConfig;
 
 public class LGItemQuiver extends Item
 {
@@ -24,7 +25,7 @@ public class LGItemQuiver extends Item
     {
         super();
         setMaxStackSize(1);
-        setMaxDamage(200);
+        setMaxDamage(LGConfig.GENERAL_SETTINGS.quiverCapacity);
     }
 
     @Override

@@ -1,7 +1,5 @@
 package mod.emt.legendgear.client.render;
 
-import mod.emt.legendgear.tileentity.LGTileEntitySkybeam;
-import mod.emt.legendgear.util.Rainbow;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.client.renderer.GlStateManager;
@@ -10,6 +8,9 @@ import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.util.ResourceLocation;
+
+import mod.emt.legendgear.tileentity.LGTileEntitySkybeam;
+import mod.emt.legendgear.util.Rainbow;
 
 public class LGRenderSkybeam extends TileEntitySpecialRenderer<LGTileEntitySkybeam>
 {
@@ -24,22 +25,19 @@ public class LGRenderSkybeam extends TileEntitySpecialRenderer<LGTileEntitySkybe
         {
             Class.forName("Config");
             isOptifineInstalled = true;
-        } catch (ClassNotFoundException e)
+        }
+        catch (ClassNotFoundException e)
         {
             try
             {
                 Class.forName("net.optifine.Config");
                 isOptifineInstalled = true;
-            } catch (ClassNotFoundException e2)
+            }
+            catch (ClassNotFoundException e2)
             {
                 isOptifineInstalled = false;
             }
         }
-    }
-
-    public boolean isGlobalRenderer(LGTileEntitySkybeam tile)
-    {
-        return true;
     }
 
     @Override
@@ -112,5 +110,10 @@ public class LGRenderSkybeam extends TileEntitySpecialRenderer<LGTileEntitySkybe
         GlStateManager.depthMask(true);
         GlStateManager.enableCull();
         GlStateManager.popMatrix();
+    }
+
+    public boolean isGlobalRenderer(LGTileEntitySkybeam tile)
+    {
+        return true;
     }
 }

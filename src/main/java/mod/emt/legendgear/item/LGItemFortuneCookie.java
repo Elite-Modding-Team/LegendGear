@@ -1,12 +1,7 @@
 package mod.emt.legendgear.item;
 
-import java.util.List;
-
 import javax.annotation.Nullable;
 
-import mod.emt.legendgear.LegendGear;
-import mod.emt.legendgear.init.LGSoundEvents;
-import mod.emt.legendgear.item.base.LGItemFood;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
@@ -16,12 +11,23 @@ import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
+import java.util.List;
+import mod.emt.legendgear.LegendGear;
+import mod.emt.legendgear.init.LGSoundEvents;
+import mod.emt.legendgear.item.base.LGItemFood;
+
 public class LGItemFortuneCookie extends LGItemFood
 {
     public LGItemFortuneCookie()
     {
         super(2, 0.1F, false);
         this.setAlwaysEdible();
+    }
+
+    @Override
+    public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flags)
+    {
+        tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.legendgear.fortune_cookie"));
     }
 
     @Override
@@ -47,11 +53,5 @@ public class LGItemFortuneCookie extends LGItemFood
 
         player.playSound(LGSoundEvents.ITEM_FORTUNE_COOKIE_USE.getSoundEvent(), 2.0F, 0.8F + world.rand.nextFloat() * 0.4F);
         super.onFoodEaten(stack, world, player);
-    }
-
-    @Override
-    public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flags)
-    {
-        tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.legendgear.fortune_cookie"));
     }
 }

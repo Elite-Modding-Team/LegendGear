@@ -1,10 +1,11 @@
 package mod.emt.legendgear.util;
 
-import mod.emt.legendgear.init.LGItems;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import mod.emt.legendgear.init.LGItems;
 
 public class LGCreativeTab extends CreativeTabs
 {

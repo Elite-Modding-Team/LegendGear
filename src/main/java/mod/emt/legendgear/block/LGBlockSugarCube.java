@@ -25,9 +25,21 @@ public class LGBlockSugarCube extends Block
     }
 
     @Override
-    public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune)
+    public void randomTick(World world, BlockPos pos, IBlockState state, Random random)
     {
-        drops.add(new ItemStack(Items.SUGAR, 9));
+        if (world.isRainingAt(pos.up()))
+        {
+            if (random.nextInt(3) == 0)
+            {
+                world.playEvent(2001, pos, Block.getStateId(state));
+                world.setBlockToAir(pos);
+
+                if (!world.isRemote)
+                {
+                    this.dropBlockAsItem(world, pos, state, 0);
+                }
+            }
+        }
     }
 
     @Override
@@ -42,11 +54,18 @@ public class LGBlockSugarCube extends Block
         checkForDissolve(world, pos, state);
     }
 
+    @Override
+    public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune)
+    {
+        drops.add(new ItemStack(Items.SUGAR, 9));
+    }
+
     private void checkForDissolve(World world, BlockPos pos, IBlockState state)
     {
         boolean shouldDissolve = false;
 
-        for (EnumFacing side : EnumFacing.values()) {
+        for (EnumFacing side : EnumFacing.values())
+        {
             if (world.getBlockState(pos.offset(side)).getMaterial() == Material.WATER)
             {
                 shouldDissolve = true;
@@ -62,24 +81,6 @@ public class LGBlockSugarCube extends Block
             if (!world.isRemote)
             {
                 this.dropBlockAsItem(world, pos, state, 0);
-            }
-        }
-    }
-
-    @Override
-    public void randomTick(World world, BlockPos pos, IBlockState state, Random random)
-    {
-        if (world.isRainingAt(pos.up()))
-        {
-            if (random.nextInt(3) == 0)
-            {
-                world.playEvent(2001, pos, Block.getStateId(state));
-                world.setBlockToAir(pos);
-
-                if (!world.isRemote)
-                {
-                    this.dropBlockAsItem(world, pos, state, 0);
-                }
             }
         }
     }

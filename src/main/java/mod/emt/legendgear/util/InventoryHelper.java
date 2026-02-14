@@ -1,16 +1,17 @@
 package mod.emt.legendgear.util;
 
+import javax.annotation.Nullable;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-
-import javax.annotation.Nullable;
 
 public class InventoryHelper
 {
     public static boolean deleteFirstMatchingItemStack(EntityPlayer player, Item item)
     {
-        if (player.getHeldItemOffhand().getItem() == item) {
+        if (player.getHeldItemOffhand().getItem() == item)
+        {
             player.getHeldItemOffhand().shrink(1);
             return true;
         }

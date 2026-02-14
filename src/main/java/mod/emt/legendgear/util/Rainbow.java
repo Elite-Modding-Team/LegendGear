@@ -4,7 +4,8 @@ import net.minecraft.util.math.MathHelper;
 
 public class Rainbow
 {
-    public static float r(float phase) {
+    public static float r(float phase)
+    {
         phase = (float) (phase * 6.283185307179586D);
         float r = (MathHelper.sin(phase + 0.0F) + 1.0F) * 0.5F;
         float g = (MathHelper.sin(phase + 2.0943952F) + 1.0F) * 0.5F;

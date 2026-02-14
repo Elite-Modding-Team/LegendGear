@@ -17,6 +17,7 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 import java.util.List;
+import mod.emt.legendgear.config.LGConfig;
 import mod.emt.legendgear.entity.LGEntityBomb;
 
 public class LGItemBombBag extends Item
@@ -25,7 +26,7 @@ public class LGItemBombBag extends Item
     {
         super();
         setMaxStackSize(1);
-        setMaxDamage(50);
+        setMaxDamage(LGConfig.GENERAL_SETTINGS.bombBagCapacity);
     }
 
     @Override

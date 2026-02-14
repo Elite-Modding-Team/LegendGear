@@ -19,21 +19,6 @@ public class LGTileEntitySkybeam extends TileEntity implements ITickable
 
     public float currentBeamHeight = 133.0F;
 
-    public AxisAlignedBB getRenderBoundingBox()
-    {
-        return TileEntity.INFINITE_EXTENT_AABB;
-    }
-
-    public double getMaxRenderDistanceSquared()
-    {
-        return 65536.0D;
-    }
-
-    public boolean shouldRenderInPass(int pass)
-    {
-        return (pass == 1);
-    }
-
     public void update()
     {
         if (!this.world.isRemote)
@@ -43,7 +28,8 @@ public class LGTileEntitySkybeam extends TileEntity implements ITickable
         {
             if (this.fade < 20)
                 this.fade++;
-        } else if (this.fade > 0)
+        }
+        else if (this.fade > 0)
         {
             this.fade--;
         }
@@ -55,6 +41,84 @@ public class LGTileEntitySkybeam extends TileEntity implements ITickable
             if (oldFade != this.fade)
                 this.world.markBlockRangeForRenderUpdate(this.pos, this.pos);
         }
+    }
+
+    public float getRamp()
+    {
+        return Math.min(this.fade / 20.0F, 1.0F);
+    }
+
+    public void readFromNBT(NBTTagCompound nbt)
+    {
+        super.readFromNBT(nbt);
+        this.active = nbt.getBoolean("Active");
+    }
+
+    public NBTTagCompound writeToNBT(NBTTagCompound nbt)
+    {
+        super.writeToNBT(nbt);
+        nbt.setBoolean("Active", this.active);
+        return nbt;
+    }
+
+    public double getMaxRenderDistanceSquared()
+    {
+        return 65536.0D;
+    }
+
+    public SPacketUpdateTileEntity getUpdatePacket()
+    {
+        NBTTagCompound nbt = new NBTTagCompound();
+        writeToNBT(nbt);
+        return new SPacketUpdateTileEntity(this.pos, 1, nbt);
+    }
+
+    public NBTTagCompound getUpdateTag()
+    {
+        NBTTagCompound nbt = super.getUpdateTag();
+        writeToNBT(nbt);
+        return nbt;
+    }
+
+    public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity pkt)
+    {
+        readFromNBT(pkt.getNbtCompound());
+    }
+
+    public void handleUpdateTag(NBTTagCompound tag)
+    {
+        super.handleUpdateTag(tag);
+        readFromNBT(tag);
+    }
+
+    public boolean shouldRenderInPass(int pass)
+    {
+        return (pass == 1);
+    }
+
+    public AxisAlignedBB getRenderBoundingBox()
+    {
+        return TileEntity.INFINITE_EXTENT_AABB;
+    }
+
+    public void setActive(boolean powered)
+    {
+        if (this.active != powered)
+        {
+            this.active = powered;
+            markDirty();
+            if (this.world != null)
+            {
+                this.world.markBlockRangeForRenderUpdate(this.pos, this.pos);
+                if (!this.world.isRemote)
+                    this.world.notifyBlockUpdate(this.pos, this.world.getBlockState(this.pos), this.world.getBlockState(this.pos), 3);
+            }
+        }
+    }
+
+    public float getRenderTicks(float partialTicks)
+    {
+        return this.tick + partialTicks;
     }
 
     private void calculateBeamHeight()
@@ -76,75 +140,13 @@ public class LGTileEntitySkybeam extends TileEntity implements ITickable
                     this.currentBeamHeight = (obstructionStartY - this.pos.getY()) - 0.5F + 13.0F;
                     return;
                 }
-            } else
+            }
+            else
             {
                 consecutiveSolidBlocks = 0;
                 obstructionStartY = -1;
             }
         }
         this.currentBeamHeight = 133.0F;
-    }
-
-    public float getRamp()
-    {
-        return Math.min(this.fade / 20.0F, 1.0F);
-    }
-
-    public NBTTagCompound writeToNBT(NBTTagCompound nbt)
-    {
-        super.writeToNBT(nbt);
-        nbt.setBoolean("Active", this.active);
-        return nbt;
-    }
-
-    public void readFromNBT(NBTTagCompound nbt)
-    {
-        super.readFromNBT(nbt);
-        this.active = nbt.getBoolean("Active");
-    }
-
-    public SPacketUpdateTileEntity getUpdatePacket()
-    {
-        NBTTagCompound nbt = new NBTTagCompound();
-        writeToNBT(nbt);
-        return new SPacketUpdateTileEntity(this.pos, 1, nbt);
-    }
-
-    public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity pkt)
-    {
-        readFromNBT(pkt.getNbtCompound());
-    }
-
-    public NBTTagCompound getUpdateTag()
-    {
-        NBTTagCompound nbt = super.getUpdateTag();
-        writeToNBT(nbt);
-        return nbt;
-    }
-
-    public void handleUpdateTag(NBTTagCompound tag)
-    {
-        super.handleUpdateTag(tag);
-        readFromNBT(tag);
-    }
-
-    public void setActive(boolean powered)
-    {
-        if (this.active != powered)
-        {
-            this.active = powered;
-            markDirty();
-            if (this.world != null)
-            {
-                this.world.markBlockRangeForRenderUpdate(this.pos, this.pos);
-                if (!this.world.isRemote)
-                    this.world.notifyBlockUpdate(this.pos, this.world.getBlockState(this.pos), this.world.getBlockState(this.pos), 3);
-            }
-        }
-    }
-
-    public float getRenderTicks(float partialTicks)
-    {
-        return this.tick + partialTicks;
     }
 }

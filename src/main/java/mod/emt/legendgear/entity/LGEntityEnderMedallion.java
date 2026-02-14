@@ -1,7 +1,5 @@
 package mod.emt.legendgear.entity;
 
-import mod.emt.legendgear.client.particle.LGParticleHandler;
-import mod.emt.legendgear.init.LGItems;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.init.SoundEvents;
@@ -12,6 +10,9 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import mod.emt.legendgear.client.particle.LGParticleHandler;
+import mod.emt.legendgear.init.LGItems;
 
 public class LGEntityEnderMedallion extends EntityThrowable
 {

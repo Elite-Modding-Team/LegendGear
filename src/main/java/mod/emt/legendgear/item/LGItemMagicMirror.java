@@ -2,7 +2,6 @@ package mod.emt.legendgear.item;
 
 import javax.annotation.Nullable;
 
-import mod.emt.legendgear.client.particle.LGParticleHandler;
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
@@ -24,6 +23,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.List;
 import mod.emt.legendgear.LegendGear;
+import mod.emt.legendgear.client.particle.LGParticleHandler;
 import mod.emt.legendgear.init.LGSoundEvents;
 
 public class LGItemMagicMirror extends Item

@@ -1,6 +1,5 @@
 package mod.emt.legendgear.item;
 
-import mod.emt.legendgear.init.LGSoundEvents;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -15,8 +14,23 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
 import net.minecraftforge.event.ForgeEventFactory;
 
+import mod.emt.legendgear.init.LGSoundEvents;
+
 public class LGItemBestBow extends ItemBow
 {
+    public static float getArrowVelocity(int charge)
+    {
+        float f = (float) charge / 20.0F;
+        f = (f * f + f * 0.6F) / 0.9F;
+
+        if (f > 0.3F)
+        {
+            f = 0.3F;
+        }
+
+        return f;
+    }
+
     // Our bow will have the same name as a normal vanilla bow
     @Override
     public String getTranslationKey(ItemStack stack)
@@ -25,7 +39,8 @@ public class LGItemBestBow extends ItemBow
     }
 
     @Override
-    public void onPlayerStoppedUsing(ItemStack stack, World worldIn, EntityLivingBase entityLiving, int timeLeft) {
+    public void onPlayerStoppedUsing(ItemStack stack, World worldIn, EntityLivingBase entityLiving, int timeLeft)
+    {
         if (entityLiving instanceof EntityPlayer)
         {
             EntityPlayer entityplayer = (EntityPlayer) entityLiving;
@@ -90,13 +105,14 @@ public class LGItemBestBow extends ItemBow
                         worldIn.spawnEntity(entityarrow);
                     }
 
-                    worldIn.playSound((EntityPlayer) null, entityplayer.posX, entityplayer.posY, entityplayer.posZ, LGSoundEvents.ITEM_BEST_BOW_SHOOT.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 1.0F / (itemRand.nextFloat() * 0.4F + 1.2F) + f * 0.5F);
+                    worldIn.playSound(null, entityplayer.posX, entityplayer.posY, entityplayer.posZ, LGSoundEvents.ITEM_BEST_BOW_SHOOT.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 1.0F / (itemRand.nextFloat() * 0.4F + 1.2F) + f * 0.5F);
 
                     if (!flag1 && !entityplayer.capabilities.isCreativeMode)
                     {
                         itemstack.shrink(1);
 
-                        if (itemstack.isEmpty()) {
+                        if (itemstack.isEmpty())
+                        {
                             entityplayer.inventory.deleteStack(itemstack);
                         }
                     }
@@ -105,18 +121,5 @@ public class LGItemBestBow extends ItemBow
                 }
             }
         }
-    }
-
-    public static float getArrowVelocity(int charge)
-    {
-        float f = (float) charge / 20.0F;
-        f = (f * f + f * 0.6F) / 0.9F;
-
-        if (f > 0.3F)
-        {
-            f = 0.3F;
-        }
-
-        return f;
     }
 }

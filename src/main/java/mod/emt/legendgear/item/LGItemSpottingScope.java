@@ -1,6 +1,7 @@
 package mod.emt.legendgear.item;
 
-import mod.emt.legendgear.entity.LGEntityPing;
+import javax.annotation.Nullable;
+
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
@@ -16,8 +17,8 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
-import javax.annotation.Nullable;
 import java.util.List;
+import mod.emt.legendgear.entity.LGEntityPing;
 
 
 public class LGItemSpottingScope extends Item
@@ -29,24 +30,18 @@ public class LGItemSpottingScope extends Item
     }
 
     @Override
-    public EnumRarity getRarity(ItemStack stack)
-    {
-        return EnumRarity.RARE;
-    }
-
-    @Override
-    public int getMaxItemUseDuration(ItemStack stack)
-    {
-        return 60000;
-    }
-
-    @Override
     public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand)
     {
         ItemStack stack = player.getHeldItem(hand);
         player.setActiveHand(hand);
 
         return new ActionResult<>(EnumActionResult.PASS, stack);
+    }
+
+    @Override
+    public int getMaxItemUseDuration(ItemStack stack)
+    {
+        return 60000;
     }
 
     @Override
@@ -78,5 +73,11 @@ public class LGItemSpottingScope extends Item
     public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flags)
     {
         tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.legendgear.spotting_scope"));
+    }
+
+    @Override
+    public EnumRarity getRarity(ItemStack stack)
+    {
+        return EnumRarity.RARE;
     }
 }

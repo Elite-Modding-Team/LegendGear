@@ -47,7 +47,7 @@ public class LGParticleSparkleFX extends Particle
         this.move(this.motionX, this.motionY, this.motionZ);
 
         this.hue += 0.3D;
-        float freshness = 1.0F - (float)this.particleAge / (float)this.particleMaxAge;
+        float freshness = 1.0F - (float) this.particleAge / (float) this.particleMaxAge;
 
         this.particleAlpha = 1.0F;
         this.particleRed = 1.0F;

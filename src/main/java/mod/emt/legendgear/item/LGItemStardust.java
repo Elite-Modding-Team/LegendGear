@@ -1,13 +1,15 @@
 package mod.emt.legendgear.item;
 
-import mod.emt.legendgear.init.LGItems;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class LGItemStardust extends Item {
+import mod.emt.legendgear.init.LGItems;
+
+public class LGItemStardust extends Item
+{
     @Override
     @SideOnly(Side.CLIENT)
     public boolean hasEffect(ItemStack stack)

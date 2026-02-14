@@ -1,9 +1,5 @@
 package mod.emt.legendgear.event;
 
-import baubles.api.BaublesApi;
-import mod.emt.legendgear.LegendGear;
-import mod.emt.legendgear.init.LGItems;
-import mod.emt.legendgear.init.LGSoundEvents;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -16,6 +12,10 @@ import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+
+import mod.emt.legendgear.LegendGear;
+import mod.emt.legendgear.init.LGItems;
+import mod.emt.legendgear.init.LGSoundEvents;
 
 @Mod.EventBusSubscriber(modid = LegendGear.MOD_ID)
 public class LGDamageEvent

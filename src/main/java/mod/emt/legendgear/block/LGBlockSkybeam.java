@@ -1,6 +1,5 @@
 package mod.emt.legendgear.block;
 
-import mod.emt.legendgear.tileentity.LGTileEntitySkybeam;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.MapColor;
@@ -10,8 +9,9 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+
+import mod.emt.legendgear.tileentity.LGTileEntitySkybeam;
 
 public class LGBlockSkybeam extends Block implements ITileEntityProvider
 {
@@ -28,18 +28,10 @@ public class LGBlockSkybeam extends Block implements ITileEntityProvider
         return new LGTileEntitySkybeam();
     }
 
-    private boolean isPoweredFromSides(World world, BlockPos pos) {
-        if (world.getStrongPower(pos) > 0)
-            return true;
-        for (EnumFacing side : EnumFacing.values())
-        {
-            BlockPos neighbor = pos.offset(side);
-            IBlockState neighborState = world.getBlockState(neighbor);
-            if (neighborState.canProvidePower() &&
-                    neighborState.getWeakPower((IBlockAccess) world, neighbor, side.getOpposite()) > 0)
-                return true;
-        }
-        return false;
+    @Override
+    public EnumBlockRenderType getRenderType(IBlockState state)
+    {
+        return EnumBlockRenderType.MODEL;
     }
 
     @Override
@@ -58,9 +50,18 @@ public class LGBlockSkybeam extends Block implements ITileEntityProvider
             ((LGTileEntitySkybeam) tile).setActive(isPoweredFromSides(world, pos));
     }
 
-    @Override
-    public EnumBlockRenderType getRenderType(IBlockState state)
+    private boolean isPoweredFromSides(World world, BlockPos pos)
     {
-        return EnumBlockRenderType.MODEL;
+        if (world.getStrongPower(pos) > 0)
+            return true;
+        for (EnumFacing side : EnumFacing.values())
+        {
+            BlockPos neighbor = pos.offset(side);
+            IBlockState neighborState = world.getBlockState(neighbor);
+            if (neighborState.canProvidePower() &&
+                neighborState.getWeakPower(world, neighbor, side.getOpposite()) > 0)
+                return true;
+        }
+        return false;
     }
 }

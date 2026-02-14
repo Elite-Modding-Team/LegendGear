@@ -1,6 +1,7 @@
 package mod.emt.legendgear.item;
 
-import mod.emt.legendgear.LegendGear;
+import javax.annotation.Nullable;
+
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
@@ -11,8 +12,8 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
-import javax.annotation.Nullable;
 import java.util.List;
+import mod.emt.legendgear.LegendGear;
 
 // TODO: Instead of durability and being able to break, it will recharge with extra fire medallions
 public class LGItemValorHeadband extends ItemArmor
@@ -32,14 +33,14 @@ public class LGItemValorHeadband extends ItemArmor
     }
 
     @Override
-    public String getArmorTexture(ItemStack stack, Entity entity, EntityEquipmentSlot slot, String type)
-    {
-        return TEXTURE;
-    }
-
-    @Override
     public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flags)
     {
         tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.legendgear.valor_headband"));
+    }
+
+    @Override
+    public String getArmorTexture(ItemStack stack, Entity entity, EntityEquipmentSlot slot, String type)
+    {
+        return TEXTURE;
     }
 }

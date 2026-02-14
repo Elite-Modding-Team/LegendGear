@@ -42,7 +42,7 @@ public class LGParticleFireSwirlFX extends Particle
 
         this.move(this.motionX, this.motionY, this.motionZ);
 
-        float freshness = 1.0F - (float)this.particleAge / (float)this.particleMaxAge;
+        float freshness = 1.0F - (float) this.particleAge / (float) this.particleMaxAge;
         float r = Math.min(freshness * 3.0F, 1.0F);
         float g = Math.max(Math.min(freshness * 3.0F - 1.0F, 1.0F), 0.0F);
         float b = Math.max(Math.min(freshness * 3.0F - 2.0F, 1.0F), 0.0F);

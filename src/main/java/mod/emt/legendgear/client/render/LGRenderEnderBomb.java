@@ -21,6 +21,21 @@ import mod.emt.legendgear.entity.LGEntityEnderBomb;
 @SideOnly(Side.CLIENT)
 public class LGRenderEnderBomb extends Render<LGEntityEnderBomb>
 {
+    private static int getAlpha(LGEntityEnderBomb entity, float partialTicks)
+    {
+        float continuousTime = entity.lifespan_timer + partialTicks;
+        float pulse = (float) Math.sin(continuousTime * 0.4F) * 0.15F + 0.85F;
+        float ticksRemaining = (float) entity.EXPAND_TIME - continuousTime;
+        float fade = 1.0F;
+
+        if (ticksRemaining < 3.5F)
+        {
+            fade = Math.max(0.0F, ticksRemaining / 3.5F);
+        }
+
+        return (int) (255 * pulse * fade);
+    }
+
     Random rand = new Random();
 
     protected LGRenderEnderBomb(RenderManager renderManager)
@@ -106,21 +121,6 @@ public class LGRenderEnderBomb extends Render<LGEntityEnderBomb>
 
         buffer.pos(firstX, firstY + 0.5D, firstZ).color(r, g, b, alpha).endVertex();
         Tessellator.getInstance().draw();
-    }
-
-    private static int getAlpha(LGEntityEnderBomb entity, float partialTicks)
-    {
-        float continuousTime = entity.lifespan_timer + partialTicks;
-        float pulse = (float) Math.sin(continuousTime * 0.4F) * 0.15F + 0.85F;
-        float ticksRemaining = (float) entity.EXPAND_TIME - continuousTime;
-        float fade = 1.0F;
-
-        if (ticksRemaining < 3.5F)
-        {
-            fade = Math.max(0.0F, ticksRemaining / 3.5F);
-        }
-
-        return (int)(255 * pulse * fade);
     }
 
     public static class Factory implements IRenderFactory<LGEntityEnderBomb>

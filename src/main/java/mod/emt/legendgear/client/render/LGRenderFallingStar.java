@@ -15,6 +15,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import mod.emt.legendgear.LegendGear;
+import mod.emt.legendgear.config.LGConfig;
 import mod.emt.legendgear.entity.LGEntityFallingStar;
 import mod.emt.legendgear.util.Rainbow;
 
@@ -49,14 +50,14 @@ public class LGRenderFallingStar extends Render<LGEntityFallingStar>
         float r = Rainbow.r(phase);
         float g = Rainbow.g(phase);
         float b = Rainbow.b(phase);
-        float scale = entity.dwindleTimer * 3.0f / LGEntityFallingStar.DWINDLE_TIME;
+        float scale = entity.dwindleTimer * 3.0f / LGConfig.GENERAL_SETTINGS.fallenStarLifetime;
 
-        if (entity.dwindleTimer > LGEntityFallingStar.DWINDLE_TIME - 10)
+        if (entity.dwindleTimer > LGConfig.GENERAL_SETTINGS.fallenStarLifetime - 10)
         {
             GlStateManager.pushMatrix();
             Tessellator tessellator = Tessellator.getInstance();
             BufferBuilder buffer = tessellator.getBuffer();
-            float sc = entity.dwindleTimer - (LGEntityFallingStar.DWINDLE_TIME - 10);
+            float sc = entity.dwindleTimer - (LGConfig.GENERAL_SETTINGS.fallenStarLifetime - 10);
             sc *= 0.1f;
             GlStateManager.scale(sc, sc, sc);
 

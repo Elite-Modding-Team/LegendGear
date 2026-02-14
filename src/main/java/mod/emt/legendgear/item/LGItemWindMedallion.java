@@ -1,7 +1,7 @@
 package mod.emt.legendgear.item;
 
-import mod.emt.legendgear.entity.LGEntityWindMedallion;
-import mod.emt.legendgear.item.base.LGItemMedallion;
+import javax.annotation.Nullable;
+
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
@@ -12,8 +12,9 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
-import javax.annotation.Nullable;
 import java.util.List;
+import mod.emt.legendgear.entity.LGEntityWindMedallion;
+import mod.emt.legendgear.item.base.LGItemMedallion;
 
 public class LGItemWindMedallion extends LGItemMedallion
 {

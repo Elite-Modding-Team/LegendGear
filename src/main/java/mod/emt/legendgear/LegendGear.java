@@ -44,11 +44,11 @@ public class LegendGear
         {
             GameRegistry.registerWorldGenerator(new LGAzuriteGenerator(), 3);
         }
-        if (LGConfig.WORLD_GEN_SETTINGS.generateBombFlowers)
+        if (LGConfig.WORLD_GEN_SETTINGS.bombFlowerFrequency > 0)
         {
             GameRegistry.registerWorldGenerator(new LGBombFlowerGenerator(), 100);
         }
-        if (LGConfig.WORLD_GEN_SETTINGS.generateMysticShrubs)
+        if (LGConfig.WORLD_GEN_SETTINGS.mysticShrubFrequency > 0)
         {
             GameRegistry.registerWorldGenerator(new LGShrubGenerator(), 100);
         }

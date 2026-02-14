@@ -1,10 +1,7 @@
 package mod.emt.legendgear.item.base;
 
-import java.util.List;
-
 import javax.annotation.Nullable;
 
-import mod.emt.legendgear.init.LGItems;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.EnumRarity;
@@ -12,6 +9,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
+
+import java.util.List;
+import mod.emt.legendgear.init.LGItems;
 
 public class LGItemSword extends ItemSword
 {
@@ -24,17 +24,17 @@ public class LGItemSword extends ItemSword
     }
 
     @Override
-    public EnumRarity getRarity(ItemStack stack)
-    {
-        return rarity;
-    }
-
-    @Override
     public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flags)
     {
         if (this.equals(LGItems.STARGLASS_SWORD))
         {
             tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.legendgear.starglass_sword"));
         }
+    }
+
+    @Override
+    public EnumRarity getRarity(ItemStack stack)
+    {
+        return rarity;
     }
 }

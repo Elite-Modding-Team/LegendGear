@@ -1,12 +1,5 @@
 package mod.emt.legendgear.event;
 
-import baubles.api.cap.BaublesCapabilities;
-import baubles.api.inv.BaublesInventoryWrapper;
-import mod.emt.legendgear.LegendGear;
-import mod.emt.legendgear.client.particle.LGParticleHandler;
-import mod.emt.legendgear.entity.LGEntityQuake;
-import mod.emt.legendgear.init.LGSoundEvents;
-import mod.emt.legendgear.item.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -15,7 +8,6 @@ import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.play.server.SPacketEntityVelocity;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
@@ -23,6 +15,16 @@ import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+
+import baubles.api.cap.BaublesCapabilities;
+import baubles.api.inv.BaublesInventoryWrapper;
+import mod.emt.legendgear.LegendGear;
+import mod.emt.legendgear.client.particle.LGParticleHandler;
+import mod.emt.legendgear.entity.LGEntityQuake;
+import mod.emt.legendgear.init.LGSoundEvents;
+import mod.emt.legendgear.item.LGItemAeroAmulet;
+import mod.emt.legendgear.item.LGItemGeoAmulet;
+import mod.emt.legendgear.item.LGItemPyroAmulet;
 
 @Mod.EventBusSubscriber(modid = LegendGear.MOD_ID)
 public class LGAmuletEvent
@@ -65,9 +67,12 @@ public class LGAmuletEvent
                         arrow.setDamage(power * 1.5D);
                         arrow.setIsCritical(true);
                         world.playSound(null, arrow.getPosition(), LGSoundEvents.ITEM_AMULET_REPEL.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 0.8F + world.rand.nextFloat() * 0.4F);
-                    } else {
+                    }
+                    else
+                    {
                         // TODO: Improve particles to be similar to 1.5.2
-                        for (int j = 0; j < 3; j++) {
+                        for (int j = 0; j < 3; j++)
+                        {
                             double azimuth = 5 * 0.3D + j * Math.PI * 2.0D / 3.0D;
                             double r = 2.0D;
                             double elevation = Math.sin(5 * 0.13D + j * Math.PI * 2.0D / 3.0D);
@@ -110,7 +115,8 @@ public class LGAmuletEvent
                     world.playSound(null, quake.getPosition(), SoundEvents.ENTITY_GENERIC_EXPLODE, SoundCategory.PLAYERS, 0.4F + 3.0F * scale, 1.2F - scale * 0.8F);
                 }
                 event.setCanceled(true);
-            } else if (stack.getItem() instanceof LGItemPyroAmulet && source.isFireDamage())
+            }
+            else if (stack.getItem() instanceof LGItemPyroAmulet && source.isFireDamage())
             {
                 if (!world.isRemote)
                 {

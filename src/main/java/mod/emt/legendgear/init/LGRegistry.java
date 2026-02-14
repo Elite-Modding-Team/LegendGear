@@ -35,6 +35,7 @@ import java.util.ArrayList;
 import java.util.List;
 import mod.emt.legendgear.LegendGear;
 import mod.emt.legendgear.client.render.*;
+import mod.emt.legendgear.config.LGConfig;
 import mod.emt.legendgear.entity.*;
 import mod.emt.legendgear.tileentity.LGTileEntityClayUrn;
 import mod.emt.legendgear.tileentity.LGTileEntityInfusedStarstone;
@@ -212,6 +213,9 @@ public class LGRegistry
         RenderingRegistry.registerEntityRenderingHandler(LGEntityWindMedallion.class, new LGRenderWindMedallion.Factory());
 
         // XP Orb Replacement
-        RenderingRegistry.registerEntityRenderingHandler(EntityXPOrb.class, LGRenderPrismaticXP::new);
+        if (LGConfig.GENERAL_SETTINGS.prismaticXP)
+        {
+            RenderingRegistry.registerEntityRenderingHandler(EntityXPOrb.class, LGRenderPrismaticXP::new);
+        }
     }
 }

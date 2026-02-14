@@ -1,9 +1,5 @@
 package mod.emt.legendgear.event;
 
-import baubles.api.BaublesApi;
-import mod.emt.legendgear.LegendGear;
-import mod.emt.legendgear.init.LGItems;
-import mod.emt.legendgear.init.LGSoundEvents;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.stats.StatList;
@@ -16,11 +12,17 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
+import baubles.api.BaublesApi;
+import mod.emt.legendgear.LegendGear;
+import mod.emt.legendgear.init.LGItems;
+import mod.emt.legendgear.init.LGSoundEvents;
+
 @Mod.EventBusSubscriber(modid = LegendGear.MOD_ID)
 public class LGCharmEvent
 {
     @SubscribeEvent
-    public static void charmAttackEvent(LivingAttackEvent event) {
+    public static void charmAttackEvent(LivingAttackEvent event)
+    {
         EntityLivingBase entity = event.getEntityLiving();
         World world = entity.getEntityWorld();
         DamageSource damageSource = event.getSource();

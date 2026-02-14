@@ -1,11 +1,7 @@
 package mod.emt.legendgear.item;
 
-import java.util.List;
-
 import javax.annotation.Nullable;
 
-import mod.emt.legendgear.LegendGear;
-import mod.emt.legendgear.init.LGSoundEvents;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
@@ -19,6 +15,10 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
+import java.util.List;
+import mod.emt.legendgear.LegendGear;
+import mod.emt.legendgear.init.LGSoundEvents;
+
 // TODO: Instead of durability and being able to break, it will recharge with extra wind medallions
 public class LGItemWhirlwindBoots extends ItemArmor
 {
@@ -28,6 +28,18 @@ public class LGItemWhirlwindBoots extends ItemArmor
     {
         super(material, renderIndex, EntityEquipmentSlot.FEET);
         this.setMaxDamage(6000);
+    }
+
+    @Override
+    public boolean isDamageable()
+    {
+        return false;
+    }
+
+    @Override
+    public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flags)
+    {
+        tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.legendgear.whirlwind_boots"));
     }
 
     @Override
@@ -75,20 +87,8 @@ public class LGItemWhirlwindBoots extends ItemArmor
     }
 
     @Override
-    public boolean isDamageable()
-    {
-        return false;
-    }
-
-    @Override
     public String getArmorTexture(ItemStack stack, Entity entity, EntityEquipmentSlot slot, String type)
     {
         return TEXTURE;
-    }
-
-    @Override
-    public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flags)
-    {
-        tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.legendgear.whirlwind_boots"));
     }
 }

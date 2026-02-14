@@ -1,6 +1,5 @@
 package mod.emt.legendgear.client.render;
 
-import mod.emt.legendgear.util.Rainbow;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.client.renderer.GlStateManager;
@@ -14,6 +13,8 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import mod.emt.legendgear.util.Rainbow;
+
 @SideOnly(Side.CLIENT)
 public class LGRenderPrismaticXP extends Render<EntityXPOrb>
 {
@@ -26,21 +27,17 @@ public class LGRenderPrismaticXP extends Render<EntityXPOrb>
         this.shadowOpaque = 0.75F;
     }
 
-    protected ResourceLocation getEntityTexture(EntityXPOrb entity)
+    public void renderTheXPOrb(EntityXPOrb orb, double x, double y, double z, float entityYaw, float partialTicks)
     {
-        return prismaticLegendOrbs;
-    }
-
-    public void renderTheXPOrb(EntityXPOrb orb, double x, double y, double z, float entityYaw, float partialTicks) {
         GlStateManager.pushMatrix();
         GlStateManager.translate((float) x, (float) y + 0.1F, (float) z);
         int frame = orb.getTextureByXP();
         this.bindTexture(prismaticLegendOrbs);
         Tessellator tess = Tessellator.getInstance();
         BufferBuilder buffer = tess.getBuffer();
-        float uMin = (float) (frame % 4 * 16 + 0) / 64.0F;
+        float uMin = (float) (frame % 4 * 16) / 64.0F;
         float uMax = (float) (frame % 4 * 16 + 16) / 64.0F;
-        float vMin = (float) (frame / 4 * 16 + 0) / 64.0F;
+        float vMin = (float) (frame / 4 * 16) / 64.0F;
         float vMax = (float) (frame / 4 * 16 + 16) / 64.0F;
         float var16 = 1.0F;
         float var17 = 0.5F;
@@ -48,7 +45,7 @@ public class LGRenderPrismaticXP extends Render<EntityXPOrb>
         int light = 240;
         int lightU = light % 65536;
         int lightV = light / 65536;
-        OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, (float) lightU / 1.0F, (float) lightV / 1.0F);
+        OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, (float) lightU, (float) lightV);
         GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
         float var26 = 255.0F;
 
@@ -69,29 +66,29 @@ public class LGRenderPrismaticXP extends Render<EntityXPOrb>
         GlStateManager.disableLighting();
         buffer.begin(7, DefaultVertexFormats.POSITION_TEX_COLOR_NORMAL);
 
-        buffer.pos((double) (0.0F - var17), (double) (0.0F - var18), 0.0D)
-                .tex((double) uMin, (double) vMax)
-                .color(r, g, b, 1.0F)
-                .normal(0.0F, 1.0F, 0.0F)
-                .endVertex();
+        buffer.pos(0.0F - var17, 0.0F - var18, 0.0D)
+            .tex(uMin, vMax)
+            .color(r, g, b, 1.0F)
+            .normal(0.0F, 1.0F, 0.0F)
+            .endVertex();
 
-        buffer.pos((double) (var16 - var17), (double) (0.0F - var18), 0.0D)
-                .tex((double) uMax, (double) vMax)
-                .color(r, g, b, 1.0F)
-                .normal(0.0F, 1.0F, 0.0F)
-                .endVertex();
+        buffer.pos(var16 - var17, 0.0F - var18, 0.0D)
+            .tex(uMax, vMax)
+            .color(r, g, b, 1.0F)
+            .normal(0.0F, 1.0F, 0.0F)
+            .endVertex();
 
-        buffer.pos((double) (var16 - var17), (double) (1.0F - var18), 0.0D)
-                .tex((double) uMax, (double) vMin)
-                .color(r, g, b, 1.0F)
-                .normal(0.0F, 1.0F, 0.0F)
-                .endVertex();
+        buffer.pos(var16 - var17, 1.0F - var18, 0.0D)
+            .tex(uMax, vMin)
+            .color(r, g, b, 1.0F)
+            .normal(0.0F, 1.0F, 0.0F)
+            .endVertex();
 
-        buffer.pos((double) (0.0F - var17), (double) (1.0F - var18), 0.0D)
-                .tex((double) uMin, (double) vMin)
-                .color(r, g, b, 1.0F)
-                .normal(0.0F, 1.0F, 0.0F)
-                .endVertex();
+        buffer.pos(0.0F - var17, 1.0F - var18, 0.0D)
+            .tex(uMin, vMin)
+            .color(r, g, b, 1.0F)
+            .normal(0.0F, 1.0F, 0.0F)
+            .endVertex();
 
         tess.draw();
         GlStateManager.enableLighting();
@@ -103,5 +100,10 @@ public class LGRenderPrismaticXP extends Render<EntityXPOrb>
     public void doRender(EntityXPOrb entity, double x, double y, double z, float entityYaw, float partialTicks)
     {
         renderTheXPOrb(entity, x, y, z, entityYaw, partialTicks);
+    }
+
+    protected ResourceLocation getEntityTexture(EntityXPOrb entity)
+    {
+        return prismaticLegendOrbs;
     }
 }

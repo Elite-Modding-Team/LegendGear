@@ -1,6 +1,5 @@
 package mod.emt.legendgear.entity;
 
-import mod.emt.legendgear.client.particle.LGParticleHandler;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.MoverType;
@@ -15,16 +14,17 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.fml.common.registry.IEntityAdditionalSpawnData;
-
-import io.netty.buffer.ByteBuf;
-import mod.emt.legendgear.init.LGItems;
-import mod.emt.legendgear.init.LGSoundEvents;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import io.netty.buffer.ByteBuf;
+import mod.emt.legendgear.client.particle.LGParticleHandler;
+import mod.emt.legendgear.config.LGConfig;
+import mod.emt.legendgear.init.LGItems;
+import mod.emt.legendgear.init.LGSoundEvents;
+
 public class LGEntityFallingStar extends Entity implements IEntityAdditionalSpawnData
 {
-    public static final int DWINDLE_TIME = 20 * 22;
     public int dwindleTimer;
     private boolean impact;
 
@@ -34,7 +34,7 @@ public class LGEntityFallingStar extends Entity implements IEntityAdditionalSpaw
         this.impact = false;
         this.noClip = false;
         this.setSize(0.5f, 1.0f);
-        this.dwindleTimer = DWINDLE_TIME;
+        this.dwindleTimer = LGConfig.GENERAL_SETTINGS.fallenStarLifetime;
     }
 
     public LGEntityFallingStar(EntityPlayer player)
@@ -93,10 +93,11 @@ public class LGEntityFallingStar extends Entity implements IEntityAdditionalSpaw
             handleGroundImpact();
         }
 
-        if(this.world.isRemote)
+        if (this.world.isRemote)
         {
-            LGParticleHandler.spawnSparkleFX(world, posX - motionX, posY - motionY, posZ - motionZ, rand.nextGaussian() * 0.2D, rand.nextGaussian() * 0.2D, rand.nextGaussian() * 0.2D, 4.0F * dwindleTimer / DWINDLE_TIME);
-        } else if (this.impact && this.dwindleTimer % 25 == 0)
+            LGParticleHandler.spawnSparkleFX(world, posX - motionX, posY - motionY, posZ - motionZ, rand.nextGaussian() * 0.2D, rand.nextGaussian() * 0.2D, rand.nextGaussian() * 0.2D, 4.0F * dwindleTimer / LGConfig.GENERAL_SETTINGS.fallenStarLifetime);
+        }
+        else if (this.impact && this.dwindleTimer % 25 == 0)
         {
             this.world.playSound(null, this.getPosition(), LGSoundEvents.ENTITY_FALLING_STAR_TWINKLE.getSoundEvent(), SoundCategory.AMBIENT, 2.0f, 1.0f);
         }
@@ -108,6 +109,19 @@ public class LGEntityFallingStar extends Entity implements IEntityAdditionalSpaw
         }
 
         super.onUpdate();
+    }
+
+    @SideOnly(Side.CLIENT)
+    @Override
+    public int getBrightnessForRender()
+    {
+        return 15728880;
+    }
+
+    @Override
+    public float getBrightness()
+    {
+        return 1.0F;
     }
 
     @Override
@@ -133,6 +147,13 @@ public class LGEntityFallingStar extends Entity implements IEntityAdditionalSpaw
 
             this.setDead();
         }
+    }
+
+    @SideOnly(Side.CLIENT)
+    @Override
+    public boolean isInRangeToRender3d(double x, double y, double z)
+    {
+        return true;
     }
 
     @Override
@@ -190,25 +211,5 @@ public class LGEntityFallingStar extends Entity implements IEntityAdditionalSpaw
             }
         }
         this.setDead();
-    }
-
-    @SideOnly(Side.CLIENT)
-    @Override
-    public boolean isInRangeToRender3d(double x, double y, double z)
-    {
-        return true;
-    }
-
-    @SideOnly(Side.CLIENT)
-    @Override
-    public int getBrightnessForRender()
-    {
-        return 15728880;
-    }
-
-    @Override
-    public float getBrightness()
-    {
-        return 1.0F;
     }
 }

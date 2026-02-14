@@ -1,10 +1,11 @@
 package mod.emt.legendgear.event;
 
-import mod.emt.legendgear.LegendGear;
 import net.minecraftforge.client.event.TextureStitchEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
+
+import mod.emt.legendgear.LegendGear;
 
 @Mod.EventBusSubscriber(modid = LegendGear.MOD_ID, value = Side.CLIENT)
 public class LGTextureStitchEvent

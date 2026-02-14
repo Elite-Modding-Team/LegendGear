@@ -1,7 +1,5 @@
 package mod.emt.legendgear.event;
 
-import mod.emt.legendgear.LegendGear;
-import mod.emt.legendgear.init.LGItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.gui.ScaledResolution;
@@ -17,6 +15,9 @@ import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
+
+import mod.emt.legendgear.LegendGear;
+import mod.emt.legendgear.init.LGItems;
 
 @Mod.EventBusSubscriber(modid = LegendGear.MOD_ID, value = Side.CLIENT)
 public class LGSpottingScopeEvent
@@ -41,7 +42,8 @@ public class LGSpottingScopeEvent
                     smoothCameraReset = true;
                 }
             }
-        } else if (smoothCameraReset)
+        }
+        else if (smoothCameraReset)
         {
             mc.gameSettings.smoothCamera = false;
             smoothCameraReset = false;

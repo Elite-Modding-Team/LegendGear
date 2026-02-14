@@ -24,6 +24,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import io.netty.buffer.ByteBuf;
 import java.util.List;
+import mod.emt.legendgear.config.LGConfig;
 import mod.emt.legendgear.init.LGItems;
 
 @SuppressWarnings("deprecation")
@@ -134,7 +135,7 @@ public class LGEntityBomb extends Entity implements IEntityAdditionalSpawnData
             {
                 away.normalize();
                 double blastForce = 4.0D / (2.0D + dist);
-                if (e instanceof EntityLiving) e.attackEntityFrom(damage, 5.0F);
+                if (e instanceof EntityLiving) e.attackEntityFrom(damage, (float) LGConfig.GENERAL_SETTINGS.bombDamage);
                 if (!(e instanceof LGEntityBomb) || !((LGEntityBomb) e).unblastable)
                 {
                     e.motionX = away.x * blastForce;
@@ -144,7 +145,7 @@ public class LGEntityBomb extends Entity implements IEntityAdditionalSpawnData
                 e.fallDistance = 0.0F;
             }
         }
-        if (!this.world.isRemote) this.world.createExplosion(this, this.posX, this.posY + (this.height / 16.0F), this.posZ, 4.0F, false);
+        if (!this.world.isRemote) this.world.createExplosion(this, this.posX, this.posY + (this.height / 16.0F), this.posZ, 4.0F, LGConfig.GENERAL_SETTINGS.bombDamageTerrain);
         setDead();
     }
 

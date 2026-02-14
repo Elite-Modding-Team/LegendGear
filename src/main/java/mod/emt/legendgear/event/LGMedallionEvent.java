@@ -1,9 +1,5 @@
 package mod.emt.legendgear.event;
 
-import mod.emt.legendgear.LegendGear;
-import mod.emt.legendgear.init.LGItems;
-import mod.emt.legendgear.init.LGSoundEvents;
-import mod.emt.legendgear.util.InventoryHelper;
 import net.minecraft.entity.boss.EntityDragon;
 import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.entity.monster.EntityEndermite;
@@ -15,6 +11,11 @@ import net.minecraft.util.SoundCategory;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+
+import mod.emt.legendgear.LegendGear;
+import mod.emt.legendgear.init.LGItems;
+import mod.emt.legendgear.init.LGSoundEvents;
+import mod.emt.legendgear.util.InventoryHelper;
 
 // TODO: Maybe a better way of recharging the Ender Medallion
 @Mod.EventBusSubscriber(modid = LegendGear.MOD_ID)
@@ -41,9 +42,9 @@ public class LGMedallionEvent
                     chargeMedallion(player, LGItems.FIRE_MEDALLION, event.getAmount());
                 }
                 if (event.getSource().getTrueSource() instanceof EntityEnderman
-                        || event.getSource().getTrueSource() instanceof EntityEndermite
-                        || event.getSource().getTrueSource() instanceof EntityShulker
-                        || event.getSource().getTrueSource() instanceof EntityDragon)
+                    || event.getSource().getTrueSource() instanceof EntityEndermite
+                    || event.getSource().getTrueSource() instanceof EntityShulker
+                    || event.getSource().getTrueSource() instanceof EntityDragon)
                 {
                     chargeMedallion(player, LGItems.ENDER_MEDALLION, event.getAmount());
                 }

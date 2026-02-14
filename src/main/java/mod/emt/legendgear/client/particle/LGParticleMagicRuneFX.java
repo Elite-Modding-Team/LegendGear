@@ -20,7 +20,7 @@ public class LGParticleMagicRuneFX extends Particle
         this.posY = yCoord;
         this.posZ = zCoord;
 
-        this.setParticleTextureIndex((int)(Math.random() * 26.0D + 1.0D + 224.0D));
+        this.setParticleTextureIndex((int) (Math.random() * 26.0D + 1.0D + 224.0D));
 
         this.canCollide = false;
         this.particleMaxAge = 30;
@@ -45,10 +45,10 @@ public class LGParticleMagicRuneFX extends Particle
         this.move(this.motionX, this.motionY, this.motionZ);
 
         this.hue += 0.3D;
-        float r = (float)Math.sin(this.hue) / 2.0F + 0.5F;
-        float g = (float)Math.sin(this.hue + 2.0943951023931953D) / 2.0F + 0.5F;
-        float b = (float)Math.sin(this.hue - 2.0943951023931953D) / 2.0F + 0.5F;
-        float freshness = 1.0F - (float)this.particleAge / (float)this.particleMaxAge;
+        float r = (float) Math.sin(this.hue) / 2.0F + 0.5F;
+        float g = (float) Math.sin(this.hue + 2.0943951023931953D) / 2.0F + 0.5F;
+        float b = (float) Math.sin(this.hue - 2.0943951023931953D) / 2.0F + 0.5F;
+        float freshness = 1.0F - (float) this.particleAge / (float) this.particleMaxAge;
 
         this.particleAlpha = freshness;
         this.particleRed = freshness + (1.0F - freshness) * r;

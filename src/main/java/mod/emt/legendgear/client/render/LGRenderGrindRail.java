@@ -1,6 +1,6 @@
 package mod.emt.legendgear.client.render;
 
-import mod.emt.legendgear.entity.LGEntityGrindRail;
+import org.lwjgl.opengl.GL11;
 import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.Tessellator;
@@ -12,7 +12,8 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import org.lwjgl.opengl.GL11;
+
+import mod.emt.legendgear.entity.LGEntityGrindRail;
 
 @SideOnly(Side.CLIENT)
 public class LGRenderGrindRail extends Render<LGEntityGrindRail>
@@ -46,12 +47,12 @@ public class LGRenderGrindRail extends Render<LGEntityGrindRail>
         bufferbuilder.begin(GL11.GL_LINE_STRIP, DefaultVertexFormats.POSITION_COLOR);
 
         bufferbuilder.pos(x + entity.fromX - entity.posX, y + entity.fromY - entity.posY, z + entity.fromZ - entity.posZ)
-                .color(r, g, b, 1.0F)
-                .endVertex();
+            .color(r, g, b, 1.0F)
+            .endVertex();
 
         bufferbuilder.pos(x + entity.toX - entity.posX, y + entity.toY - entity.posY, z + entity.toZ - entity.posZ)
-                .color(r, g, b, 1.0F)
-                .endVertex();
+            .color(r, g, b, 1.0F)
+            .endVertex();
 
         tessellator.draw();
         GlStateManager.enableLighting();

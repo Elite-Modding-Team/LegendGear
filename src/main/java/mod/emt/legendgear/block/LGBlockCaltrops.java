@@ -2,16 +2,12 @@ package mod.emt.legendgear.block;
 
 import javax.annotation.Nullable;
 
-import mod.emt.legendgear.init.LGRegistry;
-import mod.emt.legendgear.init.LGSoundEvents;
 import net.minecraft.block.Block;
-import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.MobEffects;
-import net.minecraft.init.SoundEvents;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.DamageSource;
@@ -23,6 +19,9 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import mod.emt.legendgear.init.LGRegistry;
+import mod.emt.legendgear.init.LGSoundEvents;
 
 public class LGBlockCaltrops extends Block
 {

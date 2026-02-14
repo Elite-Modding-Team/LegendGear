@@ -1,9 +1,5 @@
 package mod.emt.legendgear.event;
 
-import mod.emt.legendgear.LegendGear;
-import mod.emt.legendgear.block.LGBlockLightningStruck;
-import mod.emt.legendgear.block.LGBlockLightningStruckFalling;
-import mod.emt.legendgear.init.LGItems;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -11,9 +7,14 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import java.util.ArrayList;
 import java.util.List;
+import mod.emt.legendgear.LegendGear;
+import mod.emt.legendgear.block.LGBlockLightningStruck;
+import mod.emt.legendgear.block.LGBlockLightningStruckFalling;
+import mod.emt.legendgear.init.LGItems;
 
 @Mod.EventBusSubscriber(modid = LegendGear.MOD_ID)
-public class LGHarvestDropsEvent {
+public class LGHarvestDropsEvent
+{
     @SubscribeEvent
     public static void onFulguriteHarvest(BlockEvent.HarvestDropsEvent event)
     {

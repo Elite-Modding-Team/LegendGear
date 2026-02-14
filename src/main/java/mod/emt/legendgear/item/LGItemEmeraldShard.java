@@ -15,6 +15,7 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 import java.util.List;
+import mod.emt.legendgear.config.LGConfig;
 import mod.emt.legendgear.init.LGItems;
 import mod.emt.legendgear.init.LGSoundEvents;
 
@@ -29,9 +30,9 @@ public class LGItemEmeraldShard extends Item
     public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand)
     {
         ItemStack heldStack = player.getHeldItem(hand);
-        if (heldStack.getItem() == this && heldStack.getCount() >= 8)
+        if (heldStack.getItem() == this && heldStack.getCount() >= LGConfig.GENERAL_SETTINGS.emeraldExchangeRate)
         {
-            heldStack.shrink(8);
+            heldStack.shrink(LGConfig.GENERAL_SETTINGS.emeraldExchangeRate);
             player.addItemStackToInventory(new ItemStack(LGItems.EMERALD_PIECE));
             world.playSound(player.posX, player.posY, player.posZ, LGSoundEvents.ITEM_EMERALD_EXCHANGE.getSoundEvent(), SoundCategory.PLAYERS, 0.5F, 1F, false);
             return new ActionResult<>(EnumActionResult.SUCCESS, player.getHeldItem(hand));
@@ -42,9 +43,9 @@ public class LGItemEmeraldShard extends Item
     @Override
     public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flags)
     {
-        if (stack.getCount() >= 8)
+        if (stack.getCount() >= LGConfig.GENERAL_SETTINGS.emeraldExchangeRate)
         {
-            tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.legendgear.emerald_shard", stack.getCount() / 8));
+            tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.legendgear.emerald_shard", stack.getCount() / LGConfig.GENERAL_SETTINGS.emeraldExchangeRate));
         }
     }
 }

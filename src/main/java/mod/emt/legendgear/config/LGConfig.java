@@ -17,9 +17,41 @@ public class LGConfig
 
     public static class GeneralSettings
     {
-        @Config.Name("Falling Star Chance")
+        @Config.Name("Bomb Bag Capacity")
+        @Config.Comment("Amount of bombs a bomb bag can hold")
+        public int bombBagCapacity = 50;
+
+        @Config.Name("Bomb Damage")
+        @Config.Comment("Damage bombs deal to entities on detonation")
+        public double bombDamage = 5.0D;
+
+        @Config.Name("Bomb Terrain Damage")
+        @Config.Comment("Bombs deal terrain damage on detonation like regular explosions")
+        public boolean bombDamageTerrain = false;
+
+        @Config.Name("Emerald Exchange Rate")
+        @Config.Comment("Exchange rate for shards -> pieces and pieces -> emeralds")
+        public int emeraldExchangeRate = 8;
+
+        @Config.Name("Fallen Star Lifetime")
+        @Config.Comment("The time in ticks a fallen star will exist before dwindling away")
+        public int fallenStarLifetime = 440;
+
+        @Config.Name("Magic Boomerang Damage")
+        @Config.Comment("Damage magic boomerangs deal to hit entities")
+        public double magicBoomerangDamage = 6.0D;
+
+        @Config.Name("Prismatic XP")
+        @Config.Comment("Replace regular experience orb textures with prismatic XP")
+        public boolean prismaticXP = true;
+
+        @Config.Name("Quiver Capacity")
+        @Config.Comment("Amount of arrows a quiver can hold")
+        public int quiverCapacity = 200;
+
+        @Config.Name("Starfall Rarity")
         @Config.Comment("Spawn chance for falling stars per second for each player under the open sky at night")
-        public double chanceFallingStar = 0.001D;
+        public double starfallRarity = 0.001D;
     }
 
     public static class WorldGenSettings
@@ -36,11 +68,11 @@ public class LGConfig
         @Config.Name("Azurite Ore Generation Density")
         public double azuriteOreDensity = 0.5D;
 
-        @Config.Name("Generate Bomb Flowers")
-        public boolean generateBombFlowers = true;
+        @Config.Name("Bomb Flower Generation Frequency")
+        public int bombFlowerFrequency = 8;
 
-        @Config.Name("Generate Mystic Shrubs")
-        public boolean generateMysticShrubs = true;
+        @Config.Name("Mystic Shrub Generation Frequency")
+        public int mysticShrubFrequency = 8;
     }
 
     public static class StarbeamTorchSettings

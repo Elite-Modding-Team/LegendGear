@@ -26,6 +26,7 @@ import net.minecraftforge.fml.common.registry.IEntityAdditionalSpawnData;
 import io.netty.buffer.ByteBuf;
 import java.util.List;
 import mod.emt.legendgear.block.LGBlockMysticShrub;
+import mod.emt.legendgear.config.LGConfig;
 import mod.emt.legendgear.init.LGSoundEvents;
 
 // TODO: Let's not hardcode damage, speed, and throw time. We should make these customizable to be able to make more boomerang variants
@@ -33,7 +34,6 @@ public class LGEntityMagicBoomerang extends EntityThrowable implements IEntityAd
 {
     public static final int MAX_THROW_TIME = 10;
     public static final float BOOMERANG_SPEED = 1.5F;
-    public static final int BOOMERANG_DAMAGE = 6;
     public int returnTime;
     public ItemStack boomerangItem;
     public Entity owner;
@@ -188,7 +188,7 @@ public class LGEntityMagicBoomerang extends EntityThrowable implements IEntityAd
                     world.playSound(null, getPosition(), SoundEvents.ENTITY_ITEM_BREAK, SoundCategory.PLAYERS, 1.0F, 0.8F);
                     setDead();
                 }
-                el.attackEntityFrom(DamageSource.causeThrownDamage(this, getThrower()), BOOMERANG_DAMAGE);
+                el.attackEntityFrom(DamageSource.causeThrownDamage(this, getThrower()), (float) LGConfig.GENERAL_SETTINGS.magicBoomerangDamage);
             }
         }
         else

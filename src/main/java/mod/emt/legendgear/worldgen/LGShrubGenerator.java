@@ -8,13 +8,14 @@ import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraftforge.fml.common.IWorldGenerator;
 
 import java.util.Random;
+import mod.emt.legendgear.config.LGConfig;
 
 public class LGShrubGenerator implements IWorldGenerator
 {
     @Override
     public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider)
     {
-        if (world.getWorldType() != WorldType.FLAT && world.provider.canRespawnHere() && random.nextInt(8) == 0)
+        if (world.getWorldType() != WorldType.FLAT && world.provider.canRespawnHere() && random.nextInt(LGConfig.WORLD_GEN_SETTINGS.mysticShrubFrequency) == 0)
         {
             int x = (chunkX * 16) + 8 + random.nextInt(8);
             int z = (chunkZ * 16) + 8 + random.nextInt(8);

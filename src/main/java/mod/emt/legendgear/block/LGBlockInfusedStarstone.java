@@ -1,8 +1,5 @@
 package mod.emt.legendgear.block;
 
-import mod.emt.legendgear.LegendGear;
-import mod.emt.legendgear.init.LGItems;
-import mod.emt.legendgear.tileentity.LGTileEntityInfusedStarstone;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
@@ -14,6 +11,9 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 import java.util.Random;
+import mod.emt.legendgear.LegendGear;
+import mod.emt.legendgear.init.LGItems;
+import mod.emt.legendgear.tileentity.LGTileEntityInfusedStarstone;
 
 public class LGBlockInfusedStarstone extends LGBlockStarstone implements ITileEntityProvider
 {
