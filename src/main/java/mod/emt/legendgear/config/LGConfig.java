@@ -19,10 +19,12 @@ public class LGConfig
     {
         @Config.Name("Bomb Bag Capacity")
         @Config.Comment("Amount of bombs a bomb bag can hold")
+        @Config.RangeInt(min = 1)
         public int bombBagCapacity = 50;
 
         @Config.Name("Bomb Damage")
         @Config.Comment("Damage bombs deal to entities on detonation")
+        @Config.RangeDouble(min = 0)
         public double bombDamage = 5.0D;
 
         @Config.Name("Bomb Terrain Damage")
@@ -31,14 +33,17 @@ public class LGConfig
 
         @Config.Name("Emerald Exchange Rate")
         @Config.Comment("Exchange rate for shards -> pieces and pieces -> emeralds")
+        @Config.RangeInt(min = 1)
         public int emeraldExchangeRate = 8;
 
         @Config.Name("Fallen Star Lifetime")
         @Config.Comment("The time in ticks a fallen star will exist before dwindling away")
+        @Config.RangeInt(min = 100)
         public int fallenStarLifetime = 440;
 
         @Config.Name("Magic Boomerang Damage")
         @Config.Comment("Damage magic boomerangs deal to hit entities")
+        @Config.RangeDouble(min = 0)
         public double magicBoomerangDamage = 6.0D;
 
         @Config.Name("Prismatic XP")
@@ -47,16 +52,19 @@ public class LGConfig
 
         @Config.Name("Quiver Capacity")
         @Config.Comment("Amount of arrows a quiver can hold")
+        @Config.RangeInt(min = 1)
         public int quiverCapacity = 200;
 
         @Config.Name("Starfall Rarity")
-        @Config.Comment("Spawn chance for falling stars per second for each player under the open sky at night")
+        @Config.Comment("Spawn chance for falling stars per second for each player under the open night sky")
+        @Config.RangeDouble(min = 0)
         public double starfallRarity = 0.001D;
     }
 
     public static class WorldGenSettings
     {
         @Config.Name("Azurite Ore Generation Frequency")
+        @Config.RangeInt(min = 0)
         public int azuriteOreFrequency = 1;
 
         @Config.Name("Azurite Ore Generation Min Altitude")
@@ -66,12 +74,15 @@ public class LGConfig
         public int azuriteOreAltitudeMax = 110;
 
         @Config.Name("Azurite Ore Generation Density")
+        @Config.RangeDouble(min = 0)
         public double azuriteOreDensity = 0.5D;
 
         @Config.Name("Bomb Flower Generation Frequency")
+        @Config.RangeInt(min = 0)
         public int bombFlowerFrequency = 8;
 
         @Config.Name("Mystic Shrub Generation Frequency")
+        @Config.RangeInt(min = 0)
         public int mysticShrubFrequency = 8;
     }
 
@@ -79,18 +90,22 @@ public class LGConfig
     {
         @Config.Name("Grind Rail Start Speed")
         @Config.Comment("Initial speed for grinding on starbeam torch rails")
+        @Config.RangeDouble(min = 0)
         public double grindRailSpeedStart = 0.3D;
 
         @Config.Name("Grind Rail Minimum Speed")
         @Config.Comment("Minimum speed for grinding on starbeam torch rails")
+        @Config.RangeDouble(min = 0)
         public double grindRailSpeedMin = 0.02D;
 
         @Config.Name("Grind Rail Drag")
         @Config.Comment("Slowdown when grinding on starbeam torch rails")
+        @Config.RangeDouble(min = 0)
         public double grindRailDrag = 0.001D;
 
         @Config.Name("Grind Rail Node Link Distance")
         @Config.Comment("Maximum distance for linking starbeam torch nodes")
+        @Config.RangeInt(min = 1)
         public int grindRailNodeLinkDistance = 8;
     }
 
