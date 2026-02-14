@@ -118,16 +118,17 @@ tooltip.legendgear.wind_medallion=When fully charged, hold down right-click and 
 message.legendgear.no_levels=You don't have enough levels to infuse your star piece!
 
 # FORTUNES
-fortunes.legendgear.hint.0=Additional notes can be played on reed pipes by sneaking.
-fortunes.legendgear.hint.1=Eating chorus fruit rock candy grants a special effect.
-fortunes.legendgear.hint.2=Pings are created by right-clicking spotting scopes.
-fortunes.legendgear.hint.3=The view is zoomed when holding right-click with spotting scopes.
-fortunes.legendgear.hint.4=Magic boomerangs can collect dropped items.
-fortunes.legendgear.hint.5=Swords get repaired in pedestals when a charged skybeam is placed two blocks below.
-fortunes.legendgear.hint.6=Damage by caltrops can be avoided by sneaking.
+fortunes.legendgear.hint.0=Fortune cookie messages can be easily expanded by incrementing numbers in the language file.
+fortunes.legendgear.hint.1=Additional notes can be played on reed pipes by sneaking.
+fortunes.legendgear.hint.2=Eating chorus fruit rock candy grants a special effect.
+fortunes.legendgear.hint.3=Pings are created by right-clicking spotting scopes.
+fortunes.legendgear.hint.4=The view is zoomed when holding right-click with spotting scopes.
+fortunes.legendgear.hint.5=Magic boomerangs can collect dropped items.
+fortunes.legendgear.hint.6=Swords get repaired in pedestals when a charged skybeam is placed two blocks below.
+fortunes.legendgear.hint.7=Damage by caltrops can be avoided by sneaking.
 fortunes.legendgear.hint.8=Grinding speed is increased when landing on top of starbeam torches while sprinting.
 fortunes.legendgear.hint.9=Mystic shrubs grow charged when there's thunder.
-fortunes.legendgear.hint.10=Fortune cookie messages can be easily expanded by incrementing numbers in the language file.
+fortunes.legendgear.hint.10=Dimensional catalysts are able to extract azurite from its ore.
 
 fortunes.legendgear.generic.0=Don't believe everything you eat.
 fortunes.legendgear.generic.1=They say the best defense is a good oak fence.
