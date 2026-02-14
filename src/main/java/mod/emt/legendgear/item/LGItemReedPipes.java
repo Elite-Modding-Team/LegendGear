@@ -6,6 +6,7 @@ import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.EnumAction;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
@@ -21,32 +22,8 @@ import mod.emt.legendgear.util.TooltipHelper;
 
 public class LGItemReedPipes extends Item
 {
-    public static int[] notes = {0, 3, 7, 9, 12};
-    public static int[] altNotes = {-1, 2, 5, 8, 11};
-
-    public static float getNotePitch(int note)
-    {
-        note += 2;
-        return (float) Math.pow(2.0D, (double) (note - 12) / 12.0D);
-    }
-
-    public static int getNoteFromSpan(double span, int[] notearray)
-    {
-        int which = (int) (span * (notearray.length - 1) + 0.5);
-
-        if (which < 0)
-        {
-            which = 0;
-        }
-
-        if (which >= notearray.length)
-        {
-            which = notearray.length - 1;
-        }
-
-        return notearray[which];
-    }
-
+    private final int[] notes = {0, 3, 7, 9, 12};
+    private final int[] altNotes = {-1, 2, 5, 8, 11};
 
     public LGItemReedPipes()
     {
@@ -57,7 +34,7 @@ public class LGItemReedPipes extends Item
     @Override
     public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand)
     {
-        if (!player.isHandActive())
+        if (!player.isHandActive() && player.hurtTime == 0)
         {
             player.setActiveHand(hand);
 
@@ -70,14 +47,17 @@ public class LGItemReedPipes extends Item
 
             note++;
 
-            // Mainly for testing purposes ignore the commented out print
-            //System.out.println(player.rotationPitch);
-
             world.playSound(null, player.getPosition(), LGSoundEvents.ITEM_FLUTE_ATTACK.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, getNotePitch(note));
             player.getEntityData().setInteger("flute_note", note);
         }
 
-        return new ActionResult<ItemStack>(EnumActionResult.PASS, player.getHeldItem(hand));
+        return new ActionResult<>(EnumActionResult.PASS, player.getHeldItem(hand));
+    }
+
+    @Override
+    public EnumAction getItemUseAction(ItemStack stack)
+    {
+        return EnumAction.BLOCK;
     }
 
     @Override
@@ -101,23 +81,25 @@ public class LGItemReedPipes extends Item
     @Override
     public void onUsingTick(ItemStack stack, EntityLivingBase player, int count)
     {
+        if (player.hurtTime > 0) return;
+
         float noteTime = player.getEntityData().getFloat("flute_note_time");
 
-        int savednote = player.getEntityData().getInteger("flute_note");
-        int anglenote = getNoteFromSpan((180 - (player.rotationPitch + 90)) / 180, notes);
+        int savedNote = player.getEntityData().getInteger("flute_note");
+        int angleNote = getNoteFromSpan((180 - (player.rotationPitch + 90)) / 180, notes);
 
         if (player.isSneaking())
         {
-            anglenote = getNoteFromSpan((180 - (player.rotationPitch + 90)) / 180, altNotes);
+            angleNote = getNoteFromSpan((180 - (player.rotationPitch + 90)) / 180, altNotes);
         }
 
-        anglenote++;
+        angleNote++;
 
-        float pitch = getNotePitch(anglenote);
+        float pitch = getNotePitch(angleNote);
 
-        if (anglenote != savednote)
+        if (angleNote != savedNote)
         {
-            player.getEntityData().setInteger("flute_note", anglenote);
+            player.getEntityData().setInteger("flute_note", angleNote);
             noteTime = 0;
             player.world.playSound(null, player.getPosition(), LGSoundEvents.ITEM_FLUTE_ATTACK.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, pitch);
         }
@@ -133,5 +115,28 @@ public class LGItemReedPipes extends Item
         }
 
         player.getEntityData().setFloat("flute_note_time", noteTime);
+    }
+
+    private float getNotePitch(int note)
+    {
+        note += 2;
+        return (float) Math.pow(2.0D, (note - 12) / 12.0D);
+    }
+
+    private int getNoteFromSpan(double span, int[] noteArray)
+    {
+        int which = (int) (span * (noteArray.length - 1) + 0.5);
+
+        if (which < 0)
+        {
+            which = 0;
+        }
+
+        if (which >= noteArray.length)
+        {
+            which = noteArray.length - 1;
+        }
+
+        return noteArray[which];
     }
 }

@@ -177,7 +177,7 @@ public class LGItemMagicMirror extends Item
     @Override
     public boolean shouldCauseReequipAnimation(ItemStack oldStack, ItemStack newStack, boolean slotChanged)
     {
-        return false;
+        return slotChanged;
     }
 
     private boolean isOutdoors(EntityPlayer player, World world)
