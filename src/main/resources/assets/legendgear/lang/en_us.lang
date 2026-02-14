@@ -168,3 +168,8 @@ fortunes.legendgear.generic.47=Jon was here.
 fortunes.legendgear.generic.48=I foresee glasses in your future. (in small print)
 fortunes.legendgear.generic.49=I predict you will get angry at a cookie. How irrational!
 fortunes.legendgear.generic.50=Lucky Numbers 0, 7, 7, 3, 4
+
+# CONFIG
+config.legendgear.general=General Settings
+config.legendgear.world_gen=World Generation Settings
+config.legendgear.starbeam_torch=Starbeam Torch Settings

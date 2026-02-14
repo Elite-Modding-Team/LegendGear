@@ -11,8 +11,11 @@ import mod.emt.legendgear.LegendGear;
 @Config(modid = LegendGear.MOD_ID, name = LegendGear.NAME)
 public class LGConfig
 {
+    @Config.LangKey("config.legendgear.general")
     public static final GeneralSettings GENERAL_SETTINGS = new GeneralSettings();
+    @Config.LangKey("config.legendgear.world_gen")
     public static final WorldGenSettings WORLD_GEN_SETTINGS = new WorldGenSettings();
+    @Config.LangKey("config.legendgear.starbeam_torch")
     public static final StarbeamTorchSettings STARBEAM_TORCH_SETTINGS = new StarbeamTorchSettings();
 
     public static class GeneralSettings
