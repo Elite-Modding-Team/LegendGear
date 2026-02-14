@@ -4,6 +4,7 @@ import javax.annotation.Nonnull;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
@@ -113,7 +114,7 @@ public class LGItems
                 LGRegistry.setup(new LGItemGeoAmulet(), "geo_amulet").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemPyroAmulet(), "pyro_amulet").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemTitanBand(), "titan_band").setCreativeTab(LegendGear.TAB),
-                LGRegistry.setup(new LGItemMagicBoomerang(), "magic_boomerang").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemMagicBoomerang(1500, 10, 1.5F, Items.GOLD_INGOT), "magic_boomerang").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemRockCandy(), "redstone_rock_candy").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemRockCandy(), "emerald_rock_candy").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemRockCandy(), "lapis_lazuli_rock_candy").setCreativeTab(LegendGear.TAB),

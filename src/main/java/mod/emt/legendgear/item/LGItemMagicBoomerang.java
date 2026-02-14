@@ -5,7 +5,6 @@ import javax.annotation.Nullable;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
@@ -20,14 +19,20 @@ import mod.emt.legendgear.entity.LGEntityMagicBoomerang;
 import mod.emt.legendgear.init.LGSoundEvents;
 import mod.emt.legendgear.util.TooltipHelper;
 
-//TODO: Let's not hardcode repair time, damage, speed, and throw time. We should make these customizable to be able to make more boomerang variants
 public class LGItemMagicBoomerang extends Item
 {
-    public LGItemMagicBoomerang()
+    private final int maxThrowTime;
+    private final float speed;
+    private final Item repairItem;
+
+    public LGItemMagicBoomerang(int durability, int maxThrowTime, float speed, Item repairItem)
     {
         super();
         setMaxStackSize(1);
-        setMaxDamage(1500);
+        setMaxDamage(durability);
+        this.maxThrowTime = maxThrowTime;
+        this.speed = speed;
+        this.repairItem = repairItem;
     }
 
     @Override
@@ -35,7 +40,7 @@ public class LGItemMagicBoomerang extends Item
     {
         if (!world.isRemote)
         {
-            LGEntityMagicBoomerang emb = new LGEntityMagicBoomerang(world, player, player.getHeldItem(hand).copy());
+            LGEntityMagicBoomerang emb = new LGEntityMagicBoomerang(world, player, player.getHeldItem(hand), maxThrowTime, speed);
             emb.thrownFromSlot = player.inventory.currentItem;
             world.spawnEntity(emb);
             world.playSound(null, player.getPosition(), LGSoundEvents.ENTITY_MAGIC_BOOMERANG_FLY.getSoundEvent(), SoundCategory.PLAYERS, 3.0F, 1.0F / (itemRand.nextFloat() * 0.4F + 0.8F));
@@ -54,6 +59,6 @@ public class LGItemMagicBoomerang extends Item
     @Override
     public boolean getIsRepairable(ItemStack stack, ItemStack material)
     {
-        return material.getItem() == Items.GOLD_INGOT;
+        return material.getItem() == repairItem;
     }
 }

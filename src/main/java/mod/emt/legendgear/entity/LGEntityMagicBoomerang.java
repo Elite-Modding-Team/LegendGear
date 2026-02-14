@@ -29,23 +29,24 @@ import mod.emt.legendgear.block.LGBlockMysticShrub;
 import mod.emt.legendgear.config.LGConfig;
 import mod.emt.legendgear.init.LGSoundEvents;
 
-// TODO: Let's not hardcode damage, speed, and throw time. We should make these customizable to be able to make more boomerang variants
 public class LGEntityMagicBoomerang extends EntityThrowable implements IEntityAdditionalSpawnData
 {
-    public static final int MAX_THROW_TIME = 10;
-    public static final float BOOMERANG_SPEED = 1.5F;
-    public int returnTime;
-    public ItemStack boomerangItem;
-    public Entity owner;
     public int thrownFromSlot;
+    private int maxThrowTime;
+    private float speed;
+    private int returnTime;
+    private ItemStack boomerangItem;
+    private Entity owner;
 
-    public LGEntityMagicBoomerang(World world, EntityLivingBase entity, ItemStack boomerangThrown)
+    public LGEntityMagicBoomerang(World world, EntityLivingBase entity, ItemStack boomerangThrown, int maxThrowTime, float speed)
     {
         super(world, entity);
-        returnTime = MAX_THROW_TIME;
-        boomerangItem = boomerangThrown;
-        noClip = false;
-        owner = entity;
+        this.maxThrowTime = maxThrowTime;
+        this.speed = speed;
+        this.returnTime = maxThrowTime;
+        this.boomerangItem = boomerangThrown;
+        this.owner = entity;
+        this.noClip = false;
     }
 
     public LGEntityMagicBoomerang(World world)
@@ -87,10 +88,10 @@ public class LGEntityMagicBoomerang extends EntityThrowable implements IEntityAd
                         thrower.inventory.mainInventory.set(thrower.inventory.currentItem, new ItemStack(Items.AIR));
                     }
                 }
-                if (returnTime == MAX_THROW_TIME)
+                if (returnTime == maxThrowTime)
                 {
                     thrower.swingArm(EnumHand.MAIN_HAND);
-                    shoot(thrower, thrower.rotationPitch, thrower.rotationYaw, 0.0F, BOOMERANG_SPEED, 0.0F);
+                    shoot(thrower, thrower.rotationPitch, thrower.rotationYaw, 0.0F, speed, 0.0F);
                 }
                 if (returnTime % 3 == 0)
                 {
@@ -108,7 +109,7 @@ public class LGEntityMagicBoomerang extends EntityThrowable implements IEntityAd
                     motionX = Math.cos(newHeading) * Math.cos(newPitch);
                     motionZ = Math.sin(newHeading) * Math.cos(newPitch);
                     motionY = Math.sin(newPitch);
-                    shoot(motionX, motionY, motionZ, BOOMERANG_SPEED, 0.0F);
+                    shoot(motionX, motionY, motionZ, speed, 0.0F);
                 }
             }
             if (getRidingEntity() == null)
