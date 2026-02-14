@@ -5,14 +5,11 @@ import javax.annotation.Nonnull;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
-import net.minecraft.init.SoundEvents;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -83,11 +80,6 @@ public class LGItems
     public static final LGItemWhirlwindBoots WHIRLWIND_BOOTS = null;
     public static final LGItemWindMedallion WIND_MEDALLION = null;
 
-    // TODO: Add materials to its own class
-    public static Item.ToolMaterial TOOL_STARGLASS = EnumHelper.addToolMaterial("legendgear_tool_starglass", 2, 216, 15.0F, 2.0F, 20);
-
-    public static ItemArmor.ArmorMaterial ARMOR_SPECIAL = EnumHelper.addArmorMaterial("legendgear_armor_special", "special", 5, new int[] {1, 0, 0, 1}, 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F);
-
     @SubscribeEvent
     public static void onRegisterItemsEvent(@Nonnull final RegistryEvent.Register<Item> event)
     {
@@ -135,8 +127,8 @@ public class LGItems
                 LGRegistry.setup(new LGItemMagicPowder(), "magic_powder").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemReedPipes(), "reed_pipes").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemSlimeSword(), "slime_sword").setCreativeTab(LegendGear.TAB),
-                LGRegistry.setup(new LGItemValorHeadband(ARMOR_SPECIAL, 0), "valor_headband").setCreativeTab(LegendGear.TAB),
-                LGRegistry.setup(new LGItemWhirlwindBoots(ARMOR_SPECIAL, 0), "whirlwind_boots").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemValorHeadband(LGMaterials.ARMOR_SPECIAL, 0), "valor_headband").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemWhirlwindBoots(LGMaterials.ARMOR_SPECIAL, 0), "whirlwind_boots").setCreativeTab(LegendGear.TAB),
                 // LegendGear 2
                 LGRegistry.setup(new LGItemBase(EnumRarity.UNCOMMON), "starglass_ingot").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemBase(EnumRarity.UNCOMMON), "starsteel_ingot").setCreativeTab(LegendGear.TAB),
@@ -150,7 +142,7 @@ public class LGItems
                 LGRegistry.setup(new LGItemFortuneCookie(), "fortune_cookie").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemSpottingScope(), "spotting_scope").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemBestBow(), "best_bow").setCreativeTab(LegendGear.TAB),
-                LGRegistry.setup(new LGItemSword(TOOL_STARGLASS, EnumRarity.RARE), "starglass_sword").setCreativeTab(LegendGear.TAB)
+                LGRegistry.setup(new LGItemSword(LGMaterials.TOOL_STARGLASS, EnumRarity.RARE), "starglass_sword").setCreativeTab(LegendGear.TAB)
             );
 
         // ITEM BLOCKS
