@@ -1,5 +1,6 @@
 package mod.emt.legendgear.item;
 
+import mod.emt.legendgear.config.LGConfig;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.item.EntityItem;
@@ -47,7 +48,7 @@ public class LGItemDimensionalCatalyst extends Item
         Block block = state.getBlock();
 
         // Special behavior: Replace targeted azurite ore with stone, drop azurite
-        if (block == LGBlocks.AZURITE_ORE)
+        if (block == LGBlocks.AZURITE_ORE && LGConfig.GENERAL_SETTINGS.dimensionalCatalystAzuriteExtraction)
         {
             int dx = side.getXOffset();
             int dy = side.getYOffset();
@@ -59,7 +60,7 @@ public class LGItemDimensionalCatalyst extends Item
                 EntityItem itemEntity = new EntityItem(world, pos.getX() + 0.5 + dx, pos.getY() + 0.5 + dy, pos.getZ() + 0.5 + dz, new ItemStack(LGItems.AZURITE, 1));
                 world.spawnEntity(itemEntity);
             }
-            world.playSound(null, pos, SoundEvents.ENTITY_ZOMBIE_VILLAGER_CONVERTED, SoundCategory.BLOCKS, 1.0F, 1.0F);
+            world.playSound(null, pos, SoundEvents.ENTITY_ILLAGER_MIRROR_MOVE, SoundCategory.BLOCKS, 1.0F, 1.0F);
             if (!player.capabilities.isCreativeMode) stack.shrink(1);
             // TODO: Advancement
             return EnumActionResult.SUCCESS;

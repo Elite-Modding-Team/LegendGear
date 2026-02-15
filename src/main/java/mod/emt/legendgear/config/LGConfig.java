@@ -34,6 +34,10 @@ public class LGConfig
         @Config.Comment("Bombs deal terrain damage on detonation like regular explosions")
         public boolean bombDamageTerrain = false;
 
+        @Config.Name("Dimensional Catalyst Azurite Extraction")
+        @Config.Comment("Using a dimensional catalyst on azurite ore will extract three azurite from it")
+        public boolean dimensionalCatalystAzuriteExtraction = false;
+
         @Config.Name("Emerald Exchange Rate")
         @Config.Comment("Exchange rate for shards -> pieces and pieces -> emeralds")
         @Config.RangeInt(min = 1)
@@ -50,7 +54,7 @@ public class LGConfig
         public double magicBoomerangDamage = 6.0D;
 
         @Config.Name("Prismatic XP")
-        @Config.Comment("Replace regular experience orb textures with prismatic XP")
+        @Config.Comment("Replace regular experience orb textures with custom rainbow experience orb textures")
         public boolean prismaticXP = true;
 
         @Config.Name("Quiver Capacity")
