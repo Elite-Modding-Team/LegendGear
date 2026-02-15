@@ -3,8 +3,10 @@ package mod.emt.legendgear.entity;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
@@ -123,6 +125,7 @@ public class LGEntityEnderBomb extends Entity
                 double dist = entity.getDistance(this);
                 if (dist <= LGConfig.GENERAL_SETTINGS.enderMedallionRadius && dist >= radius)
                 {
+                    entity.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 100, 6));
                     double randX = entity.posX + rand.nextGaussian() * 20.0D;
                     double randZ = entity.posZ + rand.nextGaussian() * 20.0D;
                     double randY = entity.posY + 18.0D;
