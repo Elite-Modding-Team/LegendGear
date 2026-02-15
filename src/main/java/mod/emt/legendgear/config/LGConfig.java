@@ -48,6 +48,10 @@ public class LGConfig
         @Config.RangeInt(min = 100)
         public int fallenStarLifetime = 440;
 
+        @Config.Name("Lightning-Struck Blocks")
+        @Config.Comment("Allows lightning conversions of grass, dirt and sand into lightning-struck variants")
+        public boolean lightningStruckBlocks = true;
+
         @Config.Name("Magic Boomerang Damage")
         @Config.Comment("Damage magic boomerangs deal to hit entities")
         @Config.RangeDouble(min = 0)

@@ -15,6 +15,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 
 import mod.emt.legendgear.LegendGear;
 import mod.emt.legendgear.block.*;
+import mod.emt.legendgear.config.LGConfig;
 
 @SuppressWarnings("unused")
 @Mod.EventBusSubscriber(modid = LegendGear.MOD_ID)
@@ -72,10 +73,13 @@ public class LGBlocks
         // LegendGear 1
         registry.register(LGRegistry.setup(new LGBlockSugarCube(), "sugar_cube").setCreativeTab(LegendGear.TAB));
         // LegendGear 2
-        registry.register(LGRegistry.setup(new LGBlockLightningStruck(Material.GROUND, SoundType.GROUND, MapColor.DIRT, Blocks.DIRT, 0), "lightning_struck_dirt").setHardness(0.5F).setCreativeTab(LegendGear.TAB));
-        registry.register(LGRegistry.setup(new LGBlockLightningStruck(Material.GROUND, SoundType.GROUND, MapColor.DIRT, Blocks.DIRT, 1), "lightning_struck_coarse_dirt").setHardness(0.5F).setCreativeTab(LegendGear.TAB));
-        registry.register(LGRegistry.setup(new LGBlockLightningStruckFalling(Material.SAND, SoundType.SAND, MapColor.SAND, Blocks.SAND, 0, -2370656), "lightning_struck_sand").setHardness(0.5F).setCreativeTab(LegendGear.TAB));
-        registry.register(LGRegistry.setup(new LGBlockLightningStruckFalling(Material.SAND, SoundType.SAND, MapColor.ADOBE, Blocks.SAND, 1, -5679071), "lightning_struck_red_sand").setHardness(0.5F).setCreativeTab(LegendGear.TAB));
+        if (LGConfig.GENERAL_SETTINGS.lightningStruckBlocks)
+        {
+            registry.register(LGRegistry.setup(new LGBlockLightningStruck(Material.GROUND, SoundType.GROUND, MapColor.DIRT, Blocks.DIRT, 0), "lightning_struck_dirt").setHardness(0.5F).setCreativeTab(LegendGear.TAB));
+            registry.register(LGRegistry.setup(new LGBlockLightningStruck(Material.GROUND, SoundType.GROUND, MapColor.DIRT, Blocks.DIRT, 1), "lightning_struck_coarse_dirt").setHardness(0.5F).setCreativeTab(LegendGear.TAB));
+            registry.register(LGRegistry.setup(new LGBlockLightningStruckFalling(Material.SAND, SoundType.SAND, MapColor.SAND, Blocks.SAND, 0, -2370656), "lightning_struck_sand").setHardness(0.5F).setCreativeTab(LegendGear.TAB));
+            registry.register(LGRegistry.setup(new LGBlockLightningStruckFalling(Material.SAND, SoundType.SAND, MapColor.ADOBE, Blocks.SAND, 1, -5679071), "lightning_struck_red_sand").setHardness(0.5F).setCreativeTab(LegendGear.TAB));
+        }
         registry.register(LGRegistry.setup(new LGBlockAzuriteOre(), "azurite_ore").setCreativeTab(LegendGear.TAB));
     }
 }
