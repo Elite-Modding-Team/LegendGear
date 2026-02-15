@@ -76,21 +76,26 @@ public class LGLightningFulguriteEvent
     @SubscribeEvent
     public static void onFulguriteHarvest(BlockEvent.HarvestDropsEvent event)
     {
-        // Light-struck blocks dug by shovels will drop Fulgurite
-        if (event.getHarvester() != null && (event.getHarvester().getHeldItemMainhand().getItem().getToolClasses(event.getHarvester().getHeldItemMainhand()).contains("shovel") && !event.isSilkTouching()))
+        // Lightning-struck blocks dug by shovels will drop Fulgurite
+        if (event.getHarvester() != null && !event.isSilkTouching())
         {
-            if (event.getState().getBlock() instanceof LGBlockLightningStruck || event.getState().getBlock() instanceof LGBlockLightningStruckFalling)
+            ItemStack held = event.getHarvester().getHeldItemMainhand();
+            if (held.getItem().getToolClasses(held).contains("shovel"))
             {
-                List<ItemStack> toBeRemoved = new ArrayList<>();
-                List<ItemStack> toBeAdded = new ArrayList<>();
-                toBeAdded.add(new ItemStack(LGItems.FULGURITE));
-                // If block drops something remove it in favor of the new item
-                if (!event.getDrops().isEmpty())
+                Block block = event.getState().getBlock();
+                if (block instanceof LGBlockLightningStruck || block instanceof LGBlockLightningStruckFalling)
                 {
-                    toBeRemoved.addAll(event.getDrops());
+                    List<ItemStack> toBeRemoved = new ArrayList<>();
+                    List<ItemStack> toBeAdded = new ArrayList<>();
+                    toBeAdded.add(new ItemStack(LGItems.FULGURITE));
+                    // If block drops something, remove it in favor of the new item
+                    if (!event.getDrops().isEmpty())
+                    {
+                        toBeRemoved.addAll(event.getDrops());
+                    }
+                    event.getDrops().addAll(toBeAdded);
+                    event.getDrops().removeAll(toBeRemoved);
                 }
-                event.getDrops().addAll(toBeAdded);
-                event.getDrops().removeAll(toBeRemoved);
             }
         }
     }
