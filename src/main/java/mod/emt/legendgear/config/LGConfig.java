@@ -36,7 +36,7 @@ public class LGConfig
 
         @Config.Name("Dimensional Catalyst Azurite Extraction")
         @Config.Comment("Using a dimensional catalyst on azurite ore will extract three azurite from it")
-        public boolean dimensionalCatalystAzuriteExtraction = false;
+        public boolean dimensionalCatalystAzuriteExtraction = true;
 
         @Config.Name("Emerald Exchange Rate")
         @Config.Comment("Exchange rate for shards -> pieces and pieces -> emeralds")
