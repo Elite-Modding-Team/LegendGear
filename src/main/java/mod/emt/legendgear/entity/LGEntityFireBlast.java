@@ -1,5 +1,6 @@
 package mod.emt.legendgear.entity;
 
+import mod.emt.legendgear.config.LGConfig;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.init.SoundEvents;
@@ -20,7 +21,7 @@ public class LGEntityFireBlast extends Entity
     public static int DETONATION_TIME = 60;
     public static double DETONATION_RADIUS = 8.0D;
     public static Entity thrower;
-    public int damage_per_hit = 15;
+    public float damage_per_hit = (float) LGConfig.GENERAL_SETTINGS.fireMedallionDamage;
     public boolean noFF;
     public int lifetime;
 
@@ -97,7 +98,7 @@ public class LGEntityFireBlast extends Entity
                 if (el.getDistance(this) <= radius && (!el.equals(thrower) || !noFF))
                 {
                     DamageSourceFirestorm damageSourceFirestorm = new DamageSourceFirestorm("inFire", this, thrower);
-                    el.setFire(10);
+                    el.setFire(LGConfig.GENERAL_SETTINGS.fireMedallionBurnDuration);
                     el.attackEntityFrom(damageSourceFirestorm, damage_per_hit);
                 }
             }

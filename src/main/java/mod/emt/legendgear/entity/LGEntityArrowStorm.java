@@ -1,5 +1,6 @@
 package mod.emt.legendgear.entity;
 
+import mod.emt.legendgear.config.LGConfig;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.projectile.EntityArrow;
@@ -52,7 +53,7 @@ public class LGEntityArrowStorm extends Entity
         }
         for (int i = 0; i < 3; i++)
         {
-            createVolatileArrow(posX + world.rand.nextGaussian() * RADIUS * 0.5D, posY + 3.0D, posZ + world.rand.nextGaussian() * RADIUS * 0.5D);
+            createVolatileArrow(posX + world.rand.nextGaussian() * RADIUS * 0.5D, posY + 5.0D, posZ + world.rand.nextGaussian() * RADIUS * 0.5D);
         }
         world.playSound(null, thrower.getPosition(), SoundEvents.ENTITY_GENERIC_EXTINGUISH_FIRE, SoundCategory.NEUTRAL, 0.1F, 1.0F / (rand.nextFloat() * 0.4F + 1.2F) + 0.5F);
     }
@@ -61,7 +62,7 @@ public class LGEntityArrowStorm extends Entity
     {
         LGEntityVolatileArrow arrow = new LGEntityVolatileArrow(world, thrower);
         arrow.pickupStatus = EntityArrow.PickupStatus.DISALLOWED;
-        arrow.setDamage(5.0D);
+        arrow.setDamage(LGConfig.GENERAL_SETTINGS.windMedallionDamage);
         arrow.setPositionAndRotation(xPos, yPos, zPos, 2.5F, 12.0F);
         world.spawnEntity(arrow);
     }

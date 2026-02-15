@@ -1,12 +1,16 @@
 package mod.emt.legendgear.entity;
 
+import mod.emt.legendgear.config.LGConfig;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundCategory;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 
 public class LGEntityVolatileArrow extends EntityArrow
@@ -35,6 +39,36 @@ public class LGEntityVolatileArrow extends EntityArrow
             setDead();
             world.playSound(null, getPosition(), SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.NEUTRAL, 0.1F, 1.0F / (rand.nextFloat() * 0.4F + 1.2F) + 0.5F);
             world.spawnParticle(EnumParticleTypes.CLOUD, posX, posY, posZ, 0.0D, 0.1D, 0.0D);
+        }
+    }
+
+    @Override
+    protected void onHit(RayTraceResult raytraceResultIn)
+    {
+        if (raytraceResultIn.entityHit != null && !this.world.isRemote)
+        {
+            Entity target = raytraceResultIn.entityHit;
+            double motionX = target.motionX;
+            double motionY = target.motionY;
+            double motionZ = target.motionZ;
+
+            target.attackEntityFrom(DamageSource.causeArrowDamage(this, shootingEntity), (float) this.getDamage());
+
+            if (LGConfig.GENERAL_SETTINGS.windMedallionIgnoresIF)
+            {
+                raytraceResultIn.entityHit.hurtResistantTime = 0;
+            }
+
+            target.motionX = motionX;
+            target.motionY = motionY;
+            target.motionZ = motionZ;
+            target.isAirBorne = false;
+
+            this.setDead();
+        }
+        else
+        {
+            super.onHit(raytraceResultIn);
         }
     }
 

@@ -48,6 +48,16 @@ public class LGConfig
         @Config.RangeInt(min = 100)
         public int fallenStarLifetime = 440;
 
+        @Config.Name("Fire Medallion Damage")
+        @Config.Comment("Damage dealt by the fire medallion")
+        @Config.RangeDouble(min = 0)
+        public double fireMedallionDamage = 80.0D;
+
+        @Config.Name("Fire Medallion Burn Duration")
+        @Config.Comment("The amount of seconds the fire medallion will burn targets")
+        @Config.RangeInt(min = 0)
+        public int fireMedallionBurnDuration = 20;
+
         @Config.Name("Magic Boomerang Damage")
         @Config.Comment("Damage magic boomerangs deal to hit entities")
         @Config.RangeDouble(min = 0)
@@ -66,6 +76,15 @@ public class LGConfig
         @Config.Comment("Spawn chance for falling stars per second for each player under the open night sky")
         @Config.RangeDouble(min = 0)
         public double starfallRarity = 0.001D;
+
+        @Config.Name("Wind Medallion Damage")
+        @Config.Comment("Damage dealt by the wind medallion's arrows")
+        @Config.RangeDouble(min = 0)
+        public double windMedallionDamage = 4.0D;
+
+        @Config.Name("Wind Medallion Ignores Invincibility Frames")
+        @Config.Comment("Wind medallion's arrows will ignore invincibility frames")
+        public boolean windMedallionIgnoresIF = true;
     }
 
     public static class WorldGenSettings
