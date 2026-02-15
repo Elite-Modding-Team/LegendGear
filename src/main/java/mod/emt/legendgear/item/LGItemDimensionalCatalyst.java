@@ -20,6 +20,7 @@ import net.minecraft.world.World;
 import mod.emt.legendgear.init.LGBlocks;
 import mod.emt.legendgear.init.LGItems;
 
+@SuppressWarnings("deprecation")
 public class LGItemDimensionalCatalyst extends Item
 {
 
