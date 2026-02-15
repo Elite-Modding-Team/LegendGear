@@ -23,7 +23,7 @@ public class LGEntityQuake extends Entity implements IEntityAdditionalSpawnData
     public static double VERTICAL_LAUNCH = 0.5D;
     public static double HORIZONTAL_LAUNCH = 0.3D;
     public static Entity thrower;
-    public int damage_per_hit = 7;
+    public double damage_per_hit = 7.0D;
     public boolean noFF;
     public int lifetime;
     public boolean oneshot = false;
@@ -34,6 +34,10 @@ public class LGEntityQuake extends Entity implements IEntityAdditionalSpawnData
         this(par1World, par2, par4, par6, responsible, safeToUser);
         oneshot = true;
         oneshot_radius = radius;
+        damage_per_hit = 7.0D;
+        VERTICAL_LAUNCH = 0.5D;
+        HORIZONTAL_LAUNCH = 0.3D;
+
     }
 
     public LGEntityQuake(World par1World, double par2, double par4, double par6, Entity responsible, boolean safeToUser)
@@ -47,9 +51,12 @@ public class LGEntityQuake extends Entity implements IEntityAdditionalSpawnData
         thrower = responsible;
     }
 
-    public LGEntityQuake(World par1World, double par2, double par4, double par6, Entity responsible)
+    public LGEntityQuake(World par1World, double par2, double par4, double par6, Entity responsible, double damage, double verticalLaunch, double horizontalLaunch)
     {
         this(par1World, par2, par4, par6, responsible, false);
+        damage_per_hit = damage;
+        VERTICAL_LAUNCH = verticalLaunch;
+        HORIZONTAL_LAUNCH = horizontalLaunch;
     }
 
     public LGEntityQuake(World par1World)
@@ -71,7 +78,7 @@ public class LGEntityQuake extends Entity implements IEntityAdditionalSpawnData
                 if (el.onGround && el.getDistance(this) <= radius) if (!el.equals(thrower) || !noFF)
                 {
                     DamageSource damage = DamageSource.causeIndirectMagicDamage(this, thrower);
-                    el.attackEntityFrom(damage, damage_per_hit);
+                    el.attackEntityFrom(damage, (float) damage_per_hit);
                     el.addVelocity(rand.nextGaussian() * HORIZONTAL_LAUNCH, VERTICAL_LAUNCH, rand.nextGaussian() * HORIZONTAL_LAUNCH);
                     world.playSound(null, el.getPosition(), SoundEvents.ENTITY_IRONGOLEM_ATTACK, SoundCategory.NEUTRAL, 1.0F, 0.2F);
                 }
