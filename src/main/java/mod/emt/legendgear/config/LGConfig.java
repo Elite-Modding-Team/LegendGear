@@ -38,25 +38,15 @@ public class LGConfig
         @Config.Comment("Using a dimensional catalyst on azurite ore will extract three azurite from it")
         public boolean dimensionalCatalystAzuriteExtraction = true;
 
-        @Config.Name("Earth Medallion Damage")
-        @Config.Comment("Damage dealt by the earth medallion")
-        @Config.RangeDouble(min = 0)
-        public double earthMedallionDamage = 60.0D;
-
-        @Config.Name("Earth Medallion Horizontal Knockback")
-        @Config.Comment("Horizontal knockback dealt by the earth medallion")
-        @Config.RangeDouble(min = 0)
-        public double earthMedallionHorizontalKnockback = 4.0D;
-
-        @Config.Name("Earth Medallion Vertical Knockback")
-        @Config.Comment("Vertical knockback dealt by the earth medallion")
-        @Config.RangeDouble(min = 0)
-        public double earthMedallionVerticalKnockback = 2.0D;
-
         @Config.Name("Emerald Exchange Rate")
         @Config.Comment("Exchange rate for shards -> pieces and pieces -> emeralds")
         @Config.RangeInt(min = 1)
         public int emeraldExchangeRate = 8;
+
+        @Config.Name("Ender Medallion Radius")
+        @Config.Comment("The radius of the affected area by the ender medallion")
+        @Config.RangeDouble(min = 0)
+        public double enderMedallionRadius = 10.0D;
 
         @Config.Name("Fallen Star Lifetime")
         @Config.Comment("The time in ticks a fallen star will exist before dwindling away")
