@@ -41,7 +41,7 @@ public class LGConfig
         @Config.Name("Earth Medallion Damage")
         @Config.Comment("Damage dealt by the earth medallion")
         @Config.RangeDouble(min = 0)
-        public double earthMedallionDamage = 60.0D;
+        public double earthMedallionDamage = 70.0D;
 
         @Config.Name("Earth Medallion Horizontal Knockback")
         @Config.Comment("Horizontal knockback dealt by the earth medallion")
