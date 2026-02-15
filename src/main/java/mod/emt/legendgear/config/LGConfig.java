@@ -43,6 +43,11 @@ public class LGConfig
         @Config.RangeInt(min = 1)
         public int emeraldExchangeRate = 8;
 
+        @Config.Name("Ender Medallion Radius")
+        @Config.Comment("The radius of the affected area by the ender medallion")
+        @Config.RangeDouble(min = 0)
+        public double enderMedallionRadius = 10.0D;
+
         @Config.Name("Fallen Star Lifetime")
         @Config.Comment("The time in ticks a fallen star will exist before dwindling away")
         @Config.RangeInt(min = 100)

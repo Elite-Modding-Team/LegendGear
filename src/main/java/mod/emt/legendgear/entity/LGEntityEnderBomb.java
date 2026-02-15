@@ -14,13 +14,13 @@ import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
 
 import java.util.List;
 import mod.emt.legendgear.client.particle.LGParticleHandler;
+import mod.emt.legendgear.config.LGConfig;
 
 public class LGEntityEnderBomb extends Entity
 {
     public int lifespan_timer;
     public int EXPAND_TIME = 110;
     public int COLLAPSE_TIME = 10;
-    public double MAX_RADIUS = 10.0D;
     public double radius;
     public boolean portal;
     public double xCoord;
@@ -112,16 +112,16 @@ public class LGEntityEnderBomb extends Entity
             {
                 world.playSound(null, getPosition(), SoundEvents.ENTITY_ENDERMEN_STARE, SoundCategory.NEUTRAL, 3.0F, 2.0F);
             }
-            radius = lifespan_timer * 1.0D / EXPAND_TIME * MAX_RADIUS;
+            radius = lifespan_timer * 1.0D / EXPAND_TIME * LGConfig.GENERAL_SETTINGS.enderMedallionRadius;
         }
         else
         {
-            radius = MAX_RADIUS * (COLLAPSE_TIME - lifespan_timer - EXPAND_TIME) * 1.0D / COLLAPSE_TIME;
-            List<EntityLiving> entities = world.getEntitiesWithinAABB(EntityLiving.class, getEntityBoundingBox().grow(MAX_RADIUS));
+            radius = LGConfig.GENERAL_SETTINGS.enderMedallionRadius * (COLLAPSE_TIME - lifespan_timer - EXPAND_TIME) * 1.0D / COLLAPSE_TIME;
+            List<EntityLiving> entities = world.getEntitiesWithinAABB(EntityLiving.class, getEntityBoundingBox().grow(LGConfig.GENERAL_SETTINGS.enderMedallionRadius));
             for (EntityLiving entity : entities)
             {
                 double dist = entity.getDistance(this);
-                if (dist <= MAX_RADIUS && dist >= radius)
+                if (dist <= LGConfig.GENERAL_SETTINGS.enderMedallionRadius && dist >= radius)
                 {
                     double randX = entity.posX + rand.nextGaussian() * 20.0D;
                     double randZ = entity.posZ + rand.nextGaussian() * 20.0D;
