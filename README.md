@@ -92,7 +92,7 @@ There are also some tweaks to make your game even more interesting than before..
 
 ## 🙏 Special Thanks
 
-- Originally creating LegendGear 1-2 (both licensed under CC BY-NC-SA 4.0) and creating a lot of memories to a lot of players ~ NMcCoy
+- Originally creating LegendGear 1-2 (both licensed under CC BY-NC-SA 4.0) and making memories for a lot of players ~ NMcCoy
 - Updated Clay Urn model ~ NicholasW
 - Contacting NMcCoy for permissions and archiving the [original source code](https://github.com/xJon/LegendGear) ~ xJon
 
