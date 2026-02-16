@@ -43,7 +43,7 @@ public class LGEntityEarthMedallion extends EntityThrowable
         if (world.isRemote) return;
         world.spawnEntity(new LGEntityQuake(world, posX, posY, posZ, getThrower(), LGConfig.GENERAL_SETTINGS.earthMedallionDamage, LGConfig.GENERAL_SETTINGS.earthMedallionVerticalKnockback, LGConfig.GENERAL_SETTINGS.earthMedallionHorizontalKnockback));
         world.playSound(null, getPosition(), SoundEvents.ENTITY_LIGHTNING_THUNDER, SoundCategory.NEUTRAL, 2.0F, 0.3F);
-        world.playSound(null, getPosition(), LGSoundEvents.BLOCK_URN_SHATTER.getSoundEvent(), SoundCategory.NEUTRAL, 2.0F, 0.7F);
+        world.playSound(null, getPosition(), LGSoundEvents.ITEM_MEDALLION_SHATTER.getSoundEvent(), SoundCategory.NEUTRAL, 2.0F, 0.7F);
         world.setEntityState(this, (byte) 3);
         setDead();
     }

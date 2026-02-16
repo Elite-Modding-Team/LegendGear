@@ -41,7 +41,7 @@ public class LGEntityEnderMedallion extends EntityThrowable
     {
         if (world.isRemote) return;
         world.spawnEntity(new LGEntityEnderBomb(world, posX, posY, posZ));
-        world.playSound(null, getPosition(), LGSoundEvents.BLOCK_URN_SHATTER.getSoundEvent(), SoundCategory.NEUTRAL, 2.0F, 0.7F);
+        world.playSound(null, getPosition(), LGSoundEvents.ITEM_MEDALLION_SHATTER.getSoundEvent(), SoundCategory.NEUTRAL, 2.0F, 0.7F);
         world.setEntityState(this, (byte) 3);
         setDead();
     }

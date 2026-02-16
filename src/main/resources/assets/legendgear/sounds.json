@@ -188,6 +188,15 @@
       "legendgear:item/star_piece/charge_start"
     ]
   },
+  "item.medallion.shatter": {
+    "sounds": [
+      "legendgear:block/urn/shatter1",
+      "legendgear:block/urn/shatter2",
+      "legendgear:block/urn/shatter3",
+      "legendgear:block/urn/shatter4",
+      "legendgear:block/urn/shatter5"
+    ]
+  },
   "item.phoenix_feather.activate": {
     "sounds": [
       "legendgear:item/spell/ember_cast"

@@ -42,6 +42,7 @@ public enum LGSoundEvents
     ITEM_MAGIC_POWDER_TRANSFORM("item.magic_powder.transform"),
     ITEM_MEDALLION_CHARGE_FULL("item.medallion.charge_full"),
     ITEM_MEDALLION_CHARGE_PARTIAL("item.medallion.charge_partial"),
+    ITEM_MEDALLION_SHATTER("item.medallion.shatter"),
     ITEM_PHOENIX_FEATHER_ACTIVATE("item.phoenix_feather.activate"),
     ITEM_PHOENIX_FEATHER_REVIVE("item.phoenix_feather.revive"),
     ITEM_PHOENIX_FEATHER_USE("item.phoenix_feather.use"),
