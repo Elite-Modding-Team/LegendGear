@@ -23,15 +23,19 @@ Most of the mod's content is heavily inspired after classic games like the Legen
 - **Caltrops:** Place them on the ground to use them as traps. There is a chance for them to wear out completely.
 - **Magic Boomerang:** Right-click to throw it. The boomerang will magically return to you and pick up any items it touches.
 - **Magic Mirror:** Hold down right-click to teleport to the last point you stood on that was exposed to the sky.
+- **Phoenix Charm:** This bauble saves you from death while it is equipped. Has only one use.
 - **Phoenix Feather:** Saves you from death while it is anywhere in your inventory. Has only one use.
 - **Quiver:** Arrows picked up will be stored into the quiver until it's full. Right-click to store arrows into it or sneak and right-click to remove arrows from it.
+- **Slime Sword:** It's a sword that does no damage. WOW!
+- **Spotting Scope:** Hold down right-click to zoom. Quickly right-click to temporarily mark a location instead.
+- **Starglass Sword:** All attacks with this sword have a 50% chance to deal a critical hit.
 
 ## Medallions
 
 These are one-use items that can be thrown to cast immensely powerful spells at the impact point, but you'll first need to charge them through specific methods. Fully charged medallions are also used to craft special gear and amulets.
 
 - **Earth Medallion:** Causes a massive shockwave that will throw off mobs into the air and deal over 70 damage by default. Requires you to take fall damage to charge it.
-- **Ender Medallion:** Emits an expanding unstable ring of energy that will teleport mobs inside it once it reaches its threshold. Requires you to take damage from ender mobs to charge it.
+- **Ender Medallion:** Emits an expanding unstable ring of energy that will teleport mobs inside it once it reaches its threshold. Requires you to take damage from End mobs to charge it.
 - **Fire Medallion:** Charges up three spinning fireballs that will circle around for a few seconds before exploding, any mobs within will be dealt over 80 damage and burn for 20 seconds by default. Requires you take fire damage to charge it.
 - **Wind Medallion:** Causes a huge arrow storm that will constantly rain towards mobs below, each arrow deals 4 damage by default and will ignore invincibility frames. Requires you to take arrow damage to charge it.
 
@@ -53,6 +57,9 @@ Special equipment created with the power of the medallions.
 ## Miscellaneous
 
 - **Clay Urn:** Right-click or throw an item to it to store the item to it. Breaking it will make it drop the item.
+- **Dimensional Catalyst:** Right-click blocks with it to teleport them around, it can also be used to properly extract Azurite ore and various recipes.
+- **Fortune Cookie:** Eat it to receive a fortune. You just never know what you might get!
+- **Fulgurite:** A rare material obtained from the ground after a lightning strike.
 - **Hookshot:** Right-click to fire it. Once hooked into a block, it'll pull you towards it.
 - **Magic Powder:** Right-click certain blocks or mobs for shapeshifting surprises!
 - **Milk Chocolate:** Cures all status effects while also being chocolatey.
@@ -60,6 +67,8 @@ Special equipment created with the power of the medallions.
 - **Rock Candy:** These sugary treats are made from various different materials. They give different effects depending on the material.
 - **Skybeam Block:** When activated with redstone, it will emit a cosmetic beam towards the sky!
 - **Starbeam Torch:** Place these together and hop on them to use them as rails! Try hopping on them while running.
+- **Starglass Ingot:** New alloy made out of sand and infused stardust.
+- **Starsteel Ingot:** New alloy made out of iron and infused stardust.
 - **Sugar Cube:** Storage blocks of sugar. Gets destroyed when under rain or in water.
 - **Sword Pedestal:** Allows you to place swords within it. Place one on top of a Skybeam Block and insert a sword to activate it!
 
@@ -67,6 +76,7 @@ Special equipment created with the power of the medallions.
 
 New features that can be found throughout the world.
 
+- **Azurite:** This magical blue metal is connected to star energy. Clusters of Azurite ore can be found mainly at high altitude biomes such as Extreme Hills. 
 - **Bomb Flowers:** You can find these around lava pools. Left-click them to get them to drop bombs, but be sure to disable them in time to pick them up! The flowers will regenerate after a short amount of time.
 - **Mystic Shrubs / Energized Mystic Shrubs:** These can spawn everywhere around the Overworld and can be broken for loot, the shrubs will regenerate after a short amount of time. During a thunderstorm, they will become energized and have even better loot!
 
