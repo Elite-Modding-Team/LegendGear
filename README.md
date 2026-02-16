@@ -2,7 +2,7 @@
 
 ![LegendGear Returns Logo](docs/logo.png)
 
-**LegendGear Returns** is the 1.12.2 port of LegendGear by NMcCoy, it combines the content from both LegendGear 1 (1.5.2) and LegendGear 2 (1.7.10). Our port represents the best of both versions!
+**LegendGear Returns** is the 1.12.2 port of LegendGear by NMcCoy, it combines the content from both [LegendGear 1 (1.5.2)](https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/minecraft-mods/1287725-legendgear-items-and-more-drawing-inspiration-from) and [LegendGear 2 (1.7.10)](https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/minecraft-mods/2198530-legendgear-2-version-2-b-2-1-updated-3-9-2015). Our port represents the best of both versions!
 
 Most of the mod's content is heavily inspired after classic games like the Legend of Zelda and other RPGs. The main central focus of the mod however are the falling stars.
 
