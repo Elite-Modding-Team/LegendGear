@@ -159,6 +159,11 @@ public class LGRegistry
         OreDictionary.registerOre("ingotStarglass", LGItems.STARGLASS_INGOT);
         OreDictionary.registerOre("ingotStarsteel", LGItems.STARSTEEL_INGOT);
 
+        OreDictionary.registerOre("blockAzurite", LGBlocks.AZURITE_BLOCK);
+        if (LGConfig.GENERAL_SETTINGS.azuriteOre)
+        {
+            OreDictionary.registerOre("oreAzurite", LGBlocks.AZURITE_ORE);
+        }
         OreDictionary.registerOre("sandStarry", LGBlocks.RED_STARRY_SAND);
         OreDictionary.registerOre("sandStarry", LGBlocks.STARRY_SAND);
     }

@@ -20,6 +20,10 @@ public class LGConfig
 
     public static class GeneralSettings
     {
+        @Config.Name("Azurite Ore")
+        @Config.Comment("Enables azurite ore")
+        public boolean azuriteOre = true;
+
         @Config.Name("Bomb Bag Capacity")
         @Config.Comment("Amount of bombs a bomb bag can hold")
         @Config.RangeInt(min = 1)
@@ -100,6 +104,10 @@ public class LGConfig
         @Config.Comment("Spawn chance for falling stars per second for each player under the open night sky")
         @Config.RangeDouble(min = 0)
         public double starfallRarity = 0.001D;
+
+        @Config.Name("Sugar Cubes")
+        @Config.Comment("Enables sugar cubes")
+        public boolean sugarCubes = true;
 
         @Config.Name("Wind Medallion Damage")
         @Config.Comment("Damage dealt by the wind medallion's arrows")

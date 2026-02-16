@@ -40,7 +40,7 @@ public class LegendGear
     @Mod.EventHandler
     public void init(FMLInitializationEvent event)
     {
-        if (LGConfig.WORLD_GEN_SETTINGS.azuriteOreFrequency > 0)
+        if (LGConfig.WORLD_GEN_SETTINGS.azuriteOreFrequency > 0 && LGConfig.GENERAL_SETTINGS.azuriteOre)
         {
             GameRegistry.registerWorldGenerator(new LGAzuriteGenerator(), 3);
         }

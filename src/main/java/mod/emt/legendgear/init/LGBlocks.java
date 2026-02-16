@@ -71,7 +71,10 @@ public class LGBlocks
 
         // Optional - These blocks can be disabled by the config file
         // LegendGear 1
-        registry.register(LGRegistry.setup(new LGBlockSugarCube(), "sugar_cube").setCreativeTab(LegendGear.TAB));
+        if (LGConfig.GENERAL_SETTINGS.sugarCubes)
+        {
+            registry.register(LGRegistry.setup(new LGBlockSugarCube(), "sugar_cube").setCreativeTab(LegendGear.TAB));
+        }
         // LegendGear 2
         if (LGConfig.GENERAL_SETTINGS.lightningStruckBlocks)
         {
@@ -80,6 +83,9 @@ public class LGBlocks
             registry.register(LGRegistry.setup(new LGBlockLightningStruckFalling(Material.SAND, SoundType.SAND, MapColor.SAND, Blocks.SAND, 0, -2370656), "lightning_struck_sand").setHardness(0.5F).setCreativeTab(LegendGear.TAB));
             registry.register(LGRegistry.setup(new LGBlockLightningStruckFalling(Material.SAND, SoundType.SAND, MapColor.ADOBE, Blocks.SAND, 1, -5679071), "lightning_struck_red_sand").setHardness(0.5F).setCreativeTab(LegendGear.TAB));
         }
-        registry.register(LGRegistry.setup(new LGBlockAzuriteOre(), "azurite_ore").setCreativeTab(LegendGear.TAB));
+        if (LGConfig.GENERAL_SETTINGS.azuriteOre)
+        {
+            registry.register(LGRegistry.setup(new LGBlockAzuriteOre(), "azurite_ore").setCreativeTab(LegendGear.TAB));
+        }
     }
 }
