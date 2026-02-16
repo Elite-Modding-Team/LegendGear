@@ -14,6 +14,16 @@ Most of the mod's content is heavily inspired after classic games like the Legen
 - **Star Piece / Infused Star Piece:** When a star is caught, you will gain a star piece and quite a bit of experience. Hold right-click for awhile to infuse it at the cost of three levels by default, both star piece types are used in a variety of recipes.
 - **Starstone / Infused Starstone:** Beautiful decorative blocks, the infused variant will also glow with a sheen and flash through many colors.
 
+## Equipment
+
+- **Bomb Bag:** Bombs picked up will be stored into the bag until it's full. Right-click to throw one of the stored bombs to the ground or left-click active bombs to defuse them.
+- **Bombs:** Right-click to throw it to the ground. It will explode after a few seconds.
+- **Caltrops:** Place them on the ground to use them as traps. There is a chance for them to wear out completely.
+- **Magic Boomerang:** Right-click to throw it. The boomerang will magically return to you and pick up any items it touches.
+- **Magic Mirror:** Hold down right-click to teleport to the last point you stood on that was exposed to the sky.
+- **Phoenix Feather:** Saves you from death while it is anywhere in your inventory. Has only one use.
+- **Quiver:** Arrows picked up will be stored into the quiver until it's full. Right-click to store arrows into it or sneak and right-click to remove arrows from it.
+
 ## Medallions
 
 These are one-use items that can be thrown to cast immensely powerful spells at the impact point, but you'll first need to charge them through specific methods. Fully charged medallions are also used to craft special gear and amulets.
@@ -37,6 +47,26 @@ Special equipment created with the power of the medallions.
 ## Medallion Augmentation
 
 **COMING SOON!**
+
+## Miscellaneous
+
+- **Clay Urn:** Right-click or throw an item to it to store the item to it. Breaking it will make it drop the item.
+- **Hookshot:** Right-click to fire it. Once hooked into a block, it'll pull you towards it.
+- **Magic Powder:** Right-click certain blocks or mobs for shapeshifting surprises!
+- **Milk Chocolate:** Cures all status effects while also being chocolatey.
+- **Reed Pipes:** Hold down right-click to play it! Pitch is determined by the angle you're looking at and notes are determined by sneaking.
+- **Rock Candy:** These sugary treats are made from various different materials. They give different effects depending on the material.
+- **Skybeam Block:** When activated with redstone, it will emit a cosmetic beam towards the sky!
+- **Starbeam Torch:** Place these together and hop on them to use them as rails! Try hopping on them while running.
+- **Sugar Cube:** Storage blocks of sugar. Gets destroyed when under rain or in water.
+- **Sword Pedestal:** Allows you to place swords within it. Place one on top of a Skybeam Block and insert a sword to activate it!
+
+## World
+
+New features that can be found throughout the world.
+
+- **Bomb Flowers:** You can find these around lava pools. Left-click them to get them to drop bombs, but be sure to disable them in time to pick them up! The flowers will regenerate after a short amount of time.
+- **Mystic Shrubs / Energized Mystic Shrubs:** These can spawn everywhere around the Overworld and can be broken for loot, the shrubs will regenerate after a short amount of time. During a thunderstorm, they will become energized and have even better loot!
 
 ## Tweaks
 
