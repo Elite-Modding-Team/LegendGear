@@ -1,5 +1,7 @@
 # LegendGear Returns
 
+![LegendGear Returns Logo](docs/logo.png)
+
 **LegendGear Returns** is the 1.12.2 port of LegendGear by NMcCoy, it combines the content from both LegendGear 1 (1.5.2) and LegendGear 2 (1.7.10). Our port represents the best of both versions!
 
 Most of the mod's content is heavily inspired after classic games like the Legend of Zelda and other RPGs. The main central focus of the mod however are the falling stars.
@@ -11,7 +13,7 @@ Most of the mod's content is heavily inspired after classic games like the Legen
 - **Falling Stars:** Extremely powerful sources of celestial energy. These stars can occasionally be found falling down at night!
 - **Lightning-Struck Blocks:** When grass, dirt or sand are struck by lightning, they will become lightning-struck and can be dug up with a shovel for Fulgurite.
 - **Stardust / Infused Stardust:** Placing a star piece on the crafting grid will net you three piles of dust, they are also obtained when a fallen star has not been caught for too long.
-- **Star Piece / Infused Star Piece:** When a star is caught, you will gain a star piece and quite a bit of experience. Hold right-click for awhile to infuse it at the cost of three levels by default, both star piece types are used in a variety of recipes.
+- **Star Piece / Infused Star Piece:** When a star is caught, you will gain a star piece and quite a bit of experience. Hold right-click for a while to infuse it at the cost of three levels by default, both star piece types are used in a variety of recipes.
 - **Starstone / Infused Starstone:** Beautiful decorative blocks, the infused variant will also glow with a sheen and flash through many colors.
 
 ## Equipment
@@ -38,7 +40,7 @@ These are one-use items that can be thrown to cast immensely powerful spells at 
 Special equipment created with the power of the medallions.
 
 - **Aero Amulet:** When this bauble is equipped, it will completely protect you from arrows shot at you.
-- **Geo Amulet:** When this bauble is equipped, fall damage will be negated and you will emit shockwaves on the ground after falling through great lengths.
+- **Geo Amulet:** When this bauble is equipped, fall damage will be negated, and you will emit shockwaves on the ground after falling through great lengths.
 - **Headband of Valor:** Makes you deal more damage when equipped.
 - **Pyro Amulet:** When this bauble is equipped, fire damage will heal you instead.
 - **Titan Band:** When this bauble is equipped, right-clicking mobs with an empty hand will pick them up. Right-click again to throw them!
@@ -73,14 +75,14 @@ New features that can be found throughout the world.
 There are also some tweaks to make your game even more interesting than before...
 
 - **Emerald Shards:** Creatures slain by you will occasionally drop emerald shards. Combine these into pieces and then into full emeralds to trade with villagers!
-- **Hearts:** Creatures slain by you will ocasionally drop hearts. Pick them up to heal some health!
+- **Hearts:** Creatures slain by you will occasionally drop hearts. Pick them up to heal some health!
 - **Prismatic Experience Orbs:** Tired of those boring green experience orbs? They're rainbow with a different texture now!
 
 ---
 
 ## 🙏 Special Thanks
 
-- Originally creating LegendGear 1-2 (both licensed under CC BY-NC-SA 4.0) and creating a lot of memories to a lot of players ~ MobiusFlip
+- Originally creating LegendGear 1-2 (both licensed under CC BY-NC-SA 4.0) and creating a lot of memories to a lot of players ~ NMcCoy
 - Updated Clay Urn model ~ NicholasW
 - Contacting NMcCoy for permissions and archiving the [original source code](https://github.com/xJon/LegendGear) ~ xJon
 
