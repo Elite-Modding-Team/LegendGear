@@ -62,6 +62,11 @@ public class LGConfig
         @Config.RangeInt(min = 1)
         public int emeraldExchangeRate = 8;
 
+        @Config.Name("Ender Medallion Damage")
+        @Config.Comment("Damage dealt by the ender medallion")
+        @Config.RangeDouble(min = 0)
+        public double enderMedallionDamage = 70.0D;
+
         @Config.Name("Ender Medallion Radius")
         @Config.Comment("The radius of the affected area by the ender medallion")
         @Config.RangeDouble(min = 0)

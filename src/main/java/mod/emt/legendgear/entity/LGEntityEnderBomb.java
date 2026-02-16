@@ -7,6 +7,7 @@ import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
@@ -23,6 +24,7 @@ public class LGEntityEnderBomb extends Entity
     public int lifespan_timer;
     public int EXPAND_TIME = 110;
     public int COLLAPSE_TIME = 10;
+    public static Entity thrower;
     public double radius;
     public boolean portal;
     public double xCoord;
@@ -126,6 +128,7 @@ public class LGEntityEnderBomb extends Entity
                 if (dist <= LGConfig.GENERAL_SETTINGS.enderMedallionRadius && dist >= radius)
                 {
                     entity.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 100, 6));
+                    entity.attackEntityFrom(DamageSource.MAGIC, (float) LGConfig.GENERAL_SETTINGS.enderMedallionDamage);
                     double randX = entity.posX + rand.nextGaussian() * 20.0D;
                     double randZ = entity.posZ + rand.nextGaussian() * 20.0D;
                     double randY = entity.posY + 18.0D;
