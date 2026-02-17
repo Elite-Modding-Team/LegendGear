@@ -4,11 +4,13 @@
 
 **LegendGear Returns** is the 1.12.2 port of LegendGear by NMcCoy, it combines the content from both [LegendGear 1 (1.5.2)](https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/minecraft-mods/1287725-legendgear-items-and-more-drawing-inspiration-from) and [LegendGear 2 (1.7.10)](https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/minecraft-mods/2198530-legendgear-2-version-2-b-2-1-updated-3-9-2015). Our port represents the best of both versions!
 
-Most of the mod's content is heavily inspired after classic games like the Legend of Zelda and other RPGs. The main central focus of the mod however are the falling stars.
+Most of the mod's content is heavily inspired after classic games like the Legend of Zelda and other RPGs. The main central focus of the mod however are the falling stars and the legendary Phoenix.
 
 ---
 
 ## Events
+
+![Events](docs/events.png)
 
 - **Falling Stars:** Extremely powerful sources of celestial energy. These stars can occasionally be found falling down at night!
 - **Lightning-Struck Blocks:** When grass, dirt or sand are struck by lightning, they will become lightning-struck and can be dug up with a shovel for Fulgurite.
@@ -90,6 +92,8 @@ New features that can be found throughout the world.
 - **Mystic Shrubs / Energized Mystic Shrubs:** These can spawn everywhere around the Overworld and can be broken for loot, the shrubs will regenerate after a short amount of time. During a thunderstorm, they will become energized and have even better loot!
 
 ## Tweaks
+
+![Tweaks](docs/tweaks.png)
 
 There are also some tweaks to make your game even more interesting than before...
 
