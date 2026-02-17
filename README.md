@@ -18,9 +18,12 @@ Most of the mod's content is heavily inspired after classic games like the Legen
 
 ## Equipment
 
+![Equipment Content](docs/equipment.png)
+
 - **Bomb Bag:** Bombs picked up will be stored into the bag until it's full. Right-click to throw one of the stored bombs to the ground or left-click active bombs to defuse them.
 - **Bombs:** Right-click to throw it to the ground. It will explode after a few seconds.
 - **Caltrops:** Place them on the ground to use them as traps. There is a chance for them to wear out completely.
+- **Hookshot:** Right-click to fire it. Once hooked into a block, it'll pull you towards it.
 - **Magic Boomerang:** Right-click to throw it. The boomerang will magically return to you and pick up any items it touches.
 - **Magic Mirror:** Hold down right-click to teleport to the last point you stood on that was exposed to the sky.
 - **Phoenix Charm:** This bauble saves you from death while it is equipped. Has only one use.
@@ -31,6 +34,8 @@ Most of the mod's content is heavily inspired after classic games like the Legen
 - **Starglass Sword:** All attacks with this sword have a 50% chance to deal a critical hit.
 
 ## Medallions
+
+![Medallion Content](docs/medallions.png)
 
 These are one-use items that can be thrown to cast immensely powerful spells at the impact point, but you'll first need to charge them through specific methods. Fully charged medallions are also used to craft special gear and amulets.
 
@@ -56,13 +61,15 @@ Special equipment created with the power of the medallions.
 
 ## Miscellaneous
 
+![Miscellaneous Content](docs/misc.png)
+
 - **Clay Urn:** Right-click or throw an item to it to store the item to it. Breaking it will make it drop the item.
 - **Dimensional Catalyst:** Right-click blocks with it to teleport them around, it can also be used to properly extract Azurite ore and various recipes.
 - **Fortune Cookie:** Eat it to receive a fortune. You just never know what you might get!
 - **Fulgurite:** A rare material obtained from the ground after a lightning strike.
-- **Hookshot:** Right-click to fire it. Once hooked into a block, it'll pull you towards it.
 - **Magic Powder:** Right-click certain blocks or mobs for shapeshifting surprises!
 - **Milk Chocolate:** Cures all status effects while also being chocolatey.
+- **Mystic Seed:** Plant it on the ground to spawn some Mystic Shrubs!
 - **Reed Pipes:** Hold down right-click to play it! Pitch is determined by the angle you're looking at and notes are determined by sneaking.
 - **Rock Candy:** These sugary treats are made from various different materials. They give different effects depending on the material.
 - **Skybeam Block:** When activated with redstone, it will emit a cosmetic beam towards the sky!
@@ -73,6 +80,8 @@ Special equipment created with the power of the medallions.
 - **Sword Pedestal:** Allows you to place swords within it. Place one on top of a Skybeam Block and insert a sword to activate it!
 
 ## World
+
+![World Content](docs/world.png)
 
 New features that can be found throughout the world.
 
