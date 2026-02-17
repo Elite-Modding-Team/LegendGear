@@ -24,7 +24,7 @@ public class LegendGear
     public static final String NAME = Tags.MOD_NAME;
     public static final String VERSION = Tags.VERSION;
     public static final String ACCEPTED_VERSIONS = "[1.12.2]";
-    public static final String DEPENDENCIES = "after:baubles";
+    public static final String DEPENDENCIES = "required-after:baubles";
     public static final Logger LOGGER = LogManager.getLogger(NAME);
     public static final CreativeTabs TAB = new LGCreativeTab(CreativeTabs.CREATIVE_TAB_ARRAY.length, MOD_ID + ".tab");
 
