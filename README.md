@@ -6,6 +6,8 @@
 
 Most of the mod's content is heavily inspired after classic games like the Legend of Zelda and other RPGs. The main central focus of the mod however are the falling stars and the legendary Phoenix.
 
+[Baubles](https://www.curseforge.com/minecraft/mc-mods/baubles) or any of its [forks](https://www.curseforge.com/minecraft/mc-mods/bubbles-a-baubles-fork) is required to run with this mod.
+
 ---
 
 ## Equipment
