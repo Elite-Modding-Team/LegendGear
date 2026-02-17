@@ -2,6 +2,7 @@ package mod.emt.legendgear.event;
 
 import javax.annotation.Nullable;
 
+import mod.emt.legendgear.config.LGConfig;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
@@ -66,6 +67,10 @@ public class LGDropsEvent
     @SubscribeEvent
     public static void onMobDrops(LivingDropsEvent event)
     {
+        if (!LGConfig.GENERAL_SETTINGS.specialDrops)
+        {
+            return;
+        }
         EntityLivingBase entity = event.getEntityLiving();
         if (entity.world.isRemote || !(entity.world instanceof WorldServer))
         {

@@ -105,6 +105,10 @@ public class LGConfig
         @Config.RangeInt(min = 1)
         public int quiverCapacity = 200;
 
+        @Config.Name("Special Drops")
+        @Config.Comment("Enables additional loot tables for slain mobs (emerald shards, emerald pieces, and hearts)")
+        public boolean specialDrops = true;
+
         @Config.Name("Starfall Rarity")
         @Config.Comment("Spawn chance for falling stars per second for each player under the open night sky")
         @Config.RangeDouble(min = 0)
