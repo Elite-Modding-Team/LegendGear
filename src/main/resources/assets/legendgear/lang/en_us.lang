@@ -93,6 +93,7 @@ tooltip.legendgear.ender_medallion=When fully charged, hold down right-click and
 tooltip.legendgear.feather_charm=Provides full immunity to fall damage and wall collision damage while it is equipped.
 tooltip.legendgear.fire_medallion=When fully charged, hold down right-click and let go to throw it and cause a fiery vortex at the landing point. Charges are gained from fire damage taken.
 tooltip.legendgear.fortune_cookie=Receive your fortune.
+tooltip.legendgear.fulgurite=Can be harvested from lightning-struck blocks.
 tooltip.legendgear.geo_amulet=While equipped, it will cause a quake around you when fall damage is taken. Durability is decreased during usage.
 tooltip.legendgear.infused_star_piece=This star piece hums with an intense energy!
 tooltip.legendgear.magic_boomerang=Right-click to throw it. The boomerang will magically return to you and pick up any items it touches.
