@@ -1,8 +1,10 @@
 package mod.emt.legendgear.entity;
 
+import io.netty.buffer.ByteBuf;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.nbt.NBTTagCompound;
@@ -13,13 +15,14 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.registry.IEntityAdditionalSpawnData;
 import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
 
 import java.util.List;
 import mod.emt.legendgear.client.particle.LGParticleHandler;
 import mod.emt.legendgear.config.LGConfig;
 
-public class LGEntityEnderBomb extends Entity
+public class LGEntityEnderBomb extends Entity implements IEntityAdditionalSpawnData
 {
     public int lifespan_timer;
     public int EXPAND_TIME = 110;
@@ -127,8 +130,9 @@ public class LGEntityEnderBomb extends Entity
                 double dist = entity.getDistance(this);
                 if (dist <= LGConfig.GENERAL_SETTINGS.enderMedallionRadius && dist >= radius)
                 {
+                    DamageSource damage = DamageSource.causeIndirectMagicDamage(this, thrower);
                     entity.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 100, 6));
-                    entity.attackEntityFrom(DamageSource.MAGIC, (float) LGConfig.GENERAL_SETTINGS.enderMedallionDamage);
+                    entity.attackEntityFrom(damage, (float) LGConfig.GENERAL_SETTINGS.enderMedallionDamage);
                     double randX = entity.posX + rand.nextGaussian() * 20.0D;
                     double randZ = entity.posZ + rand.nextGaussian() * 20.0D;
                     double randY = entity.posY + 18.0D;
@@ -181,6 +185,23 @@ public class LGEntityEnderBomb extends Entity
                     world.spawnParticle(EnumParticleTypes.PORTAL, posX + ox, posY, posZ + oz, 0.0D, 0.05D, 0.0D);
                 }
             }
+        }
+    }
+
+    @Override
+    public void writeSpawnData(ByteBuf data)
+    {
+        data.writeInt(thrower != null ? thrower.getEntityId() : -1);
+    }
+
+    @Override
+    public void readSpawnData(ByteBuf data)
+    {
+        final Entity shooter = world.getEntityByID(data.readInt());
+
+        if (shooter instanceof EntityLivingBase)
+        {
+            this.thrower = (EntityLivingBase) thrower;
         }
     }
 }

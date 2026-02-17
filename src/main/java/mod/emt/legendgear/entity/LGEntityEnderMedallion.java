@@ -1,6 +1,8 @@
 package mod.emt.legendgear.entity;
 
+import io.netty.buffer.ByteBuf;
 import mod.emt.legendgear.init.LGSoundEvents;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.init.SoundEvents;
@@ -9,6 +11,7 @@ import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.registry.IEntityAdditionalSpawnData;
 import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -16,7 +19,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import mod.emt.legendgear.client.particle.LGParticleHandler;
 import mod.emt.legendgear.init.LGItems;
 
-public class LGEntityEnderMedallion extends EntityThrowable
+public class LGEntityEnderMedallion extends EntityThrowable implements IEntityAdditionalSpawnData
 {
     public LGEntityEnderMedallion(World world, EntityLivingBase thrower)
     {
@@ -61,6 +64,23 @@ public class LGEntityEnderMedallion extends EntityThrowable
             {
                 LGParticleHandler.spawnMagicRuneFX(this.world, this.posX + this.rand.nextGaussian() * 0.3D, this.posY, this.posZ + this.rand.nextGaussian() * 0.3D, 0.0D, this.rand.nextDouble(), 0.0D, 1.5F);
             }
+        }
+    }
+
+    @Override
+    public void writeSpawnData(ByteBuf data)
+    {
+        data.writeInt(thrower != null ? thrower.getEntityId() : -1);
+    }
+
+    @Override
+    public void readSpawnData(ByteBuf data)
+    {
+        final Entity shooter = world.getEntityByID(data.readInt());
+
+        if (shooter instanceof EntityLivingBase)
+        {
+            this.thrower = (EntityLivingBase) thrower;
         }
     }
 }

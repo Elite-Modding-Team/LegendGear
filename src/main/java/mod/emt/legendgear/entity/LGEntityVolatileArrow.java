@@ -1,5 +1,6 @@
 package mod.emt.legendgear.entity;
 
+import io.netty.buffer.ByteBuf;
 import mod.emt.legendgear.config.LGConfig;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -12,8 +13,9 @@ import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.registry.IEntityAdditionalSpawnData;
 
-public class LGEntityVolatileArrow extends EntityArrow
+public class LGEntityVolatileArrow extends EntityArrow implements IEntityAdditionalSpawnData
 {
     public LGEntityVolatileArrow(World worldIn)
     {
@@ -76,5 +78,22 @@ public class LGEntityVolatileArrow extends EntityArrow
     protected ItemStack getArrowStack()
     {
         return new ItemStack(Items.ARROW);
+    }
+
+    @Override
+    public void writeSpawnData(ByteBuf data)
+    {
+        data.writeInt(shootingEntity != null ? shootingEntity.getEntityId() : -1);
+    }
+
+    @Override
+    public void readSpawnData(ByteBuf data)
+    {
+        final Entity shooter = world.getEntityByID(data.readInt());
+
+        if (shooter instanceof EntityLivingBase)
+        {
+            this.shootingEntity = (EntityLivingBase) shootingEntity;
+        }
     }
 }

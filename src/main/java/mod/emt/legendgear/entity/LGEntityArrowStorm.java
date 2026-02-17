@@ -1,5 +1,6 @@
 package mod.emt.legendgear.entity;
 
+import io.netty.buffer.ByteBuf;
 import mod.emt.legendgear.config.LGConfig;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -9,11 +10,12 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.registry.IEntityAdditionalSpawnData;
 import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
 
 import java.util.List;
 
-public class LGEntityArrowStorm extends Entity
+public class LGEntityArrowStorm extends Entity implements IEntityAdditionalSpawnData
 {
     public static int MAX_LIFESPAN = 100;
     public static double RADIUS = 8.0D;
@@ -113,6 +115,23 @@ public class LGEntityArrowStorm extends Entity
             {
                 world.spawnParticle(EnumParticleTypes.CLOUD, posX + world.rand.nextGaussian() * LGEntityArrowStorm.RADIUS * 0.5D, posY + 3.0D, posZ + world.rand.nextGaussian() * LGEntityArrowStorm.RADIUS * 0.5D, 0.0D, -0.1D, 0.0D);
             }
+        }
+    }
+
+    @Override
+    public void writeSpawnData(ByteBuf data)
+    {
+        data.writeInt(thrower != null ? thrower.getEntityId() : -1);
+    }
+
+    @Override
+    public void readSpawnData(ByteBuf data)
+    {
+        final Entity shooter = world.getEntityByID(data.readInt());
+
+        if (shooter instanceof EntityLivingBase)
+        {
+            this.thrower = (EntityLivingBase) thrower;
         }
     }
 }

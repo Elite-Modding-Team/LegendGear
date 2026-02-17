@@ -1,13 +1,16 @@
 package mod.emt.legendgear.entity;
 
+import io.netty.buffer.ByteBuf;
 import mod.emt.legendgear.config.LGConfig;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.registry.IEntityAdditionalSpawnData;
 import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
 
 import java.util.List;
@@ -15,7 +18,7 @@ import mod.emt.legendgear.client.particle.LGParticleHandler;
 import mod.emt.legendgear.init.LGSoundEvents;
 import mod.emt.legendgear.util.damagesource.DamageSourceFirestorm;
 
-public class LGEntityFireBlast extends Entity
+public class LGEntityFireBlast extends Entity implements IEntityAdditionalSpawnData
 {
     public static int MAX_LIFESPAN = 70;
     public static int DETONATION_TIME = 60;
@@ -140,6 +143,23 @@ public class LGEntityFireBlast extends Entity
                     world.spawnParticle(EnumParticleTypes.LAVA, posX + world.rand.nextGaussian() * LGEntityFireBlast.DETONATION_RADIUS * 0.5D, posY, posZ + world.rand.nextGaussian() * LGEntityFireBlast.DETONATION_RADIUS * 0.5D, 0.0D, 0.5D, 0.0D);
                 }
             }
+        }
+    }
+
+    @Override
+    public void writeSpawnData(ByteBuf data)
+    {
+        data.writeInt(thrower != null ? thrower.getEntityId() : -1);
+    }
+
+    @Override
+    public void readSpawnData(ByteBuf data)
+    {
+        final Entity shooter = world.getEntityByID(data.readInt());
+
+        if (shooter instanceof EntityLivingBase)
+        {
+            this.thrower = (EntityLivingBase) thrower;
         }
     }
 }
