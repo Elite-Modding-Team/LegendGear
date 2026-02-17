@@ -8,16 +8,6 @@ Most of the mod's content is heavily inspired after classic games like the Legen
 
 ---
 
-## Events
-
-![Events](docs/events.png)
-
-- **Falling Stars:** Extremely powerful sources of celestial energy. These stars can occasionally be found falling down at night!
-- **Lightning-Struck Blocks:** When grass, dirt or sand are struck by lightning, they will become lightning-struck and can be dug up with a shovel for Fulgurite.
-- **Stardust / Infused Stardust:** Placing a star piece on the crafting grid will net you three piles of dust, they are also obtained when a fallen star has not been caught for too long.
-- **Star Piece / Infused Star Piece:** When a star is caught, you will gain a star piece and quite a bit of experience. Hold right-click for a while to infuse it at the cost of three levels by default, both star piece types are used in a variety of recipes.
-- **Starstone / Infused Starstone:** Beautiful decorative blocks, the infused variant will also glow with a sheen and flash through many colors.
-
 ## Equipment
 
 ![Equipment Content](docs/equipment.png)
@@ -46,7 +36,7 @@ These are one-use items that can be thrown to cast immensely powerful spells at 
 - **Fire Medallion:** Charges up three spinning fireballs that will circle around for a few seconds before exploding, any mobs within will be dealt over 80 damage and burn for 20 seconds by default. Requires you take fire damage to charge it.
 - **Wind Medallion:** Causes a huge arrow storm that will constantly rain towards mobs below, each arrow deals 4 damage by default and will ignore invincibility frames. Requires you to take arrow damage to charge it.
 
-## Medallion Equipment
+### Medallion Equipment
 
 Special equipment created with the power of the medallions.
 
@@ -57,9 +47,29 @@ Special equipment created with the power of the medallions.
 - **Titan Band:** When this bauble is equipped, right-clicking mobs with an empty hand will pick them up. Right-click again to throw them!
 - **Whirlwind Boots:** These pair of boots make you run much faster when they're equipped.
 
-## Medallion Augmentation
+### Medallion Augmentation
 
 **COMING SOON!**
+
+## Events
+
+![Events](docs/events.png)
+
+- **Falling Stars:** Extremely powerful sources of celestial energy. These stars can occasionally be found falling down at night!
+- **Lightning-Struck Blocks:** When grass, dirt or sand are struck by lightning, they will become lightning-struck and can be dug up with a shovel for Fulgurite.
+- **Stardust / Infused Stardust:** Placing a star piece on the crafting grid will net you three piles of dust, they are also obtained when a fallen star has not been caught for too long.
+- **Star Piece / Infused Star Piece:** When a star is caught, you will gain a star piece and quite a bit of experience. Hold right-click for a while to infuse it at the cost of three levels by default, both star piece types are used in a variety of recipes.
+- **Starstone / Infused Starstone:** Beautiful decorative blocks, the infused variant will also glow with a sheen and flash through many colors.
+
+## World
+
+![World Content](docs/world.png)
+
+New features that can be found throughout the world.
+
+- **Azurite:** This magical blue metal is connected to star energy. Clusters of Azurite ore can be found mainly at high altitude biomes such as Extreme Hills.
+- **Bomb Flowers:** You can find these around lava pools. Left-click them to get them to drop bombs, but be sure to disable them in time to pick them up! The flowers will regenerate after a short amount of time.
+- **Mystic Shrubs / Energized Mystic Shrubs:** These can spawn everywhere around the Overworld and can be broken for loot, the shrubs will regenerate after a short amount of time. During a thunderstorm, they will become energized and have even better loot!
 
 ## Miscellaneous
 
@@ -80,16 +90,6 @@ Special equipment created with the power of the medallions.
 - **Starsteel Ingot:** New alloy made out of iron and infused stardust.
 - **Sugar Cube:** Storage blocks of sugar. Gets destroyed when under rain or in water.
 - **Sword Pedestal:** Allows you to place swords within it. Place one on top of a Skybeam Block and insert a sword to activate it!
-
-## World
-
-![World Content](docs/world.png)
-
-New features that can be found throughout the world.
-
-- **Azurite:** This magical blue metal is connected to star energy. Clusters of Azurite ore can be found mainly at high altitude biomes such as Extreme Hills. 
-- **Bomb Flowers:** You can find these around lava pools. Left-click them to get them to drop bombs, but be sure to disable them in time to pick them up! The flowers will regenerate after a short amount of time.
-- **Mystic Shrubs / Energized Mystic Shrubs:** These can spawn everywhere around the Overworld and can be broken for loot, the shrubs will regenerate after a short amount of time. During a thunderstorm, they will become energized and have even better loot!
 
 ## Tweaks
 
