@@ -1,0 +1,19 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:nether_star"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "string"
+    },
+    {
+      "item": "legendgear:dimensional_catalyst"
+    }
+  ],
+  "result": {
+    "item": "legendgear:blast_charm",
+    "count": 1
+  }
+}

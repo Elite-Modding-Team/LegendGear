@@ -1,0 +1,19 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:shulker_shell"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "string"
+    },
+    {
+      "item": "legendgear:dimensional_catalyst"
+    }
+  ],
+  "result": {
+    "item": "legendgear:feather_charm",
+    "count": 1
+  }
+}

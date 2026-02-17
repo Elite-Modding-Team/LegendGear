@@ -14,9 +14,11 @@ Most of the mod's content is heavily inspired after classic games like the Legen
 
 ![Equipment Content](docs/equipment.png)
 
+- **Blast Charm:** This bauble completely shields you from explosion damage while it is equipped. Has a small cooldown per use.
 - **Bomb Bag:** Bombs picked up will be stored into the bag until it's full. Right-click to throw one of the stored bombs to the ground or left-click active bombs to defuse them.
 - **Bombs:** Right-click to throw it to the ground. It will explode after a few seconds.
 - **Caltrops:** Place them on the ground to use them as traps. There is a chance for them to wear out completely.
+- **Feather Charm:** This bauble provides full immunity to fall damage and wall collision damage while it is equipped.
 - **Hookshot:** Right-click to fire it. Once hooked into a block, it'll pull you towards it.
 - **Magic Boomerang:** Right-click to throw it. The boomerang will magically return to you and pick up any items it touches.
 - **Magic Mirror:** Hold down right-click to teleport to the last point you stood on that was exposed to the sky.
