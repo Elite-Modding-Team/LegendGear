@@ -227,7 +227,7 @@ public class LGItemMagicPowder extends Item
                 world.spawnParticle(EnumParticleTypes.EXPLOSION_LARGE, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, 0, 0, 0);
                 for (int i = 0; i < 20; i++)
                 {
-                    world.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, pos.getX() + 0.5 + world.rand.nextGaussian() * 0.5, pos.getY() + 0.5 + world.rand.nextGaussian() * 0.5, pos.getZ() + 0.5 + world.rand.nextGaussian() * 0.5, 0, -0.02, 0);
+                    LGParticleHandler.spawnSparkleFX(world, pos.getX() + 0.5D + world.rand.nextGaussian() * 0.5D, pos.getY() + 0.5D + world.rand.nextGaussian() * 0.5D, pos.getZ() + 0.5D + world.rand.nextGaussian() * 0.5D, 0.0D, -0.02D, 0.0D, 1.0F);
                 }
             }
             else
