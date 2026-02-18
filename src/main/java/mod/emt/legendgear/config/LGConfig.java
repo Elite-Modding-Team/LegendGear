@@ -62,6 +62,10 @@ public class LGConfig
         @Config.RangeInt(min = 1)
         public int emeraldExchangeRate = 8;
 
+        @Config.Name("Emerald Pickup Sound")
+        @Config.Comment("Plays an additional sound when emeralds are picked up")
+        public boolean emeraldPickupSound = true;
+
         @Config.Name("Ender Medallion Damage")
         @Config.Comment("Damage dealt by the ender medallion")
         @Config.RangeDouble(min = 0)

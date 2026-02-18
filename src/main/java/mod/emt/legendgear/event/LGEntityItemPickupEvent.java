@@ -1,5 +1,6 @@
 package mod.emt.legendgear.event;
 
+import mod.emt.legendgear.config.LGConfig;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -24,7 +25,7 @@ public class LGEntityItemPickupEvent
         Item item = event.getItem().getItem().getItem();
         EntityPlayer player = event.getEntityPlayer();
         World world = player.getEntityWorld();
-        if (item == Items.EMERALD)
+        if (item == Items.EMERALD && LGConfig.GENERAL_SETTINGS.emeraldPickupSound)
         {
             world.playSound(null, player.getPosition(), LGSoundEvents.ITEM_EMERALD_DROP_PICKUP_LARGE.getSoundEvent(), SoundCategory.PLAYERS, 0.75F, 1F);
         }
