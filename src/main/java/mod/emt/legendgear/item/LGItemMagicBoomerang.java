@@ -40,7 +40,7 @@ public class LGItemMagicBoomerang extends Item
     {
         if (!world.isRemote)
         {
-            LGEntityMagicBoomerang emb = new LGEntityMagicBoomerang(world, player, player.getHeldItem(hand), maxThrowTime, speed);
+            LGEntityMagicBoomerang emb = new LGEntityMagicBoomerang(world, player, player.getHeldItem(hand).copy(), maxThrowTime, speed);
             emb.thrownFromSlot = player.inventory.currentItem;
             world.spawnEntity(emb);
             world.playSound(null, player.getPosition(), LGSoundEvents.ENTITY_MAGIC_BOOMERANG_FLY.getSoundEvent(), SoundCategory.PLAYERS, 3.0F, 1.0F / (itemRand.nextFloat() * 0.4F + 0.8F));
