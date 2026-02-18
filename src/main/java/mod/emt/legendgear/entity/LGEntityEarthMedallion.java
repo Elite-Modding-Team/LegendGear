@@ -36,7 +36,7 @@ public class LGEntityEarthMedallion extends EntityThrowable implements IEntityAd
     public void onUpdate()
     {
         super.onUpdate();
-        if (FMLLaunchHandler.side().isClient() && world.isRemote)
+        if (world.isRemote)
             LGParticleHandler.spawnMagicRuneFX(this.world, this.posX + this.rand.nextGaussian() * 0.1D, this.posY + this.rand.nextGaussian() * 0.1D, this.posZ + this.rand.nextGaussian() * 0.1D, this.rand.nextGaussian() * 0.03D, this.rand.nextGaussian() * 0.03D, this.rand.nextGaussian() * 0.03D, 1.0F);
     }
 

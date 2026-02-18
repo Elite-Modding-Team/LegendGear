@@ -302,7 +302,7 @@ public class LGEntityGrindRail extends Entity implements IEntityAdditionalSpawnD
         }
 
         // Particles
-        if (FMLLaunchHandler.side().isClient() && this.world.isRemote)
+        if (this.world.isRemote)
         {
             LGParticleHandler.spawnSparkleFX(this.world, this.posX, this.posY - 0.5D, this.posZ, this.rand.nextGaussian() * 0.1D, this.rand.nextGaussian() * 0.1D, this.rand.nextGaussian() * 0.1D, 3.0F);
             LGParticleHandler.spawnMagicRuneFX(this.world, this.posX, this.posY - 0.5D, this.posZ, 0.0D, 0.0D, 0.0D, 2.0F);

@@ -94,7 +94,7 @@ public class LGEntityFallingStar extends Entity implements IEntityAdditionalSpaw
             handleGroundImpact();
         }
 
-        if (FMLLaunchHandler.side().isClient() && this.world.isRemote)
+        if (this.world.isRemote)
         {
             LGParticleHandler.spawnSparkleFX(world, posX - motionX, posY - motionY, posZ - motionZ, rand.nextGaussian() * 0.2D, rand.nextGaussian() * 0.2D, rand.nextGaussian() * 0.2D, 4.0F * dwindleTimer / LGConfig.GENERAL_SETTINGS.fallenStarLifetime);
         }

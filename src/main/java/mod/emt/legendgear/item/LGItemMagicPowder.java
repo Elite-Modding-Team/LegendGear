@@ -242,7 +242,7 @@ public class LGItemMagicPowder extends Item
 
     private void spawnParticles(World world, double x, double y, double z)
     {
-        if (FMLLaunchHandler.side().isClient() && world.isRemote)
+        if (world.isRemote)
         {
             world.spawnParticle(EnumParticleTypes.EXPLOSION_LARGE, x, y, z, 0, 0, 0);
             for (int i = 0; i < 20; i++)

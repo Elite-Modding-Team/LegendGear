@@ -135,7 +135,7 @@ public class LGEntityQuake extends Entity implements IEntityAdditionalSpawnData
 
     private void spawnParticles()
     {
-        if (FMLLaunchHandler.side().isClient() && world.isRemote)
+        if (world.isRemote)
         {
             double radius = oneshot_radius;
             if (!oneshot)

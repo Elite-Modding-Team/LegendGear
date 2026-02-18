@@ -162,7 +162,7 @@ public class LGEntityEnderBomb extends Entity implements IEntityAdditionalSpawnD
 
     private void spawnParticles()
     {
-        if (FMLLaunchHandler.side().isClient() && world.isRemote)
+        if (world.isRemote)
         {
             if (lifespan_timer == 0)
             {

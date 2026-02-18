@@ -61,7 +61,7 @@ public class LGItemTitanBand extends Item implements IBauble
             {
                 ++carry;
 
-                if (FMLLaunchHandler.side().isClient() && world.isRemote)
+                if (world.isRemote)
                 {
                     // TODO: Particle position varies depending on mob currently
                     LGParticleHandler.spawnMagicRuneFX(world, entity.posX, entity.posY + 2.0D, entity.posZ, world.rand.nextGaussian() * 0.1D, world.rand.nextGaussian() * 0.1D, world.rand.nextGaussian() * 0.1D, 1.0F);

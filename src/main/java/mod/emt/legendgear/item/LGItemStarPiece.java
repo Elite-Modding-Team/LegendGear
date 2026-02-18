@@ -46,7 +46,7 @@ public class LGItemStarPiece extends Item
         }
         else if (this.equals(LGItems.INFUSED_STAR_PIECE))
         {
-            if (FMLLaunchHandler.side().isClient() && world.isRemote)
+            if (world.isRemote)
             {
                 final Random rand = player.world.rand;
                 final Vec3d forward = player.getLookVec();
@@ -101,7 +101,7 @@ public class LGItemStarPiece extends Item
                         player.addItemStackToInventory(new ItemStack(LGItems.INFUSED_STAR_PIECE));
                     }
                 }
-                else if (FMLLaunchHandler.side().isClient())
+                else
                 {
                     for (int i = 0; i < 20; ++i)
                     {
@@ -167,7 +167,7 @@ public class LGItemStarPiece extends Item
                 player.world.playSound(null, player.getPosition(), LGSoundEvents.ITEM_STAR_PIECE_CHARGE_START.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 1.0F);
             }
         }
-        else if (FMLLaunchHandler.side().isClient() && count <= 56)
+        else if (count <= 56)
         {
             Random rand = player.world.rand;
             Vec3d forward = player.getLookVec();

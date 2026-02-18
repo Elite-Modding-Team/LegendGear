@@ -110,7 +110,7 @@ public class LGEntityFireBlast extends Entity implements IEntityAdditionalSpawnD
 
     private void spawnParticles()
     {
-        if (FMLLaunchHandler.side().isClient() && world.isRemote)
+        if (world.isRemote)
         {
             if (lifetime == 0)
             {

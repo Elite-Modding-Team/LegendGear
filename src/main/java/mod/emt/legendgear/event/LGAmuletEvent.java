@@ -69,7 +69,7 @@ public class LGAmuletEvent
                         arrow.setIsCritical(true);
                         world.playSound(null, arrow.getPosition(), LGSoundEvents.ITEM_AMULET_REPEL.getSoundEvent(), SoundCategory.PLAYERS, 1.0F, 0.8F + world.rand.nextFloat() * 0.4F);
                     }
-                    else if (FMLLaunchHandler.side().isClient())
+                    else
                     {
                         // TODO: Improve particles to be similar to 1.5.2
                         for (int j = 0; j < 3; j++)

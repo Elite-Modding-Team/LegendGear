@@ -166,7 +166,7 @@ public class LGItemMagicMirror extends Item
             status = 2.0F;
             int dur = stack.getMaxItemUseDuration() - time;
             float progress = dur * 1.0f / stack.getMaxItemUseDuration();
-            if (FMLLaunchHandler.side().isClient() && player.world.isRemote)
+            if (player.world.isRemote)
             {
                 if (player instanceof EntityPlayerSP) ((EntityPlayerSP) player).timeInPortal = Math.max(progress * 0.95f, ((EntityPlayerSP) player).timeInPortal);
                 double theta = Math.PI * 6 * progress;
