@@ -77,7 +77,18 @@ public class LGItemMagicMirror extends Item
                 double tx = nbt.getDouble("lastSkyX");
                 double ty = nbt.getDouble("lastSkyY");
                 double tz = nbt.getDouble("lastSkyZ");
-                while (!world.isSideSolid(new BlockPos(tx, ty - 1, tz), EnumFacing.UP)) ty--;
+                BlockPos pos = new BlockPos(tx, ty - 1, tz);
+                while (ty > 0 && !world.isSideSolid(pos, EnumFacing.UP))
+                {
+                    pos = pos.down();
+                    ty--;
+                }
+                if (ty <= 0)
+                {
+                    entity.stopActiveHand();
+                    world.playSound(player, entity.getPosition(), LGSoundEvents.ITEM_MAGIC_MIRROR_INACTIVE.getSoundEvent(), SoundCategory.PLAYERS, 0.8F, 1.0F);
+                    return stack;
+                }
                 if (world.isRemote) world.spawnParticle(EnumParticleTypes.EXPLOSION_HUGE, entity.posX, entity.posY, entity.posZ, 0, 0, 0);
                 player.setPositionAndUpdate(tx, ty, tz);
                 entity.stopActiveHand();
