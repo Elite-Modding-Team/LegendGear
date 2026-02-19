@@ -141,7 +141,7 @@ public class LGEntityHookshot extends EntityThrowable implements IEntityAddition
                 world.playSound(null, shooter.posX, shooter.posY, shooter.posZ, SoundEvents.ENTITY_ITEM_BREAK, SoundCategory.PLAYERS, 0.2F, 1.5F);
             }
 
-            if (travelTime <= -20)
+            if (travelTime <= -15)
             {
                 setDead();
             }
