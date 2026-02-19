@@ -19,7 +19,6 @@ import mod.emt.legendgear.init.LGItems;
 @SideOnly(Side.CLIENT)
 public class LGRenderMagicBoomerang extends Render<LGEntityMagicBoomerang>
 {
-    private static final ItemStack BOOMERANG = new ItemStack(LGItems.MAGIC_BOOMERANG);
     private final RenderItem itemRenderer;
 
     public LGRenderMagicBoomerang(RenderManager renderManager, RenderItem itemRenderer)
@@ -31,12 +30,15 @@ public class LGRenderMagicBoomerang extends Render<LGEntityMagicBoomerang>
     @Override
     public void doRender(LGEntityMagicBoomerang entity, double x, double y, double z, float entityYaw, float partialTicks)
     {
+        ItemStack stack = entity.getItem();
+        if (stack.isEmpty()) return;
+
         GlStateManager.pushMatrix();
         GlStateManager.translate((float) x, (float) y, (float) z);
         GlStateManager.rotate(entity.prevRotationYaw + (entity.rotationYaw - entity.prevRotationYaw) * partialTicks + (entity.rotationYaw < 0 ? -90.0F : 90.0F), 1.0F, 0.0F, 0.0F);
         GlStateManager.rotate(entity.prevRotationPitch + (entity.rotationPitch - entity.prevRotationPitch) * partialTicks, 0.0F, 0.0F, 1.0F);
         bindTexture(TextureMap.LOCATION_BLOCKS_TEXTURE);
-        itemRenderer.renderItem(BOOMERANG, ItemCameraTransforms.TransformType.GROUND);
+        itemRenderer.renderItem(stack, ItemCameraTransforms.TransformType.GROUND);
         GlStateManager.popMatrix();
     }
 

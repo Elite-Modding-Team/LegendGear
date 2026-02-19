@@ -1,25 +1,21 @@
 {
   "type": "forge:ore_shaped",
   "pattern": [
-    "DGG",
-    "GI ",
-    "G  "
+    "WWW",
+    "WI ",
+    "W  "
   ],
   "key": {
-    "G": {
+    "W": {
       "type": "forge:ore_dict",
-      "ore": "ingotGold"
-    },
-    "D": {
-      "type": "forge:ore_dict",
-      "ore": "gemDiamond"
+      "ore": "plankWood"
     },
     "I": {
       "item": "legendgear:infused_stardust"
     }
   },
   "result": {
-    "item": "legendgear:magic_boomerang",
+    "item": "legendgear:training_boomerang",
     "count": 1
   }
 }

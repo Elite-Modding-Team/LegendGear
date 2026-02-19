@@ -76,6 +76,7 @@ public class LGItems
     public static final LGItemBlockSpecial STARSTONE = null;
     public static final LGItemBase STARSTEEL_INGOT = null;
     public static final LGItemTitanBand TITAN_BAND = null;
+    public static final LGItemMagicBoomerang TRAINING_BOOMERANG = null;
     public static final LGItemValorHeadband VALOR_HEADBAND = null;
     public static final LGItemWhirlwindBoots WHIRLWIND_BOOTS = null;
     public static final LGItemWindMedallion WIND_MEDALLION = null;
@@ -106,7 +107,8 @@ public class LGItems
                 LGRegistry.setup(new LGItemGeoAmulet(), "geo_amulet").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemPyroAmulet(), "pyro_amulet").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemTitanBand(), "titan_band").setCreativeTab(LegendGear.TAB),
-                LGRegistry.setup(new LGItemMagicBoomerang(1500, 10, 1.5F, Items.GOLD_INGOT), "magic_boomerang").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemMagicBoomerang(400, 5, 0.8F, LGItems.INFUSED_STARDUST), "training_boomerang").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemMagicBoomerang(1500, 10, 1.5F, LGItems.INFUSED_STARDUST), "magic_boomerang").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemRockCandy(), "redstone_rock_candy").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemRockCandy(), "emerald_rock_candy").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemRockCandy(), "lapis_lazuli_rock_candy").setCreativeTab(LegendGear.TAB),

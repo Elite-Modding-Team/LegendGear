@@ -1,5 +1,6 @@
 package mod.emt.legendgear.entity;
 
+import mod.emt.legendgear.init.LGItems;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
@@ -12,6 +13,9 @@ import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.SPacketCollectItem;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumHand;
@@ -31,6 +35,8 @@ import mod.emt.legendgear.init.LGSoundEvents;
 
 public class LGEntityMagicBoomerang extends EntityThrowable implements IEntityAdditionalSpawnData
 {
+    private static final DataParameter<ItemStack> ITEM = EntityDataManager.createKey(LGEntityMagicBoomerang.class, DataSerializers.ITEM_STACK);
+
     public int thrownFromSlot;
     private int maxThrowTime;
     private float speed;
@@ -47,6 +53,7 @@ public class LGEntityMagicBoomerang extends EntityThrowable implements IEntityAd
         this.boomerangItem = boomerangThrown;
         this.owner = entity;
         this.noClip = false;
+        this.setItem(boomerangThrown);
     }
 
     public LGEntityMagicBoomerang(World world)
@@ -69,6 +76,21 @@ public class LGEntityMagicBoomerang extends EntityThrowable implements IEntityAd
         {
             this.thrower = (EntityLivingBase) owner;
         }
+    }
+
+    @Override
+    protected void entityInit()
+    {
+        this.dataManager.register(ITEM, new ItemStack(LGItems.WIND_MEDALLION));
+    }
+
+    public void setItem(ItemStack stack) {
+        this.dataManager.set(ITEM, stack);
+    }
+
+    public ItemStack getItem()
+    {
+        return this.dataManager.get(ITEM);
     }
 
     @Override
