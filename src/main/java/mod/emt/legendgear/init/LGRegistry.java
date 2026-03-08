@@ -136,7 +136,7 @@ public class LGRegistry
         return biomes.toArray(new Biome[0]);
     }
 
-    public static void init() {
+    public static void registerOreDictionaries() {
         OreDictionary.registerOre("gemAzurite", LGItems.AZURITE);
         OreDictionary.registerOre("ingotStarglass", LGItems.STARGLASS_INGOT);
         OreDictionary.registerOre("ingotStarsteel", LGItems.STARSTEEL_INGOT);

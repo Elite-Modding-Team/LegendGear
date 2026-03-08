@@ -54,7 +54,7 @@ public class LegendGear
         }
 
         LGPacketHandler.init();
-        LGRegistry.init();
+        LGRegistry.registerOreDictionaries();
         LGRegistry.registerTileEntities();
         LOGGER.info(NAME + " initialized");
     }
