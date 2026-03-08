@@ -136,6 +136,20 @@ public class LGRegistry
         return biomes.toArray(new Biome[0]);
     }
 
+    public static void init() {
+        OreDictionary.registerOre("gemAzurite", LGItems.AZURITE);
+        OreDictionary.registerOre("ingotStarglass", LGItems.STARGLASS_INGOT);
+        OreDictionary.registerOre("ingotStarsteel", LGItems.STARSTEEL_INGOT);
+
+        OreDictionary.registerOre("blockAzurite", LGBlocks.AZURITE_BLOCK);
+        if (LGConfig.GENERAL_SETTINGS.azuriteOre)
+        {
+            OreDictionary.registerOre("oreAzurite", LGBlocks.AZURITE_ORE);
+        }
+        OreDictionary.registerOre("sandStarry", LGBlocks.RED_STARRY_SAND);
+        OreDictionary.registerOre("sandStarry", LGBlocks.STARRY_SAND);
+    }
+
     @SubscribeEvent
     public static void registerPotions(@Nonnull final RegistryEvent.Register<Potion> event)
     {
@@ -154,18 +168,6 @@ public class LGRegistry
         GameRegistry.addSmelting(new ItemStack(LGBlocks.AZURITE_ORE), new ItemStack(LGItems.AZURITE), 1.0F);
         GameRegistry.addSmelting(new ItemStack(LGBlocks.RED_STARRY_SAND), new ItemStack(LGItems.STARGLASS_INGOT), 1.0F);
         GameRegistry.addSmelting(new ItemStack(LGBlocks.STARRY_SAND), new ItemStack(LGItems.STARGLASS_INGOT), 1.0F);
-
-        OreDictionary.registerOre("gemAzurite", LGItems.AZURITE);
-        OreDictionary.registerOre("ingotStarglass", LGItems.STARGLASS_INGOT);
-        OreDictionary.registerOre("ingotStarsteel", LGItems.STARSTEEL_INGOT);
-
-        OreDictionary.registerOre("blockAzurite", LGBlocks.AZURITE_BLOCK);
-        if (LGConfig.GENERAL_SETTINGS.azuriteOre)
-        {
-            OreDictionary.registerOre("oreAzurite", LGBlocks.AZURITE_ORE);
-        }
-        OreDictionary.registerOre("sandStarry", LGBlocks.RED_STARRY_SAND);
-        OreDictionary.registerOre("sandStarry", LGBlocks.STARRY_SAND);
     }
 
     @SubscribeEvent
