@@ -1,0 +1,12 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "legendgear:nether_star_block"
+    }
+  ],
+  "result": {
+    "item": "minecraft:nether_star",
+    "count": 9
+  }
+}

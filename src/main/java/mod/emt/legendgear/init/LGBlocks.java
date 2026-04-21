@@ -33,6 +33,7 @@ public class LGBlocks
     public static final LGBlockLightningStruckFalling LIGHTNING_STRUCK_RED_SAND = null;
     public static final LGBlockLightningStruckFalling LIGHTNING_STRUCK_SAND = null;
     public static final LGBlockMysticShrub MYSTIC_SHRUB = null;
+    public static final LGBlockNetherStar NETHER_STAR_BLOCK = null;
     public static final LGBlockSwordPedestal SWORD_PEDESTAL = null;
     public static final LGBlockSwordPedestalTechnical SWORD_PEDESTAL_TECHNICAL = null;
     public static final LGBlockFalling RED_STARRY_SAND = null;
@@ -66,6 +67,7 @@ public class LGBlocks
                 LGRegistry.setup(new LGBlockFalling(Material.SAND, SoundType.SAND, MapColor.ADOBE, -5679071), "red_starry_sand").setHardness(0.5F).setLightLevel(0.4F).setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGBlockStarstone(3000.0F), "starstone_block"),
                 LGRegistry.setup(new LGBlockInfusedStarstone(6000.0F), "infused_starstone_block"),
+                LGRegistry.setup(new LGBlockNetherStar(6000.0F), "nether_star_block").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGBlockAzurite(), "azurite_block").setCreativeTab(LegendGear.TAB)
             );
 

@@ -3,6 +3,7 @@ package mod.emt.legendgear.init;
 import javax.annotation.Nonnull;
 
 import com.google.common.base.Preconditions;
+import mod.emt.legendgear.tileentity.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.enchantment.Enchantment;
@@ -37,10 +38,6 @@ import mod.emt.legendgear.LegendGear;
 import mod.emt.legendgear.client.render.*;
 import mod.emt.legendgear.config.LGConfig;
 import mod.emt.legendgear.entity.*;
-import mod.emt.legendgear.tileentity.LGTileEntityClayUrn;
-import mod.emt.legendgear.tileentity.LGTileEntityInfusedStarstone;
-import mod.emt.legendgear.tileentity.LGTileEntitySkybeam;
-import mod.emt.legendgear.tileentity.LGTileEntitySwordPedestal;
 
 @Mod.EventBusSubscriber(modid = LegendGear.MOD_ID)
 public class LGRegistry
@@ -142,6 +139,7 @@ public class LGRegistry
         OreDictionary.registerOre("ingotStarsteel", LGItems.STARSTEEL_INGOT);
 
         OreDictionary.registerOre("blockAzurite", LGBlocks.AZURITE_BLOCK);
+        OreDictionary.registerOre("blockNetherStar", LGBlocks.NETHER_STAR_BLOCK);
         if (LGConfig.GENERAL_SETTINGS.azuriteOre)
         {
             OreDictionary.registerOre("oreAzurite", LGBlocks.AZURITE_ORE);
@@ -189,6 +187,7 @@ public class LGRegistry
 
         GameRegistry.registerTileEntity(LGTileEntityClayUrn.class, new ResourceLocation(LegendGear.MOD_ID, "clay_urn"));
         GameRegistry.registerTileEntity(LGTileEntityInfusedStarstone.class, new ResourceLocation(LegendGear.MOD_ID, "infused_starstone"));
+        GameRegistry.registerTileEntity(LGTileEntityNetherStarBlock.class, new ResourceLocation(LegendGear.MOD_ID, "nether_star_block"));
         GameRegistry.registerTileEntity(LGTileEntitySkybeam.class, new ResourceLocation(LegendGear.MOD_ID, "skybeam"));
         GameRegistry.registerTileEntity(LGTileEntitySwordPedestal.class, new ResourceLocation(LegendGear.MOD_ID, "sword_pedestal"));
     }
@@ -200,6 +199,7 @@ public class LGRegistry
         LegendGear.LOGGER.info("Registering entity renderers...");
 
         ClientRegistry.bindTileEntitySpecialRenderer(LGTileEntityInfusedStarstone.class, new LGRenderInfusedStarstone());
+        ClientRegistry.bindTileEntitySpecialRenderer(LGTileEntityNetherStarBlock.class, new LGRenderNetherStarBlock());
         ClientRegistry.bindTileEntitySpecialRenderer(LGTileEntitySkybeam.class, new LGRenderSkybeam());
         ClientRegistry.bindTileEntitySpecialRenderer(LGTileEntitySwordPedestal.class, new LGRenderSwordPedestal());
 
