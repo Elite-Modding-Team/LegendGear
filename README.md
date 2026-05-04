@@ -86,6 +86,7 @@ New features that can be found throughout the world.
 - **Magic Powder:** Right-click certain blocks or mobs for shapeshifting surprises!
 - **Milk Chocolate:** Cures all status effects while also being chocolatey.
 - **Mystic Seed:** Plant it on the ground to spawn some Mystic Shrubs!
+- **Nether Star Block:** Works for beacons, provides bragging rights, and has a special animation.
 - **Reed Pipes:** Hold down right-click to play it! Pitch is determined by the angle you're looking at and notes are determined by sneaking.
 - **Rock Candy:** These sugary treats are made from various different materials. They give different effects depending on the material.
 - **Skybeam Block:** When activated with redstone, it will emit a cosmetic beam towards the sky!
