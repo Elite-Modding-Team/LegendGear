@@ -33,7 +33,7 @@ public class LGPhoenixFeatherEvent
                 player.hurtResistantTime = 65;
                 player.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, 28, 3));
                 player.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 65, 4));
-                player.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 65, 1));
+                player.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 65, 0));
                 player.removePotionEffect(MobEffects.POISON);
                 player.removePotionEffect(MobEffects.WITHER);
                 player.setFire(3);
@@ -50,7 +50,7 @@ public class LGPhoenixFeatherEvent
                 player.hurtResistantTime = 65;
                 player.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, 28, 3));
                 player.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 65, 4));
-                player.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 65, 1));
+                player.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 65, 0));
                 player.removePotionEffect(MobEffects.POISON);
                 player.removePotionEffect(MobEffects.WITHER);
                 player.setFire(3);
