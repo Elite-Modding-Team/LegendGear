@@ -9,7 +9,6 @@ import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.IEntityAdditionalSpawnData;
-import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
 
 import io.netty.buffer.ByteBuf;
 import java.util.List;
@@ -142,7 +141,7 @@ public class LGEntityQuake extends Entity implements IEntityAdditionalSpawnData
             {
                 radius = LGEntityQuake.FIRST_PULSE_RADIUS + LGEntityQuake.RADIUS_PER_TICK * lifetime;
             }
-            if (ticksExisted % 5 == 0)
+            if (oneshot || ticksExisted % 5 == 0)
             {
                 for (int i = 0; i < 12; i++)
                 {
