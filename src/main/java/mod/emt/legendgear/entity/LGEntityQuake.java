@@ -7,6 +7,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundCategory;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.IEntityAdditionalSpawnData;
 
@@ -68,17 +69,26 @@ public class LGEntityQuake extends Entity implements IEntityAdditionalSpawnData
 
     public void doPulse(double radius)
     {
-        List<Entity> entities = world.getEntitiesWithinAABBExcludingEntity(this, getEntityBoundingBox().grow(radius));
+        AxisAlignedBB area = new AxisAlignedBB(posX - radius, posY - 1.0D, posZ - radius, posX + radius, posY + 2.0D, posZ + radius);
+        List<Entity> entities = world.getEntitiesWithinAABBExcludingEntity(this, area);
         for (Entity entity : entities)
         {
             if (entity instanceof EntityLiving)
             {
                 EntityLiving el = (EntityLiving) entity;
-                if (el.onGround && el.getDistance(this) <= radius) if (!el.equals(thrower) || !noFF)
+                if (el.onGround || el.getDistance(this) <= radius) if (!el.equals(thrower) || !noFF)
                 {
                     DamageSource damage = DamageSource.causeIndirectMagicDamage(this, thrower);
                     el.attackEntityFrom(damage, (float) damage_per_hit);
-                    el.addVelocity(rand.nextGaussian() * HORIZONTAL_LAUNCH, VERTICAL_LAUNCH, rand.nextGaussian() * HORIZONTAL_LAUNCH);
+                    double dx = el.posX - posX;
+                    double dz = el.posZ - posZ;
+                    double len = Math.sqrt(dx * dx + dz * dz);
+                    if (len > 0.001D)
+                    {
+                        dx /= len;
+                        dz /= len;
+                        el.addVelocity(dx * HORIZONTAL_LAUNCH, VERTICAL_LAUNCH, dz * HORIZONTAL_LAUNCH);
+                    }
                     world.playSound(null, el.getPosition(), SoundEvents.ENTITY_IRONGOLEM_ATTACK, SoundCategory.NEUTRAL, 1.0F, 0.2F);
                 }
             }
