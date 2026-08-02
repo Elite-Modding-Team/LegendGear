@@ -5,6 +5,7 @@ import javax.annotation.Nullable;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.TextFormatting;
@@ -60,6 +61,12 @@ public class LGItemCharm extends Item implements IBauble
         {
             TooltipHelper.addWrappedTooltip(tooltip, TextFormatting.GOLD, I18n.format("tooltip.legendgear.phoenix_charm"));
         }
+    }
+
+    @Override
+    public EnumRarity getRarity(ItemStack stack)
+    {
+        return EnumRarity.RARE;
     }
 
     @Override
