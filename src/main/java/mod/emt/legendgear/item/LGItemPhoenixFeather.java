@@ -4,6 +4,7 @@ import javax.annotation.Nullable;
 
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.TextFormatting;
@@ -25,6 +26,12 @@ public class LGItemPhoenixFeather extends Item
     public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag flags)
     {
         TooltipHelper.addWrappedTooltip(tooltip, TextFormatting.GOLD, I18n.format("tooltip.legendgear.phoenix_feather"));
+    }
+
+    @Override
+    public EnumRarity getRarity(ItemStack stack)
+    {
+        return EnumRarity.EPIC;
     }
 
     @Override
