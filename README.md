@@ -59,7 +59,7 @@ Fully charged medallions can be applied to tools by simply putting it and the to
 - **Earth:** Causes a shockwave around you that knocks back mobs. Deals the damage of your tool multiplied by 1.5.
 - **Ender:** Teleports to the mob you're looking at (even through walls!) but you will be teleported back after hitting a mob or after at least three seconds has passed. You will always deal a critical hit while under this state.
 - **Fire:** Shoots a fiery projectile that burns mobs. Deals the damage of your tool.
-- **Wind:** Shoots a windy project that heavily pushes nearby mobs, items, and xp orbs. Deals no damage.
+- **Wind:** Shoots a windy projectile that heavily pushes nearby mobs, items, and xp orbs. Deals no damage.
 
 ## Events
 
