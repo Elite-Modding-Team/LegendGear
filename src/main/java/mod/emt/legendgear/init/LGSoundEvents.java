@@ -27,6 +27,7 @@ public enum LGSoundEvents
     ITEM_AMULET_REPEL("item.amulet.repel"),
     ITEM_AUGMENT_ENDER_BEAM("item.augment.ender_beam"),
     ITEM_AUGMENT_FIRE_BOLT("item.augment.fire_bolt"),
+    ITEM_AUGMENT_FULL_CHARGE("item.augment.full_charge"),
     ITEM_AUGMENT_WHIRLWIND("item.augment.whirlwind"),
     ITEM_BAUBLE_EQUIP("item.bauble.equip"),
     ITEM_BAUBLE_UNEQUIP("item.bauble.unequip"),

@@ -71,7 +71,7 @@ public class PacketAugmentState implements IMessage
                         break;
                     case CHARGED:
                         data.setState(MedallionAugmentHelper.State.CHARGED);
-                        mc.world.playSound(mc.player.posX, mc.player.posY, mc.player.posZ, LGSoundEvents.ITEM_STAR_PIECE_SPARKLE.getSoundEvent(), SoundCategory.PLAYERS, 0.7F, 2.0F, false);
+                        mc.world.playSound(mc.player.posX, mc.player.posY, mc.player.posZ, LGSoundEvents.ITEM_AUGMENT_FULL_CHARGE.getSoundEvent(), SoundCategory.PLAYERS, 0.3F, 2.0F, false);
                         break;
                     case IDLE:
                         data.reset();

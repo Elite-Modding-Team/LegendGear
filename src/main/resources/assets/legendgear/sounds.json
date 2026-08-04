@@ -114,6 +114,11 @@
       "legendgear:item/spell/ember_cast"
     ]
   },
+  "item.augment.full_charge": {
+    "sounds": [
+      "legendgear:item/star_piece/charge_start"
+    ]
+  },
   "item.augment.whirlwind": {
     "sounds": [
       "legendgear:item/medallion/wind_whirlwind"
