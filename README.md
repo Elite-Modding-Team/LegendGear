@@ -38,6 +38,7 @@ These are one-use items that can be thrown to cast immensely powerful spells at 
 - **Earth Medallion:** Causes a massive shockwave that will throw off mobs into the air and deal over 70 damage by default. Requires you to take fall damage to charge it.
 - **Ender Medallion:** Emits an expanding unstable ring of energy that will teleport mobs inside it once it reaches its threshold. Requires you to take damage from End mobs to charge it.
 - **Fire Medallion:** Charges up three spinning fireballs that will circle around for a few seconds before exploding, any mobs within will be dealt over 80 damage and burn for 20 seconds by default. Requires you take fire damage to charge it.
+- **Null Medallion:** Can be used to remove the currently applied medallion augment from a tool. Otherwise it does nothing (thus the name).
 - **Wind Medallion:** Causes a huge arrow storm that will constantly rain towards mobs below, each arrow deals 4 damage by default and will ignore invincibility frames. Requires you to take arrow damage to charge it.
 
 ### Medallion Equipment
@@ -53,7 +54,12 @@ Special equipment created with the power of the medallions.
 
 ### Medallion Augmentation
 
-**COMING SOON!**
+Fully charged medallions can be applied to tools by simply putting it and the tool of your choice into the crafting grid. Medallion Augments act similar to enchantments and will allow the tool to activate a special ability by holding right-click to charge it and then left-clicking when it's fully charged (or right-clicking when the tool is in the offhand slot).
+
+- **Earth:** Causes a shockwave around you that knocks back mobs. Deals the damage of your tool multiplied by 1.5.
+- **Ender:** Teleports to the mob you're looking at (even through walls!) but you will be teleported back after hitting a mob or after at least three seconds has passed. You will always deal a critical hit while under this state.
+- **Fire:** Shoots a fiery projectile that burns mobs. Deals the damage of your tool.
+- **Wind:** Shoots a windy projectile that heavily pushes nearby mobs, items, and experience orbs. Deals no damage.
 
 ## Events
 
