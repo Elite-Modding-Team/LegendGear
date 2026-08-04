@@ -103,6 +103,22 @@
       "legendgear:item/medallion/wind_repel"
     ]
   },
+  "item.augment.ender_beam": {
+    "sounds": [
+      "minecraft:mob/endermen/portal",
+      "minecraft:mob/endermen/portal2"
+    ]
+  },
+  "item.augment.fire_bolt": {
+    "sounds": [
+      "legendgear:item/spell/ember_cast"
+    ]
+  },
+  "item.augment.whirlwind": {
+    "sounds": [
+      "legendgear:item/medallion/wind_whirlwind"
+    ]
+  },
   "item.bauble.equip": {
     "sounds": [
       "legendgear:bauble_equip"

@@ -53,6 +53,7 @@ item.legendgear.magic_mirror.name=Magic Mirror
 item.legendgear.magic_powder.name=Magic Powder
 item.legendgear.milk_chocolate.name=Milk Chocolate
 item.legendgear.mystic_seed.name=Mystic Seed
+item.legendgear.null_medallion.name=Null Medallion
 item.legendgear.phoenix_charm.name=Phoenix Charm
 item.legendgear.phoenix_feather.name=Phoenix Feather
 item.legendgear.pyro_amulet.name=Pyro Amulet
@@ -79,6 +80,11 @@ item.legendgear.wind_medallion.name=Wind Medallion
 item.record.dragondot.desc=NMcCoy - Dragondot's Return
 
 # TOOLTIPS
+augment.legendgear.earth_medallion=Earth Medallion
+augment.legendgear.ender_medallion=Ender Medallion
+augment.legendgear.fire_medallion=Fire Medallion
+augment.legendgear.wind_medallion=Wind Medallion
+
 tooltip.legendgear.shift=Hold SHIFT to see more info...
 tooltip.legendgear.aero_amulet=While equipped, it will provide full immunity to arrows. Durability is decreased during usage.
 tooltip.legendgear.arrows=Arrows
@@ -102,6 +108,7 @@ tooltip.legendgear.magic_boomerang=Right-click to throw it. The boomerang will m
 tooltip.legendgear.magic_mirror=Hold down right-click to teleport to the last point you stood on that was exposed to the sky.
 tooltip.legendgear.milk_chocolate=Cures all status effects while also being chocolatey.
 tooltip.legendgear.mystic_seed=Right-click on the ground to plant several Mystic Shrubs!
+tooltip.legendgear.null_medallion=Removes the current medallion augment from a tool.
 tooltip.legendgear.phoenix_charm=Saves you from death while it is equipped. Has only one use.
 tooltip.legendgear.phoenix_feather=Saves you from death while it is anywhere in your inventory. Has only one use.
 tooltip.legendgear.pyro_amulet=While equipped, it will provide full immunity to fire damage and convert the damage received to newly restored health. Durability is decreased during usage.
@@ -132,6 +139,8 @@ fortunes.legendgear.hint.7=Damage by caltrops can be avoided by sneaking.
 fortunes.legendgear.hint.8=Grinding speed is increased when landing on top of starbeam torches while sprinting.
 fortunes.legendgear.hint.9=Mystic shrubs grow charged when there's thunder.
 fortunes.legendgear.hint.10=Dimensional catalysts are able to extract azurite from its ore.
+fortunes.legendgear.hint.11=Fully charged medallions can be applied to tools on the crafting grid to give them special abilities! Just charge up the affected tool with right-click, then left-click to activate (or right-click again if it's on your offhand).
+fortunes.legendgear.hint.12=Applied the wrong medallion augment? Use a null medallion alongside your tool on the crafting grid!
 
 fortunes.legendgear.generic.0=Don't believe everything you eat.
 fortunes.legendgear.generic.1=They say the best defense is a good oak fence.

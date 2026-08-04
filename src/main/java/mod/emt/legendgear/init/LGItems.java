@@ -57,6 +57,7 @@ public class LGItems
     public static final LGItemMagicMirror MAGIC_MIRROR = null;
     public static final LGItemMagicPowder MAGIC_POWDER = null;
     public static final LGItemFood MILK_CHOCOLATE = null;
+    public static final LGItemBase NULL_MEDALLION = null;
     public static final LGItemMysticSeed MYSTIC_SEED = null;
     public static final LGItemCharm PHOENIX_CHARM = null;
     public static final LGItemPhoenixFeather PHOENIX_FEATHER = null;
@@ -103,6 +104,7 @@ public class LGItems
                 LGRegistry.setup(new LGItemWindMedallion(), "wind_medallion").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemFireMedallion(), "fire_medallion").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemEnderMedallion(), "ender_medallion").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemBase(EnumRarity.RARE, "tooltip.legendgear.null_medallion"), "null_medallion").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemAeroAmulet(), "aero_amulet").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemGeoAmulet(), "geo_amulet").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemPyroAmulet(), "pyro_amulet").setCreativeTab(LegendGear.TAB),

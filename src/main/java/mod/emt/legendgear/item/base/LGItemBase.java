@@ -2,6 +2,7 @@ package mod.emt.legendgear.item.base;
 
 import javax.annotation.Nullable;
 
+import mod.emt.legendgear.init.LGItems;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.EnumRarity;
@@ -12,6 +13,8 @@ import net.minecraft.world.World;
 
 import java.util.List;
 import mod.emt.legendgear.util.TooltipHelper;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class LGItemBase extends Item
 {
@@ -36,5 +39,12 @@ public class LGItemBase extends Item
     public EnumRarity getRarity(ItemStack stack)
     {
         return rarity;
+    }
+
+    @Override
+    @SideOnly(Side.CLIENT)
+    public boolean hasEffect(ItemStack stack)
+    {
+        return this.equals(LGItems.NULL_MEDALLION);
     }
 }

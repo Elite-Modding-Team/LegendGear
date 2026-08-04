@@ -1,5 +1,8 @@
 package mod.emt.legendgear;
 
+import mod.emt.legendgear.event.LGAugmentToolHandler;
+import mod.emt.legendgear.init.LGAugments;
+import net.minecraftforge.common.MinecraftForge;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import net.minecraft.creativetab.CreativeTabs;
@@ -53,10 +56,13 @@ public class LegendGear
             GameRegistry.registerWorldGenerator(new LGShrubGenerator(), 100);
         }
 
+        LGAugments.registerAugments();
         LGPacketHandler.init();
         LGRegistry.registerOreDictionaries();
         LGRegistry.registerTileEntities();
         LOGGER.info(NAME + " initialized");
+
+        MinecraftForge.EVENT_BUS.register(new LGAugmentToolHandler());
     }
 
     @Mod.EventHandler

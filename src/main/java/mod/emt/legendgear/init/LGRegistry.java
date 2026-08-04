@@ -3,6 +3,8 @@ package mod.emt.legendgear.init;
 import javax.annotation.Nonnull;
 
 import com.google.common.base.Preconditions;
+import mod.emt.legendgear.augment.*;
+import mod.emt.legendgear.recipe.RecipeMedallionAugment;
 import mod.emt.legendgear.tileentity.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -95,17 +97,19 @@ public class LGRegistry
         registerEntity("arrow_storm", LGEntityArrowStorm.class, 64, false);
         registerEntity("bomb", LGEntityBomb.class, 64, true);
         registerEntity("earth_medallion", LGEntityEarthMedallion.class, 64, true);
-        registerEntity("ender_bomb", LGEntityEnderBomb.class, 64, false);
+        registerEntity("ender_bomb", LGEntityEnderBomb.class, 64, true);
         registerEntity("ender_medallion", LGEntityEnderMedallion.class, 64, true);
         registerEntity("falling_star", LGEntityFallingStar.class, 512, true);
-        registerEntity("fire_blast", LGEntityFireBlast.class, 64, false);
+        registerEntity("fire_blast", LGEntityFireBlast.class, 64, true);
+        registerEntity("fire_bolt", LGEntityFireBolt.class, 64, true);
         registerEntity("fire_medallion", LGEntityFireMedallion.class, 64, true);
         registerEntity("grind_rail", LGEntityGrindRail.class, 64, true);
         registerEntity("hookshot", LGEntityHookshot.class, 64, true);
         registerEntity("magic_boomerang", LGEntityMagicBoomerang.class, 64, true);
         registerEntity("ping", LGEntityPing.class, 512, false);
-        registerEntity("quake", LGEntityQuake.class, 64, false);
+        registerEntity("quake", LGEntityQuake.class, 64, true);
         registerEntity("volatile_arrow", LGEntityVolatileArrow.class, 64, true);
+        registerEntity("whirlwind", LGEntityWhirlwind.class, 64, true);
         registerEntity("wind_medallion", LGEntityWindMedallion.class, 64, true);
     }
 
@@ -133,7 +137,8 @@ public class LGRegistry
         return biomes.toArray(new Biome[0]);
     }
 
-    public static void registerOreDictionaries() {
+    public static void registerOreDictionaries()
+    {
         OreDictionary.registerOre("gemAzurite", LGItems.AZURITE);
         OreDictionary.registerOre("ingotStarglass", LGItems.STARGLASS_INGOT);
         OreDictionary.registerOre("ingotStarsteel", LGItems.STARSTEEL_INGOT);
@@ -166,6 +171,8 @@ public class LGRegistry
         GameRegistry.addSmelting(new ItemStack(LGBlocks.AZURITE_ORE), new ItemStack(LGItems.AZURITE), 1.0F);
         GameRegistry.addSmelting(new ItemStack(LGBlocks.RED_STARRY_SAND), new ItemStack(LGItems.STARGLASS_INGOT), 1.0F);
         GameRegistry.addSmelting(new ItemStack(LGBlocks.STARRY_SAND), new ItemStack(LGItems.STARGLASS_INGOT), 1.0F);
+
+        event.getRegistry().register(new RecipeMedallionAugment(LegendGear.MOD_ID));
     }
 
     @SubscribeEvent
@@ -210,6 +217,7 @@ public class LGRegistry
         RenderingRegistry.registerEntityRenderingHandler(LGEntityEnderMedallion.class, new LGRenderEnderMedallion.Factory());
         RenderingRegistry.registerEntityRenderingHandler(LGEntityFallingStar.class, new LGRenderFallingStar.Factory());
         RenderingRegistry.registerEntityRenderingHandler(LGEntityFireBlast.class, new LGRenderFireBlast.Factory());
+        RenderingRegistry.registerEntityRenderingHandler(LGEntityFireBolt.class, new LGRenderFireBolt.Factory());
         RenderingRegistry.registerEntityRenderingHandler(LGEntityFireMedallion.class, new LGRenderFireMedallion.Factory());
         RenderingRegistry.registerEntityRenderingHandler(LGEntityGrindRail.class, new LGRenderGrindRail.Factory());
         RenderingRegistry.registerEntityRenderingHandler(LGEntityHookshot.class, new LGRenderHookshot.Factory());
@@ -217,6 +225,7 @@ public class LGRegistry
         RenderingRegistry.registerEntityRenderingHandler(LGEntityPing.class, new LGRenderPing.Factory());
         RenderingRegistry.registerEntityRenderingHandler(LGEntityQuake.class, new LGRenderQuake.Factory());
         RenderingRegistry.registerEntityRenderingHandler(LGEntityVolatileArrow.class, new LGRenderVolatileArrow.Factory());
+        RenderingRegistry.registerEntityRenderingHandler(LGEntityWhirlwind.class, new LGRenderWhirlwind.Factory());
         RenderingRegistry.registerEntityRenderingHandler(LGEntityWindMedallion.class, new LGRenderWindMedallion.Factory());
 
         // XP Orb Replacement

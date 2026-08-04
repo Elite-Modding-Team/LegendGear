@@ -1,7 +1,10 @@
 package mod.emt.legendgear.event;
 
+import mod.emt.legendgear.augment.AugmentEnderMedallion;
+import mod.emt.legendgear.util.MedallionAugmentHelper;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.SoundCategory;
@@ -26,9 +29,21 @@ public class LGCriticalEvent
         World world = entity.getEntityWorld();
         EntityPlayer player = event.getEntityPlayer();
         ItemStack mainhand = player.getItemStackFromSlot(EntityEquipmentSlot.MAINHAND);
+        MedallionAugmentHelper data = MedallionAugmentHelper.getPlayer(player);
 
+        // Ender Medallion critical hit
+        if (data.getRecallTime() > 0)
+        {
+            world.playSound(null, entity.getPosition(), LGSoundEvents.RANDOM_SWORD_SLASH.getSoundEvent(), SoundCategory.PLAYERS, 0.6F, 1.3F + world.rand.nextFloat() * 0.4F);
+            event.setResult(Result.ALLOW);
+            if (!world.isRemote)
+            {
+                AugmentEnderMedallion.bamf((EntityPlayerMP) player, data.getRecallX(), data.getRecallY(), data.getRecallZ(), false, true);
+                data.clearRecall();
+            }
+        }
         // 50% chance for the Starglass Sword to cause a critical hit
-        if (mainhand.getItem() == LGItems.STARGLASS_SWORD && world.rand.nextDouble() <= 0.5D)
+        else if (mainhand.getItem() == LGItems.STARGLASS_SWORD && world.rand.nextDouble() <= 0.5D)
         {
             world.playSound(null, entity.getPosition(), LGSoundEvents.RANDOM_SWORD_SLASH.getSoundEvent(), SoundCategory.PLAYERS, 0.6F, 1.3F + world.rand.nextFloat() * 0.4F);
             event.setResult(Result.ALLOW);
