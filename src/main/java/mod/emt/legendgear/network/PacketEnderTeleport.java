@@ -3,6 +3,7 @@ package mod.emt.legendgear.network;
 import io.netty.buffer.ByteBuf;
 import mod.emt.legendgear.util.MedallionAugmentHelper;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
@@ -56,23 +57,27 @@ public class PacketEnderTeleport implements IMessage
             {
                 World world = Minecraft.getMinecraft().world;
                 if (world == null) return;
+                EntityPlayerSP player = Minecraft.getMinecraft().player;
+                if (player == null) return;
+
+                player.setPositionAndUpdate(message.x, message.y, message.z);
 
                 for (int i = 0; i < 16; i++)
                 {
                     world.spawnParticle(EnumParticleTypes.PORTAL, message.x + RAND.nextGaussian(), message.y + 1.0D + RAND.nextGaussian(), message.z + RAND.nextGaussian(), RAND.nextGaussian() * 0.1D, RAND.nextGaussian() * 0.1D, RAND.nextGaussian() * 0.1D);
                 }
 
-                MedallionAugmentHelper data = MedallionAugmentHelper.getPlayer(Minecraft.getMinecraft().player);
+                MedallionAugmentHelper data = MedallionAugmentHelper.getPlayer(player);
 
                 if (message.startOverlay)
                 {
                     data.setPortalTimer(50);
-                } else
+                }
+                else
                 {
                     data.setPortalTimer(0);
-                    Minecraft mc = Minecraft.getMinecraft();
-                    mc.player.timeInPortal = 0.0F;
-                    mc.player.prevTimeInPortal = 0.0F;
+                    player.timeInPortal = 0.0F;
+                    player.prevTimeInPortal = 0.0F;
                 }
             });
             return null;

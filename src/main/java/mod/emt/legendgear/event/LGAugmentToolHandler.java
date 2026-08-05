@@ -28,9 +28,7 @@ import java.util.Random;
 @Mod.EventBusSubscriber(modid = LegendGear.MOD_ID)
 public class LGAugmentToolHandler
 {
-    @SideOnly(Side.CLIENT)
     private static boolean lastUseState = false;
-    @SideOnly(Side.CLIENT)
     private static float visualCharge = 0;
 
     private static final Random RAND = new Random();
