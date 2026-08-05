@@ -119,6 +119,7 @@ There are also some tweaks to make your game even more interesting than before..
 - Originally creating LegendGear 1-2 (both licensed under CC BY-NC-SA 4.0) and making memories for a lot of players ~ NMcCoy
 - Contacting NMcCoy for permissions and archiving the [original source code](https://github.com/xJon/LegendGear) ~ xJon
 - Nether Star Block texture ~ fakeginkgo
+- Boss Dungeon Lock and Boss Dungeon Key textures ~ SilverDeoxys563
 
 ## 🌐 Translators
 

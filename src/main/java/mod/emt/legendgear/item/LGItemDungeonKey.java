@@ -27,6 +27,8 @@ public class LGItemDungeonKey extends Item {
                 return super.getTranslationKey() + ".gold";
             case DIAMOND:
                 return super.getTranslationKey() + ".diamond";
+            case BOSS:
+                return super.getTranslationKey() + ".boss";
             default:
                 return super.getTranslationKey() + ".iron";
         }
@@ -55,7 +57,8 @@ public class LGItemDungeonKey extends Item {
     {
         IRON("iron"),
         GOLD("gold"),
-        DIAMOND("diamond");
+        DIAMOND("diamond"),
+        BOSS("boss");
 
         private final String name;
 

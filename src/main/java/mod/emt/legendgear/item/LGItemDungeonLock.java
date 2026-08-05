@@ -32,12 +32,16 @@ public class LGItemDungeonLock extends ItemBlock
                 return "tile.legendgear.dungeon_lock.gold";
             case DIAMOND:
                 return "tile.legendgear.dungeon_lock.diamond";
+            case BOSS:
+                return "tile.legendgear.dungeon_lock.boss";
             case UNLOCKING_IRON:
                 return "tile.legendgear.dungeon_lock.unlocking_iron";
             case UNLOCKING_GOLD:
                 return "tile.legendgear.dungeon_lock.unlocking_gold";
             case UNLOCKING_DIAMOND:
                 return "tile.legendgear.dungeon_lock.unlocking_diamond";
+            case UNLOCKING_BOSS:
+                return "tile.legendgear.dungeon_lock.unlocking_boss";
             default:
                 return "tile.legendgear.dungeon_lock";
         }

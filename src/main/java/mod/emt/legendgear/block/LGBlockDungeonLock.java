@@ -73,7 +73,7 @@ public class LGBlockDungeonLock extends Block {
         ItemStack stack = player.getHeldItem(hand);
         LockType required = state.getValue(LOCK);
 
-        if (required == LockType.UNLOCKING_IRON || required == LockType.UNLOCKING_GOLD || required == LockType.UNLOCKING_DIAMOND)
+        if (required == LockType.UNLOCKING_IRON || required == LockType.UNLOCKING_GOLD || required == LockType.UNLOCKING_DIAMOND || required == LockType.UNLOCKING_BOSS)
         {
             return false;
         }
@@ -117,6 +117,10 @@ public class LGBlockDungeonLock extends Block {
                     unlocking = LockType.UNLOCKING_DIAMOND;
                     break;
 
+                case BOSS:
+                    unlocking = LockType.UNLOCKING_BOSS;
+                    break;
+
                 default:
                     unlocking = LockType.UNLOCKING_IRON;
                     break;
@@ -153,6 +157,9 @@ public class LGBlockDungeonLock extends Block {
             case DIAMOND:
                 requiredUnlocking = LockType.UNLOCKING_DIAMOND;
                 break;
+            case BOSS:
+                requiredUnlocking = LockType.UNLOCKING_BOSS;
+                break;
             default:
                 requiredUnlocking = LockType.UNLOCKING_IRON;
                 break;
@@ -184,7 +191,7 @@ public class LGBlockDungeonLock extends Block {
     public void updateTick(World world, BlockPos pos, IBlockState state, Random rand)
     {
         LockType type = state.getValue(LOCK);
-        if (type == LockType.UNLOCKING_IRON || type == LockType.UNLOCKING_GOLD || type == LockType.UNLOCKING_DIAMOND)
+        if (type == LockType.UNLOCKING_IRON || type == LockType.UNLOCKING_GOLD || type == LockType.UNLOCKING_DIAMOND || type == LockType.UNLOCKING_BOSS)
         {
             world.setBlockToAir(pos);
             world.notifyNeighborsOfStateChange(pos, this, false);
@@ -207,6 +214,7 @@ public class LGBlockDungeonLock extends Block {
         items.add(new ItemStack(this, 1, LockType.IRON.ordinal()));
         items.add(new ItemStack(this, 1, LockType.GOLD.ordinal()));
         items.add(new ItemStack(this, 1, LockType.DIAMOND.ordinal()));
+        items.add(new ItemStack(this, 1, LockType.BOSS.ordinal()));
     }
 
     private LGItemDungeonKey.KeyType toKeyType(LockType lock)
@@ -217,6 +225,8 @@ public class LGBlockDungeonLock extends Block {
                 return LGItemDungeonKey.KeyType.GOLD;
             case DIAMOND:
                 return LGItemDungeonKey.KeyType.DIAMOND;
+            case BOSS:
+                return LGItemDungeonKey.KeyType.BOSS;
             default:
                 return LGItemDungeonKey.KeyType.IRON;
         }
@@ -227,9 +237,11 @@ public class LGBlockDungeonLock extends Block {
         IRON("iron"),
         GOLD("gold"),
         DIAMOND("diamond"),
+        BOSS("boss"),
         UNLOCKING_IRON("unlocking_iron"),
         UNLOCKING_GOLD("unlocking_gold"),
-        UNLOCKING_DIAMOND("unlocking_diamond");
+        UNLOCKING_DIAMOND("unlocking_diamond"),
+        UNLOCKING_BOSS("unlocking_boss");
 
         private final String name;
         LockType(String name)

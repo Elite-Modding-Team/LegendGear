@@ -26,6 +26,12 @@
           "all": "legendgear:blocks/dungeon_lock_unlocking"
         }
       },
+      "unlocking_boss": {
+        "model": "cube_all",
+        "textures": {
+          "all": "legendgear:blocks/dungeon_lock_boss_unlocking"
+        }
+      },
       "iron": {
         "model": "cube_all",
         "textures": {
@@ -42,6 +48,12 @@
         "model": "cube_all",
         "textures": {
           "all": "legendgear:blocks/dungeon_lock_diamond"
+        }
+      },
+      "boss": {
+        "model": "cube_all",
+        "textures": {
+          "all": "legendgear:blocks/dungeon_lock_boss"
         }
       }
     }
