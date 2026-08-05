@@ -137,6 +137,8 @@ tooltip.legendgear.wind_medallion=When fully charged, hold down right-click and 
 
 # MESSAGES
 message.legendgear.no_levels=You don't have enough levels to infuse your star piece!
+message.legendgear.locked=You need the corresponding key to unlock this!
+message.legendgear.wrong_key=That key doesn't fit this lock!
 
 # FORTUNES
 fortunes.legendgear.hint.0=Fortune cookie messages can be easily expanded by incrementing numbers in the language file.

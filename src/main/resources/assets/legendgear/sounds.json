@@ -22,6 +22,11 @@
       "legendgear:grind_rail"
     ]
   },
+  "block.locked": {
+    "sounds": [
+      "legendgear:locked"
+    ]
+  },
   "block.sword_pedestal.place": {
     "sounds": [
       "legendgear:block/sword_pedestal/place_sword"

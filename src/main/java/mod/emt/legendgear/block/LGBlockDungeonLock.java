@@ -14,6 +14,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.World;
 
 import java.util.Random;
@@ -70,20 +71,37 @@ public class LGBlockDungeonLock extends Block {
     public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
     {
         ItemStack stack = player.getHeldItem(hand);
-        if (stack.isEmpty())
+        LockType required = state.getValue(LOCK);
+
+        if (required == LockType.UNLOCKING_IRON || required == LockType.UNLOCKING_GOLD || required == LockType.UNLOCKING_DIAMOND)
         {
             return false;
         }
 
-        LockType required = state.getValue(LOCK);
-        if (required == LockType.UNLOCKING_IRON || required == LockType.UNLOCKING_GOLD || required == LockType.UNLOCKING_DIAMOND)
+        if (stack.isEmpty())
+        {
+            if (!world.isRemote)
+            {
+                player.sendStatusMessage(new TextComponentTranslation("message.legendgear.locked"), true);
+                world.playSound(null, pos, LGSoundEvents.BLOCK_LOCKED.getSoundEvent(), SoundCategory.BLOCKS, 1.0F, 1.5F);
+            }
+
+            return true;
+        }
+
+        if (!(stack.getItem() instanceof LGItemDungeonKey))
         {
             return false;
         }
 
         if (!matchesKey(stack, required))
         {
-            return false;
+            if (!world.isRemote)
+            {
+                player.sendStatusMessage(new TextComponentTranslation("message.legendgear.wrong_key"), true);
+                world.playSound(null, pos, LGSoundEvents.BLOCK_LOCKED.getSoundEvent(), SoundCategory.BLOCKS, 1.0F, 1.5F);
+            }
+            return true;
         }
 
         if (!world.isRemote)
@@ -115,12 +133,6 @@ public class LGBlockDungeonLock extends Block {
         }
 
         return true;
-    }
-
-    @Override
-    public int tickRate(World world)
-    {
-        return 10;
     }
 
     @Override
