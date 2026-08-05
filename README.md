@@ -79,6 +79,7 @@ New features that can be found throughout the world.
 
 - **Azurite:** This magical blue metal is connected to star energy. Clusters of Azurite ore can be found mainly at high altitude biomes such as Extreme Hills.
 - **Bomb Flowers:** You can find these around lava pools. Left-click them to get them to drop bombs, but be sure to disable them in time to pick them up! The flowers will regenerate after a short amount of time.
+- **Dungeon Keys/Locks:** Available in six different varieties (Iron, Gold, Diamond, Emerald, Obsidian, and Boss)! Dungeon locks are completely unbreakable and can only be opened with the matching key. They currently cannot be encountered in survival but are available for adventure map creators and modpack creators.
 - **Mystic Shrubs / Energized Mystic Shrubs:** These can spawn everywhere around the Overworld and can be broken for loot, the shrubs will regenerate after a short amount of time. During a thunderstorm, they will become energized and have even better loot!
 
 ## Miscellaneous
