@@ -73,7 +73,8 @@ public class LGBlockDungeonLock extends Block {
         ItemStack stack = player.getHeldItem(hand);
         LockType required = state.getValue(LOCK);
 
-        if (required == LockType.UNLOCKING_IRON || required == LockType.UNLOCKING_GOLD || required == LockType.UNLOCKING_DIAMOND || required == LockType.UNLOCKING_BOSS)
+        if (required == LockType.UNLOCKING_IRON || required == LockType.UNLOCKING_GOLD || required == LockType.UNLOCKING_DIAMOND
+                || required == LockType.UNLOCKING_EMERALD || required == LockType.UNLOCKING_OBSIDIAN || required == LockType.UNLOCKING_BOSS)
         {
             return false;
         }
@@ -112,15 +113,18 @@ public class LGBlockDungeonLock extends Block {
                 case GOLD:
                     unlocking = LockType.UNLOCKING_GOLD;
                     break;
-
                 case DIAMOND:
                     unlocking = LockType.UNLOCKING_DIAMOND;
                     break;
-
+                case EMERALD:
+                    unlocking = LockType.UNLOCKING_EMERALD;
+                    break;
+                case OBSIDIAN:
+                    unlocking = LockType.UNLOCKING_OBSIDIAN;
+                    break;
                 case BOSS:
                     unlocking = LockType.UNLOCKING_BOSS;
                     break;
-
                 default:
                     unlocking = LockType.UNLOCKING_IRON;
                     break;
@@ -143,7 +147,8 @@ public class LGBlockDungeonLock extends Block {
     public void neighborChanged(IBlockState state, World world, BlockPos pos, Block block, BlockPos fromPos)
     {
         LockType myType = state.getValue(LOCK);
-        if (myType == LockType.UNLOCKING_IRON || myType == LockType.UNLOCKING_GOLD || myType == LockType.UNLOCKING_DIAMOND)
+        if (myType == LockType.UNLOCKING_IRON || myType == LockType.UNLOCKING_GOLD || myType == LockType.UNLOCKING_DIAMOND
+                || myType == LockType.UNLOCKING_EMERALD || myType == LockType.UNLOCKING_OBSIDIAN || myType == LockType.UNLOCKING_BOSS)
         {
             return;
         }
@@ -156,6 +161,12 @@ public class LGBlockDungeonLock extends Block {
                 break;
             case DIAMOND:
                 requiredUnlocking = LockType.UNLOCKING_DIAMOND;
+                break;
+            case EMERALD:
+                requiredUnlocking = LockType.UNLOCKING_EMERALD;
+                break;
+            case OBSIDIAN:
+                requiredUnlocking = LockType.UNLOCKING_OBSIDIAN;
                 break;
             case BOSS:
                 requiredUnlocking = LockType.UNLOCKING_BOSS;
@@ -191,7 +202,8 @@ public class LGBlockDungeonLock extends Block {
     public void updateTick(World world, BlockPos pos, IBlockState state, Random rand)
     {
         LockType type = state.getValue(LOCK);
-        if (type == LockType.UNLOCKING_IRON || type == LockType.UNLOCKING_GOLD || type == LockType.UNLOCKING_DIAMOND || type == LockType.UNLOCKING_BOSS)
+        if (type == LockType.UNLOCKING_IRON || type == LockType.UNLOCKING_GOLD || type == LockType.UNLOCKING_DIAMOND || type == LockType.UNLOCKING_EMERALD
+                || type == LockType.UNLOCKING_OBSIDIAN || type == LockType.UNLOCKING_BOSS)
         {
             world.setBlockToAir(pos);
             world.notifyNeighborsOfStateChange(pos, this, false);
@@ -214,6 +226,8 @@ public class LGBlockDungeonLock extends Block {
         items.add(new ItemStack(this, 1, LockType.IRON.ordinal()));
         items.add(new ItemStack(this, 1, LockType.GOLD.ordinal()));
         items.add(new ItemStack(this, 1, LockType.DIAMOND.ordinal()));
+        items.add(new ItemStack(this, 1, LockType.EMERALD.ordinal()));
+        items.add(new ItemStack(this, 1, LockType.OBSIDIAN.ordinal()));
         items.add(new ItemStack(this, 1, LockType.BOSS.ordinal()));
     }
 
@@ -225,6 +239,10 @@ public class LGBlockDungeonLock extends Block {
                 return LGItemDungeonKey.KeyType.GOLD;
             case DIAMOND:
                 return LGItemDungeonKey.KeyType.DIAMOND;
+            case EMERALD:
+                return LGItemDungeonKey.KeyType.EMERALD;
+            case OBSIDIAN:
+                return LGItemDungeonKey.KeyType.OBSIDIAN;
             case BOSS:
                 return LGItemDungeonKey.KeyType.BOSS;
             default:
@@ -237,10 +255,14 @@ public class LGBlockDungeonLock extends Block {
         IRON("iron"),
         GOLD("gold"),
         DIAMOND("diamond"),
+        EMERALD("emerald"),
+        OBSIDIAN("obsidian"),
         BOSS("boss"),
         UNLOCKING_IRON("unlocking_iron"),
         UNLOCKING_GOLD("unlocking_gold"),
         UNLOCKING_DIAMOND("unlocking_diamond"),
+        UNLOCKING_EMERALD("unlocking_emerald"),
+        UNLOCKING_OBSIDIAN("unlocking_obsidian"),
         UNLOCKING_BOSS("unlocking_boss");
 
         private final String name;

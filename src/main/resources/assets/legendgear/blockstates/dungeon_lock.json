@@ -26,6 +26,18 @@
           "all": "legendgear:blocks/dungeon_lock_unlocking"
         }
       },
+      "unlocking_emerald": {
+        "model": "cube_all",
+        "textures": {
+          "all": "legendgear:blocks/dungeon_lock_unlocking"
+        }
+      },
+      "unlocking_obsidian": {
+        "model": "cube_all",
+        "textures": {
+          "all": "legendgear:blocks/dungeon_lock_unlocking"
+        }
+      },
       "unlocking_boss": {
         "model": "cube_all",
         "textures": {
@@ -48,6 +60,18 @@
         "model": "cube_all",
         "textures": {
           "all": "legendgear:blocks/dungeon_lock_diamond"
+        }
+      },
+      "emerald": {
+        "model": "cube_all",
+        "textures": {
+          "all": "legendgear:blocks/dungeon_lock_emerald"
+        }
+      },
+      "obsidian": {
+        "model": "cube_all",
+        "textures": {
+          "all": "legendgear:blocks/dungeon_lock_obsidian"
         }
       },
       "boss": {

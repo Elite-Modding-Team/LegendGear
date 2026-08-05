@@ -176,10 +176,14 @@ public class LGItems
                     ModelLoader.setCustomModelResourceLocation(item, LGBlockDungeonLock.LockType.IRON.ordinal(), new ModelResourceLocation("legendgear:dungeon_lock", "lock=iron"));
                     ModelLoader.setCustomModelResourceLocation(item, LGBlockDungeonLock.LockType.GOLD.ordinal(), new ModelResourceLocation("legendgear:dungeon_lock", "lock=gold"));
                     ModelLoader.setCustomModelResourceLocation(item, LGBlockDungeonLock.LockType.DIAMOND.ordinal(), new ModelResourceLocation("legendgear:dungeon_lock", "lock=diamond"));
+                    ModelLoader.setCustomModelResourceLocation(item, LGBlockDungeonLock.LockType.EMERALD.ordinal(), new ModelResourceLocation("legendgear:dungeon_lock", "lock=emerald"));
+                    ModelLoader.setCustomModelResourceLocation(item, LGBlockDungeonLock.LockType.OBSIDIAN.ordinal(), new ModelResourceLocation("legendgear:dungeon_lock", "lock=obsidian"));
                     ModelLoader.setCustomModelResourceLocation(item, LGBlockDungeonLock.LockType.BOSS.ordinal(), new ModelResourceLocation("legendgear:dungeon_lock", "lock=boss"));
                     ModelLoader.setCustomModelResourceLocation(item, LGBlockDungeonLock.LockType.UNLOCKING_IRON.ordinal(), new ModelResourceLocation("legendgear:dungeon_lock", "lock=unlocking_iron"));
                     ModelLoader.setCustomModelResourceLocation(item, LGBlockDungeonLock.LockType.UNLOCKING_GOLD.ordinal(), new ModelResourceLocation("legendgear:dungeon_lock", "lock=unlocking_gold"));
                     ModelLoader.setCustomModelResourceLocation(item, LGBlockDungeonLock.LockType.UNLOCKING_DIAMOND.ordinal(), new ModelResourceLocation("legendgear:dungeon_lock", "lock=unlocking_diamond"));
+                    ModelLoader.setCustomModelResourceLocation(item, LGBlockDungeonLock.LockType.UNLOCKING_EMERALD.ordinal(), new ModelResourceLocation("legendgear:dungeon_lock", "lock=unlocking_emerald"));
+                    ModelLoader.setCustomModelResourceLocation(item, LGBlockDungeonLock.LockType.UNLOCKING_OBSIDIAN.ordinal(), new ModelResourceLocation("legendgear:dungeon_lock", "lock=unlocking_obsidian"));
                     ModelLoader.setCustomModelResourceLocation(item, LGBlockDungeonLock.LockType.UNLOCKING_BOSS.ordinal(), new ModelResourceLocation("legendgear:dungeon_lock", "lock=unlocking_boss"));
                 }
                 else if (item == DUNGEON_KEY)
@@ -187,7 +191,9 @@ public class LGItems
                     ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation("legendgear:iron_dungeon_key", "inventory"));
                     ModelLoader.setCustomModelResourceLocation(item, 1, new ModelResourceLocation("legendgear:golden_dungeon_key", "inventory"));
                     ModelLoader.setCustomModelResourceLocation(item, 2, new ModelResourceLocation("legendgear:diamond_dungeon_key", "inventory"));
-                    ModelLoader.setCustomModelResourceLocation(item, 3, new ModelResourceLocation("legendgear:boss_dungeon_key", "inventory"));
+                    ModelLoader.setCustomModelResourceLocation(item, 3, new ModelResourceLocation("legendgear:emerald_dungeon_key", "inventory"));
+                    ModelLoader.setCustomModelResourceLocation(item, 4, new ModelResourceLocation("legendgear:obsidian_dungeon_key", "inventory"));
+                    ModelLoader.setCustomModelResourceLocation(item, 5, new ModelResourceLocation("legendgear:boss_dungeon_key", "inventory"));
                 }
                 else
                 {
