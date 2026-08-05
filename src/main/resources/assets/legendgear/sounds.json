@@ -32,6 +32,11 @@
       "legendgear:block/sword_pedestal/take_sword"
     ]
   },
+  "block.unchain": {
+    "sounds": [
+      "legendgear:unchain"
+    ]
+  },
   "block.urn.place": {
     "sounds": [
       "legendgear:block/urn/place1",

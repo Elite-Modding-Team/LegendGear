@@ -2,9 +2,9 @@ package mod.emt.legendgear.init;
 
 import javax.annotation.Nonnull;
 
+import mod.emt.legendgear.block.LGBlockDungeonLock;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -37,6 +37,7 @@ public class LGItems
     public static final LGItemRockCandy CHORUS_FRUIT_ROCK_CANDY = null;
     public static final LGItemRockCandy DIAMOND_ROCK_CANDY = null;
     public static final LGItemDimensionalCatalyst DIMENSIONAL_CATALYST = null;
+    public static final LGItemDungeonKey DUNGEON_KEY = null;
     public static final LGItemEarthMedallion EARTH_MEDALLION = null;
     public static final LGItemEmeraldPiece EMERALD_PIECE = null;
     public static final LGItemEnderMedallion ENDER_MEDALLION = null;
@@ -133,6 +134,8 @@ public class LGItems
                 LGRegistry.setup(new LGItemSlimeSword(), "slime_sword").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemValorHeadband(LGMaterials.ARMOR_SPECIAL, 0), "valor_headband").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemWhirlwindBoots(LGMaterials.ARMOR_SPECIAL, 0), "whirlwind_boots").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemDungeonKey(), "dungeon_key").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemDungeonLock(LGBlocks.DUNGEON_LOCK), LGBlocks.DUNGEON_LOCK.getRegistryName()),
                 // LegendGear 2
                 LGRegistry.setup(new LGItemBase(EnumRarity.UNCOMMON, ""), "starglass_ingot").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemBase(EnumRarity.UNCOMMON, ""), "starsteel_ingot").setCreativeTab(LegendGear.TAB),
@@ -152,6 +155,7 @@ public class LGItems
         // ITEM BLOCKS
         ForgeRegistries.BLOCKS.getValues().stream()
             .filter(block -> block.getRegistryName().getNamespace().equals(LegendGear.MOD_ID))
+            .filter(block -> !(block instanceof LGBlockDungeonLock))
             .filter(block -> !(block instanceof LGBlockStarstone))
             .forEach(block -> registry.register(LGRegistry.setup(new ItemBlock(block), block.getRegistryName())));
     }
@@ -167,7 +171,25 @@ public class LGItems
         {
             if (item.getRegistryName().getNamespace().equals(LegendGear.MOD_ID))
             {
-                ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
+                if (item == Item.getItemFromBlock(LGBlocks.DUNGEON_LOCK))
+                {
+                    ModelLoader.setCustomModelResourceLocation(item, LGBlockDungeonLock.LockType.IRON.ordinal(), new ModelResourceLocation("legendgear:dungeon_lock", "lock=iron"));
+                    ModelLoader.setCustomModelResourceLocation(item, LGBlockDungeonLock.LockType.GOLD.ordinal(), new ModelResourceLocation("legendgear:dungeon_lock", "lock=gold"));
+                    ModelLoader.setCustomModelResourceLocation(item, LGBlockDungeonLock.LockType.DIAMOND.ordinal(), new ModelResourceLocation("legendgear:dungeon_lock", "lock=diamond"));
+                    ModelLoader.setCustomModelResourceLocation(item, LGBlockDungeonLock.LockType.UNLOCKING_IRON.ordinal(), new ModelResourceLocation("legendgear:dungeon_lock", "lock=unlocking_iron"));
+                    ModelLoader.setCustomModelResourceLocation(item, LGBlockDungeonLock.LockType.UNLOCKING_GOLD.ordinal(), new ModelResourceLocation("legendgear:dungeon_lock", "lock=unlocking_gold"));
+                    ModelLoader.setCustomModelResourceLocation(item, LGBlockDungeonLock.LockType.UNLOCKING_DIAMOND.ordinal(), new ModelResourceLocation("legendgear:dungeon_lock", "lock=unlocking_diamond"));
+                }
+                else if (item == DUNGEON_KEY)
+                {
+                    ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation("legendgear:iron_dungeon_key", "inventory"));
+                    ModelLoader.setCustomModelResourceLocation(item, 1, new ModelResourceLocation("legendgear:golden_dungeon_key", "inventory"));
+                    ModelLoader.setCustomModelResourceLocation(item, 2, new ModelResourceLocation("legendgear:diamond_dungeon_key", "inventory"));
+                }
+                else
+                {
+                    ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
+                }
             }
         }
     }

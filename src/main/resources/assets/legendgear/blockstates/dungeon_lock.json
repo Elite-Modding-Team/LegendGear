@@ -1,0 +1,49 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "cube_all",
+    "textures": {
+      "all": "legendgear:blocks/dungeon_lock_unlocking"
+    }
+  },
+  "variants": {
+    "lock": {
+      "unlocking_iron": {
+        "model": "cube_all",
+        "textures": {
+          "all": "legendgear:blocks/dungeon_lock_unlocking"
+        }
+      },
+      "unlocking_gold": {
+        "model": "cube_all",
+        "textures": {
+          "all": "legendgear:blocks/dungeon_lock_unlocking"
+        }
+      },
+      "unlocking_diamond": {
+        "model": "cube_all",
+        "textures": {
+          "all": "legendgear:blocks/dungeon_lock_unlocking"
+        }
+      },
+      "iron": {
+        "model": "cube_all",
+        "textures": {
+          "all": "legendgear:blocks/dungeon_lock_iron"
+        }
+      },
+      "gold": {
+        "model": "cube_all",
+        "textures": {
+          "all": "legendgear:blocks/dungeon_lock_gold"
+        }
+      },
+      "diamond": {
+        "model": "cube_all",
+        "textures": {
+          "all": "legendgear:blocks/dungeon_lock_diamond"
+        }
+      }
+    }
+  }
+}

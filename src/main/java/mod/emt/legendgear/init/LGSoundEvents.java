@@ -13,6 +13,7 @@ public enum LGSoundEvents
     BLOCK_GRIND_RAIL("block.grind_rail"),
     BLOCK_SWORD_PEDESTAL_PLACE("block.sword_pedestal.place"),
     BLOCK_SWORD_PEDESTAL_TAKE("block.sword_pedestal.take"),
+    BLOCK_UNCHAIN("block.unchain"),
     BLOCK_URN_PLACE("block.urn.place"),
     BLOCK_URN_SHATTER("block.urn.shatter"),
     BLOCK_URN_STEP("block.urn.step"),

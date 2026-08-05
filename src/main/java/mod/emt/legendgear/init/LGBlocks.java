@@ -27,6 +27,7 @@ public class LGBlocks
     public static final LGBlockBombFlower BOMB_FLOWER = null;
     public static final LGBlockCaltrops CALTROPS = null;
     public static final LGBlockClayUrn CLAY_URN = null;
+    public static final LGBlockDungeonLock DUNGEON_LOCK = null;
     public static final LGBlockInfusedStarstone INFUSED_STARSTONE_BLOCK = null;
     public static final LGBlockLightningStruck LIGHTNING_STRUCK_COARSE_DIRT = null;
     public static final LGBlockLightningStruck LIGHTNING_STRUCK_DIRT = null;
@@ -62,6 +63,7 @@ public class LGBlocks
                 LGRegistry.setup(new LGBlockSwordPedestalTechnical(), "sword_pedestal_technical"),
                 LGRegistry.setup(new LGBlockStarbeamTorch(), "starbeam_torch").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGBlockSkybeam(), "skybeam_block").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGBlockDungeonLock(), "dungeon_lock").setCreativeTab(LegendGear.TAB),
                 // LegendGear 2
                 LGRegistry.setup(new LGBlockFalling(Material.SAND, SoundType.SAND, MapColor.SAND, -2370656), "starry_sand").setHardness(0.5F).setLightLevel(0.4F).setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGBlockFalling(Material.SAND, SoundType.SAND, MapColor.ADOBE, -5679071), "red_starry_sand").setHardness(0.5F).setLightLevel(0.4F).setCreativeTab(LegendGear.TAB),
