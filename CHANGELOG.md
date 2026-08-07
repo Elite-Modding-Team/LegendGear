@@ -8,6 +8,7 @@ As of this version, all content from LegendGear 1 (1.5.2) has now been completel
   - Ender: Teleports to the mob you're looking at (even through walls!) but you will be teleported back after hitting a mob or after at least three seconds has passed. You will always deal a critical hit while under this state.
   - Fire: Shoots a fiery projectile that burns mobs. Deals the damage of your tool.
   - Wind: Shoots a windy projectile that heavily pushes nearby mobs, items, and experience orbs. Deals no damage.
+- Added the Null Medallion, it can be used to remove the currently applied medallion augment from a tool.
 - Added Dungeon Locks and Dungeon Keys that are available in six different varieties (Iron, Gold, Diamond, Emerald, Obsidian, and Boss)! Dungeon locks are completely unbreakable and can only be opened with the matching key. They currently cannot be encountered in survival but are available for adventure map creators and modpack creators.
 ### Changed
 - Updated rarity of several items.
