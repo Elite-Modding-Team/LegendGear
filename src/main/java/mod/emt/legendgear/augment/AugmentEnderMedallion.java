@@ -81,11 +81,14 @@ public class AugmentEnderMedallion implements IMedallionAugment
         if (slashSound)
         {
             player.world.playSound(null, player.posX, player.posY, player.posZ, LGSoundEvents.RANDOM_SWORD_SLASH.getSoundEvent(), SoundCategory.PLAYERS, 0.6F, 1.3F + player.world.rand.nextFloat() * 0.4F);
+            PacketEnderTeleport packet = new PacketEnderTeleport(x, y, z, startOverlay, true);
+            LGPacketHandler.INSTANCE.sendTo(packet, player);
+            LGPacketHandler.INSTANCE.sendToAllTracking(packet, player);
+        } else {
+            PacketEnderTeleport packet = new PacketEnderTeleport(x, y, z, startOverlay, false);
+            LGPacketHandler.INSTANCE.sendTo(packet, player);
+            LGPacketHandler.INSTANCE.sendToAllTracking(packet, player);
         }
-
-        PacketEnderTeleport packet = new PacketEnderTeleport(x, y, z, startOverlay);
-        LGPacketHandler.INSTANCE.sendTo(packet, player);
-        LGPacketHandler.INSTANCE.sendToAllTracking(packet, player);
     }
 
     private EntityLivingBase beamScan(EntityPlayer player, double range)

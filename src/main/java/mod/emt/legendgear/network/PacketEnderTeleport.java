@@ -1,9 +1,11 @@
 package mod.emt.legendgear.network;
 
 import io.netty.buffer.ByteBuf;
+import mod.emt.legendgear.init.LGSoundEvents;
 import mod.emt.legendgear.util.MedallionAugmentHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
@@ -19,16 +21,18 @@ public class PacketEnderTeleport implements IMessage
     private double y;
     private double z;
     private boolean startOverlay;
+    private boolean slashSound;
 
     public PacketEnderTeleport()
     {
     }
 
-    public PacketEnderTeleport(double x, double y, double z, boolean startOverlay) {
+    public PacketEnderTeleport(double x, double y, double z, boolean startOverlay, boolean slashSound) {
         this.x = x;
         this.y = y;
         this.z = z;
         this.startOverlay = startOverlay;
+        this.slashSound = slashSound;
     }
 
     @Override
@@ -38,6 +42,7 @@ public class PacketEnderTeleport implements IMessage
         y = buf.readDouble();
         z = buf.readDouble();
         startOverlay = buf.readBoolean();
+        slashSound = buf.readBoolean();
     }
 
     @Override
@@ -47,6 +52,7 @@ public class PacketEnderTeleport implements IMessage
         buf.writeDouble(y);
         buf.writeDouble(z);
         buf.writeBoolean(startOverlay);
+        buf.writeBoolean(slashSound);
     }
 
     public static class Handler implements IMessageHandler<PacketEnderTeleport, IMessage>
@@ -61,6 +67,11 @@ public class PacketEnderTeleport implements IMessage
                 if (player == null) return;
 
                 player.setPositionAndUpdate(message.x, message.y, message.z);
+                player.playSound(SoundEvents.ENTITY_ENDERMEN_TELEPORT, 1.0F, 1.0F);
+
+                if (message.slashSound) {
+                    player.playSound(LGSoundEvents.RANDOM_SWORD_SLASH.getSoundEvent(), 1.0F, 1.3F + world.rand.nextFloat() * 0.4F);
+                }
 
                 for (int i = 0; i < 16; i++)
                 {

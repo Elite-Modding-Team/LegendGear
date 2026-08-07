@@ -4,6 +4,7 @@ import mod.emt.legendgear.config.LGConfig;
 import mod.emt.legendgear.event.LGAugmentToolHandler;
 import mod.emt.legendgear.init.LGAugments;
 import mod.emt.legendgear.init.LGRegistry;
+import mod.emt.legendgear.network.LGPacketHandler;
 import mod.emt.legendgear.worldgen.LGAzuriteGenerator;
 import mod.emt.legendgear.worldgen.LGBombFlowerGenerator;
 import mod.emt.legendgear.worldgen.LGShrubGenerator;
@@ -32,6 +33,7 @@ public class CommonProxy
         }
 
         LGAugments.registerAugments();
+        LGPacketHandler.init();
         LGRegistry.registerOreDictionaries();
         LGRegistry.registerTileEntities();
 
