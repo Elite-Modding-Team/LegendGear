@@ -37,7 +37,7 @@ public class AugmentEarthMedallion implements IMedallionAugment
     @Override
     public int getChargeTime()
     {
-        return 15;
+        return 20;
     }
 
     @Override
