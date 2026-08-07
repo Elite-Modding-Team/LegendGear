@@ -70,14 +70,14 @@ public class PacketAugmentCharge implements IMessage
                         MedallionAugmentRegistry.trigger(player, hand, stack);
                         stack.damageItem(ability.getDurabilityCost(), player);
                         data.reset();
-                        LGPacketHandler.instance.sendTo(new PacketAugmentState(PacketAugmentState.State.IDLE), player);
+                        LGPacketHandler.INSTANCE.sendTo(new PacketAugmentState(PacketAugmentState.State.IDLE), player);
                         return;
                     }
 
                     if (data.isIdle())
                     {
                         data.beginCharging();
-                        LGPacketHandler.instance.sendTo(new PacketAugmentState(PacketAugmentState.State.CHARGING), player);
+                        LGPacketHandler.INSTANCE.sendTo(new PacketAugmentState(PacketAugmentState.State.CHARGING), player);
                     }
                 } else
                 {
@@ -90,7 +90,7 @@ public class PacketAugmentCharge implements IMessage
                     if (data.isCharging())
                     {
                         data.reset();
-                        LGPacketHandler.instance.sendTo(new PacketAugmentState(PacketAugmentState.State.IDLE), player);
+                        LGPacketHandler.INSTANCE.sendTo(new PacketAugmentState(PacketAugmentState.State.IDLE), player);
                         return;
                     }
 

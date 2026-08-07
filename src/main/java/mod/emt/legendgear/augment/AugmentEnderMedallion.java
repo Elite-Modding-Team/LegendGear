@@ -84,8 +84,8 @@ public class AugmentEnderMedallion implements IMedallionAugment
         }
 
         PacketEnderTeleport packet = new PacketEnderTeleport(x, y, z, startOverlay);
-        LGPacketHandler.instance.sendTo(packet, player);
-        LGPacketHandler.instance.sendToAllTracking(packet, player);
+        LGPacketHandler.INSTANCE.sendTo(packet, player);
+        LGPacketHandler.INSTANCE.sendToAllTracking(packet, player);
     }
 
     private EntityLivingBase beamScan(EntityPlayer player, double range)
@@ -107,8 +107,8 @@ public class AugmentEnderMedallion implements IMedallionAugment
             box = box.offset(step);
             Vec3d center = new Vec3d((box.minX + box.maxX) * 0.5D, (box.minY + box.maxY) * 0.5D, (box.minZ + box.maxZ) * 0.5D);
             PacketEnderBeam packet = new PacketEnderBeam(center.x, center.y, center.z);
-            LGPacketHandler.instance.sendTo(packet, (EntityPlayerMP) player);
-            LGPacketHandler.instance.sendToAllTracking(packet, player);
+            LGPacketHandler.INSTANCE.sendTo(packet, (EntityPlayerMP) player);
+            LGPacketHandler.INSTANCE.sendToAllTracking(packet, player);
         }
 
         return null;

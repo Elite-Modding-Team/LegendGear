@@ -50,7 +50,7 @@ public class PacketAugmentActivate implements IMessage
                 MedallionAugmentRegistry.trigger(player, hand, stack);
                 stack.damageItem(augment.getDurabilityCost(), player);
                 data.reset();
-                LGPacketHandler.instance.sendTo(new PacketAugmentState(PacketAugmentState.State.IDLE), player);
+                LGPacketHandler.INSTANCE.sendTo(new PacketAugmentState(PacketAugmentState.State.IDLE), player);
             });
 
             return null;

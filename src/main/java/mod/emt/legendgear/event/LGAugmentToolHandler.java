@@ -59,7 +59,7 @@ public class LGAugmentToolHandler
             if (!data.isIdle())
             {
                 data.reset();
-                LGPacketHandler.instance.sendTo(new PacketAugmentState(PacketAugmentState.State.IDLE), (EntityPlayerMP) player);
+                LGPacketHandler.INSTANCE.sendTo(new PacketAugmentState(PacketAugmentState.State.IDLE), (EntityPlayerMP) player);
             }
             return;
         }
@@ -72,7 +72,7 @@ public class LGAugmentToolHandler
                 if (data.getCharge() >= ability.getChargeTime())
                 {
                     data.becomeCharged(Integer.MAX_VALUE);
-                    LGPacketHandler.instance.sendTo(new PacketAugmentState(PacketAugmentState.State.CHARGED), (EntityPlayerMP) player);
+                    LGPacketHandler.INSTANCE.sendTo(new PacketAugmentState(PacketAugmentState.State.CHARGED), (EntityPlayerMP) player);
                 }
             }
         } else if (data.isCharged())
@@ -83,7 +83,7 @@ public class LGAugmentToolHandler
                 if (data.getEnergy() <= 0)
                 {
                     data.reset();
-                    LGPacketHandler.instance.sendTo(new PacketAugmentState(PacketAugmentState.State.IDLE), (EntityPlayerMP) player);
+                    LGPacketHandler.INSTANCE.sendTo(new PacketAugmentState(PacketAugmentState.State.IDLE), (EntityPlayerMP) player);
                 }
             }
         }
@@ -103,7 +103,7 @@ public class LGAugmentToolHandler
             if (lastUseState)
             {
                 lastUseState = false;
-                LGPacketHandler.instance.sendToServer(new PacketAugmentCharge(false));
+                LGPacketHandler.INSTANCE.sendToServer(new PacketAugmentCharge(false));
             }
             return;
         }
@@ -123,7 +123,7 @@ public class LGAugmentToolHandler
                 mc.player.swingArm(EnumHand.OFF_HAND);
             }
 
-            LGPacketHandler.instance.sendToServer(new PacketAugmentCharge(holding));
+            LGPacketHandler.INSTANCE.sendToServer(new PacketAugmentCharge(holding));
         }
 
         MedallionAugmentHelper data = MedallionAugmentHelper.getPlayer(mc.player);
@@ -162,7 +162,7 @@ public class LGAugmentToolHandler
             return;
         }
 
-        LGPacketHandler.instance.sendToServer(new PacketAugmentActivate());
+        LGPacketHandler.INSTANCE.sendToServer(new PacketAugmentActivate());
     }
 
     @SideOnly(Side.CLIENT)

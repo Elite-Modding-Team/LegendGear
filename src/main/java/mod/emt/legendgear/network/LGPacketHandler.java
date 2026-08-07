@@ -7,16 +7,18 @@ import net.minecraftforge.fml.relauncher.Side;
 
 public class LGPacketHandler
 {
-    public static SimpleNetworkWrapper instance;
+    public static SimpleNetworkWrapper INSTANCE;
 
-    public static void init()
-    {
+    public static void init() {
         int id = 0;
-        instance = NetworkRegistry.INSTANCE.newSimpleChannel(LegendGear.MOD_ID);
-        instance.registerMessage(PacketEnderBeam.Handler.class, PacketEnderBeam.class, id++, Side.CLIENT);
-        instance.registerMessage(PacketEnderTeleport.Handler.class, PacketEnderTeleport.class, id++, Side.CLIENT);
-        instance.registerMessage(PacketAugmentActivate.Handler.class, PacketAugmentActivate.class, id++, Side.SERVER);
-        instance.registerMessage(PacketAugmentCharge.Handler.class, PacketAugmentCharge.class, id++, Side.SERVER);
-        instance.registerMessage(PacketAugmentState.Handler.class, PacketAugmentState.class, id++, Side.CLIENT);
+        INSTANCE.registerMessage(PacketEnderBeam.Handler.class, PacketEnderBeam.class, id++, Side.CLIENT);
+        INSTANCE.registerMessage(PacketEnderTeleport.Handler.class, PacketEnderTeleport.class, id++, Side.CLIENT);
+        INSTANCE.registerMessage(PacketAugmentActivate.Handler.class, PacketAugmentActivate.class, id++, Side.SERVER);
+        INSTANCE.registerMessage(PacketAugmentCharge.Handler.class, PacketAugmentCharge.class, id++, Side.SERVER);
+        INSTANCE.registerMessage(PacketAugmentState.Handler.class, PacketAugmentState.class, id++, Side.CLIENT);
+    }
+
+    static {
+        INSTANCE = NetworkRegistry.INSTANCE.newSimpleChannel(LegendGear.MOD_ID);
     }
 }
