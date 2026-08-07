@@ -18,6 +18,6 @@ As of this version, all content from LegendGear 1 (1.5.2) has now been completel
 - Updated rarity of several items.
 ### Fixed
 - Fixed particles from the Geo Amulet not properly displaying.
-- Fixed the hitbox of the quakes caused by the Earth Medallion and the Geo Medallion.
+- Fixed the hitbox of the quakes caused by the Earth Medallion and the Geo Amulet.
 - Fixed Fortune Cookies giving double the amount of messages.
 ---
