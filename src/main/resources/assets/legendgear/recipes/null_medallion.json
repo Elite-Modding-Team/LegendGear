@@ -1,0 +1,25 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "CBC",
+    "BSB",
+    "CBC"
+  ],
+  "key": {
+    "S": {
+      "type": "forge:ore_dict",
+      "ore": "ingotStarglass"
+    },
+    "B": {
+      "type": "forge:ore_dict",
+      "ore": "ingotBrick"
+    },
+    "C": {
+      "item": "legendgear:dimensional_catalyst"
+    }
+  },
+  "result": {
+    "item": "legendgear:null_medallion",
+    "count": 1
+  }
+}

@@ -1,4 +1,8 @@
 # LegendGear Returns Changelog (1.2.0+)
+## 1.2.1
+### Fixed
+- Null Medallion not being craftable (whoops!).
+---
 ## 1.2.0
 ### Update Notes
 As of this version, all content from LegendGear 1 (1.5.2) has now been completely ported to 1.12.2! Future updates will be fully focused on LegendGear 2 (1.7.10) content.
