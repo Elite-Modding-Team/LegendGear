@@ -132,7 +132,7 @@ public class LGBlockDungeonLock extends Block {
 
             world.setBlockState(pos, state.withProperty(LOCK, unlocking), 3);
             world.scheduleUpdate(pos, this, tickRate(world));
-            world.playSound(null, pos, LGSoundEvents.BLOCK_UNCHAIN.getSoundEvent(), SoundCategory.BLOCKS, 1.0F, 1.0F);
+            world.playSound(null, pos, LGSoundEvents.BLOCK_UNLOCK.getSoundEvent(), SoundCategory.BLOCKS, 1.0F, 1.0F);
 
             if (!player.capabilities.isCreativeMode)
             {
@@ -146,15 +146,15 @@ public class LGBlockDungeonLock extends Block {
     @Override
     public void neighborChanged(IBlockState state, World world, BlockPos pos, Block block, BlockPos fromPos)
     {
-        LockType myType = state.getValue(LOCK);
-        if (myType == LockType.UNLOCKING_IRON || myType == LockType.UNLOCKING_GOLD || myType == LockType.UNLOCKING_DIAMOND
-                || myType == LockType.UNLOCKING_EMERALD || myType == LockType.UNLOCKING_OBSIDIAN || myType == LockType.UNLOCKING_BOSS)
+        LockType lockType = state.getValue(LOCK);
+        if (lockType == LockType.UNLOCKING_IRON || lockType == LockType.UNLOCKING_GOLD || lockType == LockType.UNLOCKING_DIAMOND
+                || lockType == LockType.UNLOCKING_EMERALD || lockType == LockType.UNLOCKING_OBSIDIAN || lockType == LockType.UNLOCKING_BOSS)
         {
             return;
         }
 
         LockType requiredUnlocking;
-        switch (myType)
+        switch (lockType)
         {
             case GOLD:
                 requiredUnlocking = LockType.UNLOCKING_GOLD;
@@ -192,7 +192,7 @@ public class LGBlockDungeonLock extends Block {
             }
 
             world.setBlockState(pos, state.withProperty(LOCK, requiredUnlocking), 3);
-            world.playSound(null, pos, LGSoundEvents.BLOCK_UNCHAIN.getSoundEvent(), SoundCategory.BLOCKS, 1.0F, 1.0F);
+            world.playSound(null, pos, LGSoundEvents.BLOCK_UNLOCK.getSoundEvent(), SoundCategory.BLOCKS, 1.0F, 1.0F);
             world.scheduleUpdate(pos, this, tickRate(world));
             return;
         }
@@ -201,9 +201,9 @@ public class LGBlockDungeonLock extends Block {
     @Override
     public void updateTick(World world, BlockPos pos, IBlockState state, Random rand)
     {
-        LockType type = state.getValue(LOCK);
-        if (type == LockType.UNLOCKING_IRON || type == LockType.UNLOCKING_GOLD || type == LockType.UNLOCKING_DIAMOND || type == LockType.UNLOCKING_EMERALD
-                || type == LockType.UNLOCKING_OBSIDIAN || type == LockType.UNLOCKING_BOSS)
+        LockType lockType = state.getValue(LOCK);
+        if (lockType == LockType.UNLOCKING_IRON || lockType == LockType.UNLOCKING_GOLD || lockType == LockType.UNLOCKING_DIAMOND || lockType == LockType.UNLOCKING_EMERALD
+                || lockType == LockType.UNLOCKING_OBSIDIAN || lockType == LockType.UNLOCKING_BOSS)
         {
             world.setBlockToAir(pos);
             world.notifyNeighborsOfStateChange(pos, this, false);
@@ -231,9 +231,9 @@ public class LGBlockDungeonLock extends Block {
         items.add(new ItemStack(this, 1, LockType.BOSS.ordinal()));
     }
 
-    private LGItemDungeonKey.KeyType toKeyType(LockType lock)
+    private LGItemDungeonKey.KeyType toKeyType(LockType lockType)
     {
-        switch (lock)
+        switch (lockType)
         {
             case GOLD:
                 return LGItemDungeonKey.KeyType.GOLD;
