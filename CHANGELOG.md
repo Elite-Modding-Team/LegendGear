@@ -1,7 +1,7 @@
 # LegendGear Returns Changelog (1.2.0+)
 ## 1.2.1
 ### Fixed
-- Null Medallion not being craftable (whoops!).
+- Fixed Null Medallion not being craftable (whoops!).
 ---
 ## 1.2.0
 ### Update Notes
