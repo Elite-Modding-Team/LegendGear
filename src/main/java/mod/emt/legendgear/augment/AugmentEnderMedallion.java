@@ -76,6 +76,7 @@ public class AugmentEnderMedallion implements IMedallionAugment
         }
 
         player.fallDistance = 0.0F;
+        player.connection.setPlayerLocation(x, y, z, player.rotationYaw, player.rotationPitch);
         player.world.playSound(null, x, y, z, SoundEvents.ENTITY_ENDERMEN_TELEPORT, SoundCategory.PLAYERS, 1.0F, 1.0F);
 
         if (slashSound)

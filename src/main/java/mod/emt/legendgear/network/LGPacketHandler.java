@@ -11,11 +11,11 @@ public class LGPacketHandler
 
     public static void init() {
         int id = 0;
-        INSTANCE.registerMessage(PacketEnderBeam.Handler.class, PacketEnderBeam.class, id++, Side.CLIENT);
-        INSTANCE.registerMessage(PacketEnderTeleport.Handler.class, PacketEnderTeleport.class, id++, Side.CLIENT);
         INSTANCE.registerMessage(PacketAugmentActivate.Handler.class, PacketAugmentActivate.class, id++, Side.SERVER);
         INSTANCE.registerMessage(PacketAugmentCharge.Handler.class, PacketAugmentCharge.class, id++, Side.SERVER);
-        INSTANCE.registerMessage(PacketAugmentState.Handler.class, PacketAugmentState.class, id++, Side.CLIENT);
+        INSTANCE.registerMessage(PacketEnderBeamHandler.class, PacketEnderBeam.class, id++, Side.CLIENT);
+        INSTANCE.registerMessage(PacketEnderTeleportHandler.class, PacketEnderTeleport.class, id++, Side.CLIENT);
+        INSTANCE.registerMessage(PacketAugmentStateHandler.class, PacketAugmentState.class, id++, Side.CLIENT);
     }
 
     static {

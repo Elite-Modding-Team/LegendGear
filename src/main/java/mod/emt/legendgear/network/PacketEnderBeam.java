@@ -1,12 +1,7 @@
 package mod.emt.legendgear.network;
 
 import io.netty.buffer.ByteBuf;
-import net.minecraft.client.Minecraft;
-import net.minecraft.util.EnumParticleTypes;
-import net.minecraft.world.World;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
-import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
-import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 
 public class PacketEnderBeam implements IMessage
 {
@@ -41,18 +36,18 @@ public class PacketEnderBeam implements IMessage
         buf.writeDouble(z);
     }
 
-    public static class Handler implements IMessageHandler<PacketEnderBeam, IMessage>
+    public double getX()
     {
-        @Override
-        public IMessage onMessage(PacketEnderBeam message, MessageContext ctx)
-        {
-            Minecraft.getMinecraft().addScheduledTask(() ->
-            {
-                World world = Minecraft.getMinecraft().world;
-                if (world == null) return;
-                world.spawnParticle(EnumParticleTypes.SMOKE_LARGE, message.x, message.y, message.z, 0.0D, 0.0D, 0.0D);
-            });
-            return null;
-        }
+        return x;
+    }
+
+    public double getY()
+    {
+        return y;
+    }
+
+    public double getZ()
+    {
+        return z;
     }
 }
