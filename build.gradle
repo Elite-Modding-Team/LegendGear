@@ -219,13 +219,15 @@ jar {
         if (propertyBool('use_access_transformer')) {
             attribute_map['FMLAT'] = propertyString('access_transformer_locations')
         }
-        def mixinConfigs = propertyStringList('mixin_configs')
-        if (!mixinConfigs.isEmpty()) {
-            attribute_map['MixinConfigs'] = mixinConfigs.join(',')
-        }
-        def mixinConnectorClass = propertyString('mixin_connector_class')
-        if (!mixinConnectorClass.isEmpty()) {
-            attribute_map['MixinConnector'] = mixinConnectorClass
+        if (propertyBool('use_mixins') {
+            def mixinConfigs = propertyStringList('mixin_configs')
+            if (!mixinConfigs.isEmpty()) {
+                attribute_map['MixinConfigs'] = mixinConfigs.join(',')
+            }
+            def mixinConnectorClass = propertyString('mixin_connector_class')
+            if (!mixinConnectorClass.isEmpty()) {
+                attribute_map['MixinConnector'] = mixinConnectorClass
+            }
         }
         attributes(attribute_map)
     }
