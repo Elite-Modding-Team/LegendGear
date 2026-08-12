@@ -108,6 +108,8 @@ public class LGRegistry
         registerEntity("magic_boomerang", LGEntityMagicBoomerang.class, 64, true);
         registerEntity("ping", LGEntityPing.class, 512, false);
         registerEntity("quake", LGEntityQuake.class, 64, true);
+        registerEntity("spell_decorator", LGEntitySpellDecorator.class, 64, true);
+        registerEntity("spell_effect", LGEntitySpellEffect.class, 64, true);
         registerEntity("volatile_arrow", LGEntityVolatileArrow.class, 64, true);
         registerEntity("whirlwind", LGEntityWhirlwind.class, 64, true);
         registerEntity("wind_medallion", LGEntityWindMedallion.class, 64, true);
@@ -224,6 +226,8 @@ public class LGRegistry
         RenderingRegistry.registerEntityRenderingHandler(LGEntityMagicBoomerang.class, new LGRenderMagicBoomerang.Factory());
         RenderingRegistry.registerEntityRenderingHandler(LGEntityPing.class, new LGRenderPing.Factory());
         RenderingRegistry.registerEntityRenderingHandler(LGEntityQuake.class, new LGRenderQuake.Factory());
+        RenderingRegistry.registerEntityRenderingHandler(LGEntitySpellDecorator.class, new LGRenderSpellDecorator.Factory());
+        RenderingRegistry.registerEntityRenderingHandler(LGEntitySpellEffect.class, new LGRenderSpellEffect.Factory());
         RenderingRegistry.registerEntityRenderingHandler(LGEntityVolatileArrow.class, new LGRenderVolatileArrow.Factory());
         RenderingRegistry.registerEntityRenderingHandler(LGEntityWhirlwind.class, new LGRenderWhirlwind.Factory());
         RenderingRegistry.registerEntityRenderingHandler(LGEntityWindMedallion.class, new LGRenderWindMedallion.Factory());

@@ -248,6 +248,56 @@
       "legendgear:heart_pickup"
     ]
   },
+  "item.spell.charge": {
+    "sounds": [
+      "legendgear:item/spell/spell_charge"
+    ]
+  },
+  "item.spell.critical": {
+    "sounds": [
+      "legendgear:item/spell/critical_hit"
+    ]
+  },
+  "item.spell.ember": {
+    "sounds": [
+      "legendgear:item/spell/ember_cast"
+    ]
+  },
+  "item.spell.exeunt": {
+    "sounds": [
+      "legendgear:item/spell/exeunt_cast"
+    ]
+  },
+  "item.spell.frost": {
+    "sounds": [
+      "legendgear:item/spell/frost_cast"
+    ]
+  },
+  "item.spell.jolt": {
+    "sounds": [
+      "legendgear:item/spell/jolt_cast"
+    ]
+  },
+  "item.spell.rayfire": {
+    "sounds": [
+      "legendgear:item/spell/rayfire_cast"
+    ]
+  },
+  "item.spell.scythewind": {
+    "sounds": [
+      "legendgear:item/spell/scythewind_cast"
+    ]
+  },
+  "item.spell.spirit_drain": {
+    "sounds": [
+      "legendgear:item/spell/spirit_drain"
+    ]
+  },
+  "item.spell.twinkle": {
+    "sounds": [
+      "legendgear:item/spell/twinkle_cast"
+    ]
+  },
   "item.spotting_scope.mark": {
     "sounds": [
       "legendgear:block/ritual/ring1"

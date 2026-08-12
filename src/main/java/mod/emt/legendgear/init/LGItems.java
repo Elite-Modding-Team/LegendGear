@@ -3,6 +3,7 @@ package mod.emt.legendgear.init;
 import javax.annotation.Nonnull;
 
 import mod.emt.legendgear.block.LGBlockDungeonLock;
+import mod.emt.legendgear.spell.LGSpellRegistry;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.EnumRarity;
@@ -41,19 +42,23 @@ public class LGItems
     public static final LGItemEarthMedallion EARTH_MEDALLION = null;
     public static final LGItemEmeraldPiece EMERALD_PIECE = null;
     public static final LGItemEnderMedallion ENDER_MEDALLION = null;
+    public static final LGItemSpellTome ENDER_TOME = null;
     public static final LGItemRockCandy EMERALD_ROCK_CANDY = null;
     public static final LGItemEmeraldShard EMERALD_SHARD = null;
     public static final LGItemCharm FEATHER_CHARM = null;
     public static final LGItemFireMedallion FIRE_MEDALLION = null;
+    public static final LGItemSpellTome FIRE_TOME = null;
     public static final LGItemFortuneCookie FORTUNE_COOKIE = null;
     public static final LGItemBase FULGURITE = null;
     public static final LGItemGeoAmulet GEO_AMULET = null;
     public static final LGItemRockCandy GLOWSTONE_ROCK_CANDY = null;
     public static final LGItemHookshot HOOKSHOT = null;
+    public static final LGItemSpellTome ICE_TOME = null;
     public static final LGItemStardust INFUSED_STARDUST = null;
     public static final LGItemStarPiece INFUSED_STAR_PIECE = null;
     public static final LGItemBlockSpecial INFUSED_STARSTONE = null;
     public static final LGItemRockCandy LAPIS_LAZULI_ROCK_CANDY = null;
+    public static final LGItemSpellTome LIGHTNING_TOME = null;
     public static final LGItemMagicBoomerang MAGIC_BOOMERANG = null;
     public static final LGItemMagicMirror MAGIC_MIRROR = null;
     public static final LGItemMagicPowder MAGIC_POWDER = null;
@@ -61,6 +66,7 @@ public class LGItems
     public static final LGItemBase NULL_MEDALLION = null;
     public static final LGItemMysticSeed MYSTIC_SEED = null;
     public static final LGItemCharm PHOENIX_CHARM = null;
+    public static final LGItemSpellTome PHOENIX_TOME = null;
     public static final LGItemPhoenixFeather PHOENIX_FEATHER = null;
     public static final LGItemPyroAmulet PYRO_AMULET = null;
     public static final LGItemQuiver QUIVER = null;
@@ -70,6 +76,7 @@ public class LGItems
     public static final LGItemReedPipes REED_PIPES = null;
     public static final LGItemRecoveryHeart RECOVERY_HEART = null;
     public static final LGItemSlimeSword SLIME_SWORD = null;
+    public static final LGItemSpellTome SPIRIT_TOME = null;
     public static final LGItemSpottingScope SPOTTING_SCOPE = null;
     public static final LGItemStardust STARDUST = null;
     public static final LGItemBase STARGLASS_INGOT = null;
@@ -77,11 +84,13 @@ public class LGItems
     public static final LGItemStarPiece STAR_PIECE = null;
     public static final LGItemBlockSpecial STARSTONE = null;
     public static final LGItemBase STARSTEEL_INGOT = null;
+    public static final LGItemSpellTome STELLAR_TOME = null;
     public static final LGItemTitanBand TITAN_BAND = null;
     public static final LGItemMagicBoomerang TRAINING_BOOMERANG = null;
     public static final LGItemValorHeadband VALOR_HEADBAND = null;
     public static final LGItemWhirlwindBoots WHIRLWIND_BOOTS = null;
     public static final LGItemWindMedallion WIND_MEDALLION = null;
+    public static final LGItemSpellTome WIND_TOME = null;
 
     @SubscribeEvent
     public static void onRegisterItemsEvent(@Nonnull final RegistryEvent.Register<Item> event)
@@ -149,7 +158,15 @@ public class LGItems
                 LGRegistry.setup(new LGItemFortuneCookie(), "fortune_cookie").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemSpottingScope(), "spotting_scope").setCreativeTab(LegendGear.TAB),
                 LGRegistry.setup(new LGItemBestBow(), "best_bow").setCreativeTab(LegendGear.TAB),
-                LGRegistry.setup(new LGItemSword(LGMaterials.TOOL_STARGLASS, EnumRarity.RARE), "starglass_sword").setCreativeTab(LegendGear.TAB)
+                LGRegistry.setup(new LGItemSword(LGMaterials.TOOL_STARGLASS, EnumRarity.RARE), "starglass_sword").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemSpellTome(EnumRarity.RARE, LGSpellRegistry.FIRE), "fire_tome").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemSpellTome(EnumRarity.RARE, LGSpellRegistry.ICE), "ice_tome").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemSpellTome(EnumRarity.RARE, LGSpellRegistry.LIGHTNING), "lightning_tome").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemSpellTome(EnumRarity.RARE, LGSpellRegistry.STELLAR), "stellar_tome").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemSpellTome(EnumRarity.RARE, LGSpellRegistry.ENDER), "ender_tome").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemSpellTome(EnumRarity.RARE, LGSpellRegistry.WIND), "wind_tome").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemSpellTome(EnumRarity.EPIC, LGSpellRegistry.PHOENIX), "phoenix_tome").setCreativeTab(LegendGear.TAB),
+                LGRegistry.setup(new LGItemSpellTome(EnumRarity.RARE, LGSpellRegistry.SPIRIT), "spirit_tome").setCreativeTab(LegendGear.TAB)
             );
 
         // ITEM BLOCKS
