@@ -24,7 +24,8 @@ public class LGEntityItemPickupEvent
     public static void onEntityItemPickup(EntityItemPickupEvent event)
     {
         EntityPlayer player = event.getEntityPlayer();
-        if (!player.inventory.mainInventory.contains(ItemStack.EMPTY)) return;
+        ItemStack stack = event.getItem().getItem();
+        if (!canAccept(player, stack)) return;
         Item item = event.getItem().getItem().getItem();
         World world = player.getEntityWorld();
         if (item == Items.EMERALD && LGConfig.GENERAL_SETTINGS.emeraldPickupSound)
@@ -43,5 +44,15 @@ public class LGEntityItemPickupEvent
         {
             world.playSound(null, player.getPosition(), LGSoundEvents.ITEM_RECOVERY_HEART_PICKUP.getSoundEvent(), SoundCategory.PLAYERS, 0.75F, 1F);
         }
+    }
+
+    private static boolean canAccept(EntityPlayer player, ItemStack pickup) {
+        for (ItemStack stack : player.inventory.mainInventory) {
+            if (stack.isEmpty()) return true;
+            if (ItemStack.areItemsEqual(stack, pickup) && ItemStack.areItemStackTagsEqual(stack, pickup) && stack.isStackable() && stack.getCount() < Math.min(stack.getMaxStackSize(), player.inventory.getInventoryStackLimit())) {
+                return true;
+            }
+        }
+        return false;
     }
 }

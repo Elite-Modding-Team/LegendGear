@@ -1,4 +1,8 @@
 # LegendGear Returns Changelog (1.2.0+)
+## 1.3.0
+### Fixed
+- Fixed special pickup sounds not playing when the player's inventory is full but the hotbar still has space.
+---
 ## 1.2.1
 ### Fixed
 - Fixed Null Medallion not being craftable (whoops!).
