@@ -32,11 +32,11 @@ public class LGEntityItemPickupEvent
         {
             world.playSound(null, player.getPosition(), LGSoundEvents.ITEM_EMERALD_DROP_PICKUP_LARGE.getSoundEvent(), SoundCategory.PLAYERS, 0.75F, 1F);
         }
-        else if (item instanceof LGItemEmeraldPiece)
+        else if (item instanceof LGItemEmeraldPiece && LGConfig.GENERAL_SETTINGS.emeraldPiecePickupSound)
         {
             world.playSound(null, player.getPosition(), LGSoundEvents.ITEM_EMERALD_DROP_PICKUP_MEDIUM.getSoundEvent(), SoundCategory.PLAYERS, 0.75F, 1F);
         }
-        else if (item instanceof LGItemEmeraldShard)
+        else if (item instanceof LGItemEmeraldShard && LGConfig.GENERAL_SETTINGS.emeraldShardPickupSound)
         {
             world.playSound(null, player.getPosition(), LGSoundEvents.ITEM_EMERALD_DROP_PICKUP_SMALL.getSoundEvent(), SoundCategory.PLAYERS, 0.75F, 1F);
         }

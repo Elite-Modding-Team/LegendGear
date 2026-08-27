@@ -1,5 +1,7 @@
 # LegendGear Returns Changelog (1.2.0+)
 ## 1.3.0
+### Added
+- Added config options to disable emerald shard and emerald piece pickup sounds.
 ### Fixed
 - Fixed special pickup sounds not playing when the player's inventory is full but the hotbar still has space.
 ---

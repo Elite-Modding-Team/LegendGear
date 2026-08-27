@@ -62,6 +62,14 @@ public class LGConfig
         @Config.RangeInt(min = 1)
         public int emeraldExchangeRate = 8;
 
+        @Config.Name("Emerald Piece Pickup Sound")
+        @Config.Comment("Plays an additional sound when emerald pieces are picked up")
+        public boolean emeraldPiecePickupSound = true;
+
+        @Config.Name("Emerald Shard Pickup Sound")
+        @Config.Comment("Plays an additional sound when emerald shards are picked up")
+        public boolean emeraldShardPickupSound = true;
+
         @Config.Name("Emerald Pickup Sound")
         @Config.Comment("Plays an additional sound when emeralds are picked up")
         public boolean emeraldPickupSound = true;
