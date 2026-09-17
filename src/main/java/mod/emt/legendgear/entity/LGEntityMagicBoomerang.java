@@ -214,7 +214,7 @@ public class LGEntityMagicBoomerang extends EntityThrowable implements IEntityAd
                 el.attackEntityFrom(DamageSource.causeThrownDamage(this, getThrower()), (float) LGConfig.GENERAL_SETTINGS.magicBoomerangDamage);
             }
         }
-        else
+        else if (result.typeOfHit == RayTraceResult.Type.BLOCK)
         {
             BlockPos blockPos = result.getBlockPos();
             IBlockState blockState = world.getBlockState(blockPos);
