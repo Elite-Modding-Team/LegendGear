@@ -14,32 +14,28 @@ import mod.emt.legendgear.init.LGItems;
 @Mod.EventBusSubscriber(modid = LegendGear.MOD_ID, value = Side.CLIENT)
 public class LGCraftEvent
 {
-    private static long lastCraftSoundTime = 0L;
-
     @SubscribeEvent
     public static void dimensionalCatalystCraftingSound(PlayerEvent.ItemCraftedEvent event)
     {
-        if (lastCraftSoundTime != event.player.world.getWorldTime())
+        if (!event.player.world.isRemote)
         {
-            final ItemStack result = event.crafting;
+            return;
+        }
 
-            if (!result.isEmpty() && result.getItem() == LGItems.DIMENSIONAL_CATALYST)
+        if (!event.crafting.isEmpty() && event.crafting.getItem() == LGItems.DIMENSIONAL_CATALYST)
+        {
+            event.player.playSound(SoundEvents.ENTITY_ENDERMEN_TELEPORT, 0.5F, 1.0F);
+            return;
+        }
+
+        IInventory inv = event.craftMatrix;
+        for (int i = 0; i < inv.getSizeInventory(); ++i)
+        {
+            ItemStack stack = inv.getStackInSlot(i);
+            if (!stack.isEmpty() && stack.getItem() == LGItems.DIMENSIONAL_CATALYST)
             {
                 event.player.playSound(SoundEvents.ENTITY_ENDERMEN_TELEPORT, 0.5F, 1.0F);
-                lastCraftSoundTime = event.player.world.getWorldTime();
-                return;
-            }
-
-            final IInventory inv = event.craftMatrix;
-
-            for (int slots = inv.getSizeInventory(), i = 0; i < slots; ++i)
-            {
-                if (inv.getStackInSlot(i).isEmpty() && inv.getStackInSlot(i).getItem() == LGItems.DIMENSIONAL_CATALYST)
-                {
-                    event.player.playSound(SoundEvents.ENTITY_ENDERMEN_TELEPORT, 0.5F, 1.0F);
-                    lastCraftSoundTime = event.player.world.getWorldTime();
-                    break;
-                }
+                break;
             }
         }
     }
